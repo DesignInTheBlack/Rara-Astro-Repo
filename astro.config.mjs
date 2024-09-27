@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import alpinejs from '@astrojs/alpinejs';
 import tailwind from '@astrojs/tailwind';
-import tailwindShorthandPlugin from './vite-plugin-tailwind-shorthand.js';
+import tailwindShorthandPlugin from './elevate/vite/vite-plugin-tailwind-shorthand';
 import path from 'path';  // Import path for resolving directories
 
 // https://astro.build/config
