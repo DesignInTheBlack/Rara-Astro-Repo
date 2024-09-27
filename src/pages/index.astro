@@ -1,6 +1,7 @@
 
 ---
-//Script Content Here
+import { client } from '../../tina/__generated__/client'
+const homepage = await client.queries.homepage({ relativePath: '/homepage.md' })
 ---
 
 
@@ -9,14 +10,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Astro Page</title>
+    <title></title>
     <!-- Link to your CSS files or any other head elements here -->
   </head>
   <body>
     <section class="space h-c5 bg-purple md:bg-black">
         <div class="content">
-            <h1 class="text-white bg-warn px-d2 py-d2 md:px-d4 md:py-d4">Testing</h1>
+            <h1 class="text-white bg-warn px-d2 py-d2 md:px-d4 md:py-d4"></h1>
         </div>
+          <script>
+      console.log('hello!');
+      console.log(homepage);
+    </script>
     </section>
   </body>
 </html>

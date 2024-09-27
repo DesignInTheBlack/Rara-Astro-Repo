@@ -32,7 +32,7 @@ export default defineConfig({
       {
         label: 'Homepage',
         name: 'homepage',
-        path: 'content',
+        path: 'src/content',
         match: {
           include: 'homepage',
         },
@@ -54,7 +54,7 @@ export default defineConfig({
       {
         label: 'About',
         name: 'about',
-        path: 'content',
+        path: 'src/content',
         match: {
           include: 'about',
         },
