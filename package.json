@@ -3,12 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+      "dev": "tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "elevate": "node preprocess.mjs && tailwindcss -i input.css -o output.css --minify"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
@@ -18,10 +17,13 @@
     "alpinejs": "^3.14.1",
     "astro": "^4.15.9",
     "colorjs.io": "^0.5.2",
-    "js-beautify": "^1.15.1"
+    "js-beautify": "^1.15.1",
+    "tinacms": "^2.2.5"
   },
   "devDependencies": {
     "@rollup/plugin-yaml": "^4.1.2",
+    "@tinacms/cli": "^1.6.5",
+    "@types/node": "^22.7.4",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
     "postcss": "^8.4.47",
