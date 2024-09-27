@@ -1,31 +1,28 @@
-
 ---
 import { client } from '../../tina/__generated__/client'
-const homepage = await client.queries.homepage({ relativePath: 'homepage.md' })
----
+// Define your pagename here, it must match the name of the .md file.
+const pageName = 'homepage'
 
+// Fetch the data dynamically and destructure. 
+const query = await client.queries[pageName]({ relativePath: `${pageName}.md` })
+const data = query.data[pageName]
+const { ...page } = data
+//Note: You can now access the attributes via page.attribute.
+---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>{page.title}</title>
     <!-- Link to your CSS files or any other head elements here -->
   </head>
   <body>
     <section class="space h-c5 bg-purple md:bg-black">
         <div class="content">
-            <h1 class="text-white bg-warn px-d2 py-d2 md:px-d4 md:py-d4"></h1>
+            <h1 class="text-white bg-warn px-d2 py-d2 md:px-d4 md:py-d4">{page.title}</h1>
         </div>
-          <script>
-      console.log('hello!');
-      console.log(homepage);
-    </script>
     </section>
   </body>
 </html>
-
-
-
-
