@@ -2,7 +2,6 @@
 import { client } from '../../tina/__generated__/client'
 // Define your pagename here, it must match the name of the .md file.
 const pageName = 'homepage'
-
 // Fetch the data dynamically and destructure. 
 const query = await client.queries[pageName]({ relativePath: `${pageName}.md` })
 const data = query.data[pageName]
@@ -19,9 +18,11 @@ const { ...page } = data
     <!-- Link to your CSS files or any other head elements here -->
   </head>
   <body>
-    <section class="space h-c5 bg-grey md:bg-black">
-        <div class="content">
-            <h1 class="text-white bg-warn px-d2 py-d2 md:px-d4 md:py-d4">{page.title}</h1>
+    <section class="space h-c5 bg-grey">
+        <div class="content row-[center,center]">
+            <h1>One</h1>
+            <h1>Two</h1>
+            <h1>Three</h1>
         </div>
     </section>
   </body>

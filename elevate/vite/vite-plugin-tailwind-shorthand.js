@@ -43,8 +43,9 @@ function expandUtility(cls, prefix) {
   switch (utility) {
     case 'grid':
       return expandGridShorthand(values, prefix);
-    case 'flex':
-      return expandFlexShorthand(values, prefix);
+    case 'row':
+    case 'col':
+      return expandFlexShorthand(utility, values, prefix);
     case 'item':
       return expandFlexItemShorthand(values, prefix);
     case 'margin':
@@ -77,11 +78,10 @@ function expandGridShorthand(values, prefix) {
 // ====================================================================================
 // Flex Shorthand Expansion
 // ====================================================================================
-function expandFlexShorthand(values, prefix) {
-  const [direction, justify, align, wrap, content] = values;
-  const flexClasses = [`${prefix}flex`];
+function expandFlexShorthand(direction, values, prefix) {
+  const [justify, align, wrap, content] = values;
+  const flexClasses = [`${prefix}flex`, `${prefix}flex-${direction}`];
 
-  if (direction && direction !== '_') flexClasses.push(`${prefix}flex-${direction}`);
   if (justify && justify !== '_') flexClasses.push(`${prefix}justify-${justify}`);
   if (align && align !== '_') flexClasses.push(`${prefix}items-${align}`);
   if (wrap && wrap !== '_') flexClasses.push(`${prefix}flex-${wrap}`);
