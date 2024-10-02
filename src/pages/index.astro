@@ -1,4 +1,5 @@
 ---
+import PrimaryLayout from '../layouts/PrimaryLayout.astro'
 import { client } from '../../tina/__generated__/client'
 // Define your pagename here, it must match the name of the .md file.
 const pageName = 'homepage'
@@ -8,22 +9,29 @@ const data = query.data[pageName]
 const { ...page } = data
 //Note: You can now access the attributes via page.attribute.
 ---
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{page.title} + words</title>
+    <title>
+      {page.title}
+      + words
+    </title>
     <!-- Link to your CSS files or any other head elements here -->
   </head>
   <body>
-    <section class="space h-c5 bg-grey">
-        <div class="content flex flex-row justify-center items-center">
-            <h1>One</h1>
-            <h1>Two</h1>
-            <h1>Three</h1>
-        </div>
-    </section>
+
+
+
+    <PrimaryLayout>
+      <div>
+        <h1 class="text-h1 font-semibold text-black">We Make Brands.</h1>
+      </div>
+      <header class="w-full h-s4 bg-no-repeat bg-cover bg-center" style = "background-image:url('https://placehold.co/1280x700')"></header>
+    </PrimaryLayout>
+
+
+
   </body>
 </html>

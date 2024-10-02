@@ -50,9 +50,6 @@ module.exports = {
       // Colors
       colors: colors.colors,
 
-      // Typography extensions
-      maxWidth: typography.extend.maxWidth,
-
       // Utility extensions
       ...utilities.extend,
     },
