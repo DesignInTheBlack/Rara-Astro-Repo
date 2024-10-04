@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-      "dev": "tinacms dev -c \"astro dev\"",
+    "dev": "tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -17,8 +17,11 @@
     "alpinejs": "^3.14.1",
     "astro": "^4.15.9",
     "colorjs.io": "^0.5.2",
+    "gsap": "^3.12.5",
     "js-beautify": "^1.15.1",
-    "tinacms": "^2.2.5"
+    "lenis": "^1.1.13",
+    "tinacms": "^2.2.5",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-yaml": "^4.1.2",

@@ -1,15 +1,257 @@
-
-<nav class="bg-purple pad-[d4] w-full buffer row-[between,between]">
-  <img src = "https://placehold.co/60x60">
+<!-- <div class = "bg-black py-d2 row-[center,center]"><p class = "text-white">"Simplicity is the Ultimate Sophistication"</p></div>
+<nav class="bg-purple py-d3 w-full buffer row-[between,center]">
+  <img class = "h-d8 w-auto" src = "/images/LogoLight.svg">
   <div>
     <ul class="list-none space-x-d4">
-      <li class="inline-block text-white">Home</li>
-      <li class="inline-block text-white">Works</li>
-      <li class="inline-block text-white">Our Story</li>
-      <li class="inline-block text-black bg-grey p-d4 rounded-lg">Contact Us</li>
+      <li class="inline-block text-white text-base font-sans">Home</li>
+      <li class="inline-block text-white text-base font-sans">Works</li>
+      <li class="inline-block text-white text-base font-sans">About</li>
     </ul>
   </div>
+  <li class="inline-block text-black text-base bg-grey px-d4 py-d2 rounded-lg font-sans">Contact Us</li>
 </nav>
+ -->
 
-
-
+ ---
+ ---
+ <style>
+   /* Fixed Header Container */
+   #headerContainer {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 1000; /* Ensure it's above other content */
+     display: flex;
+     flex-direction: column;
+     align-items: center; /* Center children horizontally */
+     pointer-events: none; /* Allow interactions only on child elements */
+   }
+ 
+   /* Quote Bar Styles */
+   #quoteBar {
+     width: 100%;
+     padding: 1rem 2rem;
+     background-color: rgba(0, 0, 0, 1); /* Fully opaque */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-sizing: border-box;
+     z-index: 1001; /* Above the navbar */
+     pointer-events: auto; /* Enable interactions if any */
+     transition: none; /* Managed by GSAP */
+   }
+ 
+   /* Navigation Bar Styles */
+   #mainNav {
+     width: 100%;
+     padding: 1.5rem 2rem;
+     background-color: rgba(145, 9, 233, 1); /* Fully opaque on page load */
+     border-radius: 0;
+     display: flex;
+     align-items: center;
+     justify-content: space-between; /* Initial alignment */
+     box-sizing: border-box;
+     z-index: 1000; /* Below the quote bar */
+     pointer-events: auto; /* Enable interactions */
+     transition: none; /* Managed by GSAP */
+     opacity: 1; /* Ensure full opacity on page load */
+     transform: scale(1); /* Ensure original scale on page load */
+   }
+ 
+   /* Centered navigation links when nav is adjusted */
+   #mainNav.nav-centered {
+     justify-content: center; /* Center the navigation links */
+   }
+ 
+   /* Navigation Menu Centering */
+   #navMenu {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex: 1; /* Allow navMenu to take available space */
+   }
+ 
+   /* Logo and Contact Button Styles */
+   #logo,
+   #contactButton {
+     overflow: hidden;
+     white-space: nowrap;
+     transform-origin: center;
+     /* Ensure scaling happens from the center */
+     opacity: 1; /* Full opacity on page load */
+     transform: scale(1); /* Original scale on page load */
+   }
+ 
+   /* Transition optimizations */
+   #headerContainer,
+   #quoteBar,
+   #mainNav,
+   #navMenu,
+   #logo,
+   #contactButton {
+     will-change: transform, opacity, width, padding, border-radius, background-color, margin;
+   }
+ 
+   /* Add top padding to main content to prevent overlap with fixed header */
+   body {
+     padding-top: 120px; /* Adjust based on headerContainer's total height */
+   }
+ 
+   /* Responsive Adjustments (Optional) */
+   @media (max-width: 768px) {
+     #mainNav {
+       padding: 1rem 1.5rem;
+     }
+ 
+     #mainNav.nav-centered {
+       padding: 0.8rem 1rem;
+     }
+ 
+     #quoteBar {
+       padding: 0.8rem 1.5rem;
+     }
+ 
+     #mainNav {
+       width: 90%; /* Adjusted width for smaller screens */
+     }
+   }
+ </style>
+ 
+ <!-- Fixed Header Container -->
+ <div id="headerContainer">
+   <!-- Quote Bar -->
+   <div id="quoteBar" class="bg-black py-d2 row-[center,center]">
+     <p class="text-white">"Simplicity is the Ultimate Sophistication"</p>
+   </div>
+ 
+   <!-- Navigation Bar -->
+   <nav id="mainNav" class="bg-purple buffer row-[between,center]">
+     <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
+     <div id="navMenu">
+       <ul class="list-none space-x-d4">
+         <li class="inline-block text-white text-base font-sans">Home</li>
+         <li class="inline-block text-white text-base font-sans">Works</li>
+         <li class="inline-block text-white text-base font-sans">About</li>
+       </ul>
+     </div>
+     <li
+       id="contactButton"
+       class="inline-block text-black text-base bg-grey px-d4 py-d2 rounded-lg font-sans"
+     >
+       Contact Us
+     </li>
+   </nav>
+ </div>
+ 
+ <!-- Include GSAP and ScrollTrigger via CDN -->
+ <script
+   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+   integrity="sha512-YourIntegrityHashHere"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer"
+ ></script>
+ <script
+   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+   integrity="sha512-YourIntegrityHashHere"
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer"
+ ></script>
+ 
+ <script is:inline>
+   document.addEventListener('DOMContentLoaded', function () {
+     // Ensure GSAP and ScrollTrigger are loaded
+     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+       console.error('GSAP or ScrollTrigger is not loaded.');
+       return;
+     }
+ 
+     // Respect users' reduced motion preferences
+     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+       // Optionally, disable or simplify animations
+       return;
+     }
+ 
+     gsap.registerPlugin(ScrollTrigger);
+ 
+     // Optional: Enable markers for debugging
+     // ScrollTrigger.defaults({ markers: true });
+ 
+     // Create a GSAP timeline for scroll-triggered animations
+     const navTimeline = gsap.timeline({
+       scrollTrigger: {
+         trigger: "#headerContainer",
+         start: "top top", // When the top of headerContainer hits the top of the viewport
+         end: "+=300", // 300px scroll distance for the animation
+         scrub: true, // Smoothly scrubs the animation with the scrollbar
+       }
+     });
+ 
+     // 1. Collapse the quoteBar
+     navTimeline.to("#quoteBar", {
+       height: 0,
+       opacity: 0,
+       padding: 0,
+       duration: 0.3,
+       ease: "power1.out",
+     }, 0); // Start at the beginning of the timeline
+ 
+     // 2. Animate logo and contact button to fade and scale down
+     navTimeline.to(["#logo", "#contactButton"], {
+       opacity: 0,
+       scale: 0,
+       duration: 0.3,
+       ease: "power1.out",
+     }, 0); // Simultaneous with quoteBar animation
+ 
+     // 3. Adjust the navbar to desired styles (bring sides inward)
+     navTimeline.to("#mainNav", {
+       padding: "0.5rem 1rem",
+       borderRadius: "1rem",
+       backgroundColor: "rgba(0, 0, 0, 0.8)", // Black with mild transparency
+       marginTop: "0.5rem",
+       boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+       width: "300px", // Adjusted width for "hug" effect
+       duration: 0.3,
+       ease: "power1.out",
+       onStart: function() {
+         document.getElementById("mainNav").classList.add("nav-centered");
+       }
+     }, 0); // Simultaneous with previous tweens
+ 
+     // ScrollTrigger to set display: none after fade and scale down
+     ScrollTrigger.create({
+       trigger: "#headerContainer",
+       start: "top top",
+       end: "+=300",
+       scrub: true,
+       onUpdate: (self) => {
+         if (self.direction === 1 && self.progress >= 0.99) { // Scrolling down and animation complete
+           gsap.set(["#logo", "#contactButton"], { display: "none" });
+         }
+         if (self.direction === -1 && self.progress <= 0.01) { // Scrolling up and animation at start
+           gsap.set(["#logo", "#contactButton"], { display: "block" });
+         }
+       }
+     });
+ 
+     // ScrollTrigger to animate logo and contact button when scrolling up
+     ScrollTrigger.create({
+       trigger: "#headerContainer",
+       start: "top top",
+       end: "+=300",
+       scrub: true,
+       onUpdate: (self) => {
+         if (self.direction === -1 && self.progress > 0.0) { // Scrolling up and in progress
+           gsap.to(["#logo", "#contactButton"], {
+             opacity: 1,
+             scale: 1,
+             duration: 0.3,
+             ease: "power1.out",
+           });
+         }
+       }
+     });
+   });
+ </script>
+ 

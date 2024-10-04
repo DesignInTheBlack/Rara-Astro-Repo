@@ -1,4 +1,4 @@
-// tailwind.config.js
+// tailwind.config.mjs
 
 const typography = require('./elevate/typography');
 const colors = require('./elevate/colors');
@@ -42,6 +42,7 @@ module.exports = {
     lineHeight: typography.lineHeight,
     letterSpacing: typography.letterSpacing,
     lineWidth: typography.lineWidth,
+    fontFamily: typography.fontFamily,
 
     // ----------------------------------
     // Extended Theme Settings
@@ -60,6 +61,11 @@ module.exports = {
   // ====================================================================================
   plugins: [
     ...plugins,
+    function({ addBase }) {
+      addBase({
+        '@font-face': typography.fonts,
+      });
+    },
     // Add any additional plugins here
   ],
 

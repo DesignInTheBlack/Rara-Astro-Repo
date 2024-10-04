@@ -1,3 +1,5 @@
+// typography.js
+
 module.exports = {
   // ====================================================================================
   // Typography Settings with Responsive Fluid Font Sizes
@@ -15,16 +17,16 @@ module.exports = {
     'fluid-5xl': ['clamp(3rem, 2.5rem + 2.5vw, 4rem)'],
 
     // Non-fluid perfect fifth scale typography without line heights
-    'tiny': ['0.8rem'],      // 12px
-    'small': ['1rem'],       // 16px
-    'base': ['1.5rem'],      // 24px (body)
-    'h6': ['1.875rem'],      // 30px
-    'h5': ['2.25rem'],       // 36px
-    'h4': ['3rem'],          // 48px
-    'h3': ['3.75rem'],       // 60px
-    'h2': ['4.5rem'],        // 72px
-    'h1': ['5.625rem'],      // 90px
-    'eyebrow': ['0.875rem'], // 14px for eyebrow text
+    'tiny': ['0.533rem'],      // 8.53px
+    'small': ['0.711rem'],     // 11.38px
+    'base': ['1rem'],          // 16px (body)
+    'h6': ['1.125rem'],        // 18px
+    'h5': ['1.5rem'],          // 24px
+    'h4': ['2.25rem'],         // 36px
+    'h3': ['3.375rem'],        // 54px
+    'h2': ['5.062rem'],        // 81px
+    'h1': ['7.594rem'],        // 121.5px
+    'eyebrow': ['0.583rem'],   // 9.33px for eyebrow text
   },
 
   // ====================================================================================
@@ -62,5 +64,83 @@ module.exports = {
     'wide': '75ch',         // For larger screens
     'extra-wide': '90ch',   // For very wide layouts
   },
+
+  // ====================================================================================
+  // Font Family Settings
+  // ====================================================================================
+  fontFamily: {
+    'sans': ['Sk-Modernist'],
+    'mono': ['Sk-Modernist-Mono'],
+    'serif': ['PlayfairDisplay'],
+  },
+
+  // ====================================================================================
+  // Font Definitions
+  // ====================================================================================
+  fonts: [
+    {
+      family: 'Sk-Modernist',
+      src: 'url("/fonts/Sk-Modernist-Regular.otf") format("opentype")',
+      weight: '400',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'Sk-Modernist',
+      src: 'url("/fonts/Sk-Modernist-Bold.otf") format("opentype")',
+      weight: '700',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'Sk-Modernist-Mono',
+      src: 'url("/fonts/Sk-Modernist-Mono.otf") format("opentype")',
+      weight: '400',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'PlayfairDisplay',
+      src: 'url("/fonts/PlayfairDisplay-Black.ttf") format("truetype")',
+      weight: '900',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'PlayfairDisplay',
+      src: 'url("/fonts/PlayfairDisplay-Bold.ttf") format("truetype")',
+      weight: '700',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'PlayfairDisplay',
+      src: 'url("/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype")',
+      weight: '800',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'PlayfairDisplay',
+      src: 'url("/fonts/PlayfairDisplay-Medium.ttf") format("truetype")',
+      weight: '500',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'PlayfairDisplay',
+      src: 'url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype")',
+      weight: '400',
+      style: 'normal',
+      display: 'swap',
+    },
+    {
+      family: 'PlayfairDisplay',
+      src: 'url("/fonts/PlayfairDisplay-SemiBold.ttf") format("truetype")',
+      weight: '600',
+      style: 'normal',
+      display: 'swap',
+    },
+  ],
 
 };

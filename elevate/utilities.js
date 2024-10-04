@@ -26,6 +26,13 @@ module.exports = {
     },
 
     // ----------------------------------
+    // Custom Max Width Utilities
+    // ----------------------------------
+    maxWidth: {
+      'prose': 'var(--line-width, 65ch)',
+    },
+
+    // ----------------------------------
     // Additional Utility Classes
     // ----------------------------------
     // Add any project-specific utility classes here
@@ -43,18 +50,13 @@ module.exports = {
   // ====================================================================================
   // Custom Utility Plugins
   // ====================================================================================
-  // Define any custom utility plugins here
-  // plugins: [
-  //   function({ addUtilities }) {
-  //     const newUtilities = {
-  //       '.rotate-45': {
-  //         transform: 'rotate(45deg)',
-  //       },
-  //       '.rotate-90': {
-  //         transform: 'rotate(90deg)',
-  //       },
-  //     }
-  //     addUtilities(newUtilities)
-  //   }
-  // ]
+  plugins: [
+    function({ addUtilities, theme }) {
+      const lineWidthUtilities = Object.entries(theme('lineWidth')).map(([key, value]) => ({
+        [`.max-w-${key}`]: { maxWidth: value },
+      }));
+
+      addUtilities(lineWidthUtilities, ['responsive']);
+    }
+  ],
 };

@@ -1,7 +1,8 @@
 // plugins.js
 
-module.exports = [
+const utilities = require('./utilities');
 
+module.exports = [
   // ----------------------------------
   // Layout Plugin: Adds Custom Components for Layout
   // ----------------------------------
@@ -22,9 +23,29 @@ module.exports = [
 
       // Buffer Utility for Padding
       '.buffer': {
-        paddingLeft: theme('spacing.d4', '1rem'),
-        paddingRight: theme('spacing.d4', '1rem'),
-      },
+        paddingLeft: theme('spacing.d6', '1rem'),
+        paddingRight: theme('spacing.d6', '1rem'),
+        '@screen xs': {
+          paddingLeft: theme('spacing.d6', '0.5rem'),
+          paddingRight: theme('spacing.d6', '0.5rem'),
+        },
+        '@screen sm': {
+          paddingLeft: theme('spacing.d6', '1rem'),
+          paddingRight: theme('spacing.d6', '1rem'),
+        },
+        '@screen md': {
+          paddingLeft: theme('spacing.d6', '1.5rem'),
+          paddingRight: theme('spacing.d6', '1.5rem'),
+        },
+        '@screen lg': {
+          paddingLeft: theme('spacing.c8', '2rem'),
+          paddingRight: theme('spacing.c8', '2rem'),
+        },
+        '@screen xl': {
+          paddingLeft: theme('spacing.c8', '2.5rem'),
+          paddingRight: theme('spacing.c8', '2.5rem'),
+        },
+      }
     };
 
     addComponents(components);
@@ -55,4 +76,9 @@ module.exports = [
     };
     addUtilities(newUtilities);
   },
+
+  // ----------------------------------
+  // Line Width Utilities Plugin
+  // ----------------------------------
+  ...utilities.plugins,
 ];

@@ -5,10 +5,10 @@ module.exports = {
   // ====================================================================================
   colors: {
   
-    'purple': '#9109E9', // Dark Blue
-    'grey': '#E5ECF4', // Main primary color (Bright Blue)
-    'white': '#FFFFFF',
-    'black':'#0F0A0A',
+    'purple': '#9109E9', //potentially - 6e53f2
+    'grey': '#EBEBEB', 
+    'white': '#F7F5FB',
+    'black':'#0A141F',
     'error': '#D81E5B',
     'warn': '#FFD046',
 
