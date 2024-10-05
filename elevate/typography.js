@@ -33,6 +33,7 @@ module.exports = {
   // Line Height Settings (if needed elsewhere)
   // ====================================================================================
   lineHeight: {
+    'hug':'1',
     'tight': '1.2',           // For headings
     'snug': '1.3',
     'normal': '1.4',          // Default for body text

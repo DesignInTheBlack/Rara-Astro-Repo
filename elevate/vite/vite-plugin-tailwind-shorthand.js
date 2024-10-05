@@ -85,7 +85,6 @@ function transformClassAttribute(classValue) {
 // Utility Expansion Functions
 // ====================================================================================
 
-// Expand a single utility shorthand into full Tailwind classes
 function expandUtility(cls, prefix) {
   const [utility, valuesStr] = cls.split('-[');
   if (!valuesStr) return [`${prefix}${cls}`];
@@ -96,6 +95,8 @@ function expandUtility(cls, prefix) {
       return expandGridShorthand(values, prefix);
     case 'row':
     case 'col':
+    case 'rowr':
+    case 'colr':  // Add handling for reverse flex shorthands here
       return expandFlexShorthand(utility, values, prefix);
     case 'item':
       return expandFlexItemShorthand(values, prefix);
@@ -108,6 +109,7 @@ function expandUtility(cls, prefix) {
       return [`${prefix}${cls}`];
   }
 }
+
 
 // Grid Shorthand Expansion
 function expandGridShorthand(values, prefix) {
@@ -127,8 +129,21 @@ function expandGridShorthand(values, prefix) {
 // Flex Shorthand Expansion
 function expandFlexShorthand(direction, values, prefix) {
   const [justify, align, wrap, content] = values;
-  const flexClasses = [`${prefix}flex`, `${prefix}flex-${direction}`];
+  
+  let flexClasses = [`${prefix}flex`];
 
+  // Handle direction-specific logic for reverse flex directions
+  if (direction === 'rowr') {
+    flexClasses.push(`${prefix}flex-row-reverse`);
+  } else if (direction === 'colr') {
+    flexClasses.push(`${prefix}flex-col-reverse`);
+  } else if (direction === 'row') {
+    flexClasses.push(`${prefix}flex-row`);
+  } else if (direction === 'col') {
+    flexClasses.push(`${prefix}flex-col`);
+  }
+
+  // Add additional flex classes
   if (justify && justify !== '_') flexClasses.push(`${prefix}justify-${justify}`);
   if (align && align !== '_') flexClasses.push(`${prefix}items-${align}`);
   if (wrap && wrap !== '_') flexClasses.push(`${prefix}flex-${wrap}`);
@@ -136,6 +151,8 @@ function expandFlexShorthand(direction, values, prefix) {
 
   return flexClasses;
 }
+
+
 
 // Flex Item Shorthand Expansion
 function expandFlexItemShorthand(values, prefix) {

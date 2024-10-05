@@ -11,16 +11,14 @@
 7. [Typography](#typography)
 8. [Z-Index Scale](#z-index-scale)
 9. [Container Sizes](#container-sizes)
+10. [Utility Extensions](#utility-extensions)
+11. [Custom Plugins](#custom-plugins)
 
-// ====================================================================================
-// Introduction
-// ====================================================================================
+## Introduction
 
 The Elevate Web Design System (EWDS) is a custom Tailwind CSS configuration that provides a consistent and efficient way to build web interfaces. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development.
 
-// ====================================================================================
-// Core Layout Philosophy
-// ====================================================================================
+## Core Layout Philosophy
 
 EWDS provides three key classes for structuring and spacing content:
 
@@ -40,9 +38,7 @@ Example usage:
 </section>
 ```
 
-// ====================================================================================
-// Breakpoint System
-// ====================================================================================
+## Breakpoint System
 
 EWDS defines five custom breakpoints:
 
@@ -52,9 +48,7 @@ EWDS defines five custom breakpoints:
 - `lg`: 80rem (1280px) - Desktop
 - `xl`: 100rem (1600px) - Large Desktop
 
-// ----------------------------------
-// Breakpoint Shorthand Syntax
-// ----------------------------------
+### Breakpoint Shorthand Syntax
 
 The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a concise notation:
 
@@ -69,15 +63,11 @@ Example:
 </div>
 ```
 
-// ====================================================================================
-// Shorthand Syntax
-// ====================================================================================
+## Shorthand Syntax
 
 EWDS provides several shorthand notations for common Tailwind utility combinations:
 
-// ----------------------------------
-// Grid Shorthand
-// ----------------------------------
+### Grid Shorthand
 
 Format: `grid-[columns,rows,gap,justify,align,flow]`
 
@@ -95,13 +85,11 @@ Example:
 </div>
 ```
 
-// ----------------------------------
-// Flex Container Shorthand
-// ----------------------------------
+### Flex Container Shorthand
 
 Format: `direction-[justify,align,wrap,content]`
 
-- `direction`: row or col
+- `direction`: row, col, rowr (row-reverse), colr (column-reverse)
 - `justify`: start, end, center, between, around, evenly
 - `align`: start, end, center, stretch, baseline
 - `wrap`: wrap, nowrap, wrap-reverse
@@ -114,9 +102,7 @@ Example:
 </div>
 ```
 
-// ----------------------------------
-// Flex Item Shorthand
-// ----------------------------------
+### Flex Item Shorthand
 
 Format: `item-[grow,basis,shrink,align]`
 
@@ -132,9 +118,7 @@ Example:
 </div>
 ```
 
-// ----------------------------------
-// Margin/Padding Shorthand
-// ----------------------------------
+### Margin/Padding Shorthand
 
 Format: `margin-[l,r,t,b]` or `pad-[l,r,t,b]`
 
@@ -147,9 +131,7 @@ Example:
 </div>
 ```
 
-// ----------------------------------
-// Text Shorthand
-// ----------------------------------
+### Text Shorthand
 
 Format: `text-[size,weight,family,height,align,spacing,color]`
 
@@ -168,15 +150,11 @@ Example:
 </p>
 ```
 
-// ====================================================================================
-// Spacing Scale
-// ====================================================================================
+## Spacing Scale
 
 EWDS uses a comprehensive spacing scale divided into three categories:
 
-// ----------------------------------
-// Detail (d1 to d13)
-// ----------------------------------
+### Detail (d1 to d13)
 
 For fine adjustments and component construction (0.25rem - 3.5rem):
 
@@ -201,9 +179,7 @@ Example usage:
 </div>
 ```
 
-// ----------------------------------
-// Content (c1 to c13)
-// ----------------------------------
+### Content (c1 to c13)
 
 For general page layout and larger component spacing (4rem - 20rem):
 
@@ -228,9 +204,7 @@ Example usage:
 </section>
 ```
 
-// ----------------------------------
-// Space (s1 to s13)
-// ----------------------------------
+### Space (s1 to s13)
 
 For major page sections and full-page layouts (24rem - 120rem):
 
@@ -255,16 +229,14 @@ Example usage:
 </div>
 ```
 
-// ====================================================================================
-// Color Palette
-// ====================================================================================
+## Color Palette
 
 EWDS defines a custom color palette:
 
 - `purple`: #9109E9
-- `grey`: #E5ECF4
-- `white`: #FFFFFF
-- `black`: #0F0A0A
+- `grey`: #EBEBEB
+- `white`: #F7F5FB
+- `black`: #0A141F
 - `error`: #D81E5B
 - `warn`: #FFD046
 
@@ -278,13 +250,9 @@ Example usage:
 </span>
 ```
 
-// ====================================================================================
-// Typography
-// ====================================================================================
+## Typography
 
-// ----------------------------------
-// Font Sizes
-// ----------------------------------
+### Font Sizes
 
 EWDS provides both fluid and non-fluid typography scales:
 
@@ -300,16 +268,16 @@ Fluid Typography:
 - `fluid-5xl`: clamp(3rem, 2.5rem + 2.5vw, 4rem)
 
 Non-fluid Typography:
-- `tiny`: 0.8rem (12px)
-- `small`: 1rem (16px)
-- `base`: 1.5rem (24px)
-- `h6`: 1.875rem (30px)
-- `h5`: 2.25rem (36px)
-- `h4`: 3rem (48px)
-- `h3`: 3.75rem (60px)
-- `h2`: 4.5rem (72px)
-- `h1`: 5.625rem (90px)
-- `eyebrow`: 0.875rem (14px)
+- `tiny`: 0.533rem (8.53px)
+- `small`: 0.711rem (11.38px)
+- `base`: 1rem (16px)
+- `h6`: 1.125rem (18px)
+- `h5`: 1.5rem (24px)
+- `h4`: 2.25rem (36px)
+- `h3`: 3.375rem (54px)
+- `h2`: 5.062rem (81px)
+- `h1`: 7.594rem (121.5px)
+- `eyebrow`: 0.583rem (9.33px)
 
 Example usage:
 ```html
@@ -317,10 +285,9 @@ Example usage:
 <h1 class="text-h1">Heading 1</h1>
 ```
 
-// ----------------------------------
-// Line Heights
-// ----------------------------------
+### Line Heights
 
+- `hug`: 1
 - `tight`: 1.2
 - `snug`: 1.3
 - `normal`: 1.4
@@ -335,9 +302,7 @@ Example usage:
 <div class="leading-loose">Loose line height</div>
 ```
 
-// ----------------------------------
-// Letter Spacing
-// ----------------------------------
+### Letter Spacing
 
 - `extra-tight`: -0.02rem
 - `tight`: -0.01rem
@@ -352,9 +317,7 @@ Example usage:
 <p class="tracking-wide">Wide letter spacing</p>
 ```
 
-// ----------------------------------
-// Line Width (Measure)
-// ----------------------------------
+### Line Width (Measure)
 
 - `extra-narrow`: 30ch
 - `narrow`: 45ch
@@ -369,9 +332,13 @@ Example usage:
 </p>
 ```
 
-// ====================================================================================
-// Z-Index Scale
-// ====================================================================================
+### Font Families
+
+- `sans`: Sk-Modernist
+- `mono`: Sk-Modernist-Mono
+- `serif`: PlayfairDisplay
+
+## Z-Index Scale
 
 EWDS provides a custom z-index scale:
 
@@ -393,9 +360,7 @@ Example usage:
 <div class="z-50">Modal overlay</div>
 ```
 
-// ====================================================================================
-// Container Sizes
-// ====================================================================================
+## Container Sizes
 
 EWDS defines custom container sizes for different breakpoints:
 
@@ -412,6 +377,56 @@ Example usage:
 <div class="container mx-auto">
   <!-- Centered container with responsive width -->
 </div>
+```
+
+## Utility Extensions
+
+EWDS extends Tailwind's utility classes with custom configurations:
+
+### Custom Max Width Utilities
+
+```javascript
+maxWidth: {
+  'prose': 'var(--line-width, 65ch)',
+},
+```
+
+Example usage:
+```html
+<article class="max-w-prose">
+  <!-- Article content with optimal reading width -->
+</article>
+```
+
+## Custom Plugins
+
+EWDS includes several custom plugins to enhance functionality:
+
+### Layout Plugin
+
+Adds custom components for layout:
+
+- `.space`: For creating distinct sections
+- `.content`: For wrapping main content
+- `.buffer`: For adding consistent padding
+
+### Line Width Plugin
+
+Adds utilities for controlling line width:
+
+```javascript
+[`.line-width-${key}`]: { maxWidth: value }
+```
+
+### Baseline Grid Plugin
+
+Adds a utility for displaying a baseline grid overlay:
+
+```javascript
+'.baseline-grid': {
+  backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px)',
+  backgroundSize: '100% 0.25rem',
+}
 ```
 
 This documentation covers the main features and usage of the Elevate Web Design System with Tailwind CSS. Always refer to the specific configuration files for the most up-to-date values and options available in your project.

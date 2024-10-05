@@ -126,7 +126,7 @@
    </div>
  
    <!-- Navigation Bar -->
-   <nav id="mainNav" class="bg-purple buffer row-[between,center]">
+   <nav id="mainNav" class="bg-purple row-[between,center] !buffer">
      <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
      <div id="navMenu">
        <ul class="list-none space-x-d4">
@@ -137,7 +137,7 @@
      </div>
      <li
        id="contactButton"
-       class="inline-block text-black text-base bg-grey px-d4 py-d2 rounded-lg font-sans"
+       class="inline-block text-black text-base bg-grey px-d4 py-d2 rounded-lg font-sans font-bold"
      >
        Contact Us
      </li>
@@ -159,99 +159,107 @@
  ></script>
  
  <script is:inline>
-   document.addEventListener('DOMContentLoaded', function () {
-     // Ensure GSAP and ScrollTrigger are loaded
-     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-       console.error('GSAP or ScrollTrigger is not loaded.');
-       return;
-     }
- 
-     // Respect users' reduced motion preferences
-     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-       // Optionally, disable or simplify animations
-       return;
-     }
- 
-     gsap.registerPlugin(ScrollTrigger);
- 
-     // Optional: Enable markers for debugging
-     // ScrollTrigger.defaults({ markers: true });
- 
-     // Create a GSAP timeline for scroll-triggered animations
-     const navTimeline = gsap.timeline({
-       scrollTrigger: {
-         trigger: "#headerContainer",
-         start: "top top", // When the top of headerContainer hits the top of the viewport
-         end: "+=300", // 300px scroll distance for the animation
-         scrub: true, // Smoothly scrubs the animation with the scrollbar
-       }
-     });
- 
-     // 1. Collapse the quoteBar
-     navTimeline.to("#quoteBar", {
-       height: 0,
-       opacity: 0,
-       padding: 0,
-       duration: 0.3,
-       ease: "power1.out",
-     }, 0); // Start at the beginning of the timeline
- 
-     // 2. Animate logo and contact button to fade and scale down
-     navTimeline.to(["#logo", "#contactButton"], {
-       opacity: 0,
-       scale: 0,
-       duration: 0.3,
-       ease: "power1.out",
-     }, 0); // Simultaneous with quoteBar animation
- 
-     // 3. Adjust the navbar to desired styles (bring sides inward)
-     navTimeline.to("#mainNav", {
-       padding: "0.5rem 1rem",
-       borderRadius: "1rem",
-       backgroundColor: "rgba(0, 0, 0, 0.8)", // Black with mild transparency
-       marginTop: "0.5rem",
-       boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-       width: "300px", // Adjusted width for "hug" effect
-       duration: 0.3,
-       ease: "power1.out",
-       onStart: function() {
-         document.getElementById("mainNav").classList.add("nav-centered");
-       }
-     }, 0); // Simultaneous with previous tweens
- 
-     // ScrollTrigger to set display: none after fade and scale down
-     ScrollTrigger.create({
-       trigger: "#headerContainer",
-       start: "top top",
-       end: "+=300",
-       scrub: true,
-       onUpdate: (self) => {
-         if (self.direction === 1 && self.progress >= 0.99) { // Scrolling down and animation complete
-           gsap.set(["#logo", "#contactButton"], { display: "none" });
-         }
-         if (self.direction === -1 && self.progress <= 0.01) { // Scrolling up and animation at start
-           gsap.set(["#logo", "#contactButton"], { display: "block" });
-         }
-       }
-     });
- 
-     // ScrollTrigger to animate logo and contact button when scrolling up
-     ScrollTrigger.create({
-       trigger: "#headerContainer",
-       start: "top top",
-       end: "+=300",
-       scrub: true,
-       onUpdate: (self) => {
-         if (self.direction === -1 && self.progress > 0.0) { // Scrolling up and in progress
-           gsap.to(["#logo", "#contactButton"], {
-             opacity: 1,
-             scale: 1,
-             duration: 0.3,
-             ease: "power1.out",
-           });
-         }
-       }
-     });
-   });
+  document.addEventListener('DOMContentLoaded', function () {
+  // Ensure GSAP and ScrollTrigger are loaded
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    console.error('GSAP or ScrollTrigger is not loaded.');
+    return;
+  }
+
+  // Respect users' reduced motion preferences
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // Optionally, disable or simplify animations
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Optional: Enable markers for debugging
+  // ScrollTrigger.defaults({ markers: true });
+
+  // Create a GSAP timeline for scroll-triggered animations
+  const navTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#headerContainer",
+      start: "top top", // When the top of headerContainer hits the top of the viewport
+      end: "+=300", // 300px scroll distance for the animation
+      scrub: true, // Smoothly scrubs the animation with the scrollbar
+      onUpdate: (self) => {
+        const mainNav = document.getElementById("mainNav");
+        if (self.progress > 0) {
+          // Remove !buffer class as soon as scrolling begins
+          mainNav.classList.remove("!buffer");
+        } else {
+          // Add !buffer class back when scrolled to the top
+          mainNav.classList.add("!buffer");
+        }
+      }
+    }
+  });
+
+  // Rest of the animation code remains the same
+  navTimeline.to("#quoteBar", {
+    height: 0,
+    opacity: 0,
+    padding: 0,
+    duration: 0.3,
+    ease: "power1.out",
+  }, 0);
+
+  navTimeline.to(["#logo", "#contactButton"], {
+    opacity: 0,
+    scale: 0,
+    duration: 0.3,
+    ease: "power1.out",
+  }, 0);
+
+  navTimeline.to("#mainNav", {
+    padding: "0.5rem 1rem",
+    borderRadius: "1rem",
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    marginTop: "0.5rem",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+    width: "300px",
+    duration: 0.3,
+    ease: "power1.out",
+    onStart: function() {
+      document.getElementById("mainNav").classList.add("nav-centered");
+    }
+  }, 0);
+
+  // ScrollTrigger to set display: none after fade and scale down
+  ScrollTrigger.create({
+    trigger: "#headerContainer",
+    start: "top top",
+    end: "+=300",
+    scrub: true,
+    onUpdate: (self) => {
+      if (self.direction === 1 && self.progress >= 0.99) {
+        gsap.set(["#logo", "#contactButton"], { display: "none" });
+      }
+      if (self.direction === -1 && self.progress <= 0.01) {
+        gsap.set(["#logo", "#contactButton"], { display: "block" });
+      }
+    }
+  });
+
+  // ScrollTrigger to animate logo and contact button when scrolling up
+  ScrollTrigger.create({
+    trigger: "#headerContainer",
+    start: "top top",
+    end: "+=300",
+    scrub: true,
+    onUpdate: (self) => {
+      if (self.direction === -1 && self.progress > 0.0) {
+        gsap.to(["#logo", "#contactButton"], {
+          opacity: 1,
+          scale: 1,
+          duration: 0.3,
+          ease: "power1.out",
+        });
+      }
+    }
+  });
+});
  </script>
  
