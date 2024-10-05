@@ -55,7 +55,7 @@ const maxInlineTextLength = 80; // Adjust as needed
 // ====================================================================================
 
 function transformClassAttribute(classValue) {
-  const BREAKPOINTS = ['xs', 'sm', 'md', 'lg', 'xl'];
+  const BREAKPOINTS = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'];
   const segments = classValue.split('/');
   let resultClasses = [];
   let currentPrefix = '';

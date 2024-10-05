@@ -7,11 +7,14 @@ module.exports = {
   // Defines custom screen sizes for responsive design.
 
   screens: {
-    'xs': '36rem',    // 576px - Mobile Small
-    'sm': '48rem',    // 768px - Mobile
-    'md': '64rem',    // 1024px - Tablet
-    'lg': '80rem',    // 1280px - Desktop
-    'xl': '100rem',   // 1600px - Large Desktop
+    '2xs': '20rem',   // 320px - Very Small Mobile
+    'xs': '30rem',    // 480px - Small Mobile
+    'sm': '36rem',    // 576px - Large Mobile
+    'md': '48rem',    // 768px - Tablet
+    'lg': '64rem',    // 1024px - Small Desktop
+    'xl': '80rem',    // 1280px - Medium Desktop
+    '2xl': '100rem',  // 1600px - Large Desktop
+    '3xl': '120rem',  // 1920px - Extra Large Desktop
   },
 
   // ====================================================================================
@@ -24,11 +27,14 @@ module.exports = {
     padding: '1rem', // Default padding for the container
 
     screens: {
-      'xs': '24rem',   // 384px - Extra Small
-      'sm': '32rem',   // 512px - Small
-      'md': '48rem',   // 768px - Medium
-      'lg': '64rem',   // 1024px - Large
-      'xl': '80rem',   // 1280px - Extra Large
+      '2xs': '18rem',   // 288px - Very Small Mobile
+      'xs': '28rem',    // 448px - Small Mobile
+      'sm': '34rem',    // 544px - Large Mobile
+      'md': '45rem',    // 720px - Tablet
+      'lg': '60rem',    // 960px - Small Desktop
+      'xl': '75rem',    // 1200px - Medium Desktop
+      '2xl': '90rem',   // 1440px - Large Desktop
+      '3xl': '110rem',  // 1760px - Extra Large Desktop
     },
   },
 };
