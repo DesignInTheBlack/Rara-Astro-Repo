@@ -31,20 +31,6 @@ module.exports = {
     maxWidth: {
       'prose': 'var(--line-width, 65ch)',
     },
-
-    // ----------------------------------
-    // Additional Utility Classes
-    // ----------------------------------
-    // Add any project-specific utility classes here
-    // For example:
-    // opacity: {
-    //   '15': '0.15',
-    //   '35': '0.35',
-    //   '65': '0.65',
-    // },
-    // transitionDuration: {
-    //   '400': '400ms',
-    // },
   },
 
   // ====================================================================================

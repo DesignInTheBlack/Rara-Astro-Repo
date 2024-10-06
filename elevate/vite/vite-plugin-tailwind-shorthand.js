@@ -1,4 +1,4 @@
-// tailwindShorthandPlugin.js
+// vite-plugin-tailwind-shorthand.js
 
 import { createFilter } from '@rollup/pluginutils';
 import path from 'path';
@@ -55,7 +55,7 @@ const maxInlineTextLength = 80; // Adjust as needed
 // ====================================================================================
 
 function transformClassAttribute(classValue) {
-  const BREAKPOINTS = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'];
+  const BREAKPOINTS = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl','4xl','5xl'];
   const segments = classValue.split('/');
   let resultClasses = [];
   let currentPrefix = '';
@@ -68,7 +68,11 @@ function transformClassAttribute(classValue) {
       currentPrefix = `${segment}:`;
     } else {
       const classes = segment.split(/\s+/).flatMap((cls) => {
-        if (cls.includes('-[')) {
+        if (cls === 'row') {
+          return [`${currentPrefix}flex`, `${currentPrefix}flex-row`];
+        } else if (cls === 'col') {
+          return [`${currentPrefix}flex`, `${currentPrefix}flex-col`];
+        } else if (cls.includes('-[')) {
           return expandUtility(cls, currentPrefix);
         } else {
           return `${currentPrefix}${cls}`;
@@ -85,6 +89,7 @@ function transformClassAttribute(classValue) {
 // Utility Expansion Functions
 // ====================================================================================
 
+// Update the expandUtility function to include the new border shorthand
 function expandUtility(cls, prefix) {
   const [utility, valuesStr] = cls.split('-[');
   if (!valuesStr) return [`${prefix}${cls}`];
@@ -96,7 +101,7 @@ function expandUtility(cls, prefix) {
     case 'row':
     case 'col':
     case 'rowr':
-    case 'colr':  // Add handling for reverse flex shorthands here
+    case 'colr':
       return expandFlexShorthand(utility, values, prefix);
     case 'item':
       return expandFlexItemShorthand(values, prefix);
@@ -105,6 +110,10 @@ function expandUtility(cls, prefix) {
       return expandSpacingShorthand(utility, values, prefix);
     case 'text':
       return expandTextShorthand(values, prefix);
+    case 'span':
+      return expandSpanShorthand(values, prefix);
+    case 'border':
+      return expandBorderShorthand(values, prefix);
     default:
       return [`${prefix}${cls}`];
   }
@@ -124,6 +133,40 @@ function expandGridShorthand(values, prefix) {
   if (flow && flow !== '_') gridClasses.push(`${prefix}grid-flow-${flow}`);
 
   return gridClasses;
+}
+
+//Border Shorthand Expansion
+function expandBorderShorthand(values, prefix) {
+  const [direction, width, style, color] = values;
+  const borderClasses = [];
+
+  // Handle direction
+  if (direction && direction !== '_') {
+    if (['t', 'r', 'b', 'l', 'x', 'y'].includes(direction)) {
+      borderClasses.push(`${prefix}border-${direction}`);
+    } else {
+      borderClasses.push(`${prefix}border`); // Default to all sides if invalid direction
+    }
+  } else {
+    borderClasses.push(`${prefix}border`); // No direction specified, apply to all sides
+  }
+
+  // Handle width
+  if (width && width !== '_') {
+    borderClasses.push(`${prefix}border-${width}`);
+  }
+
+  // Handle style
+  if (style && style !== '_') {
+    borderClasses.push(`${prefix}border-${style}`);
+  }
+
+  // Handle color
+  if (color && color !== '_') {
+    borderClasses.push(`${prefix}border-${color}`);
+  }
+
+  return borderClasses;
 }
 
 // Flex Shorthand Expansion
@@ -152,8 +195,6 @@ function expandFlexShorthand(direction, values, prefix) {
   return flexClasses;
 }
 
-
-
 // Flex Item Shorthand Expansion
 function expandFlexItemShorthand(values, prefix) {
   const [grow, basis, shrink, align] = values;
@@ -165,6 +206,22 @@ function expandFlexItemShorthand(values, prefix) {
   if (align && align !== '_') itemClasses.push(`${prefix}self-${align}`);
 
   return itemClasses;
+}
+
+//Grid Span Shorthand Expansion
+function expandSpanShorthand(values, prefix) {
+  const [columns, rows] = values;
+  const spanClasses = [];
+
+  if (columns && columns !== '_') {
+    spanClasses.push(`${prefix}col-span-${columns}`);
+  }
+
+  if (rows && rows !== '_') {
+    spanClasses.push(`${prefix}row-span-${rows}`);
+  }
+
+  return spanClasses;
 }
 
 // Spacing Shorthand Expansion
@@ -427,6 +484,4 @@ export default function tailwindShorthandPlugin({
   
     return frontmatter + formatted.trimEnd() + '\n'; // Ensure single newline at the end
   }
-  
-  
 }

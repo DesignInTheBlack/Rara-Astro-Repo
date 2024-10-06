@@ -5,17 +5,6 @@ module.exports = {
   // Typography Settings with Responsive Fluid Font Sizes
   // ====================================================================================
   fontSize: {
-    // Existing fluid typography (no changes)
-    'fluid-xs': ['clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)'],
-    'fluid-sm': ['clamp(0.875rem, 0.8rem + 0.375vw, 1rem)'],
-    'fluid-base': ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)'],
-    'fluid-lg': ['clamp(1.125rem, 1rem + 0.625vw, 1.25rem)'],
-    'fluid-xl': ['clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)'],
-    'fluid-2xl': ['clamp(1.5rem, 1.3rem + 1vw, 1.875rem)'],
-    'fluid-3xl': ['clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem)'],
-    'fluid-4xl': ['clamp(2.25rem, 1.9rem + 1.75vw, 3rem)'],
-    'fluid-5xl': ['clamp(3rem, 2.5rem + 2.5vw, 4rem)'],
-
     // Non-fluid perfect fifth scale typography without line heights
     'tiny': ['0.533rem'],      // 8.53px
     'small': ['0.711rem'],     // 11.38px
@@ -27,6 +16,17 @@ module.exports = {
     'h2': ['5.062rem'],        // 81px
     'h1': ['7.594rem'],        // 121.5px
     'eyebrow': ['0.583rem'],   // 9.33px for eyebrow text
+
+    // Existing fluid typography (no changes)
+    'fluid-xs': ['clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)'],
+    'fluid-sm': ['clamp(0.875rem, 0.8rem + 0.375vw, 1rem)'],
+    'fluid-base': ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)'],
+    'fluid-lg': ['clamp(1.125rem, 1rem + 0.625vw, 1.25rem)'],
+    'fluid-xl': ['clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)'],
+    'fluid-2xl': ['clamp(1.5rem, 1.3rem + 1vw, 1.875rem)'],
+    'fluid-3xl': ['clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem)'],
+    'fluid-4xl': ['clamp(2.25rem, 1.9rem + 1.75vw, 3rem)'],
+    'fluid-5xl': ['clamp(3rem, 2.5rem + 2.5vw, 4rem)'],
   },
 
   // ====================================================================================

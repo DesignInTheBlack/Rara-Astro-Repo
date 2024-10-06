@@ -61,11 +61,6 @@ module.exports = {
   // ====================================================================================
   plugins: [
     ...plugins,
-    function({ addBase }) {
-      addBase({
-        '@font-face': typography.fonts,
-      });
-    },
     // Add any additional plugins here
   ],
 

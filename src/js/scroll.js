@@ -24,10 +24,10 @@ function raf(time) {
 // Start the animation
 requestAnimationFrame(raf)
 
-// Smooth scroll to top when page loads
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0)
-})
+// // Smooth scroll to top when page loads
+// window.addEventListener('load', () => {
+//   window.scrollTo(0, 0)
+// })
 
 // Add a scroll progress indicator
 const progressBar = document.createElement('div')

@@ -14,6 +14,7 @@
 10. [Utility Extensions](#utility-extensions)
 11. [Custom Plugins](#custom-plugins)
 
+
 ## Introduction
 
 The Elevate Web Design System (EWDS) is a custom Tailwind CSS configuration that provides a consistent and efficient way to build web interfaces. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development.
@@ -40,16 +41,18 @@ Example usage:
 
 ## Breakpoint System
 
-EWDS defines eight custom breakpoints:
+EWDS defines ten custom breakpoints:
 
 - `2xs`: 20rem (320px) - Very Small Mobile
 - `xs`: 30rem (480px) - Small Mobile
-- `sm`: 36rem (576px) - Large Mobile
+- `sm`: 40rem (640px) - Large Mobile
 - `md`: 48rem (768px) - Tablet
 - `lg`: 64rem (1024px) - Small Desktop
 - `xl`: 80rem (1280px) - Medium Desktop
-- `2xl`: 100rem (1600px) - Large Desktop
-- `3xl`: 120rem (1920px) - Extra Large Desktop
+- `2xl`: 96rem (1536px) - Large Desktop
+- `3xl`: 120rem (1920px) - Full HD
+- `4xl`: 160rem (2560px) - 2K
+- `5xl`: 240rem (3840px) - 4K
 
 ### Breakpoint Shorthand Syntax
 
@@ -151,6 +154,36 @@ Example:
 <p class="text-[fluid-lg,bold,sans,normal,center,wide,purple]">
   <!-- Text content -->
 </p>
+```
+
+### Border Shorthand
+
+Format: `border-[direction,width,style,color]`
+
+- `direction`: t (top), r (right), b (bottom), l (left), x (horizontal), y (vertical), or omit for all sides
+- `width`: Tailwind's border-width values (e.g., 0, 2, 4, 8)
+- `style`: solid, dashed, dotted, double, none
+- `color`: Any color from the color palette
+
+Example:
+```html
+<div class="border-[l,2,solid,purple]">
+  <!-- Content with left border -->
+</div>
+```
+
+### Span Shorthand
+
+Format: `span-[columns,rows]`
+
+- `columns`: Number of columns to span
+- `rows`: Number of rows to span
+
+Example:
+```html
+<div class="span-[2,3]">
+  <!-- Content spanning 2 columns and 3 rows -->
+</div>
 ```
 
 ## Spacing Scale
@@ -369,12 +402,14 @@ EWDS defines custom container sizes for different breakpoints:
 
 - `2xs`: 18rem (288px) - Very Small Mobile
 - `xs`: 28rem (448px) - Small Mobile
-- `sm`: 34rem (544px) - Large Mobile
+- `sm`: 38rem (608px) - Large Mobile
 - `md`: 45rem (720px) - Tablet
 - `lg`: 60rem (960px) - Small Desktop
 - `xl`: 75rem (1200px) - Medium Desktop
 - `2xl`: 90rem (1440px) - Large Desktop
-- `3xl`: 110rem (1760px) - Extra Large Desktop
+- `3xl`: 114rem (1824px) - Full HD
+- `4xl`: 152rem (2432px) - 2K
+- `5xl`: 228rem (3648px) - 4K
 
 The container is centered by default and has a padding of 1rem.
 
@@ -434,5 +469,3 @@ Adds a utility for displaying a baseline grid overlay:
   backgroundSize: '100% 0.25rem',
 }
 ```
-
-This documentation covers the main features and usage of the Elevate Web Design System with Tailwind CSS. Always refer to the specific configuration files for the most up-to-date values and options available in your project.
