@@ -59,7 +59,7 @@ module.exports = {
   // Line Width (Measure) Settings for Controlling Text Width
   // ====================================================================================
   lineWidth: {
-    'extra-narrow': '30ch', // Approx. 30 characters per line
+    'extra-narrow': '20ch', // Approx. 20 characters per line
     'narrow': '45ch',       // Recommended for mobile
     'medium': '60ch',       // Ideal for readability
     'wide': '75ch',         // For larger screens
