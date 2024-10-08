@@ -86,7 +86,7 @@ module.exports = [
   },
 
   // ----------------------------------
-  // Baseline Grid Plugin: Adds Utilities for a Baseline Grid Overlay
+  // Baseline Grid Plugin: Adds Utilities for Baseline Grid Overlays
   // ----------------------------------
   function ({ addUtilities }) {
     const newUtilities = {
