@@ -266,13 +266,13 @@ function expandTextShorthand(values, prefix) {
 // Vite/Rollup Plugin with Formatting Enhancements
 // ====================================================================================
 
-export default function tailwindShorthandPlugin({
+export default function Elevate({
   include = ['**/*.astro', '**/*.html'],
   baseDir = 'precompiled_src',
 } = {}) {
   // Resolve the base directory to an absolute path to ensure correct filtering
   const resolvedBaseDir = path.resolve(baseDir);
-  console.log(`tailwindShorthandPlugin: Resolved baseDir to ${resolvedBaseDir}`);
+
 
   // Create absolute filter patterns
   const filterPatterns = include.map((pattern) => path.join(resolvedBaseDir, pattern));
@@ -283,7 +283,6 @@ export default function tailwindShorthandPlugin({
     enforce: 'pre',
 
     configureServer(server) {
-      console.log(`tailwindShorthandPlugin: Watching directory: ${baseDir}/**/*`);
       server.watcher.add(`${baseDir}/**/*`);
 
       // Set up event listeners for file changes
@@ -299,7 +298,7 @@ export default function tailwindShorthandPlugin({
         const relativePath = path.relative(resolvedBaseDir, filePath);
         const outputPath = path.join('src', relativePath);
         await fs.remove(outputPath);
-        console.log(`tailwindShorthandPlugin: Removed output file: ${outputPath}`);
+        console.log(`Elevate: Removed output file: ${outputPath}`);
       });
     },
   };
@@ -307,10 +306,8 @@ export default function tailwindShorthandPlugin({
   // Function to process a file: read, transform, write to 'src', and format original
   async function processFile(filePath) {
     const normalizedId = path.resolve(filePath);
-    console.log(`tailwindShorthandPlugin: Processing file: ${filePath}`);
 
     if (!filter(normalizedId)) {
-      console.log(`tailwindShorthandPlugin: File ${filePath} does not match filter.`);
       return;
     }
 
@@ -324,7 +321,6 @@ export default function tailwindShorthandPlugin({
       const classRegex = /class\s*=\s*["']([^"']*)["']/g;
       const transformedCode = code.replace(classRegex, (match, classAttribute) => {
         const transformedClasses = transformClassAttribute(classAttribute);
-        console.log(`tailwindShorthandPlugin: Transformed classes: "${transformedClasses}"`);
         return `class="${transformedClasses}"`;
       });
 
@@ -334,7 +330,7 @@ export default function tailwindShorthandPlugin({
       const outputPath = path.join('src', relativePath);
       await fs.ensureDir(path.dirname(outputPath));
       await fs.writeFile(outputPath, transformedCode);
-      console.log(`tailwindShorthandPlugin: Wrote transformed file to: ${outputPath}`);
+      console.log(`Elevate: Wrote transformed file to: ${outputPath}`);
 
       // ============================
       // Step 2: Format the Original File (if enabled)
@@ -347,10 +343,10 @@ export default function tailwindShorthandPlugin({
 
         // Write the formatted code back to the original file
         await fs.writeFile(filePath, formattedCode);
-        console.log(`tailwindShorthandPlugin: Formatted original file: ${filePath}`);
+        console.log(`Elevate: Formatted original file: ${filePath}`);
       }
     } catch (error) {
-      console.error(`tailwindShorthandPlugin: Error processing file ${filePath}:`, error);
+      console.error(`Elevate: Error processing file ${filePath}:`, error);
     }
   }
 
@@ -385,7 +381,7 @@ export default function tailwindShorthandPlugin({
     if (frontmatterMatch) {
       frontmatter = frontmatterMatch[0];
       htmlContent = html.slice(frontmatter.length);
-      console.log(`tailwindShorthandPlugin: Frontmatter detected and preserved.`);
+      console.log(`Elevate: Frontmatter detected and preserved.`);
     }
   
     // List of void elements

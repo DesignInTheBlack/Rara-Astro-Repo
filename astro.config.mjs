@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import alpinejs from '@astrojs/alpinejs';
 import tailwind from '@astrojs/tailwind';
 import tailwindShorthandPlugin from './elevate/vite/vite-plugin-tailwind-shorthand';
-import path from 'path';  // Import path for resolving directories
+import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,9 +13,13 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindShorthandPlugin({
-        baseDir: path.resolve('./precompiled_src'),  // Ensures the path is absolute
-        include: ['**/*.astro', '**/*.html'],         // Explicitly define include patterns
+        baseDir: path.resolve('./precompiled_src'),
+        include: ['**/*.astro', '**/*.html'],
       }),
     ],
+    logLevel: 'error', // Add this line to reduce Vite logging
+  },
+  server: {
+    logLevel: 'error', // Add this line to reduce Astro server logging
   },
 });
