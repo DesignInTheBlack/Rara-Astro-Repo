@@ -103,11 +103,17 @@ module.exports = [
   // Font Face Plugin: Adds Base Styles for Fonts
   // ----------------------------------
   function({ addBase }) {
-    addBase({
-      '@font-face': typography.fonts,
-    });
+    const fontFace = typography.fonts.map(font => ({
+      '@font-face': {
+        fontFamily: font.family,
+        src: font.src,
+        fontWeight: font.weight,
+        fontStyle: font.style,
+        fontDisplay: font.display
+      }
+    }));
+    addBase(fontFace);
   },
-
   // ----------------------------------
   // Line Width Utilities Plugin
   // ----------------------------------
