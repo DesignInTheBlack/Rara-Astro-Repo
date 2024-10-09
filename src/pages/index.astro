@@ -5,16 +5,6 @@ import HomeHero from '../components/HomeHero.astro'
 import HomeCards from '../components/HomeCards.astro'
 import HomeValues from '../components/HomeValues.astro'
 import HomeWorks from '../components/HomeWorks.astro'
-import { client } from '../../tina/__generated__/client'
-
-
-// Define your pagename here, it must match the name of the .md file.
-const pageName = 'homepage'
-// Fetch the data dynamically and destructure. 
-const query = await client.queries[pageName]({ relativePath: `${pageName}.md` })
-const data = query.data[pageName]
-const { ...page } = data
-//Note: You can now access the attributes via page.attribute.
 ---
 
 <PrimaryLayout>
