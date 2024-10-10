@@ -1,13 +1,23 @@
 import Typed from 'typed.js';
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Detect if the device is mobile (e.g., using window width)
+  const isMobile = window.innerWidth <= 768; // Example breakpoint for mobile
+
+  // Strings for desktop and mobile
+  const desktopStrings = [
+    'Make <strong>Beautiful</strong> Websites^150.',
+    'Design <strong>Powerful</strong> Graphics^250.',
+    'Build <strong>Bold</strong> Brands^350.',
+    'Are <strong>Rara Avis</strong>^200.'
+  ];
+
+  const mobileStrings = [
+    'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
+  ];
+
   var typed = new Typed('#typed', {
-    strings: [
-      'Make <strong>Beautiful</strong> Websites^150.',
-      'Design <strong>Powerful</strong> Graphics^250.',
-      'Build <strong>Bold</strong> Brands^350.',
-      'Are <strong>Rara Avis</strong>^200.'
-    ],
+    strings: isMobile ? mobileStrings : desktopStrings, // Conditionally set strings
     typeSpeed: 'natural',
     backSpeed: 50,
     backDelay: 100,

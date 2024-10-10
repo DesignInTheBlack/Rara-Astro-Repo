@@ -91,7 +91,7 @@
   </div>
 
   <!-- Navigation Bar -->
-  <nav id="mainNav" class="bg-purple flex flex-row justify-between items-center !buffer shadow-md">
+  <nav id="mainNav" class="bg-purple flex flex-row justify-between items-center !buffer shadow-lg">
     <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
     <div id="navMenu" class = "hidden /sm/ flex">
       <ul class="list-none space-x-d4">
@@ -107,11 +107,11 @@
   </nav>
 </div>
 
-<div id = "mobileNavigation" class = "hidden top-0 left-0 w-full h-full bg-purple z-[1000] pt-c3">
-  <nav class="bg-purple flex flex-row justify-between items-center !buffer">
+<div id = "mobileNavigation" class = "hidden top-0 left-0 w-full h-full bg-error z-[1000] pt-c3">
+  <nav class="flex flex-row justify-between items-center !buffer">
     <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
     <div id = "closeButton" class="overflow-hidden col-[center,center]">
-      <img class="h-d7 w-d8 /sm/ hidden" src="/images/close.svg" alt="Logo" />
+      <img class="h-d7 w-d8" src="/images/close.svg" alt="Logo" />
     </div>
   </nav>
   <ul class="mx-auto list-none space-y-d6 mt-c12">
@@ -136,6 +136,23 @@
 
 <script is:inline>
  document.addEventListener('DOMContentLoaded', function () {
+
+// Apply GSAP animation to elements with the class 'fade-in'
+gsap.utils.toArray('.fade-in').forEach((element) => {
+  gsap.from(element, {
+    opacity: 0,
+    y: 50, // Optional: Move the element up by 50px for a subtle lift effect
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: element,
+      start: 'top 85%', // When the element's top is 85% from the top of the viewport
+      toggleActions: 'play none none none', // Only play the animation once
+      markers: false // Set to true for debugging
+    }
+  });
+});
+
+
   // Function to check if screen width is over 550px
   function isScreenWidthOver600px() {
     return window.innerWidth > 600;
@@ -253,6 +270,7 @@
 </script>
 
 <script is:inline>
+
 
 document.addEventListener('DOMContentLoaded', function () {
 const mobileNavigation = document.getElementById('mobileNavigation')
