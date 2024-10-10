@@ -1,5 +1,3 @@
----
----
 <style>
   /* Fixed Header Container */
   #headerContainer {
@@ -52,7 +50,6 @@
 
   /* Navigation Menu Centering */
   #navMenu {
-    display: flex;
     justify-content: center;
     align-items: center;
     flex: 1; /* Allow navMenu to take available space */
@@ -84,24 +81,6 @@
     padding-top: 120px; /* Adjust based on headerContainer's total height */
   }
 
-  /* Responsive Adjustments (Optional) */
-  @media (max-width: 36rem) { /* Changed from 768px to 36rem (576px) to match the 'sm' breakpoint */
-    #mainNav {
-      padding: 1rem 1.5rem;
-    }
-
-    #mainNav.nav-centered {
-      padding: 0.8rem 1rem;
-    }
-
-    #quoteBar {
-      padding: 0.8rem 1.5rem;
-    }
-
-    #mainNav {
-      width: 90%; /* Adjusted width for smaller screens */
-    }
-  }
 </style>
 
 <!-- Fixed Header Container -->
@@ -112,25 +91,43 @@
   </div>
 
   <!-- Navigation Bar -->
-  <nav id="mainNav" class="bg-purple flex flex-row justify-between items-center !buffer">
+  <nav id="mainNav" class="bg-purple flex flex-row justify-between items-center !buffer shadow-md">
     <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
-    <div id="navMenu">
+    <div id="navMenu" class="hidden sm:flex">
       <ul class="list-none space-x-d4">
-        <li class="inline-block text-white text-base font-sans">Home</li>
-        <li class="inline-block text-white text-base font-sans">About</li>
-        <li class="inline-block text-white text-base font-sans">Works</li>
+        <li class="inline-block text-white text-base font-sans"><a href = "/">Home</a></li>
+        <li class="inline-block text-white text-base font-sans"><a href = "/about">About</a></li>
+        <li class="inline-block text-white text-base font-sans"><a href = "/works">Works</a></li>
       </ul>
     </div>
-    <li id="contactButton" class="inline-block text-black text-base bg-white px-d4 py-d2 rounded-lg font-sans font-bold">Contact Us</li>
+    <li id="contactButton" class="hidden sm:inline-block sm:text-black sm:text-base sm:bg-white sm:px-d4 sm:py-d2 sm:rounded-lg sm:font-sans sm:font-bold">Contact Us</li>
+    <div id = "mobileButton" class="overflow-hidden flex flex-col justify-center items-center">
+      <img class="h-d7 w-d8 sm:hidden" src="/images/menu.svg" alt="Logo" />
+    </div>
   </nav>
 </div>
 
-<!-- Include GSAP and ScrollTrigger via CDN -->
+<div id = "mobileNavigation" class="hidden top-0 left-0 w-full h-full bg-purple z-[1000] pt-c3">
+  <nav class="bg-purple flex flex-row justify-between items-center !buffer">
+    <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
+    <div id = "closeButton" class="overflow-hidden flex flex-col justify-center items-center">
+      <img class="h-d7 w-d8 sm:hidden" src="/images/close.svg" alt="Logo" />
+    </div>
+  </nav>
+  <ul class="mx-auto list-none space-y-d6 mt-c12">
+    <li class="text-white text-h4 font-sans text-center"><a href = "/">Home</a></li>
+    <li class="text-white text-h4 font-sans text-center"><a href = "/about">About</a></li>
+    <li class="text-white text-h4 font-sans text-center"><a href = "/works">Works</a></li>
+  </ul>
+</div>
+
+
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
+
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
   crossorigin="anonymous"
@@ -139,105 +136,199 @@
 
 <script is:inline>
  document.addEventListener('DOMContentLoaded', function () {
- // Ensure GSAP and ScrollTrigger are loaded
- if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-   console.error('GSAP or ScrollTrigger is not loaded.');
-   return;
- }
+  // Function to check if screen width is over 550px
+  function isScreenWidthOver600px() {
+    return window.innerWidth > 600;
+  }
 
- // Respect users' reduced motion preferences
- if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-   // Optionally, disable or simplify animations
-   return;
- }
+  // Only run the animations if the screen width is over 550px
+  if (isScreenWidthOver600px()) {
+    // Ensure GSAP and ScrollTrigger are loaded
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+      console.error('GSAP or ScrollTrigger is not loaded.');
+      return;
+    }
 
- gsap.registerPlugin(ScrollTrigger);
+    // Respect users' reduced motion preferences
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // Optionally, disable or simplify animations
+      return;
+    }
 
- // Optional: Enable markers for debugging
- // ScrollTrigger.defaults({ markers: true });
+    gsap.registerPlugin(ScrollTrigger);
 
- // Create a GSAP timeline for scroll-triggered animations
- const navTimeline = gsap.timeline({
-   scrollTrigger: {
-     trigger: "#headerContainer",
-     start: "top top", // When the top of headerContainer hits the top of the viewport
-     end: "+=300", // 300px scroll distance for the animation
-     scrub: true, // Smoothly scrubs the animation with the scrollbar
-     onUpdate: (self) => {
-       const mainNav = document.getElementById("mainNav");
-       if (self.progress > 0) {
-         // Remove !buffer class as soon as scrolling begins
-         mainNav.classList.remove("!buffer");
-       } else {
-         // Add !buffer class back when scrolled to the top
-         mainNav.classList.add("!buffer");
-       }
-     }
-   }
- });
+    // Create a GSAP timeline for scroll-triggered animations
+    const navTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#headerContainer",
+        start: "top top", // When the top of headerContainer hits the top of the viewport
+        end: "+=300", // 300px scroll distance for the animation
+        scrub: true, // Smoothly scrubs the animation with the scrollbar
+        onUpdate: (self) => {
+          const mainNav = document.getElementById("mainNav");
+          if (self.progress > 0) {
+            // Remove !buffer class as soon as scrolling begins
+            mainNav.classList.remove("!buffer");
+          } else {
+            // Add !buffer class back when scrolled to the top
+            mainNav.classList.add("!buffer");
+          }
+        }
+      }
+    });
 
- // Rest of the animation code remains the same
- navTimeline.to("#quoteBar", {
-   height: 0,
-   opacity: 0,
-   padding: 0,
-   duration: 0.3,
-   ease: "power1.out",
- }, 0);
+    // Rest of the animation code remains the same
+    navTimeline.to("#quoteBar", {
+      height: 0,
+      opacity: 0,
+      padding: 0,
+      duration: 0.3,
+      ease: "power1.out",
+    }, 0);
 
- navTimeline.to(["#logo", "#contactButton"], {
-   opacity: 0,
-   scale: 0,
-   duration: 0.3,
-   ease: "power1.out",
- }, 0);
+    navTimeline.to(["#logo", "#contactButton"], {
+      opacity: 0,
+      scale: 0,
+      duration: 0.1,
+      ease: "power1.out",
+    }, 0);
 
- navTimeline.to("#mainNav", {
-   padding: "0.5rem 1rem",
-   borderRadius: "1rem",
-   backgroundColor: "rgba(0, 0, 0, 0.8)",
-   marginTop: "0.5rem",
-   boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-   width: "225px",
-   duration: 0.3,
-   ease: "power1.out",
-   onStart: function() {
-     document.getElementById("mainNav").classList.add("nav-centered");
-   }
- }, 0);
+    navTimeline.to("#mainNav", {
+      padding: "0.5rem 1rem",
+      borderRadius: "1rem",
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      marginTop: "0.5rem",
+      boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+      width: "225px",
+      duration: 0.3,
+      ease: "power1.out",
+      onStart: function() {
+        document.getElementById("mainNav").classList.add("nav-centered");
+      }
+    }, 0);
 
- // ScrollTrigger to set display: none after fade and scale down
- ScrollTrigger.create({
-   trigger: "#headerContainer",
-   start: "top top",
-   end: "+=300",
-   scrub: true,
-   onUpdate: (self) => {
-     if (self.direction === 1 && self.progress >= 0.99) {
-       gsap.set(["#logo", "#contactButton"], { display: "none" });
-     }
-     if (self.direction === -1 && self.progress <= 0.01) {
-       gsap.set(["#logo", "#contactButton"], { display: "block" });
-     }
-   }
- });
+    // ScrollTrigger to set display: none after fade and scale down
+    ScrollTrigger.create({
+      trigger: "#headerContainer",
+      start: "top top",
+      end: "+=100",
+      scrub: true,
+      onUpdate: (self) => {
+        if (self.direction === 1 && self.progress >= 0.99) {
+          gsap.set(["#logo", "#contactButton"], { display: "none" });
+        }
+        if (self.direction === -1 && self.progress <= 0.01) {
+          gsap.set(["#logo", "#contactButton"], { display: "block" });
+        }
+      }
+    });
 
- // ScrollTrigger to animate logo and contact button when scrolling up
- ScrollTrigger.create({
-   trigger: "#headerContainer",
-   start: "top top",
-   end: "+=300",
-   scrub: true,
-   onUpdate: (self) => {
-     if (self.direction === -1 && self.progress > 0.0) {
-       gsap.to(["#logo", "#contactButton"], {
-         opacity: 1,
-         scale: 1,
-         duration: 0.3,
-         ease: "power1.out",
-       });
-     }
-   }
- });
+    // ScrollTrigger to animate logo and contact button when scrolling up
+    ScrollTrigger.create({
+      trigger: "#headerContainer",
+      start: "top top",
+      end: "+=200",
+      scrub: true,
+      onUpdate: (self) => {
+        if (self.direction === -1 && self.progress > 0.0) {
+          gsap.to(["#logo", "#contactButton"], {
+            opacity: 1,
+            scale: 1,
+            duration: 0.1,
+            ease: "power1.out",
+          });
+        }
+      }
+    });
+  }
+
+  // Add event listener for window resize
+  window.addEventListener('resize', function() {
+    if (isScreenWidthOver550px()) {
+      // Reinitialize animations if screen width becomes > 550px
+      location.reload();
+    }
+  });
 });
+</script>
+
+<script is:inline>
+
+document.addEventListener('DOMContentLoaded', function () {
+const mobileNavigation = document.getElementById('mobileNavigation')
+const mobileButton = document.getElementById('mobileButton')
+
+
+
+function openMenu(mobileNavigation) {
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';  // Prevents body from scrolling when fixed elements are moved
+  document.body.style.top = `-${window.scrollY}px`;  // Lock scroll position
+  const tl = gsap.timeline({
+    onComplete: function() {
+      // Restore the alternate button (close button) after animations
+      closeButton.style.height = "28px"; // or any desired height
+    }
+  });
+
+  // Animate the mobile button collapsing (hide)
+  tl.to(mobileButton, { 
+    height: 0, 
+    duration: 0.25, 
+    ease: "power2.inOut", 
+    transformOrigin: "center" 
+  });
+
+  // Show and fix the mobile navigation
+  mobileNavigation.classList.remove('hidden');
+  mobileNavigation.classList.add('fixed');
+
+  // Animate the opacity of the mobile navigation (fade in)
+  tl.fromTo(mobileNavigation, 
+    { opacity: 0 }, 
+    { opacity: 1, duration: 0.5, ease: "power2.inOut" }
+  );
+}
+
+function closeMenu(mobileNavigation) {
+  const scrollY = document.body.style.top;
+  document.body.style.overflow = '';  // Reset overflow
+  document.body.style.position = '';  // Reset position
+  document.body.style.top = '';       // Reset top
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  const tl2 = gsap.timeline({
+    onComplete: function() {
+      // Restore the alternate button (mobile button) after animations
+      mobileButton.style.height = "28px"; // or any desired height
+      mobileNavigation.classList.remove('fixed');
+      mobileNavigation.classList.add('hidden');
+    }
+  });
+
+  // Animate the close button collapsing (hide)
+  tl2.to(closeButton, { 
+    height: 0, 
+    duration: 0.25, 
+    ease: "power2.inOut", 
+    transformOrigin: "center" 
+  });
+
+  // Animate the opacity of the mobile navigation (fade out)
+  tl2.fromTo(mobileNavigation, 
+    { opacity: 1 }, 
+    { opacity: 0, duration: 0.5, ease: "power2.inOut" }
+  );
+}
+
+
+mobileButton.addEventListener('click',function() {
+  openMenu(mobileNavigation)
+})
+
+closeButton.addEventListener('click',function() {
+  closeMenu(mobileNavigation)
+})
+
+})
+
 </script>
