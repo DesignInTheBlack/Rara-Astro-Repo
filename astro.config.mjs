@@ -1,19 +1,21 @@
 import { defineConfig } from 'astro/config';
 import alpinejs from '@astrojs/alpinejs';
 import tailwind from '@astrojs/tailwind';
-import tailwindShorthandPlugin from './elevate/vite/vite-plugin-tailwind-shorthand';
+import tailwindShorthandPlugin from './plugins/vite/vite-plugin-tailwind-shorthand';
 import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
+  srcDir: './compiled/src',
+  publicDir: './elevate/public',
   integrations: [
     alpinejs(),
-    tailwind(),
+    tailwind({configFile: './elevate/config/tailwind.config.mjs'}),
   ],
   vite: {
     plugins: [
       tailwindShorthandPlugin({
-        baseDir: path.resolve('./precompiled_src'),
+        baseDir: 'elevate/templates',
         include: ['**/*.astro', '**/*.html'],
       }),
     ],

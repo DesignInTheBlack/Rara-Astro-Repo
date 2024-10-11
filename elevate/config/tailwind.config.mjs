@@ -1,11 +1,11 @@
 // tailwind.config.mjs
 
-const typography = require('./elevate/typography');
-const colors = require('./elevate/colors');
-const spacing = require('./elevate/spacing');
-const { screens, container } = require('./elevate/breakpoints');
-const utilities = require('./elevate/utilities');
-const plugins = require('./elevate/plugins');
+const typography = require('../design/typography');
+const colors = require('../design/colors');
+const spacing = require('../design/spacing');
+const { screens, container } = require('../design/breakpoints');
+const utilities = require('../design/utilities');
+const plugins = require('../design/plugins');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
   // Content Configuration
   // ====================================================================================
   // Specify the files Tailwind should scan for class names
-  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue}"],
+  content: ["../../compiled/src/**/*.{astro,html,js,jsx,ts,tsx,vue}"],
 
   // ====================================================================================
   // Theme Configuration
