@@ -23,7 +23,7 @@
    - [Grid Shorthand](#grid-shorthand)
    - [Flex Container Shorthand](#flex-container-shorthand)
    - [Flex Item Shorthand](#flex-item-shorthand)
-   - [Margin/Padding Shorthand](#marginpadding-shorthand)
+   - [Margin/Padding Shorthand](#margin-padding-shorthand)
    - [Text Shorthand](#text-shorthand)
    - [Border Shorthand](#border-shorthand)
    - [Span Shorthand](#span-shorthand)
@@ -31,11 +31,11 @@
    - [Baseline Grid Plugin](#baseline-grid-plugin)
 7. [Custom Plugins](#custom-plugins)
 
-## Introduction {#introduction}
+## Introduction
 
 The Elevate Web Design System (EWDS) is an opinionated design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build attractive and proportional websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your preferred fonts, colors, etc. Please note that this system is a work in progress and as such, is subject to regular changes, revisions, and improvements.
 
-## Usage {#usage}
+## Usage
 
 The primary folders of concern are:
 
@@ -45,13 +45,13 @@ The primary folders of concern are:
 
 `templates` - (for your Astro JS components, pages, and layouts)
 
-## Core Concepts {#core-concepts}
+## Core Concepts
 
-### Core Layout Philosophy {#core-layout-philosophy}
+### Core Layout Philosophy
 
 WIP
 
-### Breakpoint System {#breakpoint-system}
+### Breakpoint System
 
 EWDS defines ten custom breakpoints:
 
@@ -70,7 +70,7 @@ EWDS defines ten custom breakpoints:
 
 * Please note: if you expand upon or rename any of these, you must adjust the Vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand).
 
-### Spacing Scale {#spacing-scale}
+### Spacing Scale
 
 EWDS uses a comprehensive and opinionated spacing scale divided into three categories:
 
@@ -134,7 +134,7 @@ For major page sections and full-page layouts (24rem - 120rem):
 | `s12` | 90rem      | 1440px    |
 | `s13` | 120rem     | 1920px    |
 
-### Color Palette {#color-palette}
+### Color Palette
 
 EWDS defines by default a custom color palette:
 
@@ -147,11 +147,11 @@ EWDS defines by default a custom color palette:
 | `error`  | #D81E5B  |
 | `warn`   | #FFD046  |
 
-### Typography {#typography}
+### Typography
 
-#### Font Sizes {#font-sizes}
+#### Font Sizes
 
-##### Fluid Typography {#fluid-typography}
+##### Fluid Typography
 
 | Class        | Size                                            |
 |--------------|--------------------------------------------------|
@@ -165,7 +165,7 @@ EWDS defines by default a custom color palette:
 | `fluid-4xl`  | clamp(2.25rem, 1.9rem + 1.75vw, 3rem)            |
 | `fluid-5xl`  | clamp(3rem, 2.5rem + 2.5vw, 4rem)                |
 
-##### Non-fluid Typography {#non-fluid-typography}
+##### Non-fluid Typography
 
 | Class     | Size           | Size (px) |
 |-----------|----------------|-----------|
@@ -180,7 +180,7 @@ EWDS defines by default a custom color palette:
 | `h1`      | 7.594rem       | 121.5px   |
 | `eyebrow` | 0.583rem       | 9.33px    |
 
-#### Line Heights {#line-heights}
+#### Line Heights
 
 | Class            | Value |
 |------------------|-------|
@@ -193,7 +193,7 @@ EWDS defines by default a custom color palette:
 | `spacious`       | 1.7   |
 | `extra-spacious` | 1.8   |
 
-#### Letter Spacing {#letter-spacing}
+#### Letter Spacing
 
 | Class         | Value    |
 |---------------|----------|
@@ -204,7 +204,7 @@ EWDS defines by default a custom color palette:
 | `wider`       | 0.02rem  |
 | `widest`      | 0.04rem  |
 
-#### Line Width (Measure) {#line-width-measure}
+#### Line Width (Measure)
 
 | Class          | Value |
 |----------------|-------|
@@ -214,7 +214,7 @@ EWDS defines by default a custom color palette:
 | `wide`         | 75ch  |
 | `extra-wide`   | 90ch  |
 
-#### Font Families {#font-families}
+#### Font Families
 
 | Class   | Font Stack                |
 |---------|---------------------------|
@@ -222,7 +222,7 @@ EWDS defines by default a custom color palette:
 | `mono`  | Sk-Modernist-Mono, monospace |
 | `serif` | PlayfairDisplay, serif    |
 
-## Z-Index Scale {#z-index-scale}
+## Z-Index Scale
 
 EWDS provides a custom z-index scale:
 
@@ -240,9 +240,9 @@ EWDS provides a custom z-index scale:
 | `z-90`   | 90    |
 | `z-100`  | 100   |
 
-## Shorthand Syntax {#shorthand-syntax}
+## Shorthand Syntax
 
-### Breakpoint Shorthand {#breakpoint-shorthand}
+### Breakpoint Shorthand
 
 The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a more concise, mobile-first notation.
 
@@ -258,7 +258,7 @@ Example:
 </div>
 ```
 
-### Grid Shorthand {#grid-shorthand}
+### Grid Shorthand
 
 Format: `grid-[columns,rows,gap,justify,align,flow]`
 
@@ -278,7 +278,7 @@ Example:
 </div>
 ```
 
-### Flex Container Shorthand {#flex-container-shorthand}
+### Flex Container Shorthand
 
 Format: `direction-[justify,align,wrap,content]`
 
@@ -297,7 +297,7 @@ Example:
 </div>
 ```
 
-### Flex Item Shorthand {#flex-item-shorthand}
+### Flex Item Shorthand
 
 Format: `item-[grow,basis,shrink,align]`
 
@@ -315,7 +315,7 @@ Example:
 </div>
 ```
 
-### Margin/Padding Shorthand {#marginpadding-shorthand}
+### Margin/Padding Shorthand {#margin-padding-shorthand}
 
 Format: `margin-[l,r,t,b]` or `pad-[l,r,t,b]`
 
@@ -334,7 +334,7 @@ Example:
 ```
 * Margin to be replaced with `mar` in a near future revision.
 
-### Text Shorthand {#text-shorthand}
+### Text Shorthand
 
 Format: `text-[size,weight,family,height,align,spacing,color]`
 
@@ -355,7 +355,7 @@ Example:
 </p>
 ```
 
-### Border Shorthand {#border-shorthand}
+### Border Shorthand
 
 Format: `border-[direction,width,style,color]`
 
@@ -373,7 +373,7 @@ Example:
 </div>
 ```
 
-### Span Shorthand {#span-shorthand}
+### Span Shorthand
 
 Format: `span-[columns,rows]`
 
@@ -389,9 +389,9 @@ Example:
 </div>
 ```
 
-## Utility Extensions {#utility-extensions}
+## Utility Extensions
 
-### Baseline Grid Plugin {#baseline-grid-plugin}
+### Baseline Grid Plugin
 
 Adds a utility for displaying a baseline grid overlay:
 
@@ -402,7 +402,6 @@ Adds a utility for displaying a baseline grid overlay:
 }
 ```
 
-## Custom Plugins {#custom-plugins}
+## Custom Plugins
 
 WIP
-
