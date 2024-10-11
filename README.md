@@ -323,7 +323,7 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 | Slot      | Values |
 |-----------|--------|
 | columns   | 1-12, or Tailwind's grid-cols-* values |
-| rows      | 1-6, or Tailwind's grid-rows-* values |
+| rows      | 1-12, or Tailwind's grid-rows-* values |
 | gap       | d1-d13, c1-c13, s1-s13 (see [Spacing Scale](#spacing-scale)) |
 | justify   | start, end, center, between, around, evenly |
 | align     | start, end, center, stretch, baseline |
