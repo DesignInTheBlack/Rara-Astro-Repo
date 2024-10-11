@@ -19,6 +19,7 @@
      - [Font Families](#font-families)
 4. [Z-Index Scale](#z-index-scale)
 5. [Shorthand Syntax](#shorthand-syntax)
+   - [Partial Shorthand Inputs](#partial-shorthand-inputs)
    - [Breakpoint Shorthand](#breakpoint-shorthand)
    - [Grid Shorthand](#grid-shorthand)
    - [Flex Container Shorthand](#flex-container-shorthand)
@@ -242,6 +243,10 @@ EWDS provides a custom z-index scale:
 
 ## Shorthand Syntax
 
+### Partial Shorthand Inputs
+
+EWDS shorthands generally support partial inputs, allowing you to specify only the values you need. Omitted values are typically ignored or use default values. This flexibility allows for more concise and focused class definitions.
+
 ### Breakpoint Shorthand
 
 The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a more concise, mobile-first notation.
@@ -271,10 +276,14 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 | align     | start, end, center, stretch, baseline |
 | flow      | row, col, row-dense, col-dense |
 
-Example:
+You can omit any value by using an underscore (_) or by not including it. For example:
+
 ```html
-<div class="grid-[3,2,d4,center,stretch,row]">
-  <!-- Grid content -->
+<div class="grid-[3,2]">
+  <!-- Grid with 3 columns and 2 rows, other properties use defaults -->
+</div>
+<div class="grid-[3,_,d4,center]">
+  <!-- Grid with 3 columns, d4 gap, and center justification -->
 </div>
 ```
 
@@ -290,10 +299,14 @@ Format: `direction-[justify,align,wrap,content]`
 | wrap      | wrap, nowrap, wrap-reverse |
 | content   | start, end, center, between, around, evenly |
 
-Example:
+You can omit any value by using an underscore (_) or by not including it. For example:
+
 ```html
-<div class="rowr-[between,center,wrap,_]">
-  <!-- Flex container content -->
+<div class="row-[between,center]">
+  <!-- Flex row with justify-between and align-center -->
+</div>
+<div class="col-[_,_,wrap]">
+  <!-- Flex column with wrap, other properties use defaults -->
 </div>
 ```
 
@@ -308,31 +321,57 @@ Format: `item-[grow,basis,shrink,align]`
 | shrink | 0, 1, Tailwind's flex-shrink-* values |
 | align  | auto, start, end, center, stretch, baseline |
 
-Example:
+You can omit any value by using an underscore (_) or by not including it. For example:
+
 ```html
-<div class="item-[1,c5,0,center]">
-  <!-- Flex item content -->
+<div class="item-[1,c5,0,_]">
+  <!-- Flex item with flex-grow: 1, flex-basis: c5, and flex-shrink: 0 -->
+</div>
+<div class="item-[_,_,_,center]">
+  <!-- Flex item with align-self: center, other properties use defaults -->
 </div>
 ```
+
+In these examples:
+- The first div uses the shorthand to set flex-grow to 1, flex-basis to c5, flex-shrink to 0, and leaves align-self at its default.
+- The second div only sets align-self to center, leaving all other properties at their default values.
 
 ### Margin/Padding Shorthand {#margin-padding-shorthand}
 
-Format: `margin-[l,r,t,b]` or `pad-[l,r,t,b]`
+Format: `mar-[t,r,b,l]`, `mar-[y,x]`, `mar-[both]` or `pad-[t,r,b,l]`, `pad-[y,x]`, `pad-[both]`
 
 | Slot | Values |
 |------|--------|
-| l    | d1-d13, c1-c13, s1-s13 (see [Spacing Scale](#spacing-scale)) |
+| t    | d1-d13, c1-c13, s1-s13 (see [Spacing Scale](#spacing-scale)) |
 | r    | d1-d13, c1-c13, s1-s13 |
-| t    | d1-d13, c1-c13, s1-s13 |
 | b    | d1-d13, c1-c13, s1-s13 |
+| l    | d1-d13, c1-c13, s1-s13 |
+| y    | d1-d13, c1-c13, s1-s13 (applies to top and bottom) |
+| x    | d1-d13, c1-c13, s1-s13 (applies to left and right) |
 
-Example:
+You can use either the full directional syntax (t,r,b,l) or the x/y syntax for more concise horizontal and vertical spacing. If only one value is specified, it will apply to all sides. 
+
+Examples:
 ```html
-<div class="margin-[d4,d4,d4,d4] pad-[c2,c2,c2,c2]">
-  <!-- Content with margin and padding -->
+<!-- Full directional syntax -->
+<div class="mar-[d4,d4,d4,d4] pad-[c2,c2,c2,c2]">
+  <!-- Content with margin and padding on all sides -->
+</div>
+
+<!-- X/Y syntax -->
+<div class="mar-[d6,d4] pad-[c3,c2]">
+  <!-- Content with vertical and horizontal margin/padding -->
+</div>
+
+<!-- Single value syntax -->
+<div class="mar-[d4] pad-[c2]">
+  <!-- Content with equal margin and padding on all sides -->
 </div>
 ```
-* Margin to be replaced with `mar` in a near future revision.
+
+In the x/y syntax example:
+- `mar-[d6,d4]` expands to `my-d6 mx-d4` (margin-top and margin-bottom: d6, margin-left and margin-right: d4)
+- `pad-[c3,c2]` expands to `py-c3 px-c2` (padding-top and padding-bottom: c3, padding-left and padding-right: c2)
 
 ### Text Shorthand
 
@@ -348,11 +387,15 @@ Format: `text-[size,weight,family,height,align,spacing,color]`
 | spacing | extra-tight, tight, normal, wide, wider, widest |
 | color   | purple, grey, white, black, error, warn |
 
-Example:
+You can omit any value by using an underscore (_) or by not including it. For example:
+
 ```html
-<p class="text-[fluid-lg,bold,sans,normal,center,wide,purple]">
-  <!-- Text content -->
+<p class="text-[fluid-lg,bold,_,_,center]">
+  <!-- Large, bold, centered text -->
 </p>
+<span class="text-[_,_,_,_,_,_,purple]">
+  <!-- Purple text with default other properties -->
+</span>
 ```
 
 ### Border Shorthand
@@ -366,10 +409,14 @@ Format: `border-[direction,width,style,color]`
 | style     | solid, dashed, dotted, double, none |
 | color     | purple, grey, white, black, error, warn |
 
-Example:
+You can omit any value by using an underscore (_) or by not including it. For example:
+
 ```html
-<div class="border-[l,2,solid,purple]">
-  <!-- Content with left border -->
+<div class="border-[l,2,_,purple]">
+  <!-- Left purple border with width 2 and default style -->
+</div>
+<div class="border-[_,_,dashed]">
+  <!-- Dashed border on all sides with default width and color -->
 </div>
 ```
 
@@ -379,13 +426,17 @@ Format: `span-[columns,rows]`
 
 | Slot    | Values |
 |---------|--------|
-| columns | 1-12   |
-| rows    | 1-6    |
+| columns | # of columns to span   |
+| rows    | # of rows to span  |
 
-Example:
+You can omit any value by using an underscore (_) or by not including it. For example:
+
 ```html
-<div class="span-[2,3]">
-  <!-- Content spanning 2 columns and 3 rows -->
+<div class="span-[2]">
+  <!-- Span 2 columns -->
+</div>
+<div class="span-[_,3]">
+  <!-- Span 3 rows -->
 </div>
 ```
 
@@ -402,6 +453,10 @@ Adds a utility for displaying a baseline grid overlay:
 }
 ```
 
-## Custom Plugins
+Usage:
+```html
+<div class="baseline-grid">
+  <!-- Content with baseline grid overlay -->
+</div>
+```
 
-WIP

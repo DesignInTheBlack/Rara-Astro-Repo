@@ -105,7 +105,7 @@ function expandUtility(cls, prefix) {
       return expandFlexShorthand(utility, values, prefix);
     case 'item':
       return expandFlexItemShorthand(values, prefix);
-    case 'margin':
+    case 'mar':
     case 'pad':
       return expandSpacingShorthand(utility, values, prefix);
     case 'text':
@@ -226,7 +226,7 @@ function expandSpanShorthand(values, prefix) {
 
 // Spacing Shorthand Expansion
 function expandSpacingShorthand(type, values, prefix) {
-  const property = type === 'margin' ? 'm' : 'p';
+  const property = type === 'mar' ? 'm' : 'p';
   const directions = ['t', 'r', 'b', 'l'];
   const validValues = values.filter((value) => value !== '_');
 
