@@ -263,6 +263,11 @@ Example:
 </div>
 ```
 
+This example sets:
+- Default: fluid-base font size, bold weight, purple color
+- From 'sm' breakpoint: fluid-lg font size, centered text
+- From 'lg' breakpoint: fluid-xl font size
+
 ### Grid Shorthand
 
 Format: `grid-[columns,rows,gap,justify,align,flow]`
@@ -271,21 +276,36 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 |-----------|--------|
 | columns   | 1-12, or Tailwind's grid-cols-* values |
 | rows      | 1-6, or Tailwind's grid-rows-* values |
-| gap       | (see [Spacing Scale](#spacing-scale)) |
+| gap       | d1-d13, c1-c13, s1-s13 (see [Spacing Scale](#spacing-scale)) |
 | justify   | start, end, center, between, around, evenly |
 | align     | start, end, center, stretch, baseline |
 | flow      | row, col, row-dense, col-dense |
 
-You can omit any value by using an underscore (_) or by not including it. For example:
+You can specify just the first few values, omitting the rest:
 
 ```html
 <div class="grid-[3,2]">
-  <!-- Grid with 3 columns and 2 rows, other properties use defaults -->
+  <!-- Grid with 3 columns and 2 rows -->
 </div>
-<div class="grid-[3,_,d4,center]">
-  <!-- Grid with 3 columns, d4 gap, and center justification -->
+<div class="grid-[3,2,d4]">
+  <!-- Grid with 3 columns, 2 rows, and d4 gap -->
+</div>
+<div class="grid-[3,2,d4,center]">
+  <!-- Grid with 3 columns, 2 rows, d4 gap, and center justification -->
 </div>
 ```
+
+You can also skip values using underscores:
+
+```html
+<div class="grid-[3,_,d4,center]">
+  <!-- Grid with 3 columns, default rows, d4 gap, and center justification -->
+</div>
+```
+
+In these examples:
+- The first div creates a 3x2 grid with default gap and alignment.
+- The second div creates a grid with 3 columns, default rows, a gap of d4 (1rem), and center justification.
 
 ### Flex Container Shorthand
 
@@ -299,16 +319,48 @@ Format: `direction-[justify,align,wrap,content]`
 | wrap      | wrap, nowrap, wrap-reverse |
 | content   | start, end, center, between, around, evenly |
 
-You can omit any value by using an underscore (_) or by not including it. For example:
+You can omit any value by using an underscore (_) or by not including it. The shorthand is flexible and allows for various combinations:
 
+1. Using all values:
 ```html
-<div class="row-[between,center]">
-  <!-- Flex row with justify-between and align-center -->
-</div>
-<div class="col-[_,_,wrap]">
-  <!-- Flex column with wrap, other properties use defaults -->
+<div class="row-[between,center,wrap,start]">
+  <!-- Flex row with justify-between, align-center, wrap, and align-content-start -->
 </div>
 ```
+
+2. Using only the first two values (justify and align):
+```html
+<div class="row-[center,center]">
+  <!-- Flex row with justify-center and align-center -->
+</div>
+```
+
+3. Using only the first value (justify):
+```html
+<div class="col-[end]">
+  <!-- Flex column with justify-end -->
+</div>
+```
+
+4. Skipping values:
+```html
+<div class="row-[_,_,wrap]">
+  <!-- Flex row with wrap, other properties use defaults -->
+</div>
+```
+
+5. Using any combination:
+```html
+<div class="rowr-[between,_,_,center]">
+  <!-- Flex row-reverse with justify-between and align-content-center -->
+</div>
+```
+
+These examples demonstrate the flexibility of the shorthand syntax, allowing you to specify only the properties you need while using defaults for the rest.
+
+In these examples:
+- The first div creates a flex row with space-between justification and center alignment.
+- The second div creates a flex column with wrap enabled, using default values for justify and align.
 
 ### Flex Item Shorthand
 
@@ -333,7 +385,7 @@ You can omit any value by using an underscore (_) or by not including it. For ex
 ```
 
 In these examples:
-- The first div uses the shorthand to set flex-grow to 1, flex-basis to c5, flex-shrink to 0, and leaves align-self at its default.
+- The first div uses the shorthand to set flex-grow to 1, flex-basis to c5 (6rem), flex-shrink to 0, and leaves align-self at its default.
 - The second div only sets align-self to center, leaving all other properties at their default values.
 
 ### Margin/Padding Shorthand {#margin-padding-shorthand}
@@ -348,24 +400,25 @@ Format: `mar-[t,r,b,l]`, `mar-[y,x]`, `mar-[both]` or `pad-[t,r,b,l]`, `pad-[y,x
 | l    | d1-d13, c1-c13, s1-s13 |
 | y    | d1-d13, c1-c13, s1-s13 (applies to top and bottom) |
 | x    | d1-d13, c1-c13, s1-s13 (applies to left and right) |
+| both | d1-d13, c1-c13, s1-s13 (applies to all sides) |
 
-You can use either the full directional syntax (t,r,b,l) or the x/y syntax for more concise horizontal and vertical spacing. If only one value is specified, it will apply to all sides. 
+You can use either the full directional syntax (t,r,b,l), the x/y syntax for more concise horizontal and vertical spacing, or a single value to apply to all sides. 
 
 Examples:
 ```html
 <!-- Full directional syntax -->
 <div class="mar-[d4,d4,d4,d4] pad-[c2,c2,c2,c2]">
-  <!-- Content with margin and padding on all sides -->
+  <!-- Content with margin d4 and padding c2 on all sides -->
 </div>
 
 <!-- X/Y syntax -->
 <div class="mar-[d6,d4] pad-[c3,c2]">
-  <!-- Content with vertical and horizontal margin/padding -->
+  <!-- Content with vertical margin d6, horizontal margin d4, vertical padding c3, and horizontal padding c2 -->
 </div>
 
 <!-- Single value syntax -->
 <div class="mar-[d4] pad-[c2]">
-  <!-- Content with equal margin and padding on all sides -->
+  <!-- Content with margin d4 and padding c2 on all sides -->
 </div>
 ```
 
@@ -394,9 +447,13 @@ You can omit any value by using an underscore (_) or by not including it. For ex
   <!-- Large, bold, centered text -->
 </p>
 <span class="text-[_,_,_,_,_,_,purple]">
-  <!-- Purple text with default other properties -->
+  <!-- Purple text with default other properties, obviously in this case you could simply use tailwind's defaults such as text-purple. -->
 </span>
 ```
+
+In these examples:
+- The first paragraph uses fluid-lg size, bold weight, and center alignment, with other properties using their defaults.
+- The second span only sets the text color to purple, leaving all other text properties at their default values.
 
 ### Border Shorthand
 
@@ -420,25 +477,44 @@ You can omit any value by using an underscore (_) or by not including it. For ex
 </div>
 ```
 
+In these examples:
+- The first div has a left border that's 2 pixels wide and purple, using the default border style (usually solid).
+- The second div has a dashed border on all sides, using the default width and color.
+
 ### Span Shorthand
 
 Format: `span-[columns,rows]`
 
 | Slot    | Values |
 |---------|--------|
-| columns | # of columns to span   |
-| rows    | # of rows to span  |
+| columns | Number of columns to span |
+| rows    | Number of rows to span |
 
-You can omit any value by using an underscore (_) or by not including it. For example:
+You can specify one or both values:
+
+1. Single value (columns only):
+   ```html
+   <div class="span-[2]">
+     <!-- Span 2 columns -->
+   </div>
+   ```
+
+2. Both values:
+   ```html
+   <div class="span-[2,3]">
+     <!-- Span 2 columns and 3 rows -->
+   </div>
+   ```
+
+If you only want to specify rows, use an underscore for columns:
 
 ```html
-<div class="span-[2]">
-  <!-- Span 2 columns -->
-</div>
 <div class="span-[_,3]">
-  <!-- Span 3 rows -->
+  <!-- Span 3 rows, default column span -->
 </div>
 ```
+
+The shorthand allows you to easily control the size of grid items within your layout.
 
 ## Utility Extensions
 
@@ -460,3 +536,4 @@ Usage:
 </div>
 ```
 
+This utility adds a subtle background grid to help align content to a baseline rhythm. 
