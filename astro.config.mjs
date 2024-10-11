@@ -14,8 +14,8 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindShorthandPlugin({
-        baseDir: 'templates',
-        include: ['**/*.astro', '**/*.html'],
+        baseDir: 'site',
+        include: ['**/*.astro', '**/*.html','**/*.js'],
       }),
     ],
     logLevel: 'error', // Add this line to reduce Vite logging
