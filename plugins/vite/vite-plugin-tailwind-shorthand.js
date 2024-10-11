@@ -55,7 +55,7 @@ const maxInlineTextLength = 80; // Adjust as needed
 // ====================================================================================
 
 function transformClassAttribute(classValue) {
-  const BREAKPOINTS = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl'];
+  const BREAKPOINTS = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl','4xl','5xl'];
   const segments = classValue.split('/');
   let resultClasses = [];
   let currentPrefix = '';
@@ -89,6 +89,7 @@ function transformClassAttribute(classValue) {
 // Utility Expansion Functions
 // ====================================================================================
 
+// Update the expandUtility function to include the new border shorthand
 function expandUtility(cls, prefix) {
   const [utility, valuesStr] = cls.split('-[');
   if (!valuesStr) return [`${prefix}${cls}`];
@@ -118,6 +119,7 @@ function expandUtility(cls, prefix) {
   }
 }
 
+
 // Grid Shorthand Expansion
 function expandGridShorthand(values, prefix) {
   const [columns, rows, gap, justify, align, flow] = values;
@@ -133,7 +135,7 @@ function expandGridShorthand(values, prefix) {
   return gridClasses;
 }
 
-// Border Shorthand Expansion
+//Border Shorthand Expansion
 function expandBorderShorthand(values, prefix) {
   const [direction, width, style, color] = values;
   const borderClasses = [];
@@ -170,7 +172,7 @@ function expandBorderShorthand(values, prefix) {
 // Flex Shorthand Expansion
 function expandFlexShorthand(direction, values, prefix) {
   const [justify, align, wrap, content] = values;
-
+  
   let flexClasses = [`${prefix}flex`];
 
   // Handle direction-specific logic for reverse flex directions
@@ -206,7 +208,7 @@ function expandFlexItemShorthand(values, prefix) {
   return itemClasses;
 }
 
-// Grid Span Shorthand Expansion
+//Grid Span Shorthand Expansion
 function expandSpanShorthand(values, prefix) {
   const [columns, rows] = values;
   const spanClasses = [];
@@ -266,10 +268,11 @@ function expandTextShorthand(values, prefix) {
 
 export default function Elevate({
   include = ['**/*.astro', '**/*.html'],
-  baseDir = 'elevate/templates', // Removed leading '/'
+  baseDir = 'templates',
 } = {}) {
   // Resolve the base directory to an absolute path to ensure correct filtering
   const resolvedBaseDir = path.resolve(baseDir);
+
 
   // Create absolute filter patterns
   const filterPatterns = include.map((pattern) => path.join(resolvedBaseDir, pattern));
@@ -280,8 +283,7 @@ export default function Elevate({
     enforce: 'pre',
 
     configureServer(server) {
-      // Use resolvedBaseDir here
-      server.watcher.add(`${resolvedBaseDir}/**/*`);
+      server.watcher.add(`${baseDir}/**/*`);
 
       // Set up event listeners for file changes
       server.watcher.on('add', async (filePath) => {
@@ -375,36 +377,36 @@ export default function Elevate({
     const frontmatterMatch = html.match(/^---\s*\n[\s\S]*?\n---\s*\n?/);
     let frontmatter = '';
     let htmlContent = html;
-
+  
     if (frontmatterMatch) {
       frontmatter = frontmatterMatch[0];
       htmlContent = html.slice(frontmatter.length);
       console.log(`Elevate: Frontmatter detected and preserved.`);
     }
-
+  
     // List of void elements
     const voidElements = [
       'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
-      'link', 'meta', 'param', 'source', 'track', 'wbr',
+      'link', 'meta', 'param', 'source', 'track', 'wbr'
     ];
-
+  
     // Step 2: Format the HTML content
     const indentChar = '  '; // Use two spaces for indentation; adjust as needed
     let indentLevel = 0;
     let formatted = '';
     const tokens = htmlContent.match(/<!--[\s\S]*?-->|{[\s\S]*?}|<\/?[^>]+>|[^<>]+/g);
-
+  
     const tagStack = [];
-
+  
     tokens.forEach((token) => {
       token = token.trim();
       if (!token) return;
-
+  
       // Match different types of tokens
       const openingTagMatch = token.match(/^<([A-Za-z][A-Za-z0-9_-]*)(\s[^>]*)?>$/);
       const closingTagMatch = token.match(/^<\/([A-Za-z][A-Za-z0-9_-]*)>$/);
       const selfClosingTagMatch = token.match(/^<([A-Za-z][A-Za-z0-9_-]*)(\s[^>]*)?\/>$/);
-
+  
       if (token.startsWith('<!--')) {
         // Comment
         formatted += indentChar.repeat(indentLevel) + token + '\n';
@@ -416,27 +418,27 @@ export default function Elevate({
         const tagName = openingTagMatch[1];
         const lowerTagName = tagName.toLowerCase();
         const isVoidElement = voidElements.includes(lowerTagName);
-
+  
         // Add extra newline before opening tag if in tagsWithExtraNewlines
         if (tagsWithExtraNewlines.includes(lowerTagName)) {
           if (!formatted.endsWith('\n\n')) {
             formatted = formatted.trimEnd() + '\n\n';
           }
         }
-
+  
         formatted += indentChar.repeat(indentLevel) + token;
-
+  
         if (!isVoidElement) {
           indentLevel++;
           tagStack.push({ tagName, isInline: inlineTags.includes(lowerTagName) });
         }
-
+  
         formatted += '\n';
       } else if (closingTagMatch) {
         // Closing tag
         indentLevel = Math.max(indentLevel - 1, 0);
         const { tagName, isInline } = tagStack.pop() || {};
-
+  
         if (isInline) {
           // Inline element
           formatted = formatted.trimEnd();
@@ -444,7 +446,7 @@ export default function Elevate({
         } else {
           formatted += indentChar.repeat(indentLevel) + `</${tagName}>\n`;
         }
-
+  
         // Add extra newline after closing tag if in tagsWithExtraNewlines
         if (tagsWithExtraNewlines.includes(tagName.toLowerCase())) {
           formatted += '\n';
@@ -457,12 +459,12 @@ export default function Elevate({
         const parent = tagStack[tagStack.length - 1] || {};
         const isInlineParent = parent.isInline;
         token = token.replace(/^\s+|\s+$/g, '');
-
+  
         if (token.length === 0) {
           // Skip empty text nodes
           return;
         }
-
+  
         if (isInlineParent && token.length <= maxInlineTextLength) {
           // Keep inline with the opening tag
           formatted = formatted.trimEnd() + token;
@@ -472,10 +474,10 @@ export default function Elevate({
         }
       }
     });
-
+  
     // Reduce multiple newlines to a maximum of two
     formatted = formatted.replace(/\n{3,}/g, '\n\n');
-
+  
     return frontmatter + formatted.trimEnd() + '\n'; // Ensure single newline at the end
   }
 }

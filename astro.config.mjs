@@ -7,7 +7,6 @@ import path from 'path';
 // https://astro.build/config
 export default defineConfig({
   srcDir: './compiled/src',
-  publicDir: './elevate/public',
   integrations: [
     alpinejs(),
     tailwind({configFile: './elevate/config/tailwind.config.mjs'}),
@@ -15,7 +14,7 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindShorthandPlugin({
-        baseDir: 'elevate/templates',
+        baseDir: 'templates',
         include: ['**/*.astro', '**/*.html'],
       }),
     ],

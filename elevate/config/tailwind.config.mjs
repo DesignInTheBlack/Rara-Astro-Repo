@@ -13,7 +13,7 @@ module.exports = {
   // Content Configuration
   // ====================================================================================
   // Specify the files Tailwind should scan for class names
-  content: ["../../compiled/src/**/*.{astro,html,js,jsx,ts,tsx,vue}"],
+  content: ["compiled/src/**/*.{astro,html,js,jsx,ts,tsx,vue}"],
 
   // ====================================================================================
   // Theme Configuration
