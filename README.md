@@ -52,7 +52,7 @@ The primary folders of concern are:
 
 WIP
 
-### Breakpoint System
+## Breakpoint System
 
 EWDS defines ten custom breakpoints:
 
@@ -71,7 +71,7 @@ EWDS defines ten custom breakpoints:
 
 * Please note: if you expand upon or rename any of these, you must adjust the Vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand).
 
-### Spacing Scale
+## Spacing Scale
 
 EWDS uses a comprehensive and opinionated spacing scale divided into three categories:
 
@@ -135,7 +135,7 @@ For major page sections and full-page layouts (24rem - 120rem):
 | `s12` | 90rem      | 1440px    |
 | `s13` | 120rem     | 1920px    |
 
-### Color Palette
+## Color Palette
 
 EWDS defines by default a custom color palette:
 
@@ -148,7 +148,7 @@ EWDS defines by default a custom color palette:
 | `error`  | #D81E5B  |
 | `warn`   | #FFD046  |
 
-### Typography
+## Typography
 
 #### Font Sizes
 
