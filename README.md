@@ -166,6 +166,12 @@ EWDS defines by default a custom color palette:
 | `fluid-4xl`  | clamp(2.25rem, 1.9rem + 1.75vw, 3rem)            |
 | `fluid-5xl`  | clamp(3rem, 2.5rem + 2.5vw, 4rem)                |
 
+```html
+<div class="text-fluid-base">
+  <!-- Content -->
+</div>
+```
+
 ##### Non-fluid Typography
 
 | Class     | Size           | Size (px) |
@@ -181,6 +187,12 @@ EWDS defines by default a custom color palette:
 | `h1`      | 7.594rem       | 121.5px   |
 | `eyebrow` | 0.583rem       | 9.33px    |
 
+```html
+<div class="text-h4">
+  <!-- Content -->
+</div>
+```
+
 #### Line Heights
 
 | Class            | Value |
@@ -194,6 +206,12 @@ EWDS defines by default a custom color palette:
 | `spacious`       | 1.7   |
 | `extra-spacious` | 1.8   |
 
+```html
+<p class="leading-tight">
+  <!-- Content -->
+</p>
+```
+
 #### Letter Spacing
 
 | Class         | Value    |
@@ -205,6 +223,12 @@ EWDS defines by default a custom color palette:
 | `wider`       | 0.02rem  |
 | `widest`      | 0.04rem  |
 
+```html
+<p class="tracking-wide">
+  <!-- Content -->
+</p>
+```
+
 #### Line Width (Measure)
 
 | Class          | Value |
@@ -215,6 +239,12 @@ EWDS defines by default a custom color palette:
 | `wide`         | 75ch  |
 | `extra-wide`   | 90ch  |
 
+```html
+<p class="max-w-medium">
+  <!-- Content -->
+</p>
+```
+
 #### Font Families
 
 | Class   | Font Stack                |
@@ -222,6 +252,12 @@ EWDS defines by default a custom color palette:
 | `sans`  | Sk-Modernist, sans-serif  |
 | `mono`  | Sk-Modernist-Mono, monospace |
 | `serif` | PlayfairDisplay, serif    |
+
+```html
+<div class="font-sans">
+  <!-- Content -->
+</div>
+```
 
 ## Z-Index Scale
 
@@ -240,6 +276,12 @@ EWDS provides a custom z-index scale:
 | `z-80`   | 80    |
 | `z-90`   | 90    |
 | `z-100`  | 100   |
+
+```html
+<div class="z-100">
+  <!-- Content -->
+</div>
+```
 
 ## Shorthand Syntax
 
