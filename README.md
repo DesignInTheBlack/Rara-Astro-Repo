@@ -69,7 +69,7 @@ EWDS defines ten custom breakpoints:
 | `4xl`      | 160rem     | 2560px    | 2K             |
 | `5xl`      | 240rem     | 3840px    | 4K             |
 
-* Please note: if you expand upon or rename any of these, you must adjust the Vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand).
+* Please note: if you expand upon or rename any of these, you must adjust the names in the Vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand).
 
 ## Spacing Scale
 
@@ -147,6 +147,12 @@ EWDS defines by default a custom color palette:
 | `black`  | #0A141F  |
 | `error`  | #D81E5B  |
 | `warn`   | #FFD046  |
+
+```html
+<p class="text-white bg-purple">
+  <!-- Content -->
+</p>
+```
 
 ## Typography
 
