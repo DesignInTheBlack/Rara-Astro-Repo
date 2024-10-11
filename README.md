@@ -1,4 +1,4 @@
-# Elevate Web Design System (EWDS) Documentation
+# Elevate Web Design System (EWDS)
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@
 
 ## Introduction
 
-The Elevate Web Design System (EWDS) is a core design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your own styles.
+The Elevate Web Design System (EWDS) is a design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your preferred fonts, colors, etc,
 
 ## Core Layout Philosophy
 
@@ -38,7 +38,7 @@ Example usage:
 </section>
 ```
 
-## Breakpoint System
+## Breakpoint System - (elevate/design/breakpoints.js)
 
 EWDS defines ten custom breakpoints:
 
@@ -149,7 +149,7 @@ Example:
 </div>
 ```
 
-### Text Shorthand
+### Text Shorthand - (elevate/design/typography.js)
 
 Format: `text-[size,weight,family,height,align,spacing,color]`
 
@@ -204,7 +204,7 @@ Example:
 </div>
 ```
 
-## Spacing Scale
+## Spacing Scale - (elevate/design/spacing.js)
 
 EWDS uses a comprehensive spacing scale divided into three categories:
 
@@ -281,7 +281,7 @@ Example usage:
 </div>
 ```
 
-## Color Palette
+## Color Palette - (elevate/design/colors.js)
 
 EWDS defines a custom color palette:
 
@@ -304,13 +304,13 @@ Example usage:
 </span>
 ```
 
-## Typography
+## Typography - (elevate/design/typography.js)
 
 ### Font Sizes
 
 EWDS provides both fluid and non-fluid typography scales:
 
-#### Fluid Typography
+#### Fluid Typography 
 
 | Class        | Size                                            |
 |--------------|--------------------------------------------------|
@@ -400,7 +400,7 @@ Example usage:
 | `mono`  | Sk-Modernist-Mono, monospace |
 | `serif` | PlayfairDisplay, serif    |
 
-## Z-Index Scale
+## Z-Index Scale - (elevate/design/utilities.js)
 
 EWDS provides a custom z-index scale:
 
@@ -424,7 +424,7 @@ Example usage:
 <div class="z-50">Modal overlay</div>
 ```
 
-## Container Sizes
+## Container Sizes - (elevate/design/breakpoints.js)
 
 EWDS defines custom container sizes for different breakpoints:
 
@@ -450,24 +450,7 @@ Example usage:
 </div>
 ```
 
-## Utility Extensions
-
-EWDS extends Tailwind's utility classes with custom configurations:
-
-### Custom Max Width Utilities
-
-```javascript
-maxWidth: {
-  'prose': 'var(--line-width, 65ch)',
-},
-```
-
-Example usage:
-```html
-<article class="max-w-prose">
-  <!-- Article content with optimal reading width -->
-</article>
-```
+## Utility Extensions - (elevate/design/utilities.js)
 
 ### Baseline Grid Plugin
 
