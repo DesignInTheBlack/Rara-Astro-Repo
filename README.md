@@ -266,7 +266,7 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 |-----------|--------|
 | columns   | 1-12, or Tailwind's grid-cols-* values |
 | rows      | 1-6, or Tailwind's grid-rows-* values |
-| gap       | [Spacing Scale](#spacing-scale) |
+| gap       | (see [Spacing Scale](#spacing-scale)) |
 | justify   | start, end, center, between, around, evenly |
 | align     | start, end, center, stretch, baseline |
 | flow      | row, col, row-dense, col-dense |
