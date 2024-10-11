@@ -3,27 +3,41 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Core Layout Philosophy](#core-layout-philosophy)
-3. [Breakpoint System](#breakpoint-system)
-4. [Shorthand Syntax](#shorthand-syntax)
-5. [Spacing Scale](#spacing-scale)
-6. [Color Palette](#color-palette)
-7. [Typography](#typography)
-8. [Z-Index Scale](#z-index-scale)
-9. [Container Sizes](#container-sizes)
-10. [Utility Extensions](#utility-extensions)
-11. [Custom Plugins](#custom-plugins)
+2. [Usage](#usage)
+3. [Core Concepts](#core-concepts)
+   - [Core Layout Philosophy](#core-layout-philosophy)
+   - [Breakpoint System](#breakpoint-system)
+   - [Spacing Scale](#spacing-scale)
+   - [Color Palette](#color-palette)
+   - [Typography](#typography)
+     - [Font Sizes](#font-sizes)
+       - [Fluid Typography](#fluid-typography)
+       - [Non-fluid Typography](#non-fluid-typography)
+     - [Line Heights](#line-heights)
+     - [Letter Spacing](#letter-spacing)
+     - [Line Width (Measure)](#line-width-measure)
+     - [Font Families](#font-families)
+4. [Z-Index Scale](#z-index-scale)
+5. [Shorthand Syntax](#shorthand-syntax)
+   - [Breakpoint Shorthand](#breakpoint-shorthand)
+   - [Grid Shorthand](#grid-shorthand)
+   - [Flex Container Shorthand](#flex-container-shorthand)
+   - [Flex Item Shorthand](#flex-item-shorthand)
+   - [Margin/Padding Shorthand](#marginpadding-shorthand)
+   - [Text Shorthand](#text-shorthand)
+   - [Border Shorthand](#border-shorthand)
+   - [Span Shorthand](#span-shorthand)
+6. [Utility Extensions](#utility-extensions)
+   - [Baseline Grid Plugin](#baseline-grid-plugin)
+7. [Custom Plugins](#custom-plugins)
 
+## Introduction {#introduction}
 
+The Elevate Web Design System (EWDS) is an opinionated design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build attractive and proportional websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your preferred fonts, colors, etc. Please note that this system is a work in progress and as such, is subject to regular changes, revisions, and improvements.
 
-## Introduction
+## Usage {#usage}
 
-The Elevate Web Design System (EWDS) is an opinionated design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build attractive and proportional websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your preferred fonts, colors, etc. Please note that this
-system is a work in progress and as such, is subject to regular changes, revisions, and improvements. 
-
-## Usage
-
-The primary folders of concern are: 
+The primary folders of concern are:
 
 `elevate` - (for configuring the EWDS design system)
 
@@ -31,11 +45,13 @@ The primary folders of concern are:
 
 `templates` - (for your Astro JS components, pages, and layouts)
 
-## Core Layout Philosophy
+## Core Concepts {#core-concepts}
+
+### Core Layout Philosophy {#core-layout-philosophy}
 
 WIP
 
-## Breakpoint System - (elevate/design/breakpoints.js)
+### Breakpoint System {#breakpoint-system}
 
 EWDS defines ten custom breakpoints:
 
@@ -52,23 +68,186 @@ EWDS defines ten custom breakpoints:
 | `4xl`      | 160rem     | 2560px    | 2K             |
 | `5xl`      | 240rem     | 3840px    | 4K             |
 
-* please note: if you expand upon or rename any of these, you must adjust the vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand)
+* Please note: if you expand upon or rename any of these, you must adjust the Vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand).
 
+### Spacing Scale {#spacing-scale}
 
-## Shorthand Syntax
+EWDS uses a comprehensive and opinionated spacing scale divided into three categories:
 
-EWDS provides several shorthand notations for common Tailwind utility combinations. This is achieved through the use of a tailored vite plugin that 
-converts the EWDS shorthand notations into their corresponding tailwind classes. In so doing, the precompiled files are less class cluttered and as such more readable, approachable, and maintainable.
+#### Detail (d1 to d13)
 
-* Note that omitted values in the shorthand are replaced with an underscore '_'. 
+For fine adjustments and component construction (0.25rem - 3.5rem):
 
-### Breakpoint Shorthand
+| Class | Size (rem) | Size (px) |
+|-------|------------|-----------|
+| `d1`  | 0.25rem    | 4px       |
+| `d2`  | 0.5rem     | 8px       |
+| `d3`  | 0.75rem    | 12px      |
+| `d4`  | 1rem       | 16px      |
+| `d5`  | 1.25rem    | 20px      |
+| `d6`  | 1.5rem     | 24px      |
+| `d7`  | 1.75rem    | 28px      |
+| `d8`  | 2rem       | 32px      |
+| `d9`  | 2.25rem    | 36px      |
+| `d10` | 2.5rem     | 40px      |
+| `d11` | 2.75rem    | 44px      |
+| `d12` | 3rem       | 48px      |
+| `d13` | 3.5rem     | 56px      |
+
+#### Content (c1 to c13)
+
+For general page layout and larger component spacing (4rem - 20rem):
+
+| Class | Size (rem) | Size (px) |
+|-------|------------|-----------|
+| `c1`  | 4rem       | 64px      |
+| `c2`  | 4.5rem     | 72px      |
+| `c3`  | 5rem       | 80px      |
+| `c4`  | 5.5rem     | 88px      |
+| `c5`  | 6rem       | 96px      |
+| `c6`  | 7rem       | 112px     |
+| `c7`  | 7.5rem     | 120px     |
+| `c8`  | 8rem       | 128px     |
+| `c9`  | 9rem       | 144px     |
+| `c10` | 10rem      | 160px     |
+| `c11` | 12rem      | 192px     |
+| `c12` | 16rem      | 256px     |
+| `c13` | 20rem      | 320px     |
+
+#### Space (s1 to s13)
+
+For major page sections and full-page layouts (24rem - 120rem):
+
+| Class | Size (rem) | Size (px) |
+|-------|------------|-----------|
+| `s1`  | 24rem      | 384px     |
+| `s2`  | 28rem      | 448px     |
+| `s3`  | 32rem      | 512px     |
+| `s4`  | 36rem      | 576px     |
+| `s5`  | 40rem      | 640px     |
+| `s6`  | 48rem      | 768px     |
+| `s7`  | 56rem      | 896px     |
+| `s8`  | 60rem      | 960px     |
+| `s9`  | 64rem      | 1024px    |
+| `s10` | 72rem      | 1152px    |
+| `s11` | 80rem      | 1280px    |
+| `s12` | 90rem      | 1440px    |
+| `s13` | 120rem     | 1920px    |
+
+### Color Palette {#color-palette}
+
+EWDS defines by default a custom color palette:
+
+| Color    | Hex Code |
+|----------|----------|
+| `purple` | #9109E9  |
+| `grey`   | #EBEBEB  |
+| `white`  | #F7F5FB  |
+| `black`  | #0A141F  |
+| `error`  | #D81E5B  |
+| `warn`   | #FFD046  |
+
+### Typography {#typography}
+
+#### Font Sizes {#font-sizes}
+
+##### Fluid Typography {#fluid-typography}
+
+| Class        | Size                                            |
+|--------------|--------------------------------------------------|
+| `fluid-xs`   | clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)        |
+| `fluid-sm`   | clamp(0.875rem, 0.8rem + 0.375vw, 1rem)          |
+| `fluid-base` | clamp(1rem, 0.9rem + 0.5vw, 1.125rem)            |
+| `fluid-lg`   | clamp(1.125rem, 1rem + 0.625vw, 1.25rem)         |
+| `fluid-xl`   | clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)          |
+| `fluid-2xl`  | clamp(1.5rem, 1.3rem + 1vw, 1.875rem)            |
+| `fluid-3xl`  | clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem)       |
+| `fluid-4xl`  | clamp(2.25rem, 1.9rem + 1.75vw, 3rem)            |
+| `fluid-5xl`  | clamp(3rem, 2.5rem + 2.5vw, 4rem)                |
+
+##### Non-fluid Typography {#non-fluid-typography}
+
+| Class     | Size           | Size (px) |
+|-----------|----------------|-----------|
+| `tiny`    | 0.533rem       | 8.53px    |
+| `small`   | 0.711rem       | 11.38px   |
+| `base`    | 1rem           | 16px      |
+| `h6`      | 1.125rem       | 18px      |
+| `h5`      | 1.5rem         | 24px      |
+| `h4`      | 2.25rem        | 36px      |
+| `h3`      | 3.375rem       | 54px      |
+| `h2`      | 5.062rem       | 81px      |
+| `h1`      | 7.594rem       | 121.5px   |
+| `eyebrow` | 0.583rem       | 9.33px    |
+
+#### Line Heights {#line-heights}
+
+| Class            | Value |
+|------------------|-------|
+| `hug`            | 1     |
+| `tight`          | 1.2   |
+| `snug`           | 1.3   |
+| `normal`         | 1.4   |
+| `relaxed`        | 1.5   |
+| `loose`          | 1.6   |
+| `spacious`       | 1.7   |
+| `extra-spacious` | 1.8   |
+
+#### Letter Spacing {#letter-spacing}
+
+| Class         | Value    |
+|---------------|----------|
+| `extra-tight` | -0.02rem |
+| `tight`       | -0.01rem |
+| `normal`      | 0        |
+| `wide`        | 0.01rem  |
+| `wider`       | 0.02rem  |
+| `widest`      | 0.04rem  |
+
+#### Line Width (Measure) {#line-width-measure}
+
+| Class          | Value |
+|----------------|-------|
+| `extra-narrow` | 30ch  |
+| `narrow`       | 45ch  |
+| `medium`       | 60ch  |
+| `wide`         | 75ch  |
+| `extra-wide`   | 90ch  |
+
+#### Font Families {#font-families}
+
+| Class   | Font Stack                |
+|---------|---------------------------|
+| `sans`  | Sk-Modernist, sans-serif  |
+| `mono`  | Sk-Modernist-Mono, monospace |
+| `serif` | PlayfairDisplay, serif    |
+
+## Z-Index Scale {#z-index-scale}
+
+EWDS provides a custom z-index scale:
+
+| Class    | Value |
+|----------|-------|
+| `z-0`    | 0     |
+| `z-10`   | 10    |
+| `z-20`   | 20    |
+| `z-30`   | 30    |
+| `z-40`   | 40    |
+| `z-50`   | 50    |
+| `z-60`   | 60    |
+| `z-70`   | 70    |
+| `z-80`   | 80    |
+| `z-90`   | 90    |
+| `z-100`  | 100   |
+
+## Shorthand Syntax {#shorthand-syntax}
+
+### Breakpoint Shorthand {#breakpoint-shorthand}
 
 The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a more concise, mobile-first notation.
 
 ```
 class class class /breakpoint/ class class class /breakpoint/ class class class
-
 ```
 
 Example:
@@ -79,7 +258,7 @@ Example:
 </div>
 ```
 
-### Grid Shorthand
+### Grid Shorthand {#grid-shorthand}
 
 Format: `grid-[columns,rows,gap,justify,align,flow]`
 
@@ -87,7 +266,7 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 |-----------|--------|
 | columns   | 1-12, or Tailwind's grid-cols-* values |
 | rows      | 1-6, or Tailwind's grid-rows-* values |
-| gap       | [Spacing Scale](#spacing-scale)) |
+| gap       | [Spacing Scale](#spacing-scale) |
 | justify   | start, end, center, between, around, evenly |
 | align     | start, end, center, stretch, baseline |
 | flow      | row, col, row-dense, col-dense |
@@ -99,7 +278,7 @@ Example:
 </div>
 ```
 
-### Flex Container Shorthand
+### Flex Container Shorthand {#flex-container-shorthand}
 
 Format: `direction-[justify,align,wrap,content]`
 
@@ -118,7 +297,7 @@ Example:
 </div>
 ```
 
-### Flex Item Shorthand
+### Flex Item Shorthand {#flex-item-shorthand}
 
 Format: `item-[grow,basis,shrink,align]`
 
@@ -136,7 +315,7 @@ Example:
 </div>
 ```
 
-### Margin/Padding Shorthand
+### Margin/Padding Shorthand {#marginpadding-shorthand}
 
 Format: `margin-[l,r,t,b]` or `pad-[l,r,t,b]`
 
@@ -153,9 +332,9 @@ Example:
   <!-- Content with margin and padding -->
 </div>
 ```
-* margin to be replaced with mar in a near future revision.
+* Margin to be replaced with `mar` in a near future revision.
 
-### Text Shorthand - (elevate/design/typography.js)
+### Text Shorthand {#text-shorthand}
 
 Format: `text-[size,weight,family,height,align,spacing,color]`
 
@@ -176,7 +355,7 @@ Example:
 </p>
 ```
 
-### Border Shorthand
+### Border Shorthand {#border-shorthand}
 
 Format: `border-[direction,width,style,color]`
 
@@ -194,14 +373,14 @@ Example:
 </div>
 ```
 
-### Span Shorthand
+### Span Shorthand {#span-shorthand}
 
 Format: `span-[columns,rows]`
 
 | Slot    | Values |
 |---------|--------|
-| columns | 1-12 |
-| rows    | 1-6 |
+| columns | 1-12   |
+| rows    | 1-6    |
 
 Example:
 ```html
@@ -210,231 +389,9 @@ Example:
 </div>
 ```
 
-## Spacing Scale - (elevate/design/spacing.js)
+## Utility Extensions {#utility-extensions}
 
-EWDS uses a comprehensive and opinionated spacing scale divided into three categories:
-
-### Detail (d1 to d13)
-
-For fine adjustments and component construction (0.25rem - 3.5rem):
-
-| Class | Size (rem) | Size (px) |
-|-------|------------|-----------|
-| `d1`  | 0.25rem    | 4px       |
-| `d2`  | 0.5rem     | 8px       |
-| `d3`  | 0.75rem    | 12px      |
-| `d4`  | 1rem       | 16px      |
-| `d5`  | 1.25rem    | 20px      |
-| `d6`  | 1.5rem     | 24px      |
-| `d7`  | 1.75rem    | 28px      |
-| `d8`  | 2rem       | 32px      |
-| `d9`  | 2.25rem    | 36px      |
-| `d10` | 2.5rem     | 40px      |
-| `d11` | 2.75rem    | 44px      |
-| `d12` | 3rem       | 48px      |
-| `d13` | 3.5rem     | 56px      |
-
-### Content (c1 to c13)
-
-For general page layout and larger component spacing (4rem - 20rem):
-
-| Class | Size (rem) | Size (px) |
-|-------|------------|-----------|
-| `c1`  | 4rem       | 64px      |
-| `c2`  | 4.5rem     | 72px      |
-| `c3`  | 5rem       | 80px      |
-| `c4`  | 5.5rem     | 88px      |
-| `c5`  | 6rem       | 96px      |
-| `c6`  | 7rem       | 112px     |
-| `c7`  | 7.5rem     | 120px     |
-| `c8`  | 8rem       | 128px     |
-| `c9`  | 9rem       | 144px     |
-| `c10` | 10rem      | 160px     |
-| `c11` | 12rem      | 192px     |
-| `c12` | 16rem      | 256px     |
-| `c13` | 20rem      | 320px     |
-
-### Space (s1 to s13)
-
-For major page sections and full-page layouts (24rem - 120rem):
-
-| Class | Size (rem) | Size (px) |
-|-------|------------|-----------|
-| `s1`  | 24rem      | 384px     |
-| `s2`  | 28rem      | 448px     |
-| `s3`  | 32rem      | 512px     |
-| `s4`  | 36rem      | 576px     |
-| `s5`  | 40rem      | 640px     |
-| `s6`  | 48rem      | 768px     |
-| `s7`  | 56rem      | 896px     |
-| `s8`  | 60rem      | 960px     |
-| `s9`  | 64rem      | 1024px    |
-| `s10` | 72rem      | 1152px    |
-| `s11` | 80rem      | 1280px    |
-| `s12` | 90rem      | 1440px    |
-| `s13` | 120rem     | 1920px    |
-
-Example usage:
-```html
-<div class="m-d4 p-d8">
-  <!-- Element with 1rem margin and 2rem padding -->
-</div>
-<section class="my-c6 px-c3">
-  <!-- Section with 7rem vertical margin and 5rem horizontal padding -->
-</section>
-<div class="w-s6 h-s4">
-  <!-- Element with 48rem width and 36rem height -->
-</div>
-```
-
-## Color Palette - (elevate/design/colors.js)
-
-EWDS defines by default a custom color palette:
-
-| Color    | Hex Code |
-|----------|----------|
-| `purple` | #9109E9  |
-| `grey`   | #EBEBEB  |
-| `white`  | #F7F5FB  |
-| `black`  | #0A141F  |
-| `error`  | #D81E5B  |
-| `warn`   | #FFD046  |
-
-Example usage:
-```html
-<div class="bg-purple text-white">
-  <!-- Purple background with white text -->
-</div>
-<span class="text-error">
-  <!-- Error text -->
-</span>
-```
-
-## Typography - (elevate/design/typography.js)
-
-### Font Sizes
-
-EWDS provides by default both fluid and non-fluid typography scales:
-
-#### Fluid Typography 
-
-| Class        | Size                                            |
-|--------------|--------------------------------------------------|
-| `fluid-xs`   | clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)        |
-| `fluid-sm`   | clamp(0.875rem, 0.8rem + 0.375vw, 1rem)          |
-| `fluid-base` | clamp(1rem, 0.9rem + 0.5vw, 1.125rem)            |
-| `fluid-lg`   | clamp(1.125rem, 1rem + 0.625vw, 1.25rem)         |
-| `fluid-xl`   | clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)          |
-| `fluid-2xl`  | clamp(1.5rem, 1.3rem + 1vw, 1.875rem)            |
-| `fluid-3xl`  | clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem)       |
-| `fluid-4xl`  | clamp(2.25rem, 1.9rem + 1.75vw, 3rem)            |
-| `fluid-5xl`  | clamp(3rem, 2.5rem + 2.5vw, 4rem)                |
-
-* to be expanded upon and potentially made into a more robust utility class in future.
-
-#### Non-fluid Typography
-
-| Class     | Size           | Size (px) |
-|-----------|----------------|-----------|
-| `tiny`    | 0.533rem       | 8.53px    |
-| `small`   | 0.711rem       | 11.38px   |
-| `base`    | 1rem           | 16px      |
-| `h6`      | 1.125rem       | 18px      |
-| `h5`      | 1.5rem         | 24px      |
-| `h4`      | 2.25rem        | 36px      |
-| `h3`      | 3.375rem       | 54px      |
-| `h2`      | 5.062rem       | 81px      |
-| `h1`      | 7.594rem       | 121.5px   |
-| `eyebrow` | 0.583rem       | 9.33px    |
-
-### Line Heights
-
-| Class            | Value |
-|------------------|-------|
-| `hug`            | 1     |
-| `tight`          | 1.2   |
-| `snug`           | 1.3   |
-| `normal`         | 1.4   |
-| `relaxed`        | 1.5   |
-| `loose`          | 1.6   |
-| `spacious`       | 1.7   |
-| `extra-spacious` | 1.8   |
-
-Example usage:
-```html
-<p class="leading-normal">Normal line height</p>
-<div class="leading-loose">Loose line height</div>
-```
-
-### Letter Spacing
-
-| Class         | Value    |
-|---------------|----------|
-| `extra-tight` | -0.02rem |
-| `tight`       | -0.01rem |
-| `normal`      | 0        |
-| `wide`        | 0.01rem  |
-| `wider`       | 0.02rem  |
-| `widest`      | 0.04rem  |
-
-Example usage:
-```html
-<h2 class="tracking-tight">Tight letter spacing</h2>
-<p class="tracking-wide">Wide letter spacing</p>
-```
-
-### Line Width (Measure)
-
-| Class          | Value |
-|----------------|-------|
-| `extra-narrow` | 30ch  |
-| `narrow`       | 45ch  |
-| `medium`       | 60ch  |
-| `wide`         | 75ch  |
-| `extra-wide`   | 90ch  |
-
-Example usage:
-```html
-<p class="max-w-medium">
-  This paragraph has a maximum width of 60 characters for optimal readability.
-</p>
-```
-
-### Font Families
-
-| Class   | Font Stack                |
-|---------|---------------------------|
-| `sans`  | Sk-Modernist, sans-serif  |
-| `mono`  | Sk-Modernist-Mono, monospace |
-| `serif` | PlayfairDisplay, serif    |
-
-## Z-Index Scale - (elevate/design/utilities.js)
-
-EWDS provides a custom z-index scale:
-
-| Class    | Value |
-|----------|-------|
-| `z-0`    | 0     |
-| `z-10`   | 10    |
-| `z-20`   | 20    |
-| `z-30`   | 30    |
-| `z-40`   | 40    |
-| `z-50`   | 50    |
-| `z-60`   | 60    |
-| `z-70`   | 70    |
-| `z-80`   | 80    |
-| `z-90`   | 90    |
-| `z-100`  | 100   |
-
-Example usage:
-```html
-<div class="z-10">Slightly elevated element</div>
-<div class="z-50">Modal overlay</div>
-```
-
-## Utility Extensions - (elevate/design/utilities.js)
-
-### Baseline Grid Plugin
+### Baseline Grid Plugin {#baseline-grid-plugin}
 
 Adds a utility for displaying a baseline grid overlay:
 
@@ -444,3 +401,8 @@ Adds a utility for displaying a baseline grid overlay:
   backgroundSize: '100% 0.25rem',
 }
 ```
+
+## Custom Plugins {#custom-plugins}
+
+WIP
+
