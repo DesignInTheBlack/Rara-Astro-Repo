@@ -14,29 +14,26 @@
 10. [Utility Extensions](#utility-extensions)
 11. [Custom Plugins](#custom-plugins)
 
+
+
 ## Introduction
 
-The Elevate Web Design System (EWDS) is a design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your preferred fonts, colors, etc,
+The Elevate Web Design System (EWDS) is an opinionated design system implemented via Tailwind CSS and Astro JS that provides a consistent and efficient way to build attractive and proportional websites. It includes predefined settings for colors, typography, spacing, breakpoints, and custom shorthand formats for rapid development as well as a series of easily modifiable configuration files for implementing your preferred fonts, colors, etc. Please note that this
+system is a work in progress and as such, is subject to regular changes, revisions, and improvements. 
+
+## Usage
+
+The primary folders of concern are: 
+
+`elevate` - (for configuring the EWDS design system)
+
+`public` - (for files you don't want Astro JS to process, such as specific images or fonts)
+
+`templates` - (for your Astro JS components, pages, and layouts)
 
 ## Core Layout Philosophy
 
-EWDS provides three key classes for structuring and spacing content:
-
-1. `.space`: Used to create distinct sections within a page. It establishes vertical rhythm and visual separation between major content areas.
-
-2. `.content`: Wraps the main content within a section. It applies a maximum width to the content area and centers it horizontally within its parent container.
-
-3. `.buffer`: Adds padding to the left and right of an element, creating a consistent gutter between the content and the edges of its container.
-
-Example usage:
-
-```html
-<section class="space">
-  <div class="content buffer">
-    <!-- Main content with padding -->
-  </div>
-</section>
-```
+WIP
 
 ## Breakpoint System - (elevate/design/breakpoints.js)
 
@@ -55,24 +52,32 @@ EWDS defines ten custom breakpoints:
 | `4xl`      | 160rem     | 2560px    | 2K             |
 | `5xl`      | 240rem     | 3840px    | 4K             |
 
-### Breakpoint Shorthand Syntax
+* please note: if you expand upon or rename any of these, you must adjust the vite plugin accordingly (plugins/vite/vite-plugin-tailwind-shorthand)
 
-The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a concise notation:
+
+## Shorthand Syntax
+
+EWDS provides several shorthand notations for common Tailwind utility combinations. This is achieved through the use of a tailored vite plugin that 
+converts the EWDS shorthand notations into their corresponding tailwind classes. In so doing, the precompiled files are less class cluttered and as such more readable, approachable, and maintainable.
+
+* Note that omitted values in the shorthand are replaced with an underscore '_'. 
+
+### Breakpoint Shorthand
+
+The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a more concise, mobile-first notation.
 
 ```
 class class class /breakpoint/ class class class /breakpoint/ class class class
+
 ```
 
 Example:
+
 ```html
 <div class="text-[fluid-base,bold,_,_,_,_,purple] /sm/ text-[fluid-lg,_,_,_,center,_,_] /lg/ text-[fluid-xl,_,_,_,_,_,_]">
   <!-- Content -->
 </div>
 ```
-
-## Shorthand Syntax
-
-EWDS provides several shorthand notations for common Tailwind utility combinations:
 
 ### Grid Shorthand
 
@@ -82,7 +87,7 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 |-----------|--------|
 | columns   | 1-12, or Tailwind's grid-cols-* values |
 | rows      | 1-6, or Tailwind's grid-rows-* values |
-| gap       | d1-d13, c1-c13, s1-s13 (see [Spacing Scale](#spacing-scale)) |
+| gap       | [Spacing Scale](#spacing-scale)) |
 | justify   | start, end, center, between, around, evenly |
 | align     | start, end, center, stretch, baseline |
 | flow      | row, col, row-dense, col-dense |
@@ -108,7 +113,7 @@ Format: `direction-[justify,align,wrap,content]`
 
 Example:
 ```html
-<div class="row-[between,center,wrap,_]">
+<div class="rowr-[between,center,wrap,_]">
   <!-- Flex container content -->
 </div>
 ```
@@ -148,6 +153,7 @@ Example:
   <!-- Content with margin and padding -->
 </div>
 ```
+* margin to be replaced with mar in a near future revision.
 
 ### Text Shorthand - (elevate/design/typography.js)
 
@@ -206,7 +212,7 @@ Example:
 
 ## Spacing Scale - (elevate/design/spacing.js)
 
-EWDS uses a comprehensive spacing scale divided into three categories:
+EWDS uses a comprehensive and opinionated spacing scale divided into three categories:
 
 ### Detail (d1 to d13)
 
@@ -283,7 +289,7 @@ Example usage:
 
 ## Color Palette - (elevate/design/colors.js)
 
-EWDS defines a custom color palette:
+EWDS defines by default a custom color palette:
 
 | Color    | Hex Code |
 |----------|----------|
@@ -308,7 +314,7 @@ Example usage:
 
 ### Font Sizes
 
-EWDS provides both fluid and non-fluid typography scales:
+EWDS provides by default both fluid and non-fluid typography scales:
 
 #### Fluid Typography 
 
@@ -323,6 +329,8 @@ EWDS provides both fluid and non-fluid typography scales:
 | `fluid-3xl`  | clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem)       |
 | `fluid-4xl`  | clamp(2.25rem, 1.9rem + 1.75vw, 3rem)            |
 | `fluid-5xl`  | clamp(3rem, 2.5rem + 2.5vw, 4rem)                |
+
+* to be expanded upon and potentially made into a more robust utility class in future.
 
 #### Non-fluid Typography
 
@@ -422,32 +430,6 @@ Example usage:
 ```html
 <div class="z-10">Slightly elevated element</div>
 <div class="z-50">Modal overlay</div>
-```
-
-## Container Sizes - (elevate/design/breakpoints.js)
-
-EWDS defines custom container sizes for different breakpoints:
-
-| Breakpoint | Size (rem) | Size (px) | Description    |
-|------------|------------|-----------|----------------|
-| `2xs`      | 18rem      | 288px     | Very Small Mobile |
-| `xs`       | 28rem      | 448px     | Small Mobile   |
-| `sm`       | 38rem      | 608px     | Large Mobile   |
-| `md`       | 45rem      | 720px     | Tablet         |
-| `lg`       | 60rem      | 960px     | Small Desktop  |
-| `xl`       | 75rem      | 1200px    | Medium Desktop |
-| `2xl`      | 90rem      | 1440px    | Large Desktop  |
-| `3xl`      | 114rem     | 1824px    | Full HD        |
-| `4xl`      | 152rem     | 2432px    | 2K             |
-| `5xl`      | 228rem     | 3648px    | 4K             |
-
-The container is automatically centered. 
-
-Example usage:
-```html
-<div class="container mx-auto">
-  <!-- Centered container with responsive width -->
-</div>
 ```
 
 ## Utility Extensions - (elevate/design/utilities.js)
