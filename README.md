@@ -148,6 +148,7 @@ EWDS defines by default a custom color palette:
 | `error`  | #D81E5B  |
 | `warn`   | #FFD046  |
 
+
 ```html
 <p class="text-white bg-purple">
   <!-- Content -->
@@ -172,6 +173,7 @@ EWDS defines by default a custom color palette:
 | `fluid-4xl`  | clamp(2.25rem, 1.9rem + 1.75vw, 3rem)            |
 | `fluid-5xl`  | clamp(3rem, 2.5rem + 2.5vw, 4rem)                |
 
+
 ```html
 <div class="text-fluid-base">
   <!-- Content -->
@@ -193,6 +195,7 @@ EWDS defines by default a custom color palette:
 | `h1`      | 7.594rem       | 121.5px   |
 | `eyebrow` | 0.583rem       | 9.33px    |
 
+
 ```html
 <div class="text-h4">
   <!-- Content -->
@@ -212,6 +215,7 @@ EWDS defines by default a custom color palette:
 | `spacious`       | 1.7   |
 | `extra-spacious` | 1.8   |
 
+
 ```html
 <p class="leading-tight">
   <!-- Content -->
@@ -229,6 +233,7 @@ EWDS defines by default a custom color palette:
 | `wider`       | 0.02rem  |
 | `widest`      | 0.04rem  |
 
+
 ```html
 <p class="tracking-wide">
   <!-- Content -->
@@ -245,6 +250,7 @@ EWDS defines by default a custom color palette:
 | `wide`         | 75ch  |
 | `extra-wide`   | 90ch  |
 
+
 ```html
 <p class="max-w-medium">
   <!-- Content -->
@@ -258,6 +264,7 @@ EWDS defines by default a custom color palette:
 | `sans`  | Sk-Modernist, sans-serif  |
 | `mono`  | Sk-Modernist-Mono, monospace |
 | `serif` | PlayfairDisplay, serif    |
+
 
 ```html
 <div class="font-sans">
@@ -283,6 +290,7 @@ EWDS provides a custom z-index scale:
 | `z-90`   | 90    |
 | `z-100`  | 100   |
 
+
 ```html
 <div class="z-100">
   <!-- Content -->
@@ -299,11 +307,13 @@ EWDS shorthands generally support partial inputs, allowing you to specify only t
 
 The breakpoint shorthand syntax allows you to specify different classes for different breakpoints using a more concise, mobile-first notation.
 
+
 ```
 class class class /breakpoint/ class class class /breakpoint/ class class class
 ```
 
 Example:
+
 
 ```html
 <div class="text-[fluid-base,bold,_,_,_,_,purple] /sm/ text-[fluid-lg,_,_,_,center,_,_] /lg/ text-[fluid-xl,_,_,_,_,_,_]">
@@ -331,6 +341,7 @@ Format: `grid-[columns,rows,gap,justify,align,flow]`
 
 You can specify just the first few values, omitting the rest:
 
+
 ```html
 <div class="grid-[3,2]">
   <!-- Grid with 3 columns and 2 rows -->
@@ -344,6 +355,7 @@ You can specify just the first few values, omitting the rest:
 ```
 
 You can also skip values using underscores:
+
 
 ```html
 <div class="grid-[3,_,d4,center]">
@@ -368,6 +380,7 @@ Format: `direction-[justify,align,wrap,content]`
 | content   | start, end, center, between, around, evenly |
 
 You can omit any value by using an underscore (_) or by not including it. The shorthand is flexible and allows for various combinations:
+
 
 1. Using all values:
 ```html
@@ -422,6 +435,7 @@ Format: `item-[grow,basis,shrink,align]`
 | align  | auto, start, end, center, stretch, baseline |
 
 You can omit any value by using an underscore (_) or by not including it. For example:
+
 
 ```html
 <div class="item-[1,c5,0,_]">
