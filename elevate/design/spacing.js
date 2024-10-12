@@ -4,9 +4,9 @@ module.exports = {
 
   // Buffer padding references
   bufferPadding: {
-    '2xs': 'd7',
-    'xs': 'd7',
-    'sm': 'd7',
+    '2xs': 'd6',
+    'xs': 'd6',
+    'sm': 'd6',
     'md': 'd8',
     'lg': 'd8',
     'xl': 'd8',

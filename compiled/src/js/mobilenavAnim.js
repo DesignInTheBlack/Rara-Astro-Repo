@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
   
       const tl2 = gsap.timeline({
         onComplete: function() {

@@ -24,11 +24,6 @@ function raf(time) {
 // Start the animation
 requestAnimationFrame(raf)
 
-// // Smooth scroll to top when page loads
-// window.addEventListener('load', () => {
-//   window.scrollTo(0, 0)
-// })
-
 // Add a scroll progress indicator
 const progressBar = document.createElement('div')
 progressBar.style.position = 'fixed'
@@ -71,10 +66,6 @@ function startScroll(event) {
 
 document.addEventListener('mouseleave', startScroll, true)
 
-// Method to programmatically scroll to elements
-window.scrollTo = (target) => {
-  lenis.scrollTo(target)
-}
 
 // Pause Lenis when browser window is resized
 let resizeTimer
