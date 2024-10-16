@@ -12,14 +12,7 @@ import Footer from "../components/Footer.astro"
       Elevate Your Expectations
     </title>
   </head>
-  <body class="antialiased bg-white">
-    <style>
-        html {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
-    </style>
+  <body class="antialiased bg-white opacity-0">
 <Navigation>
 </Navigation>
 <slot/>
@@ -27,6 +20,7 @@ import Footer from "../components/Footer.astro"
 </Footer>
 
 <script src="../js/scroll.js"></script>
+<script src = "../js/pageLoad.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" is:raw></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" is:raw></script>
 
