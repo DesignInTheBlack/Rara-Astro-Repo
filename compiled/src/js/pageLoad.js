@@ -14,14 +14,20 @@ window.onload = () => {
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a');
   if (link && link.href && link.origin === window.location.origin) {
-    e.preventDefault();
-    gsap.to('body', {
-      opacity: 0,
-      duration: 0.4,
-      ease: 'power1.out',
-      onComplete: () => {
-        window.location.href = link.href;
-      }
-    });
+    const currentPath = window.location.pathname;
+    const newPath = new URL(link.href).pathname;
+
+    // Only trigger fade if the path is changing
+    if (currentPath !== newPath) {
+      e.preventDefault();
+      gsap.to('body', {
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power1.out',
+        onComplete: () => {
+          window.location.href = link.href;
+        }
+      });
+    }
   }
 });
