@@ -31,7 +31,7 @@ progressBar.style.top = '0'
 progressBar.style.left = '0'
 progressBar.style.width = '0%'
 progressBar.style.height = '4px'
-progressBar.style.backgroundColor = '#FFD046'
+progressBar.style.backgroundColor = '#BD62F9'
 progressBar.style.transition = 'width 0.2s ease'
 progressBar.style.zIndex = '9999'
 document.body.appendChild(progressBar)
