@@ -53,13 +53,27 @@ module.exports = {
 
       // Utility extensions
       ...utilities.extend,
+
+      // Custom gradient
+      backgroundImage: {
+        'rara': `linear-gradient(
+          135deg,
+          hsla(260, 86%, 53%, 1) 30%,
+          hsla(271, 100%, 43%, 1) 65%
+        )`,
+        'rara-pattern': `linear-gradient(
+          135deg,
+          hsla(260, 86%, 53%, 1) 30%,
+          hsla(271, 100%, 43%, 1) 65%
+        ), url("https://www.transparenttextures.com/patterns/brilliant.png")`,
+      },
     },
   },
 
   // ====================================================================================
   // Plugin Configuration
   // ====================================================================================
-  plugins:plugins,
+  plugins: plugins,
 
   // ====================================================================================
   // Core Plugins Configuration

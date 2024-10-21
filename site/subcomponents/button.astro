@@ -1,1 +1,22 @@
-<p class = "bg-purple"></p>
+---
+interface Props {
+  title: string;
+  id: string;
+  link: string;
+  bgClass: string;
+  textClass: string;
+  mobile: boolean;
+  arrow: boolean;
+}
+
+const { ...props } = Astro.props;
+---
+
+<a
+  href={props.link}
+  id={props.id}
+  class={`${props.bgClass} ${props.textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${!props.mobile ? 'hidden sm:flex' : 'flex'}`}
+>
+  {props.title}
+  {props.arrow && <img class="ml-d3 h-d7 w-auto" src="/images/arrowright.svg">}
+</a>

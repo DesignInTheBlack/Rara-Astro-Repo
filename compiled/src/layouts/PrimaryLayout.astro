@@ -1,17 +1,19 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro"
+import Navigation from "../components/Layout/Navigation.astro";
+import Footer from "../components/Layout/Footer.astro"
+import Button from "../subcomponents/Button.astro";
+import { Head } from 'astro-capo'
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
       Elevate Your Expectations
     </title>
-  </head>
+  </Head>
   <body class="antialiased bg-white opacity-0">
 <Navigation>
 </Navigation>
