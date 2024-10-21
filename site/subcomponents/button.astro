@@ -12,7 +12,7 @@ interface Props {
 const { ...props } = Astro.props;
 ---
 
-
+<a
   href={props.link}
   id={props.id}
   class={`${props.bgClass} ${props.textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${!props.mobile ? 'hidden sm:flex' : 'flex'}`}
