@@ -1,0 +1,43 @@
+---
+import SmartBadge from "../../subcomponents/SmartBadge.astro";
+---
+<div class="buffer w-full my-c3 buffer grid grid-cols-1 grid-rows-1 gap-d6 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:gap-d6">
+
+  <div class="col-span-1 row-span-2 space-y-d6 flex flex-col justify-center items-center h-full"> <!-- Add h-full if not already present -->
+    <div class="flex flex-col w-full flex-1"> <!-- flex-1 ensures equal growth -->
+      <div class="relative h-s1 lg:flex-grow lg:h-0"> <!-- h-0 with flex-grow for even distribution -->
+        <img src="/images/carneyscene.png" alt="Carney Promo" class="w-full h-full object-cover object-center rounded-md">
+        <SmartBadge rebrand={1} logo={1}></SmartBadge>
+      </div>
+      <h4 class="slip text-black text-base mt-d6">Logo & Promotional</h4>
+      <h4 class="slip2 text-darkgrey text-base">Carney Bookkeeping</h4>
+    </div>
+    
+    <div class="flex flex-col w-full flex-1"> <!-- flex-1 ensures equal growth -->
+      <div class="relative h-s1 lg:flex-grow lg:h-0"> <!-- h-0 with flex-grow for even distribution -->
+        <img src="/images/bentonsscene.png" alt="Benton's Promo" class="w-full h-full object-cover object-center rounded-md">
+        <SmartBadge rebrand={1} ui={1} promo={1}></SmartBadge>
+      </div>
+      <h4 class="slip text-black text-base mt-d6">Redesigned Website & Social Media</h4>
+      <h4 class="slip2 text-darkgrey text-base">Benton's Inc</h4>
+    </div>
+  </div>
+
+
+  <div class="col-span-1 row-span-1 lg:col-span-2 lg:row-span-2">
+    
+    <div class="h-full flex flex-col">
+      <div class="relative h-s1 w-full lg:h-s9 lg:bg-purple lg:rounded-md lg:overflow-hidden">
+        <img src="/images/enszscene.png" alt="Ensz Promo" class="w-full h-full object-cover object-center rounded-md">
+        <SmartBadge rebrand={1} promo={1} logo={1}></SmartBadge>
+      </div>
+      <h4 class="slip text-black text-base mt-d6">Logo & Brand Guidelines</h4>
+      <h4 class="slip2 text-darkgrey text-base">Ensz & Sons</h4>
+    </div>
+
+  </div>
+  
+
+
+</div>
+

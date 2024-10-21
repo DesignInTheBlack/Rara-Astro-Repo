@@ -1,0 +1,166 @@
+---
+import SmartButton from "../../subcomponents/SmartButton.astro";
+---
+
+<style>
+  /* Fixed Header Container */
+  #headerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    pointer-events: none; /* Allow interactions only on child elements */
+  }
+
+  /* Quote Bar Styles */
+  #quoteBar {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 1); /* Fully opaque */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 1001; /* Above the navbar */
+    pointer-events: auto; /* Enable interactions if any */
+    transition: none; /* Managed by GSAP */
+  }
+
+  /* Navigation Bar Styles */
+  #mainNav {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background-color:#6320EE; /* Fully opaque on page load */
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1000; /* Below the quote bar */
+    pointer-events: auto; /* Enable interactions */
+    transition: none; /* Managed by GSAP */
+    opacity: 1; /* Ensure full opacity on page load */
+    transform: scale(1); /* Ensure original scale on page load */
+  }
+
+  /* Centered navigation links when nav is adjusted */
+  #mainNav.nav-centered {
+    justify-content: center; /* Center the navigation links */
+  }
+
+  /* Navigation Menu Centering */
+  #navMenu {
+    justify-content: center;
+    margin-left:110px;
+    align-items: center;
+    flex: 1; /* Allow navMenu to take available space */
+  }
+
+  /* Logo and Contact Button Styles */
+  #logo,
+  #contactButton {
+    overflow: hidden;
+    white-space: nowrap;
+    transform-origin: center;
+    /* Ensure scaling happens from the center */
+    opacity: 1; /* Full opacity on page load */
+    transform: scale(1); /* Original scale on page load */
+  }
+
+  /* Transition optimizations */
+  #headerContainer,
+  #quoteBar,
+  #mainNav,
+  #navMenu,
+  #logo,
+  #contactButton {
+    will-change: transform, opacity, width, padding, border-radius, background-color, margin;
+  }
+
+  /* Add top padding to main content to prevent overlap with fixed header */
+  body {
+    padding-top: 120px; /* Adjust based on headerContainer's total height */
+  }
+
+</style>
+
+<!-- Fixed Header Container -->
+<div id="headerContainer">
+  <!-- Quote Bar -->
+  <div id="quoteBar" class="bg-black py-d2 flex flex-row justify-center items-center">
+    <p class="text-white">"Simplicity is the Ultimate Sophistication"</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav id="mainNav" class="bg-rara flex flex-row justify-between items-center !buffer shadow-lg">
+    <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
+    <div id="navMenu" class="hidden sm:flex">
+      <ul class="list-none space-x-d4">
+        <li class="inline-block text-white text-base font-sans"><a href = "/">Home</a></li>
+        <li class="inline-block text-white text-base font-sans"><a href = "/about">About</a></li>
+        <li class="inline-block text-white text-base font-sans"><a href = "/works">Works</a></li>
+      </ul>
+    </div>
+    <SmartButton title="Contact Us" id="contactButton" link="#footer" bgClass="bg-white" textClass="text-black" mobile={false} arrow={true}/>
+    <div id = "mobileButton" class="overflow-hidden flex flex-col justify-center items-center">
+      <img class="h-d7 w-d8 sm:hidden" src="/images/menu.svg" alt="Logo" />
+    </div>
+  </nav>
+</div>
+
+<div id = "mobileNavigation" class="hidden top-0 left-0 w-full h-full bg-rara z-[1000] pt-c3">
+  <nav class="flex flex-row justify-between items-center !buffer">
+    <a href = "/"><img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" /></a>
+    <div id = "closeButton" class="overflow-hidden flex flex-col justify-center items-center">
+      <img class="h-d7 w-d8" src="/images/close.svg" alt="Logo" />
+    </div>
+  </nav>
+  <ul class="buffer mx-auto list-none space-y-d6 mt-c5">
+    <li class="text-white font-sans"><a href = "/">
+      <p class="text-h5 mb-d2">Home</p>
+      <p class="text-base opacity-75">We Believe In Good First Impressions</p>
+    </a></li>
+
+<hr class="border-t border-black border-opacity-15">
+
+    <li class="text-white font-sans"><a href = "/about">
+      <p class="text-h5 mb-d2">About</p>
+      <p class="text-base opacity-75">Learn More About Rara Avis</p>
+    </a></li>
+
+<hr class="border-t border-black border-opacity-15">
+
+    <li class="text-white font-sans"><a href = "/works">
+      <p class="text-h5 mb-d2">Works</p>
+      <p class="text-base opacity-75">View The Work We're Most Proud Of</p>
+    </a></li>
+  </ul>
+
+<div class="flex flex-row justify-start items-center space-x-d3 buffer mt-c6">
+    <a href = "https://www.facebook.com/profile.php?id=61566898301393"><img class="h-d8 w-auto" src="/images/facebook.svg"></a>
+    <a href = "https://www.linkedin.com/company/raraavisdesign"><img class="h-d8 w-auto" src="/images/linkedin.svg"></a>
+</div>
+
+
+</div>
+
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script src="../../js/navAnim.js"></script>
+<script src="../../js/mobilenavAnim.js"></script>
+<script src="../../js/fadeinAnim.js"></script>
+<script src="../../js/typeAnim.js"></script>
