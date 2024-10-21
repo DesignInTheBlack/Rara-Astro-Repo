@@ -18,9 +18,6 @@ export default defineConfig({
         include: ['**/*.astro', '**/*.html','**/*.js'],
       }),
     ],
-    logLevel: 'error', // Add this line to reduce Vite logging
   },
-  server: {
-    logLevel: 'error', // Add this line to reduce Astro server logging
-  },
+
 });
