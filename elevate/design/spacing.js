@@ -11,9 +11,9 @@ module.exports = {
     'lg': 'd8',
     'xl': 'd8',
     '2xl': 'd8',
-    '3xl': 'c10',
-    '4xl': 'c10',
-    '5xl': 'c10',
+    '3xl': 'c12',
+    '4xl': 'c12',
+    '5xl': 'c12',
   },
 
   spacing: {

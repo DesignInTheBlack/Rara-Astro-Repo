@@ -2,17 +2,18 @@
 import SmartBadge from "../../subcomponents/SmartBadge.astro";
 ---
 
-<div class="buffer w-full my-c3 buffer grid grid-cols-1 grid-rows-1 gap-d6 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:gap-d6">
+<div class="buffer w-full my-d12 buffer grid grid-cols-1 grid-rows-1 gap-d6 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:gap-d6">
 
   <div class="col-span-1 row-span-1 lg:col-span-2 lg:row-span-2">
     
     <div class="h-full flex flex-col">
-      <div class="relative h-s1 w-full lg:h-s9 lg:bg-purple lg:rounded-md lg:overflow-hidden">
-        <img src="/images/bentonpromo.png" alt="Benton Promo" class="w-full h-full object-cover object-center rounded-md">
+      <div class="relative h-s1 w-full rounded-[24px] lg:h-s7 lg:overflow-hidden">
+        <img src="/images/bentonpromo.png" alt="Benton Promo" class="w-full h-full object-cover object-center rounded-[24px]" style="clip-path: polygon( 0% 0%,0% 85.06%,0% 85.06%,0.065% 85.861%,0.252% 86.621%,0.551% 87.33%,0.953% 87.977%,1.447% 88.553%,2.023% 89.047%,2.67% 89.449%,3.379% 89.748%,4.139% 89.935%,4.94% 90%,45.166% 90%,45.166% 90%,45.95% 90.063%,46.694% 90.246%,47.388% 90.54%,48.021% 90.933%,48.584% 91.416%,49.067% 91.979%,49.46% 92.612%,49.754% 93.306%,49.937% 94.05%,50% 94.834%,50% 95.189%,50% 95.189%,50.063% 95.969%,50.245% 96.709%,50.537% 97.4%,50.928% 98.03%,51.409% 98.591%,51.97% 99.072%,52.6% 99.463%,53.291% 99.755%,54.031% 99.937%,54.811% 100%,100% 100%,100% 100%,111.627% 97.2%,118.373% 89.6%,121.1% 78.4%,120.669% 64.8%,117.942% 50%,113.78% 35.2%,109.043% 21.6%,104.593% 10.4%,101.292% 2.8%,100% 0%,0% 0% );'">
         <SmartBadge promo={1}></SmartBadge>
+        <h4 class="absolute bottom-0 left-d2 text-darkgrey text-base mt-d6">Benton's Inc</h4>
+        <h4 class="absolute bottom-d3 right-d6 text-white text-base">Concept Van</h4>
       </div>
-      <h4 class="text-black text-base mt-d6">Concept Van Design</h4>
-      <h4 class="text-darkgrey text-base">Benton's Inc</h4>
+     
     </div>
 
   </div>
@@ -20,20 +21,21 @@ import SmartBadge from "../../subcomponents/SmartBadge.astro";
   <div class="col-span-1 row-span-2 space-y-d6 flex flex-col justify-center items-center h-full"> <!-- Added col-[center,center] and h-full -->
     <div class="flex flex-col w-full flex-1"> <!-- Added flex-1 -->
       <div class="relative h-s1 lg:flex-grow lg:h-0"> <!-- Replaced h-s2 and /lg/ h-full with flex-grow h-0 -->
-        <img src="/images/pouredpromo.png" alt="Poured Promo" class="w-full h-full object-cover object-center rounded-md">
+        <img src="/images/pouredpromo.png" alt="Poured Promo" class="w-full h-full object-cover object-center rounded-[24px]"   style="clip-path: polygon( 0% 0%,0% 85.06%,0% 85.06%,0.065% 85.861%,0.252% 86.621%,0.551% 87.33%,0.953% 87.977%,1.447% 88.553%,2.023% 89.047%,2.67% 89.449%,3.379% 89.748%,4.139% 89.935%,4.94% 90%,45.166% 90%,45.166% 90%,45.95% 90.063%,46.694% 90.246%,47.388% 90.54%,48.021% 90.933%,48.584% 91.416%,49.067% 91.979%,49.46% 92.612%,49.754% 93.306%,49.937% 94.05%,50% 94.834%,50% 95.189%,50% 95.189%,50.063% 95.969%,50.245% 96.709%,50.537% 97.4%,50.928% 98.03%,51.409% 98.591%,51.97% 99.072%,52.6% 99.463%,53.291% 99.755%,54.031% 99.937%,54.811% 100%,100% 100%,100% 100%,111.627% 97.2%,118.373% 89.6%,121.1% 78.4%,120.669% 64.8%,117.942% 50%,113.78% 35.2%,109.043% 21.6%,104.593% 10.4%,101.292% 2.8%,100% 0%,0% 0% );">
         <SmartBadge promo={1} logo={1}></SmartBadge>
+        <h4 class="absolute bottom-0 left-d2 text-darkgrey text-base mt-d6">Poured Out Art</h4>
+      <h4 class="absolute bottom-d3 right-d6 text-white text-base">Business Cards</h4>
       </div>
-      <h4 class="text-black text-base mt-d6">Business Cards</h4>
-      <h4 class="text-darkgrey text-base">Poured Out Art</h4>
     </div>
     
     <div class="flex flex-col w-full flex-1"> <!-- Added flex-1 -->
       <div class="relative h-s1 lg:flex-grow lg:h-0"> <!-- Replaced h-s and /lg/ h-full with flex-grow h-0 -->
-        <img src="/images/hungrypromo.png" alt="Hungry Promo" class="w-full h-full object-cover object-center rounded-md">
+        <img src="/images/hungrypromo.png" alt="Hungry Promo" class="w-full h-full object-cover object-center rounded-[24px]" style="clip-path: polygon( 0% 0%,0% 85.06%,0% 85.06%,0.065% 85.861%,0.252% 86.621%,0.551% 87.33%,0.953% 87.977%,1.447% 88.553%,2.023% 89.047%,2.67% 89.449%,3.379% 89.748%,4.139% 89.935%,4.94% 90%,45.166% 90%,45.166% 90%,45.95% 90.063%,46.694% 90.246%,47.388% 90.54%,48.021% 90.933%,48.584% 91.416%,49.067% 91.979%,49.46% 92.612%,49.754% 93.306%,49.937% 94.05%,50% 94.834%,50% 95.189%,50% 95.189%,50.063% 95.969%,50.245% 96.709%,50.537% 97.4%,50.928% 98.03%,51.409% 98.591%,51.97% 99.072%,52.6% 99.463%,53.291% 99.755%,54.031% 99.937%,54.811% 100%,100% 100%,100% 100%,111.627% 97.2%,118.373% 89.6%,121.1% 78.4%,120.669% 64.8%,117.942% 50%,113.78% 35.2%,109.043% 21.6%,104.593% 10.4%,101.292% 2.8%,100% 0%,0% 0% );">
         <SmartBadge rebrand={1} promo={1} logo={1}></SmartBadge>
+        <h4 class="absolute bottom-0 left-d2 text-darkgrey text-base mt-d6">Hangry Haberdasher</h4>
+        <h4 class="absolute bottom-d3 right-d6 text-white text-base">New Logo</h4>
       </div>
-      <h4 class="text-black text-base mt-d6">New Logo</h4>
-      <h4 class="text-darkgrey text-base">The Hungry Haberdasher</h4>
+
     </div>
   </div>
   
