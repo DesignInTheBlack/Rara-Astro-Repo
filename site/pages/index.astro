@@ -5,13 +5,20 @@ import HomeHero from '../components/home/HomeHero.astro'
 import HomeCards from '../components/home/HomeCards.astro'
 import HomeValues from '../components/home/HomeValues.astro'
 import HomeWorks from '../components/home/HomeWorks.astro'
+import SmartSpacer from '../subcomponents/SmartSpacer.astro'
 ---
 
 <PrimaryLayout>
+  <SmartSpacer sizeClass = {'py-c6'}></SmartSpacer>
   <HomeTyped></HomeTyped>
+  <SmartSpacer sizeClass = {'py-d3'}></SmartSpacer>
   <HomeHero></HomeHero>
+  <SmartSpacer sizeClass = {'py-d3'}></SmartSpacer>
   <HomeCards></HomeCards>
+  <SmartSpacer sizeClass = {'py-d8'}></SmartSpacer>
   <HomeValues></HomeValues>
+  <SmartSpacer sizeClass = {'py-d8'}></SmartSpacer>
   <HomeWorks></HomeWorks>
+  <SmartSpacer sizeClass = {'py-d8'}></SmartSpacer>
 </PrimaryLayout>
 

@@ -1,0 +1,10 @@
+---
+interface Props {
+  sizeClass: string;
+}
+
+const { ...props } = Astro.props;
+---
+
+<div class = {`${props.sizeClass}`}>
+</div>
