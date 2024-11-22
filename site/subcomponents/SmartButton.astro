@@ -2,21 +2,37 @@
 interface Props {
   title: string;
   id: string;
-  link: string;
+  link?: string; // Optional for links
   bgClass: string;
   textClass: string;
   mobile: boolean;
   arrow: boolean;
+  type?: "button" | "submit"; // Optional for forms
 }
 
-const { ...props } = Astro.props;
+const { title, id, link, bgClass, textClass, mobile, arrow, type } = Astro.props;
 ---
 
-<a
-  href={props.link}
-  id={props.id}
-  class={`${props.bgClass} ${props.textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${!props.mobile ? 'hidden sm:flex' : 'flex'}`}
->
-  {props.title}
-  {props.arrow && <img class="ml-d3 h-d7 w-auto" src="/images/arrowright.svg" />}
-</a>
+{link ? (
+  <a
+    href={link}
+    id={id}
+    class={`${bgClass} ${textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${
+      !mobile ? "hidden sm:flex" : "flex"
+    }`}
+  >
+    {title}
+    {arrow && <img class="ml-d3 h-d7 w-auto" src="/images/arrowright.svg" />}
+  </a>
+) : (
+  <button
+    type={type || "button"}
+    id={id}
+    class={`${bgClass} ${textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${
+      !mobile ? "hidden sm:flex" : "flex"
+    }`}
+  >
+    {title}
+    {arrow && <img class="ml-d3 h-d7 w-auto" src="/images/arrowright.svg" />}
+  </button>
+)}

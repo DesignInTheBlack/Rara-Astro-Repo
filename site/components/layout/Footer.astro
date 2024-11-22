@@ -1,5 +1,5 @@
 ---
-import SmartButton from "../../subcomponents/SmartButton.astro";
+import Contact from "../../subcomponents/Contact.astro";
 ---
 <div id ="footer" class="bg-rara buffer pb-c6" >
     <div class="colr-[center,start] h-s4 /xl/ row-[between,center] h-s1">
@@ -10,11 +10,8 @@ import SmartButton from "../../subcomponents/SmartButton.astro";
         </div>
 
         <div class="max-w-full">
-            <p class="slip text-[h4,bold,_,tight,_,widest,white] /md/ my-d3">Let's Start The Conversation.</p>
-            <div class="slip2 col items-stretch space-x-0 w-full /md/ row space-x-d4">
-                <input type="email" placeholder="What's Your Email?" class="placeholder:text-white placeholder:text-base bg-transparent flex-grow px-d4 py-d2 my-d4 rounded-md min-w-0 border-[_,d1,solid,white] /md/ my-0">
-                <SmartButton title="Let's Go" id="footerButton" link="#" bgClass="bg-white" textClass="text-black" mobile={true} arrow={true}/>
-            </div>
+            <p id = "contentHead" class="slip text-[h4,bold,_,tight,_,widest,white] /md/ my-d3">Let's Start The Conversation.</p>
+            <Contact></Contact>
         </div>
     </div>
 

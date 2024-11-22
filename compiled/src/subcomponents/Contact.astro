@@ -1,0 +1,8 @@
+---
+import SmartButton from "../subcomponents/SmartButton.astro";
+---
+
+<form action="/actions/send-email" enctype="multipart/form-data" method="post" class="slip2 flex flex-col items-stretch space-x-0 w-full md:flex md:flex-row md:space-x-d4">
+    <input name="message" type="email" placeholder="What's Your Email?" class="placeholder:text-white placeholder:text-base bg-transparent flex-grow px-d4 py-d2 my-d4 rounded-md min-w-0 border border-d1 border-solid border-white md:my-0">
+    <SmartButton title="Let's Go" type="submit" id="footerButton" link="" bgClass="bg-white" textClass="text-black" mobile={true} arrow={true}/>
+</form>

@@ -14,11 +14,13 @@
     "@astrojs/tailwind": "^5.1.2",
     "@rollup/pluginutils": "^5.1.2",
     "@types/alpinejs": "^3.13.10",
+    "@types/nodemailer": "^6.4.17",
     "alpinejs": "^3.14.1",
     "astro": "^4.16.6",
     "astro-capo": "^0.0.1",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
+    "nodemailer": "^6.9.16",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {

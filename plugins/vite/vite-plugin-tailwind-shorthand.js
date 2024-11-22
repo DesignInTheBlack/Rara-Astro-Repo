@@ -267,7 +267,7 @@ function expandTextShorthand(values, prefix) {
 // ====================================================================================
 
 export default function Elevate({
-  include = ['**/*.astro', '**/*.html','**/*.js'],
+  include = ['**/*.astro', '**/*.html','**/*.js','**/*.ts'],
   baseDir = 'templates',
 } = {}) {
   // Resolve the base directory to an absolute path to ensure correct filtering

@@ -6,6 +6,7 @@ import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'hybrid',
   srcDir: './compiled/src',
   integrations: [
     alpinejs(),
@@ -15,7 +16,7 @@ export default defineConfig({
     plugins: [
       tailwindShorthandPlugin({
         baseDir: 'site',
-        include: ['**/*.astro', '**/*.html','**/*.js'],
+        include: ['**/*.astro', '**/*.html','**/*.js','**/*.ts'],
       }),
     ],
   },
