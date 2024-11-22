@@ -50,26 +50,27 @@ async function getEmailTransporter(): Promise<Transporter> {
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
-  // Get the form data submitted by the user on the home page
   const formData = await request.formData();
   const to = "creative@raraavis.design";
-  const subject = "ATTENTION: New Client Lead Submitted"
+  const subject = "ATTENTION: New Client Lead Submitted";
   const message = formData.get("message") as string | null;
 
-  // Throw an error if we're missing any of the needed fields.
   if (!to || !subject || !message) {
     throw new Error("Missing required fields");
   }
 
-  // Try to send the email using a `sendEmail` function we'll create next. Throw
-  // an error if it fails.
   try {
     const html = `<div>${message} has requested a consultation.</div>`;
     await sendEmail({ to, subject, html });
   } catch (error) {
-    throw new Error("Failed to send email");
+    return new Response(
+      JSON.stringify({ success: false, error: "Failed to send email" }),
+      { status: 500 }
+    );
   }
 
-  // Redirect the user to a success page after the email is sent.
-  return new Response(null, { status: 204 }); // 204 No Content
+  return new Response(JSON.stringify({ success: true }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
 };

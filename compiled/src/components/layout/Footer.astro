@@ -1,6 +1,58 @@
 ---
 import Contact from "../../subcomponents/Contact.astro";
 ---
+
+
+<script>
+    import {typeCore} from "@scripts/typeCore"
+    document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form"); // Your form selector
+  const textID = "formHead";
+
+  // Strings for desktop and mobile
+  const desktopStrings = [
+    "<strong>Thanks</strong>, We'll Be In Touch!",
+  ];
+
+  const mobileStrings = [
+    "<strong>Thanks</strong>, We'll Be In Touch!",
+  ];
+
+  // Handle form submission
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent default form navigation behavior
+
+    const formData = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      const result = await response.json();
+      if (result.success) {
+        console.log("Form submitted successfully");
+
+        // Trigger typeCore after form submission
+        typeCore(mobileStrings, desktopStrings, textID);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  });
+});
+</script>
+
+
+
+
 <div id ="footer" class="bg-rara buffer pb-c6" >
     <div class="flex flex-col-reverse justify-center items-start h-s4 xl:flex xl:flex-row xl:justify-between xl:items-center xl:h-s1">
         <div class="space-y-d3">
@@ -10,7 +62,7 @@ import Contact from "../../subcomponents/Contact.astro";
         </div>
 
         <div class="max-w-full">
-            <p id = "contentHead" class="slip text-h4 font-bold leading-tight tracking-widest text-white md:my-d3">Let's Start The Conversation.</p>
+            <p id = "formHead" class="slip text-h4 font-bold leading-tight tracking-widest text-white md:my-d3">Let's Start The Conversation.</p>
             <Contact></Contact>
         </div>
     </div>

@@ -1,32 +1,29 @@
----
-import {typeCore} from "../../../compiled/src/js/typeCore.js";
 
-document.addEventListener('DOMContentLoaded', function() {
+<script>
+  import {typeCore} from "@scripts/typeCore.js";
+    document.addEventListener('DOMContentLoaded', function() {
 
-  let textID = "typed";
+let textID = "typed";
 
-  // Strings for desktop and mobile
-  const desktopStrings = [
-    'Make <strong>Beautiful</strong> Websites^150.',
-    'Design <strong>Powerful</strong> Graphics^250.',
-    'Build <strong>Bold</strong> Brands^350.',
-    'Are <strong>Rara Avis</strong>^200.'
-  ];
+// Strings for desktop and mobile
+const desktopStrings = [
+  'Make <strong>Beautiful</strong> Websites^150.',
+  'Design <strong>Powerful</strong> Graphics^250.',
+  'Build <strong>Bold</strong> Brands^350.',
+  'Are <strong>Rara Avis</strong>^200.'
+];
 
-  const mobileStrings = [
-    'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
-  ];
+const mobileStrings = [
+  'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
+];
 
-  typeCore(mobileStrings,desktopStrings,textID)
-
+typeCore(mobileStrings,desktopStrings,textID)
 });
----
-  
-  <div class="buffer row-[between,center] text-[h5,_,sans,_,_,_,black] /md/ text-h3 /lg/ text-h2">
+</script>
+
+  <div class="buffer flex flex-row justify-between items-center text-h5 font-sans text-black md:text-h3 lg:text-h2">
     <h1 class="hug font-normal">
       We <span id="typed"></span>
     </h1>
     <img class="slip h-[1em] w-auto" src="/images/Arrow.svg" alt="Arrow">
   </div>
-
-  <script src="../../js/typeEffect.js"></script>

@@ -2,6 +2,10 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "moduleResolution": "node",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".", // Required for paths to work
+    "paths": {
+      "@scripts/*": ["compiled/src/js/*"]
+    }
   }
 }
