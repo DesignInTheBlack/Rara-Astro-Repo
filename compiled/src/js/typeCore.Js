@@ -1,24 +1,13 @@
 import Typed from 'typed.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+export const typeCore = (mobileStrings,desktopStrings,textID) => {
+
   // Detect if the device is mobile (e.g., using window width)
   const isMobile = window.innerWidth <= 768; // Example breakpoint for mobile
 
-  // Strings for desktop and mobile
-  const desktopStrings = [
-    'Make <strong>Beautiful</strong> Websites^150.',
-    'Design <strong>Powerful</strong> Graphics^250.',
-    'Build <strong>Bold</strong> Brands^350.',
-    'Are <strong>Rara Avis</strong>^200.'
-  ];
-
-  const mobileStrings = [
-    'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
-  ];
-
   // Function to initialize Typed
   function initTyped() {
-    var typed = new Typed('#typed', {
+    var typed = new Typed(`#${textID}`, {
       strings: isMobile ? mobileStrings : desktopStrings, // Conditionally set strings
       typeSpeed: 'natural',
       backSpeed: 50,
@@ -56,4 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Wait for 1 second before initializing Typed
   setTimeout(initTyped, 1000);
-});
+}

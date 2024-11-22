@@ -1,3 +1,27 @@
+---
+import {typeCore} from "../../../compiled/src/js/typeCore.js";
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  let textID = "typed";
+
+  // Strings for desktop and mobile
+  const desktopStrings = [
+    'Make <strong>Beautiful</strong> Websites^150.',
+    'Design <strong>Powerful</strong> Graphics^250.',
+    'Build <strong>Bold</strong> Brands^350.',
+    'Are <strong>Rara Avis</strong>^200.'
+  ];
+
+  const mobileStrings = [
+    'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
+  ];
+
+  typeCore(mobileStrings,desktopStrings,textID)
+
+});
+---
+  
   <div class="buffer flex flex-row justify-between items-center text-h5 font-sans text-black md:text-h3 lg:text-h2">
     <h1 class="hug font-normal">
       We <span id="typed"></span>
