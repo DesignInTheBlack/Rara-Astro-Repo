@@ -5,13 +5,11 @@ import tailwindShorthandPlugin from './plugins/vite/vite-plugin-tailwind-shortha
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cloudflare from '@astrojs/cloudflare';
-import events from 'events'; // Added for Node.js polyfill
 
 // Convert import.meta.url to __dirname equivalent
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Astro configuration
 export default defineConfig({
   output: 'hybrid',
   srcDir: './compiled/src',
@@ -25,11 +23,12 @@ export default defineConfig({
     resolve: {
       alias: {
         '@scripts': path.resolve(__dirname, 'compiled/src/js'),
-        events: 'events', // Add Node.js polyfill for "events"
+        events: 'events', // Alias for Node.js built-in "events"
+        util: 'util/',    // Alias for Node.js built-in "util"
       },
     },
     ssr: {
-      noExternal: ['nodemailer'], // Ensure Nodemailer is bundled in SSR
+      noExternal: ['nodemailer'], // Ensure Nodemailer is bundled for SSR
     },
     plugins: [
       tailwindShorthandPlugin({
@@ -41,6 +40,5 @@ export default defineConfig({
 
   adapter: cloudflare(),
 
-  // Ensure Node.js environment variables are accessible for email transport configuration
-  envPrefix: ['EMAIL_', 'NODE_'], // Allow access to specific environment variables
+  envPrefix: ['EMAIL_', 'NODE_'], // Allow email-related env vars
 });
