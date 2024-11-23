@@ -1,5 +1,19 @@
 export const prerender = false;
 import type { APIRoute } from "astro";
+// Explicit imports for Node.js built-ins with `node:` prefix
+const fs = require('node:fs');
+const path = require('node:path');
+const url = require('node:url');
+const http = require('node:http');
+const https = require('node:https');
+const zlib = require('node:zlib');
+const net = require('node:net');
+const events = require('node:events');
+const util = require('node:util');
+const dns = require('node:dns');
+const os = require('node:os');
+const tls = require('node:tls');
+const crypto = require('node:crypto');
 
 import { createTransport, type Transporter } from "nodemailer";
 
