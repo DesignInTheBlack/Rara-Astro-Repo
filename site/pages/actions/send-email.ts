@@ -1,22 +1,6 @@
 export const prerender = false;
 import type { APIRoute } from "astro";
-// Explicit imports for Node.js built-ins with `node:` prefix
-const fs = require('node:fs');
-const path = require('node:path');
-const url = require('node:url');
-const http = require('node:http');
-const https = require('node:https');
-const zlib = require('node:zlib');
-const net = require('node:net');
-const events = require('node:events');
-const util = require('node:util');
-const dns = require('node:dns');
-const os = require('node:os');
-const tls = require('node:tls');
-const crypto = require('node:crypto');
-
-import { createTransport, type Transporter } from "nodemailer";
-
+import { Resend } from "resend"; // Import Resend library
 
 type SendEmailOptions = {
   /** Email address of the recipient */
@@ -27,65 +11,70 @@ type SendEmailOptions = {
   html: string;
 };
 
-export async function sendEmail(options: SendEmailOptions): Promise<Transporter> {
-  const transporter = await getEmailTransporter();
-  return new Promise(async (resolve, reject) => {
-    // Build the email message
-    const { to, subject, html } = options;
-    const from = import.meta.env.SEND_EMAIL_FROM;
-    const message = { to, subject, html, from };
-    // Send the email
-    transporter.sendMail(message, (err, info) => {
-      // Log the error if one occurred
-      if (err) {
-        console.error(err);
-        reject(err);
-      }
-      // Log the message ID and preview URL if available.
-      console.log("Message sent:", info.messageId);
-      resolve(info);
-    });
-  });
-}
+// Initialize Resend with API key
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
-async function getEmailTransporter(): Promise<Transporter> {
-  return new Promise((resolve, reject) => {
-    if (!import.meta.env.RESEND_API_KEY) {
-      throw new Error("Missing Resend configuration");
-    }
-    const transporter = createTransport({
-      host: "smtp.resend.com",
-      secure: true,
-      port: 465,
-      auth: { user: "resend", pass: import.meta.env.RESEND_API_KEY },
-    });
-    resolve(transporter);
-  });
-}
+// Send email using Resend library
+export async function sendEmail(options: SendEmailOptions): Promise<void> {
+  const { to, subject, html } = options;
 
-
-export const POST: APIRoute = async ({ request }) => {
-  const formData = await request.formData();
-  const to = "creative@raraavis.design";
-  const subject = "ATTENTION: New Client Lead Submitted";
-  const message = formData.get("message") as string | null;
-
-  if (!to || !subject || !message) {
-    throw new Error("Missing required fields");
+  // Validate environment variables
+  const from = import.meta.env.SEND_EMAIL_FROM;
+  if (!from) {
+    throw new Error("SEND_EMAIL_FROM is missing. Please set it in your environment.");
   }
 
   try {
+    const { data, error } = await resend.emails.send({
+      from,
+      to,
+      subject,
+      html,
+    });
+
+    if (error) {
+      console.error("Resend API Error:", error);
+      throw new Error(`Failed to send email: ${error.message}`);
+    }
+
+    console.log("Email sent successfully:", data);
+  } catch (err) {
+    console.error("Error in sendEmail function:", err);
+    throw err;
+  }
+}
+
+// API Route
+export const POST: APIRoute = async ({ request }) => {
+  try {
+    const formData = await request.formData();
+    const message = formData.get("message") as string | null;
+
+    if (!message) {
+      return new Response(
+        JSON.stringify({ success: false, error: "The 'message' field is required." }),
+        { status: 400 }
+      );
+    }
+
     const html = `<div>${message} has requested a consultation.</div>`;
-    await sendEmail({ to, subject, html });
+
+    // Send the email
+    await sendEmail({
+      to: "creative@raraavis.design",
+      subject: "ATTENTION: New Client Lead Submitted",
+      html,
+    });
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
+    console.error("Error in POST handler:", error);
     return new Response(
-      JSON.stringify({ success: false, error: "Failed to send email" }),
+      JSON.stringify({ success: false, error: "Failed to send email." }),
       { status: 500 }
     );
   }
-
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
 };

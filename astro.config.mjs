@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import alpinejs from '@astrojs/alpinejs';
 import tailwind from '@astrojs/tailwind';
 import tailwindShorthandPlugin from './plugins/vite/vite-plugin-tailwind-shorthand';
-import nodePolyfills from 'rollup-plugin-polyfill-node'; // Ensure this is properly imported
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cloudflare from '@astrojs/cloudflare';
@@ -24,15 +23,9 @@ export default defineConfig({
     resolve: {
       alias: {
         '@scripts': path.resolve(__dirname, 'compiled/src/js'), // Custom script alias
-        events: 'events', // Polyfill alias for Node.js events
-        util: 'util/',    // Polyfill alias for Node.js util
       },
     },
-    ssr: {
-      noExternal: ['nodemailer'], // Ensures Nodemailer is included in SSR bundle
-    },
     plugins: [
-      nodePolyfills(), // Polyfill Node.js built-ins like url, fs, etc.
       tailwindShorthandPlugin({
         baseDir: 'site',
         include: ['**/*.astro', '**/*.html', '**/*.js', '**/*.ts'], // Tailwind shorthand plugin
@@ -41,6 +34,4 @@ export default defineConfig({
   },
 
   adapter: cloudflare(), // Deploy to Cloudflare Workers with SSR
-
-  envPrefix: ['EMAIL_', 'NODE_'], // Allow email-related env vars like RESEND_API_KEY
 });
