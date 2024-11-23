@@ -1,0 +1,13 @@
+name = "astro-send-email-worker"
+compatibility_date = "2023-11-23"
+main = "compiled/src/worker/index.js"
+
+account_id = "cd9e790ff14de85e511fa4b0cad269a7"
+
+[env]
+RESEND_API_KEY = "re_2ZF9wy8K_E7dDoj8HiFTmtDFUCAe7Cuoj"
+SEND_EMAIL_FROM = "creative@raraavis.design"
+
+[[routes]]
+pattern = "https://www.raraavis.design/actions/send-email" # Full domain name
+zone_name = "raraavis.design" # Base domain
