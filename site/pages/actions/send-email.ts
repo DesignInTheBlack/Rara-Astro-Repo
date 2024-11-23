@@ -1,6 +1,8 @@
+export const prerender = false;
 import type { APIRoute } from "astro";
 
 import { createTransport, type Transporter } from "nodemailer";
+
 
 type SendEmailOptions = {
   /** Email address of the recipient */
@@ -47,7 +49,6 @@ async function getEmailTransporter(): Promise<Transporter> {
   });
 }
 
-export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
