@@ -5,6 +5,8 @@ import tailwindShorthandPlugin from './plugins/vite/vite-plugin-tailwind-shortha
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // Convert import.meta.url to __dirname equivalent
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,10 +15,12 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   output: 'hybrid',
   srcDir: './compiled/src',
+
   integrations: [
     alpinejs(),
     tailwind({ configFile: './elevate/config/tailwind.config.mjs' }),
   ],
+
   vite: {
     resolve: {
       alias: {
@@ -30,4 +34,6 @@ export default defineConfig({
       }),
     ],
   },
+
+  adapter: cloudflare(),
 });
