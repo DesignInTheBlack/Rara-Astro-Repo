@@ -1,5 +1,6 @@
 ---
 import Contact from "../../subcomponents/Contact.astro";
+import { gsap } from 'gsap';
 ---
 
 
@@ -11,16 +12,28 @@ import Contact from "../../subcomponents/Contact.astro";
 
   // Strings for desktop and mobile
   const desktopStrings = [
-    "<strong>Thanks</strong>, We'll Be In Touch!",
+    "Thanks! We'll Be In Touch.",
   ];
 
   const mobileStrings = [
-    "<strong>Thanks</strong>, We'll Be In Touch!",
+    "Thanks! We'll Be In Touch.",
   ];
 
   // Handle form submission
   form.addEventListener("submit", async (event) => {
     event.preventDefault(); // Prevent default form navigation behavior
+
+    let heading = document.querySelector("#formHead");
+        let body = document.querySelector("#formActual");
+        body.classList.add('fade-out')
+        
+        gsap.to(body, {
+        opacity: 0, // Set opacity to 0 for fade-out effect
+        duration: 1,
+         })
+
+
+        typeCore(mobileStrings, desktopStrings, textID);
 
     const formData = new FormData(form);
     try {
@@ -39,9 +52,7 @@ import Contact from "../../subcomponents/Contact.astro";
       const result = await response.json();
       if (result.success) {
         console.log("Form submitted successfully");
-
         // Trigger typeCore after form submission
-        typeCore(mobileStrings, desktopStrings, textID);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -61,10 +72,14 @@ import Contact from "../../subcomponents/Contact.astro";
             <p class="slip3 text-h5 leading-hug text-white">256-388-9385</p>
         </div>
 
-        <div class="max-w-full">
-            <p id = "formHead" class="slip text-h4 font-bold leading-tight tracking-widest text-white md:my-d3">Let's Start The Conversation.</p>
-            <Contact></Contact>
-        </div>
+          <div>
+              <div class="md:my-d3">
+                <span id = "formHead" class="text-h4 font-bold leading-tight tracking-widest text-white">Let's Start The Conversation.</span>
+              </div>
+              <div id="formActual">
+                <Contact></Contact>
+              </div>
+          </div>
     </div>
 
     <div class="flex flex-col justify-start items-start xl:flex xl:flex-row xl:justify-between xl:items-end">

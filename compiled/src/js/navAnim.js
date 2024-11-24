@@ -59,10 +59,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Reinitialize animations on window resize
-  window.addEventListener('resize', function() {
-    if (isScreenWidthOver600px()) {
-      location.reload();
-    }
-  });
+  
 });
