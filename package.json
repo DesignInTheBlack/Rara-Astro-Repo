@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "elevate": "tsx elevate/core/index.ts"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
@@ -19,6 +20,7 @@
     "alpinejs": "^3.14.1",
     "astro": "^4.16.6",
     "astro-capo": "^0.0.1",
+    "elevate-framework": "^1.0.17",
     "events": "^3.3.0",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
