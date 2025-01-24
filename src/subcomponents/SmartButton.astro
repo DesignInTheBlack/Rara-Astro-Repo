@@ -17,22 +17,22 @@ const { title, id, link, bgClass, textClass, mobile, arrow, type } = Astro.props
   <a
     href={link}
     id={id}
-    class={`${bgClass} ${textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${
+    class={`${bgClass} ${textClass} pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 item:start font:sans font:bold row:x-center ${
       !mobile ? "hidden sm:flex" : "flex"
     }`}
   >
     {title}
-    {arrow && <img class="ml-d3 h-d7 w-auto" src="/images/arrowright.svg" />}
+    {arrow && <img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg" />}
   </a>
 ) : (
   <button
     type={type || "button"}
     id={id}
-    class={`${bgClass} ${textClass} px-d4 py-d2 rounded-full self-start font-sans font-bold flex flex-row items-center ${
+    class={`${bgClass} ${textClass} pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 item:start font:sans:bold row:x-center ${
       !mobile ? "hidden sm:flex" : "flex"
     }`}
   >
     {title}
-    {arrow && <img class="ml-d3 h-d7 w-auto" src="/images/arrowright.svg" />}
+    {arrow && <img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg" />}
   </button>
 )}

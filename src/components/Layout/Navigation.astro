@@ -90,58 +90,59 @@ import SmartButton from "../../subcomponents/SmartButton.astro";
 <!-- Fixed Header Container -->
 <div id="headerContainer">
   <!-- Quote Bar -->
-  <div id="quoteBar" class="bg-black py-d2 flex flex-row justify-center items-center">
-    <p class="text-white">"Simplicity is the Ultimate Sophistication"</p>
+  <div id="quoteBar" class="bg-color:black pd-t:d2 pd-b:d2 row:x-center:y-center">
+    <p class="text:white">"Simplicity is the Ultimate Sophistication"</p>
   </div>
 
   <!-- Navigation Bar -->
-  <nav id="mainNav" class="bg-rara flex flex-row justify-between items-center !buffer shadow-lg">
-    <img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" />
-    <div id="navMenu" class="hidden sm:flex">
-      <ul class="list-none space-x-d4">
-        <li class="inline-block text-white text-base font-sans"><a href = "/">Home</a></li>
-        <li class="inline-block text-white text-base font-sans"><a href = "/about">About</a></li>
-        <li class="inline-block text-white text-base font-sans"><a href = "/works">Works</a></li>
+  <nav id="mainNav" class="bg-color:purple row:x-between:y-center contain">
+    <img id="logo" class="h:d8 w:auto" src="/images/LogoLight.svg" alt="Logo" />
+    <div id="navMenu" class="hidden /sm/ row">
+      <ul class="">
+        <li class="inline-block text:white font:sans:base"><a href = "/">Home</a></li>
+        <li class="inline-block text:white font:sans:base"><a href = "/about">About</a></li>
+        <li class="inline-block text:white font:sans:base"><a href = "/works">Works</a></li>
       </ul>
     </div>
     <SmartButton title="Contact Us" id="contactButton" link="#footer" bgClass="bg-white" textClass="text-black" mobile={false} arrow={true}/>
-    <div id = "mobileButton" class="overflow-hidden flex flex-col justify-center items-center">
-      <img class="h-d7 w-d8 sm:hidden" src="/images/menu.svg" alt="Logo" />
+    <div id = "mobileButton" class="overflow:hidden col:x-center:y-center">
+      <img class="h:d7 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
     </div>
   </nav>
 </div>
 
-<div id = "mobileNavigation" class="hidden top-0 left-0 w-full h-full bg-rara z-[1000] pt-c3">
-  <nav class="flex flex-row justify-between items-center !buffer">
-    <a href = "/"><img id="logo" class="h-d8 w-auto" src="/images/LogoLight.svg" alt="Logo" /></a>
-    <div id = "closeButton" class="overflow-hidden flex flex-col justify-center items-center">
-      <img class="h-d7 w-d8" src="/images/close.svg" alt="Logo" />
+<div id = "mobileNavigation" class="hidden top:0 left:0 w:full h:full bg-color:purple z:1000 pd-t:c3">
+  <nav class="row:x-between:y-center contain">
+    <a href = "/"><img id="logo" class="h:d8 w:auto" src="/images/LogoLight.svg" alt="Logo" /></a>
+    <div id = "closeButton" class="overflow:hidden col:x-center:y-center">
+      <img class="h:d7 w:d8" src="/images/close.svg" alt="Logo" />
     </div>
   </nav>
-  <ul class="buffer mx-auto list-none space-y-d6 mt-c5">
-    <li class="text-white font-sans"><a href = "/">
-      <p class="text-h5 mb-d2">Home</p>
-      <p class="text-base opacity-75">We Believe In Good First Impressions</p>
+  <ul class="contain mg-l:auto mg-r:auto mg-t:c5">
+    <li class="text:white font:sans"><a href = "/">
+      <p class="font:heading5 mg-b:d2">Home</p>
+      <p class="font:base opacity:0.75">We Believe In Good First Impressions</p>
     </a></li>
 
-<hr class="border-t border-black border-opacity-15">
+    <!-- border-opacity-15 -->
+<hr class="bd-t:black">
 
-    <li class="text-white font-sans"><a href = "/about">
-      <p class="text-h5 mb-d2">About</p>
-      <p class="text-base opacity-75">Learn More About Rara Avis</p>
+    <li class="text:white font:sans"><a href = "/about">
+      <p class="font:heading5 mg-b:d2">About</p>
+      <p class="font:base opacity:0.75">Learn More About Rara Avis</p>
     </a></li>
 
-<hr class="border-t border-black border-opacity-15">
+<hr class="bd-t:black">
 
-    <li class="text-white font-sans"><a href = "/works">
-      <p class="text-h5 mb-d2">Works</p>
-      <p class="text-base opacity-75">View The Work We're Most Proud Of</p>
+    <li class="text:white font:sans"><a href = "/works">
+      <p class="font:heading5 mg-b:d2">Works</p>
+      <p class="font:base opacity:0.75">View The Work We're Most Proud Of</p>
     </a></li>
   </ul>
 
-<div class="flex flex-row justify-start items-center space-x-d3 buffer mt-c6">
-    <a href = "https://www.facebook.com/profile.php?id=61566898301393"><img class="h-d8 w-auto" src="/images/facebook.svg"></a>
-    <a href = "https://www.linkedin.com/company/raraavisdesign"><img class="h-d8 w-auto" src="/images/linkedin.svg"></a>
+<div class="row:x-start:y-center contain mg-t:c6">
+    <a href = "https://www.facebook.com/profile.php?id=61566898301393"><img class="h:d8 w:auto" src="/images/facebook.svg"></a>
+    <a href = "https://www.linkedin.com/company/raraavisdesign"><img class="h:d8 w:auto" src="/images/linkedin.svg"></a>
 </div>
 
 

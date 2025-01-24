@@ -10,28 +10,28 @@ interface Props {
 const { ...props } = Astro.props;
 ---
 
-<div class="absolute top-0 right-0 w-full flex flex-row justify-end items-center space-x-d2 pt-d4 pr-d4">
+<div class="absolute top:0 right:0 w:full row:x-end:y-center pd-t:d4 pd-r:d4">
 
 {props.ui && (
-    <div class="px-d4 py-d2 bg-warn text-white text-small rounded-full shadow-sm">
+    <div class="pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 bg-color:warn text:white font:small">
         <p>UI/UX</p>
     </div>
 )}
 
 {props.promo && (
-    <div class="px-d4 py-d2 bg-purple text-white text-small rounded-full shadow-sm">
+    <div class="pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 bg-color:warn text:white font:small">
         <p>Promo</p>
     </div>
 )}
 
 {props.rebrand && (
-    <div class="px-d4 py-d2 bg-error text-white text-small rounded-full shadow-sm">
+    <div class="pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 bg-color:warn text:white font:small">
         <p>Rebrand</p>
     </div>
 )}
 
 {props.logo && (
-    <div class="px-d4 py-d2 bg-white text-black text-small rounded-full shadow-sm">
+    <div class="pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 bg-color:warn text:white font:small">
         <p>Logo</p>
     </div>
 )}

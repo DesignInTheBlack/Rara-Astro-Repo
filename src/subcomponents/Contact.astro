@@ -7,13 +7,14 @@ import SmartButton from "../subcomponents/SmartButton.astro";
   action="/actions/send-email"
   enctype="multipart/form-data"
   method="post"
-  class="slip2 flex flex-col items-stretch space-x-0 w-full md:flex md:flex-row md:space-x-d4"
+  
+  class="-slip2 col:x-stretch w:full /md/ row"
 >
   <input
     name="message"
     type="email"
     placeholder="What's Your Email?"
-    class="placeholder:text-white placeholder:text-base bg-transparent text-white focus:outline-lightpurple flex-grow px-d4 py-d2 my-d4 rounded-md min-w-0 border border-d1 border-solid border-white md:my-0"
+    class="@placeholder:[text:white_font:base] bg-color:purple text:white @focus:[outline:lightpurple] item:grow pd:d4:d2 mg-t:d4 mg-b:d4 min-w:0 bd:w-d1:solid:white /md/ mg-t:0 mg-b:0"
     required
   />
   <SmartButton
