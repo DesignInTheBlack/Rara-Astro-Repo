@@ -10,7 +10,7 @@ import { raracolors } from "../design/RaraColors.js";
 import { spacing } from "../core/system/design/spacing.js";
 import { typography } from "../core/system/design/typography.js";
 import { breakpoints } from '../core/system/design/breakpoints.js';
-import {effects } from '../core/system/design/effects.js';
+import { effects } from '../core/system/design/effects.js';
 
 //Token Definitions
 export const designSystem = {
@@ -27,4 +27,5 @@ export const designSystem = {
     TextShadowToken: effects.textShadows,
     TransitionToken: effects.transitions,
     PatternToken: effects.backgrounds,
+    MeasureToken: typography.measure,
 };
