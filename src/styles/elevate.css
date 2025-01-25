@@ -363,7 +363,7 @@ background-color: #0A141F;
 
 .font\:base\:sans\:bold {
 font-size: 1rem;
-font-family: Raleway;
+font-family: Modernist, sans-serif;
 font-weight: 700;
 }
 
@@ -541,7 +541,7 @@ font-size: 1.5rem;
 }
 
 .font\:sans {
-font-family: Raleway;
+font-family: Modernist, sans-serif;
 }
 
 .bd-t\:black {
@@ -588,7 +588,7 @@ display: none;
 }
 
 .font\:sans\:base {
-font-family: Raleway;
+font-family: Modernist, sans-serif;
 font-size: 1rem;
 }
 
@@ -683,10 +683,11 @@ line-height: 1.4;
 margin-bottom: 0.75rem;
 }
 
-.font\:heading3\:bold\:tight {
+.font\:heading3\:bold\:tight\:sans {
 font-size: 3.375rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
+font-family: Modernist, sans-serif;
 }
 
 .pd-b\:c3 {
@@ -704,7 +705,7 @@ line-height: 1.2;
 
 .font\:heading5\:sans {
 font-size: 1.5rem;
-font-family: Raleway;
+font-family: Modernist, sans-serif;
 }
 
 .font\:heading6 {
@@ -713,7 +714,7 @@ font-size: 1.125rem;
 
 .font\:heading3\:serif {
 font-size: 3.375rem;
-font-family: Merriweather, serif;
+font-family: Playfair, serif;
 }
 
 .h\:d10 {
@@ -751,7 +752,7 @@ justify-content: flex-start;
 }
 
 .font\:serif {
-font-family: Merriweather, serif;
+font-family: Playfair, serif;
 }
 
 .font\:heading3 {
@@ -999,3 +1000,23 @@ font-size: 3.375rem;
 }
 
 
+@font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-Bold.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-Black.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-ExtraBold.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-Medium.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Modernist';
+    src: url('/fonts/Sk-Modernist-Regular.otf') format('opentype'),
+         url('/fonts/Sk-Modernist-Bold.otf') format('opentype'),
+         url('/fonts/Sk-Modernist-Mono.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }

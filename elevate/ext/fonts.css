@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Playfair';
+    src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-Bold.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-Black.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-ExtraBold.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-Medium.ttf') format('truetype'),
+         url('/fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Modernist';
+    src: url('/fonts/Sk-Modernist-Regular.otf') format('opentype'),
+         url('/fonts/Sk-Modernist-Bold.otf') format('opentype'),
+         url('/fonts/Sk-Modernist-Mono.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
