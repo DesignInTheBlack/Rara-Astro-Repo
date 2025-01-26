@@ -22,9 +22,19 @@ import { origin } from './rules/origin.js';
 import { outline } from './rules/outline.js';
 import { pattern } from './rules/pattern.js';
 import { span } from './rules/span.js';
+import { object } from './rules/object.js';
+import { overflowwrap } from './rules/overflowwrap.js';
+import { justc } from './rules/justifycontent.js';
+import { aligni } from './rules/alignitems.js';
+import { alignc } from './rules/aligncontent.js';
+import { justi } from './rules/justifyitems.js';
 
 //Token Type Definitions
 export const elevateRules = {
+    JustifyContentRule: justc.options,
+    AlignItemsRule: aligni.options,
+    AlignContentRule: alignc.options,
+    JustifyItemsRule: justi.options,
     TextAlignRule: text.align,
     TextTransformRule: text.transform,
     xAxis: flex.xAxis,
@@ -66,5 +76,7 @@ export const elevateRules = {
     SpanRowStartRule: span.rowstart,
     SpanRowEndRule: span.rowend,
     GridGapXRule: grid.columngap,
-    GridGapYRule: grid.rowgap
+    GridGapYRule: grid.rowgap,
+    ObjectFitRule: object.options,
+    OverflowWrapRule: overflowwrap.options,
 };
