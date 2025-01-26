@@ -650,6 +650,61 @@ grid-template-rows: repeat(2,auto);
 gap: 1.5rem;
 }
 
+.text\:darkgrey\:medium {
+color: #666666;
+max-width: 60ch;
+}
+
+.font\:base\:sans {
+font-size: 1rem;
+font-family: Modernist, sans-serif;
+}
+
+.mg-t\:d5 {
+margin-top: 1.25rem;
+}
+
+.font\:heading5\:sans\:medium {
+font-size: 1.5rem;
+font-family: Modernist, sans-serif;
+font-weight: 60ch;
+}
+
+.w\:d6 {
+width: 1.5rem;
+}
+
+.h\:d6 {
+height: 1.5rem;
+}
+
+.mg-r\:d6 {
+margin-right: 1.5rem;
+}
+
+.bd\:r-d2 {
+border-radius: 0.5rem;
+}
+
+.w\:d12 {
+width: 3rem;
+}
+
+.h\:d12 {
+height: 3rem;
+}
+
+.font\:heading5\:sans\:regular {
+font-size: 1.5rem;
+font-family: Modernist, sans-serif;
+font-weight: 400;
+}
+
+.font\:heading3\:sans {
+font-size: 3.375rem;
+font-family: Modernist, sans-serif;
+}
+
 .bg-img\:\(url\(\/images\/davidsonscene\.png\)\) {
 background-image: url(/images/davidsonscene.png);
 }
@@ -659,20 +714,9 @@ grid-column-start: 1;
 grid-column-end: 3;
 }
 
-.grid\:cols-3-fr\:rows-1\:gap-d6 {
-display:grid;
-grid-template-columns: repeat(3,1fr);
-grid-template-rows: repeat(1,auto);
-gap: 1.5rem;
-}
-
-.pd-y\:d12 {
-padding-top: 3rem;
-padding-bottom: 3rem;
-}
-
-.h\:s6 {
-height: 48rem;
+.pd-y\:c2 {
+padding-top: 4.5rem;
+padding-bottom: 4.5rem;
 }
 
 .h\:d4 {
