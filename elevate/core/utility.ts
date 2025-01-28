@@ -541,6 +541,37 @@ For more information, refer to https://elevate-docs.pages.dev\n`
 // ║    Handles final CSS content output to a file.                     ║
 // ╚════════════════════════════════════════════════════════════════════╝
 
+
+function sortMediaQueries(cssContent) {
+    const mediaQueryRegex = /@media\s+only\s+screen\s+and\s+\(min-width:\s*([\d.]+)(rem|px)\)[^{}]*\{[^{}]*\}/g;
+    const mediaQueries = [];
+    const nonMediaQueries = [];
+
+    cssContent.split('\n').forEach((line) => {
+        if (mediaQueryRegex.test(line)) {
+            mediaQueries.push(line);
+        } else {
+            nonMediaQueries.push(line);
+        }
+    });
+
+    // Sort media queries by min-width value
+    mediaQueries.sort((a, b) => {
+        const aMinWidth = parseFloat(a.match(/min-width:\s*([\d.]+)(rem|px)/)[1]);
+        const bMinWidth = parseFloat(b.match(/min-width:\s*([\d.]+)(rem|px)/)[1]);
+        return aMinWidth - bMinWidth;
+    });
+
+    return [...nonMediaQueries, ...mediaQueries].join('\n');
+}
+
+
+
+// ╔════════════════════════════════════════════════════════════════════╗
+// ║                        CSS Sorting                                 ║
+// ║                 Sorting CSS Breakpoints                            ║
+// ╚════════════════════════════════════════════════════════════════════╝
+
 // Determines the priority of a breakpoint by its index in the breakpoints map, used for responsive ordering.
 export function getBreakpointPriority(breakpoint: string): number {
     const clean = breakpoint.replace(/\//g, '') as BreakpointToken;
@@ -551,20 +582,48 @@ export function getBreakpointPriority(breakpoint: string): number {
 // ║        Handles final CSS content output to a file.                 ║
 // ╚════════════════════════════════════════════════════════════════════╝
 
+
 // Writes the compiled CSS content, along with reset and contain styles, to the elevate.css output file.
 export function writeToFile(content: string) {
     const filePath = `${config.Output}/elevate.css`; // Define the file path
+
+    // Helper function to sort media queries
+    const sortMediaQueries = (cssContent) => {
+        const mediaQueryRegex = /@media\s+only\s+screen\s+and\s+\(min-width:\s*([\d.]+)(rem|px)\)[^{}]*\{[^{}]*\}/g;
+        const mediaQueries = [];
+        const nonMediaQueries = [];
+
+        // Separate media queries and non-media content
+        cssContent.split('\n').forEach((line) => {
+            if (mediaQueryRegex.test(line)) {
+                mediaQueries.push(line);
+            } else {
+                nonMediaQueries.push(line);
+            }
+        });
+
+        // Sort media queries by min-width
+        mediaQueries.sort((a, b) => {
+            const aMinWidth = parseFloat(a.match(/min-width:\s*([\d.]+)(rem|px)/)[1]);
+            const bMinWidth = parseFloat(b.match(/min-width:\s*([\d.]+)(rem|px)/)[1]);
+            return aMinWidth - bMinWidth;
+        });
+
+        // Combine sorted media queries with the rest of the content
+        return [...nonMediaQueries, ...mediaQueries].join('\n');
+    };
+
     // Clear or create the file
     fs.writeFileSync(filePath, '', 'utf8'); // Ensures a clean slate
-    //Compose Contain CSS
+
+    // Compose Contain CSS
     let containString = '';
     Object.entries(contain).forEach(([key, value]) => {
-        // Type-safe casting to preserve the types
         const breakpointKey = key as BreakpointToken;
         const spacingValue = value as SpacingToken;
-        // Resolve actual values
         const minWidth = breakpoints[breakpointKey]; // e.g., '320px'
         const padding = spacing[spacingValue];      // e.g., '1.25rem'
+
         // Create CSS entry
         let newEntry = `
 @media only screen and (min-width:${minWidth}) {
@@ -577,7 +636,6 @@ export function writeToFile(content: string) {
         containString += newEntry;
     });
 
-
     (async () => {
         try {
             // Read all CSS from the file paths in config.extend
@@ -586,27 +644,28 @@ export function writeToFile(content: string) {
                     const absolutePath = path.resolve(relativePath);
                     return await fs.promises.readFile(absolutePath, 'utf8');
                 } catch (readError) {
-                    // Handle missing or unreadable files gracefully
                     console.warn(`Warning: Could not read file at ${relativePath}. Skipping.`);
                     return ''; // Return empty string for failed files
                 }
             });
-    
+
             // Wait for all CSS to be read
             const fetchedCSS = await Promise.all(cssPromises);
-    
+
             // Combine the reset CSS, provided content, and fetched CSS
-            const combinedCSS =
+            let combinedCSS =
                 `${cssReset}\n\n${containString}\n\n${content}\n\n${
                     fetchedCSS.filter(Boolean).join('\n\n') // Skip empty strings
                 }`;
-    
-            // Write the combined content to the file
+
+            // Sort media queries in the combined CSS
+            combinedCSS = sortMediaQueries(combinedCSS);
+
+            // Write the sorted content to the file
             fs.writeFile(filePath, combinedCSS, () => {});
         } catch (error) {
             console.error('Error during file processing:', error);
         }
     })();
-
-
 }
+
