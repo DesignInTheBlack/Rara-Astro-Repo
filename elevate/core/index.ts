@@ -63,6 +63,20 @@ const main = async () => {
         }
             let lastBreak = '';
             let classList = instance.classes;
+
+           
+            // Variable to hold the removed item
+            let scopeItem = null;
+
+            // Find and remove the item containing "scope"
+            classList = classList.filter(item => {
+                if (item.includes('scope')) {
+                    scopeItem = item;
+                    return false; // Exclude it from the new array
+                }
+                return true; // Keep other items
+            });
+            
          
 
             classList.forEach(function (classString) {
@@ -73,10 +87,12 @@ const main = async () => {
                         lastBreak = classString;
                         return;
                     }
+
                     let classObject = elevateCompiler(classString,{ fileName: instance.file, lineNumber: instance.lineNumber });
                     classObject.breakpoint = lastBreak;
-                   
-
+                    classObject.scope = scopeItem;
+                 
+                    
                     compiledClasses.push(classObject);
                 }
             });
@@ -103,10 +119,12 @@ const main = async () => {
             return getBreakpointPriority(a.breakpoint) - getBreakpointPriority(b.breakpoint);
         });
 
+ 
+
         // Deduplicate classes
         const uniqueClasses = new Map();
         compiledClasses.forEach(item => {
-            const key = `${item.className}${item.breakpoint || ''}`;
+            const key = `${item.className}${item.breakpoint || ''}${item.scope || ''}`; // Include scope
             if (!uniqueClasses.has(key)) {
                 uniqueClasses.set(key, item);
             }
@@ -169,9 +187,14 @@ const main = async () => {
 
             const modifiers = item.modifiers.map((modifier) => `${modifier};`).join("\n");
 
-            compiledCSS += `.${escapeClassName(item.className)}${stateSelector} {` +
+            compiledCSS += `${item.scope ? `.${escapeClassName(item.scope)}` : ''}.${escapeClassName(item.className)}${stateSelector} {` +
             (flexProperties ? `\n${flexProperties}` : '') +
             `\n${modifiers}\n}\n\n`;
+
+            // console.log(compiledCSS)
+
+
+            
         });
 
         // Close the last media query if open
@@ -186,7 +209,7 @@ const main = async () => {
           throw new Error('No CSS content generated!');
       }
         writeToFile(compiledCSS);
-        console.clear();
+        // console.clear();
         spinner.succeed('Elevate CSS Compilation Successful!');
     } catch (error) {
         spinner.fail(`Compilation failed: ${error.message}`);
@@ -205,12 +228,12 @@ const watcher = chokidar.watch(config.Watch, {
 });
 
 watcher.on('ready', () => {
-    console.clear();
+    // console.clear();
     console.log('Elevate CSS is watching for changes...');
 });
 
 watcher.on('change', () => {
-    console.clear();
+    // console.clear();
     main();
 });
 

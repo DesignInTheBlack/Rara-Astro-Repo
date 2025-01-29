@@ -528,17 +528,21 @@ background-size: cover;
 background-position: center center;
 }
 
-.col-spans\:from-1\:to-1 {
+.scope\:altgrid.col-spans\:from-1\:to-1 {
 grid-column-start: 1;
 grid-column-end: 1;
 }
 
-.relative {
+.scope\:altgrid.relative {
 position: relative;
 }
 
 .bg-img\:\(url\(\/images\/hungrypromo\.png\)\) {
 background-image: url(/images/hungrypromo.png);
+}
+
+.relative {
+position: relative;
 }
 
 .bg-img\:\(url\(\/images\/pouredpromo\.png\)\) {
@@ -554,6 +558,15 @@ row-gap: 2.5rem;
 
 .h\:s10 {
 height: 72rem;
+}
+
+.scope\:grid.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
+}
+
+.scope\:grid.relative {
+position: relative;
 }
 
 .h\:d8 {
@@ -1004,12 +1017,12 @@ grid-column-end: 4;
 height: 60rem;
 }
 
-.col-spans\:from-1\:to-3 {
+.scope\:grid.col-spans\:from-1\:to-3 {
 grid-column-start: 1;
 grid-column-end: 3;
 }
 
-.row-spans-all {
+.scope\:grid.row-spans-all {
 grid-row-start: 1;
 grid-row-end: -1;
 }
@@ -1024,15 +1037,25 @@ grid-column-start: 1;
 grid-column-end: 1;
 }
 
-.col-spans\:from-2\:to-3 {
+.scope\:altgrid.col-spans\:from-2\:to-4 {
 grid-column-start: 2;
-grid-column-end: 3;
+grid-column-end: 4;
+}
+
+.scope\:altgrid.row-spans-all {
+grid-row-start: 1;
+grid-row-end: -1;
 }
 
 .grid\:cols-2\:gap-d12 {
 display:grid;
 grid-template-columns: repeat(2,auto);
 gap: 3rem;
+}
+
+.col-spans\:from-2\:to-3 {
+grid-column-start: 2;
+grid-column-end: 3;
 }
 
 .row\:x-end\:y-end {

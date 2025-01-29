@@ -20,7 +20,7 @@
     "alpinejs": "^3.14.1",
     "astro": "^4.16.6",
     "astro-capo": "^0.0.1",
-    "elevate-framework": "^1.0.27",
+    "elevate-framework": "^1.0.36",
     "events": "^3.3.0",
     "gsap": "^3.12.5",
     "lenis": "^1.1.13",
