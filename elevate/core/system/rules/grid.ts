@@ -3,10 +3,10 @@ export const grid = {
      "gap-": "SpacingToken", 
    },
    columngap: {
-     "xgap-": "SpacingToken",
+     "colgap-": "SpacingToken",
    },
    rowgap: {
-     "ygap-": "SpacingToken",
+     "rowgap-": "SpacingToken",
    },
  
    //

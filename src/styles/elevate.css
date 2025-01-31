@@ -220,7 +220,7 @@ top: 0;
 position: absolute;
 }
 
-.bd\:w-d1\:solid\:white {
+.bd\:width-d1\:solid\:white {
 border-width: 0.25rem;
 border-style: solid;
 border-color: #F7F5FB;
@@ -280,17 +280,17 @@ background-color: #F7F5FB;
 height: 24rem;
 }
 
-.bd\:r-d6 {
+.bd\:round-d6 {
 border-radius: 1.5rem;
 }
 
-.bg-attr\:cover\:no-repeat\:center-center {
+.bg-attr\:cover\:no-repeat\:center {
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center center;
 }
 
-.bg-attr\:contain\:no-repeat\:center-center {
+.bg-attr\:contain\:no-repeat\:center {
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center center;
@@ -368,13 +368,13 @@ font-family: Modernist, sans-serif;
 font-weight: 700;
 }
 
-.text\:darkgrey\:narrow\:loose {
+.text\:darkgrey\:brief\:loose {
 color: #666666;
 max-width: 45ch;
 line-height: 1.6;
 }
 
-.font\:heading6\:regular\:tight {
+.font\:h6\:regular\:tight {
 font-size: 1.125rem;
 font-weight: 400;
 letter-spacing: -0.01rem;
@@ -384,13 +384,13 @@ letter-spacing: -0.01rem;
 margin-bottom: 1.5rem;
 }
 
-.text\:black\:extra-narrow\:relaxed {
+.text\:black\:note\:relaxed {
 color: #0A141F;
 max-width: 20ch;
 line-height: 1.5;
 }
 
-.font\:heading4\:bold\:tight {
+.font\:h4\:bold\:tight {
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
@@ -400,7 +400,7 @@ letter-spacing: -0.01rem;
 color: #0A141F;
 }
 
-.font\:heading5\:bold\:tight {
+.font\:h5\:bold\:tight {
 font-size: 1.5rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
@@ -433,7 +433,7 @@ padding-top: 7rem;
 
 }
 
-.font\:sans\:heading6\:regular\:tight {
+.font\:sans\:h6\:regular\:tight {
 font-family: Modernist, sans-serif;
 font-size: 1.125rem;
 font-weight: 400;
@@ -452,12 +452,12 @@ grid-column-start: 1;
 grid-column-end: -1;
 }
 
-.text\:black\:extra-narrow {
+.text\:black\:note {
 color: #0A141F;
 max-width: 20ch;
 }
 
-.font\:sans\:heading4\:bold\:tight {
+.font\:sans\:h4\:bold\:tight {
 font-family: Modernist, sans-serif;
 font-size: 2.25rem;
 font-weight: 700;
@@ -472,7 +472,7 @@ margin-bottom: 0.5rem;
 color: #6320EE;
 }
 
-.font\:sans\:heading5\:medium\:tight {
+.font\:sans\:h5\:medium\:tight {
 font-family: Modernist, sans-serif;
 font-size: 1.5rem;
 font-weight: 500;
@@ -484,7 +484,7 @@ display:grid;
 grid-template-columns: repeat(1,1fr);
 }
 
-.bg-attr\:no-repeat\:cover\:center-center {
+.bg-attr\:no-repeat\:cover\:center {
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center center;
@@ -523,7 +523,7 @@ bottom: 0;
 background-image: url(/images/bentonpromo.png);
 }
 
-.bg-attr\:cover\:center-center {
+.bg-attr\:cover\:center {
 background-size: cover;
 background-position: center center;
 }
@@ -549,7 +549,7 @@ position: relative;
 background-image: url(/images/pouredpromo.png);
 }
 
-.grid\:cols-1-fr\:rows-1\:ygap-d10 {
+.grid\:cols-1-fr\:rows-1\:rowgap-d10 {
 display:grid;
 grid-template-columns: repeat(1,1fr);
 grid-template-rows: repeat(1,auto);
@@ -581,7 +581,7 @@ margin-top: 7rem;
 opacity: 0.75;
 }
 
-.font\:heading5 {
+.font\:h5 {
 font-size: 1.5rem;
 }
 
@@ -653,7 +653,7 @@ align-items: flex-start;
 justify-content: flex-start;
 }
 
-.font\:heading4\:bold\:tight\:widest {
+.font\:h4\:bold\:tight\:widest {
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
@@ -669,7 +669,7 @@ line-height: 1.2;
 margin-top: 3rem;
 }
 
-.font\:heading5\:bold\:widest {
+.font\:h5\:bold\:widest {
 font-size: 1.5rem;
 font-weight: 700;
 letter-spacing: 0.04rem;
@@ -692,9 +692,9 @@ grid-template-rows: repeat(2,auto);
 gap: 1.5rem;
 }
 
-.text\:darkgrey\:medium {
+.text\:darkgrey\:book {
 color: #666666;
-max-width: 60ch;
+max-width: 70ch;
 }
 
 .font\:base\:sans {
@@ -706,7 +706,7 @@ font-family: Modernist, sans-serif;
 margin-top: 1.25rem;
 }
 
-.font\:heading5\:sans\:medium {
+.font\:h5\:sans\:medium {
 font-size: 1.5rem;
 font-family: Modernist, sans-serif;
 font-weight: 500;
@@ -724,7 +724,7 @@ height: 1.5rem;
 margin-right: 1.5rem;
 }
 
-.bd\:r-d2 {
+.bd\:round-d2 {
 border-radius: 0.5rem;
 }
 
@@ -736,13 +736,13 @@ width: 3rem;
 height: 3rem;
 }
 
-.font\:heading5\:sans\:regular {
+.font\:h5\:sans\:regular {
 font-size: 1.5rem;
 font-family: Modernist, sans-serif;
 font-weight: 400;
 }
 
-.font\:heading3\:sans {
+.font\:h3\:sans {
 font-size: 3.375rem;
 font-family: Modernist, sans-serif;
 }
@@ -778,16 +778,16 @@ line-height: 1.2;
 font-weight: 400;
 }
 
-.font\:heading5\:sans {
+.font\:h5\:sans {
 font-size: 1.5rem;
 font-family: Modernist, sans-serif;
 }
 
-.font\:heading6 {
+.font\:h6 {
 font-size: 1.125rem;
 }
 
-.font\:heading3\:serif {
+.font\:h3\:serif {
 font-size: 3.375rem;
 font-family: Playfair, serif;
 }
@@ -796,7 +796,7 @@ font-family: Playfair, serif;
 height: 2.5rem;
 }
 
-.font\:heading5\:widest {
+.font\:h5\:widest {
 font-size: 1.5rem;
 letter-spacing: 0.04rem;
 }
@@ -834,7 +834,7 @@ justify-content: flex-start;
 font-family: Playfair, serif;
 }
 
-.font\:heading3 {
+.font\:h3 {
 font-size: 3.375rem;
 }
 
@@ -849,7 +849,13 @@ gap: 1.5rem;
 gap: 0.75rem;
 }
 
-.font\:sans\:heading6\:normal\:tight {
+.text\:darkgrey\:blog\:loose {
+color: #666666;
+max-width: 65ch;
+line-height: 1.6;
+}
+
+.font\:sans\:h6\:normal\:tight {
 font-family: Modernist, sans-serif;
 font-size: 1.125rem;
 letter-spacing: 0;
@@ -859,13 +865,6 @@ letter-spacing: -0.01rem;
 .text\:black\:loose {
 color: #0A141F;
 line-height: 1.6;
-}
-
-.font\:sans\:heading6\:bold\:tight {
-font-family: Modernist, sans-serif;
-font-size: 1.125rem;
-font-weight: 700;
-letter-spacing: -0.01rem;
 }
 
 .col\:y-start\:x-start {
@@ -880,39 +879,39 @@ grid-column-start: 3;
 grid-column-end: 4;
 }
 
-.text\:darkgrey\:loose\:wide {
+.text\:darkgrey\:loose\:full {
 color: #666666;
 line-height: 1.6;
-max-width: 75ch;
+max-width: 80ch;
 }
 
-.font\:sans\:heading6\:medium {
+.font\:sans\:h6\:medium {
 font-family: Modernist, sans-serif;
 font-size: 1.125rem;
 font-weight: 500;
 }
 
-.text\:darkgrey\:center\:medium {
+.text\:darkgrey\:center\:book {
 color: #666666;
 text-align: center;
-max-width: 60ch;
+max-width: 70ch;
 }
 
-.font\:heading6\:regular\:medium\:sans {
+.font\:h6\:regular\:medium\:sans {
 font-size: 1.125rem;
 font-weight: 400;
 font-weight: 500;
 font-family: Modernist, sans-serif;
 }
 
-.font\:heading4\:bold\:tight\:sans {
+.font\:h4\:bold\:tight\:sans {
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
 font-family: Modernist, sans-serif;
 }
 
-.font\:heading5\:medium\:tight\:sans {
+.font\:h5\:medium\:tight\:sans {
 font-size: 1.5rem;
 font-weight: 500;
 letter-spacing: -0.01rem;
@@ -943,7 +942,7 @@ height: 72rem;
 height: 60rem;
 }
 
-.font\:heading3 {
+.font\:h3 {
 font-size: 3.375rem;
 }
 
@@ -974,7 +973,7 @@ margin-bottom: 0;
 }
 
 @media only screen and (min-width:64rem) {
-.font\:heading3 {
+.font\:h3 {
 font-size: 3.375rem;
 }
 
@@ -993,7 +992,7 @@ grid-column-end: 2;
 height: 28rem;
 }
 
-.font\:heading2 {
+.font\:h2 {
 font-size: 5.062rem;
 }
 
@@ -1101,7 +1100,7 @@ align-items: center;
 height: 24rem;
 }
 
-.font\:heading4 {
+.font\:h4 {
 font-size: 2.25rem;
 }
 
@@ -1116,7 +1115,7 @@ justify-content: space-between;
 align-items: flex-end;
 }
 
-.font\:heading3 {
+.font\:h3 {
 font-size: 3.375rem;
 }
 
