@@ -1,10 +1,10 @@
 ---
 interface Props {
-  sizeClass: string;
+  componentClass: string;
 }
 
 const { ...props } = Astro.props;
 ---
 
-<div class = "pd-y:d10">
+<div class = {props.componentClass}>
 </div>

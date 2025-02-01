@@ -148,11 +148,6 @@ textarea:not([rows]) {
     }
 }
 
-.pd-y\:d10 {
-padding-top: 2.5rem;
-padding-bottom: 2.5rem;
-}
-
 .w\:auto {
 width: auto;
 }
@@ -266,6 +261,21 @@ font-size: 1rem;
 display:flex;
 flex-direction:column;
 align-items: stretch;
+}
+
+.pd-y\:d10 {
+padding-top: 2.5rem;
+padding-bottom: 2.5rem;
+}
+
+.pd-y\:d4 {
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+.pd-y\:c12 {
+padding-top: 16rem;
+padding-bottom: 16rem;
 }
 
 .opacity\:0 {
@@ -610,11 +620,6 @@ padding-bottom: 2rem;
 
 .transition\:slow {
 transition: all 0.3s ease-in-out;
-}
-
-.pd-y\:d4 {
-padding-top: 1rem;
-padding-bottom: 1rem;
 }
 
 .fixed {
