@@ -2,166 +2,91 @@
 import SmartButton from "../../subcomponents/SmartButton.astro";
 ---
 
-<style>
-  /* Fixed Header Container */
-  #headerContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure it's above other content */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center children horizontally */
-    pointer-events: none; /* Allow interactions only on child elements */
+<script>
+import { animate, scroll} from "motion";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  let quote = document.getElementById("quoteBar")
+  let nav = document.getElementById("primaryNavContainer")
+  let logo = document.getElementById("primaryNavLogo")
+  let originalColor = nav.style.backgroundColor
+  let originalRadius = nav.style.borderRadius
+  let originalPaddingTop = nav.style.paddingTop
+  let originalPaddingBottom = nav.style.paddingBottom
+  let originalPaddingLeft = nav.style.paddingLeft
+  let originalPaddingRight = nav.style.paddingRight
+  
+
+  let compressNav = (progress) => {
+    console.log(progress.toFixed(1))
+
+    if (progress > 0.1) {
+    nav.style.backgroundColor = "rgba(0,0,0,0.8)";
+    nav.style.borderRadius = "1rem";
+    logo.style.display = "none";
+    nav.style.width = "16rem";
+    nav.style.paddingTop = "0.5rem";
+    nav.style.paddingBottom = "0.5rem";
+    nav.style.paddingLeft = "0.5rem";
+    nav.style.paddingRight = "0.5rem";
+    quote.style.display = "none";
+    nav.style.marginTop = "0.5rem";
+
   }
 
-  /* Quote Bar Styles */
-  #quoteBar {
-    width: 100%;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 1); /* Fully opaque */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    z-index: 1001; /* Above the navbar */
-    pointer-events: auto; /* Enable interactions if any */
-    transition: none; /* Managed by GSAP */
-  }
+    else {
+      nav.style.backgroundColor = originalColor;
+      nav.style.borderRadius = originalRadius;
+      nav.style.width = "100%";
+      logo.style.display = "block";
+      nav.style.paddingTop = originalPaddingTop;
+      nav.style.paddingBottom = originalPaddingBottom;
+      nav.style.paddingLeft = originalPaddingLeft;
+      nav.style.paddingRight = originalPaddingRight;
+      quote.style.display = "flex";
+      nav.style.marginTop = "0";
 
-  /* Navigation Bar Styles */
-  #mainNav {
-    width: 100%;
-    padding: 1.5rem 2rem;
-    background-color:#6320EE; /* Fully opaque on page load */
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    z-index: 1000; /* Below the quote bar */
-    pointer-events: auto; /* Enable interactions */
-    transition: none; /* Managed by GSAP */
-    opacity: 1; /* Ensure full opacity on page load */
-    transform: scale(1); /* Ensure original scale on page load */
-  }
 
-  /* Centered navigation links when nav is adjusted */
-  #mainNav.nav-centered {
-    justify-content: center; /* Center the navigation links */
-  }
+    }
+}
 
-  /* Navigation Menu Centering */
-  #navMenu {
-    justify-content: center;
-    margin-left:110px;
-    align-items: center;
-    flex: 1; /* Allow navMenu to take available space */
-  }
+  scroll(progress => compressNav(progress))
+});
 
-  /* Logo and Contact Button Styles */
-  #logo,
-  #contactButton {
-    overflow: hidden;
-    white-space: nowrap;
-    transform-origin: center;
-    /* Ensure scaling happens from the center */
-    opacity: 1; /* Full opacity on page load */
-    transform: scale(1); /* Original scale on page load */
-  }
 
-  /* Transition optimizations */
-  #headerContainer,
-  #quoteBar,
-  #mainNav,
-  #navMenu,
-  #logo,
-  #contactButton {
-    will-change: transform, opacity, width, padding, border-radius, background-color, margin;
-  }
 
-  /* Add top padding to main content to prevent overlap with fixed header */
-  body {
-    padding-top: 120px; /* Adjust based on headerContainer's total height */
-  }
-
-</style>
+</script>
 
 <!-- Fixed Header Container -->
-<div id="headerContainer">
+<div class = "fixed top:0 w:full">
   <!-- Quote Bar -->
-  <div id="quoteBar" class="bg-color:black pd-t:d2 pd-b:d2 row:x-center:y-center">
-    <p class="text:white">"Simplicity is the Ultimate Sophistication"</p>
+  <div id = "quoteBar" class="bg-color:black pd-y:d4 row:x-center:y-center">
+    <p class="font:sans:base text:white">"Simplicity is the Ultimate Sophistication"</p>
   </div>
 
   <!-- Navigation Bar -->
-  <nav id="mainNav" class="bg-color:purple row:x-between:y-center contain">
-    <img id="logo" class="h:d8 w:auto" src="/images/LogoLight.svg" alt="Logo" />
-    <div id="navMenu" class="hidden /sm/ row">
-      <ul class="">
-        <li class="inline-block text:white font:sans:base"><a href = "/">Home</a></li>
-        <li class="inline-block text:white font:sans:base"><a href = "/about">About</a></li>
-        <li class="inline-block text:white font:sans:base"><a href = "/works">Works</a></li>
-      </ul>
+  <nav id="primaryNavContainer" class="contain bg-color:purple transition:slow pd-y:d8">
+
+    <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
+
+        <img id="primaryNavLogo" class="h:d8 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
+        <div id="navMenu" class="hidden /sm/ row">
+          <ul class = "row:x-center:y-center gap:d3">
+            <li class="-box inline-block text:white font:sans:base"><a href = "/">Home</a></li>
+            <li class="-box inline-block text:white font:sans:base"><a href = "/about">About</a></li>
+            <li class="-box inline-block text:white font:sans:base"><a href = "/works">Works</a></li>
+          </ul>
+        </div>
+        <SmartButton title="Contact Us" id="contactButton" link="#footer" bgClass="bg-white" textClass="text-black" mobile={false} arrow={true}/>
+        <div id = "mobileButton" class="overflow:hidden col:x-center:y-center">
+          <img class="h:d7 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
+        </div>
+
     </div>
-    <SmartButton title="Contact Us" id="contactButton" link="#footer" bgClass="bg-white" textClass="text-black" mobile={false} arrow={true}/>
-    <div id = "mobileButton" class="overflow:hidden col:x-center:y-center">
-      <img class="h:d7 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
-    </div>
+
   </nav>
-</div>
-
-<div id = "mobileNavigation" class="hidden top:0 left:0 w:full h:full bg-color:purple z:1000 pd-t:c3">
-  <nav class="row:x-between:y-center contain">
-    <a href = "/"><img id="logo" class="h:d8 w:auto" src="/images/LogoLight.svg" alt="Logo" /></a>
-    <div id = "closeButton" class="overflow:hidden col:x-center:y-center">
-      <img class="h:d7 w:d8" src="/images/close.svg" alt="Logo" />
-    </div>
-  </nav>
-  <ul class="contain mg-l:auto mg-r:auto mg-t:c5">
-    <li class="text:white font:sans"><a href = "/">
-      <p class="font:h5 mg-b:d2">Home</p>
-      <p class="font:base opacity:0.75">We Believe In Good First Impressions</p>
-    </a></li>
-
-    <!-- border-opacity-15 -->
-<hr class="bd-t:black">
-
-    <li class="text:white font:sans"><a href = "/about">
-      <p class="font:h5 mg-b:d2">About</p>
-      <p class="font:base opacity:0.75">Learn More About Rara Avis</p>
-    </a></li>
-
-<hr class="bd-t:black">
-
-    <li class="text:white font:sans"><a href = "/works">
-      <p class="font:h5 mg-b:d2">Works</p>
-      <p class="font:base opacity:0.75">View The Work We're Most Proud Of</p>
-    </a></li>
-  </ul>
-
-<div class="row:x-start:y-center contain mg-t:c6">
-    <a href = "https://www.facebook.com/profile.php?id=61566898301393"><img class="h:d8 w:auto" src="/images/facebook.svg"></a>
-    <a href = "https://www.linkedin.com/company/raraavisdesign"><img class="h:d8 w:auto" src="/images/linkedin.svg"></a>
-</div>
 
 
 </div>
 
-
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
-
-<script src="../../js/navAnim.js"></script>
-<script src="../../js/mobilenavAnim.js"></script>
-<script src="../../js/fadeinAnim.js"></script>
-<script src="../../js/typeAnim.js"></script>
