@@ -14,17 +14,10 @@ import SmartButton from "../subcomponents/SmartButton.astro";
     name="message"
     type="email"
     placeholder="What's Your Email?"
-    class="@placeholder:[text:white_font:base] bg-color:purple text:white @focus:[outline:lightpurple] child:grow pd:d4:d2 mg-t:d4 mg-b:d4 min-w:0 bd:solid:white /md/ mg-t:0 mg-b:0"
+    class="@placeholder:[text:white_font:base:sans] bg-color:purple text:white @focus:[outline:lightpurple_text:black_bg-color:white_font:sans_bd:dotted] pd-l:d4 pd-y:d4 child:grow min-w:0 bd:solid:white:round-d2"
     required
   />
-  <SmartButton
-    title="Let's Go"
-    type="submit"
-    id="footerButton"
-    link=""
-    bgClass="bg-white"
-    textClass="text-black"
-    mobile={true}
-    arrow={true}
-  />
+ 
+  <button type = "submit" id = "footerButton" class = "bg-color:white text:black mg-l:d2 pd-x:d4 pd-y:d2 bd:round-d2 font:sans:bold row:x-center:y-center">Let's Go <img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></button>
+
 </form>

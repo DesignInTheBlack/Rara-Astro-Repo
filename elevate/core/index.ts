@@ -184,7 +184,7 @@ const main = async () => {
 
             const modifiers = item.modifiers.map((modifier) => `${modifier};`).join("\n");
 
-            compiledCSS += `${item.scope ? `.${escapeClassName(item.scope)}` : ''}.${escapeClassName(item.className)}${stateSelector? `:` : ''}${stateSelector} {` +
+            compiledCSS += `${item.scope ? `.${escapeClassName(item.scope)}` : ''}.${escapeClassName(item.className)}${stateSelector === ':placeholder' ? `:` : ''}${stateSelector} {` +
             (flexProperties ? `\n${flexProperties}` : '') +
             `\n${modifiers}\n}\n\n`;
 

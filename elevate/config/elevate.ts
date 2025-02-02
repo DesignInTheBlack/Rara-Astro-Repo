@@ -5,7 +5,9 @@ const options = {
     Extend: ['./elevate/ext/fonts.css'], // CSS files to include as well
     ClassRegex: [
         /class\s*=\s*"([^"]+)"/g, // Matches class="..."
-        /componentClass\s*=\s*\{'([^']+)'\}/g // Matches componentClass={'...'}
+        /componentClass\s*=\s*\{'([^']+)'\}/g, // Matches componentClass={'...'}
+        /bgClass\s*=\s*"([^"]+)"/g, // Matches class="..."
+        /textClass\s*=\s*"([^"]+)"/g, // Matches class="..."
     ]
 };
 
