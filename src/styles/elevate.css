@@ -215,8 +215,7 @@ top: 0;
 position: absolute;
 }
 
-.bd\:width-d1\:solid\:white {
-border-width: 0.25rem;
+.bd\:solid\:white {
 border-style: solid;
 border-color: #F7F5FB;
 }
@@ -244,7 +243,7 @@ padding-bottom: 0.5rem;
 flex-grow: 1;
 }
 
-.\@focus\:\[outline\:lightpurple\]:focus {
+.\@focus\:\[outline\:lightpurple\]::focus {
 outline-color: #C051F2;
 }
 
@@ -252,7 +251,7 @@ outline-color: #C051F2;
 background-color: #6320EE;
 }
 
-.\@placeholder\:\[text\:white_font\:base\]:placeholder {
+.\@placeholder\:\[text\:white_font\:base\]::placeholder {
 color: #F7F5FB;
 font-size: 1rem;
 }
@@ -626,6 +625,17 @@ transition: all 0.3s ease-in-out;
 position: fixed;
 }
 
+.font\:h4\:bold\:tight\:sans {
+font-size: 2.25rem;
+font-weight: 700;
+letter-spacing: -0.01rem;
+font-family: Modernist, sans-serif;
+}
+
+.mg-r\:d4 {
+margin-right: 1rem;
+}
+
 .col\:x-start\:y-start {
 display:flex;
 flex-direction:column;
@@ -633,11 +643,12 @@ align-items: flex-start;
 justify-content: flex-start;
 }
 
-.font\:h4\:bold\:tight\:widest {
+.font\:h4\:bold\:tight\:widest\:sans {
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
 letter-spacing: 0.04rem;
+font-family: Modernist, sans-serif;
 }
 
 .text\:white\:hug {
@@ -645,18 +656,20 @@ color: #F7F5FB;
 line-height: 1.2;
 }
 
-.font\:h5 {
+.font\:h5\:sans {
 font-size: 1.5rem;
+font-family: Modernist, sans-serif;
 }
 
 .mg-t\:d12 {
 margin-top: 3rem;
 }
 
-.font\:h5\:bold\:widest {
+.font\:h5\:bold\:widest\:sans {
 font-size: 1.5rem;
 font-weight: 700;
 letter-spacing: 0.04rem;
+font-family: Modernist, sans-serif;
 }
 
 .col-r\:x-center\:y-start {
@@ -750,8 +763,8 @@ padding-top: 4.5rem;
 padding-bottom: 4.5rem;
 }
 
-.h\:d4 {
-height: 1rem;
+.h\:c1 {
+height: 4rem;
 }
 
 .text\:hug {
@@ -762,11 +775,6 @@ line-height: 1.2;
 font-weight: 400;
 }
 
-.font\:h5\:sans {
-font-size: 1.5rem;
-font-family: Modernist, sans-serif;
-}
-
 .row\:x-between\:y-center {
 display:flex;
 flex-direction:row;
@@ -774,22 +782,25 @@ justify-content: space-between;
 align-items: center;
 }
 
-.font\:h6 {
+.font\:h6\:sans {
 font-size: 1.125rem;
+font-family: Modernist, sans-serif;
 }
 
-.font\:h3\:serif {
+.font\:h3\:serif\:light {
 font-size: 3.375rem;
 font-family: Playfair, serif;
+font-weight: 300;
 }
 
 .h\:d10 {
 height: 2.5rem;
 }
 
-.font\:h5\:widest {
+.font\:h5\:widest\:sans {
 font-size: 1.5rem;
 letter-spacing: 0.04rem;
+font-family: Modernist, sans-serif;
 }
 
 .row\:x-between\:y-start {
@@ -814,15 +825,22 @@ padding-bottom: 2rem;
 box-sizing: border-box;
 }
 
-.col\:x-between\:y-start {
+.col\:x-between\:y-between {
 display:flex;
 flex-direction:column;
 align-items: space-between;
-justify-content: flex-start;
+justify-content: space-between;
 }
 
-.font\:serif {
+.font\:h5\:sans\:widest {
+font-size: 1.5rem;
+font-family: Modernist, sans-serif;
+letter-spacing: 0.04rem;
+}
+
+.font\:serif\:light {
 font-family: Playfair, serif;
+font-weight: 300;
 }
 
 .font\:h3 {
@@ -885,13 +903,6 @@ font-weight: 500;
 font-family: Modernist, sans-serif;
 }
 
-.font\:h4\:bold\:tight\:sans {
-font-size: 2.25rem;
-font-weight: 700;
-letter-spacing: -0.01rem;
-font-family: Modernist, sans-serif;
-}
-
 .font\:h5\:medium\:tight\:sans {
 font-size: 1.5rem;
 font-weight: 500;
@@ -923,8 +934,8 @@ height: 72rem;
 height: 60rem;
 }
 
-.font\:h3 {
-font-size: 3.375rem;
+.font\:h4 {
+font-size: 2.25rem;
 }
 
 .mg-t\:d3 {

@@ -18,7 +18,7 @@ const { title, id, link, bgClass, textClass, mobile, arrow, type } = Astro.props
     href={link}
     id={id}
     class={`${bgClass} ${textClass} pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 item:start font:sans font:bold row:x-center ${
-      !mobile ? "hidden sm:flex" : "flex"
+      !mobile ? "hidden /sm/ row:x-center:y-center" : "row:x-center:y-center"
     }`}
   >
     {title}
@@ -29,7 +29,7 @@ const { title, id, link, bgClass, textClass, mobile, arrow, type } = Astro.props
     type={type || "button"}
     id={id}
     class={`${bgClass} ${textClass} pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 item:start font:sans:bold row:x-center ${
-      !mobile ? "hidden sm:flex" : "flex"
+      !mobile ? "hidden /sm/ row:x-center:y-center" : "row:x-center:y-center"
     }`}
   >
     {title}
