@@ -8,6 +8,7 @@ export const raracolors = {
     'darkgrey':'#666666',
     'lightgrey':'#F3F0F9',
     'white': '#F7F5FB',
+    'altwhite': '#F2EFFA',
     'black':'#0A141F',
     'error': '#F40076',
     'warn': '#F7B538',

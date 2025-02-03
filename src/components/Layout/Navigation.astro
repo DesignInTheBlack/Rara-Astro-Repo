@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let quote = document.getElementById("quoteBar")
   let nav = document.getElementById("primaryNavContainer")
   let logo = document.getElementById("primaryNavLogo")
+  let contact = document.getElementById("primaryNavContact")
   let originalColor = nav.style.backgroundColor
   let originalRadius = nav.style.borderRadius
   let originalPaddingTop = nav.style.paddingTop
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.style.paddingRight = "0.5rem";
     quote.style.display = "none";
     nav.style.marginTop = "0.5rem";
+    contact.style.display = "none";
 
   }
 
@@ -46,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.style.paddingRight = originalPaddingRight;
       quote.style.display = "flex";
       nav.style.marginTop = "0";
+      contact.style.display = "flex";
 
 
     }
@@ -78,9 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <li class="-box inline-block text:white font:sans:base"><a href = "/works">Works</a></li>
           </ul>
         </div>
-        <div style = "top:50%;transform:translateY(-50%)" class = "bg-color:white text:black absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans font:bold row:x-center /sm/ row:x-center:y-center">Contact Us</div>
+        <a id = "primaryNavContact" href = "#footer" style = "top:50%;transform:translateY(-50%)" class = "hidden /sm/ row:x-center:y-center bg-color:white text:black absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans bd:round-d2 font:bold row:x-center">Contact Us<img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></a>
         <div id = "mobileButton" class="overflow:hidden col:x-center:y-center ">
-          <img class="scope:mobilenavbutton block /sm/ hidden" src="/images/menu.svg" alt="Logo" />
+          <img class="scope:mobilenavbutton block h:d8 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
         </div>
 
     </div>
