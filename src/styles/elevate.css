@@ -320,67 +320,178 @@ background-color: #F7F5FB;
 color: #F2EFFA;
 }
 
-.h\:s1 {
-height: 24rem;
-}
-
-.bd\:round-d6 {
+.scope\:3rdcol.bd\:round-d6 {
 border-radius: 1.5rem;
 }
 
-.bg-attr\:cover\:no-repeat\:center {
+.scope\:3rdcol.bg-attr\:cover\:center {
 background-size: cover;
-background-repeat: no-repeat;
 background-position: center center;
 }
 
-.bg-attr\:contain\:no-repeat\:center {
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center center;
+.scope\:3rdcol.bg-img\:\(url\(\/images\/bentonstva\.png\)\) {
+background-image: url(/images/bentonstva.png);
 }
 
-.bg-color\:grey {
-background-color: #f1eef7;
+.scope\:3rdcol.w\:full {
+width: 100%;
 }
 
-.grid\:cols-1\:rows-2\:gap-d6 {
-display:grid;
-grid-template-columns: repeat(1,auto);
-grid-template-rows: repeat(2,auto);
-gap: 1.5rem;
-}
-
-.row-spans\:to-3 {
-grid-row-end: 3;
-}
-
-.col-spans\:to-2 {
-grid-column-end: 2;
-}
-
-.h\:full {
+.scope\:3rdcol.h\:full {
 height: 100%;
 }
 
-.grid\:rows-2 {
+.scope\:3rdcol.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
+}
+
+.scope\:2ndcol.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:2ndcol.bg-attr\:cover\:center {
+background-size: cover;
+background-position: center center;
+}
+
+.scope\:2ndcol.bg-img\:\(url\(\/images\/bentonssurge\.jpg\)\) {
+background-image: url(/images/bentonssurge.jpg);
+}
+
+.scope\:2ndcol.w\:full {
+width: 100%;
+}
+
+.scope\:2ndcol.h\:full {
+height: 100%;
+}
+
+.scope\:2ndcol.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
+}
+
+.scope\:1stcol.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:1stcol.bg-attr\:cover\:center {
+background-size: cover;
+background-position: center center;
+}
+
+.scope\:1stcol.bg-img\:\(url\(\/images\/bentonslaptop\.png\)\) {
+background-image: url(/images/bentonslaptop.png);
+}
+
+.scope\:1stcol.bg-color\:grey {
+background-color: #f1eef7;
+}
+
+.scope\:1stcol.w\:full {
+width: 100%;
+}
+
+.scope\:1stcol.h\:full {
+height: 100%;
+}
+
+.scope\:1stcol.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
+}
+
+.scope\:2ndcolcontainer.h\:s10 {
+height: 72rem;
+}
+
+.scope\:2ndcolcontainer.grid\:cols-1\:gap-d6 {
 display:grid;
-grid-template-rows: repeat(2,auto);
-}
-
-.col-spans\:to-3 {
-grid-column-end: 3;
-}
-
-.overflow\:hidden {
-overflow: hidden;
-}
-
-.grid\:cols-2\:rows-2\:gap-d6 {
-display:grid;
-grid-template-columns: repeat(2,auto);
-grid-template-rows: repeat(2,auto);
+grid-template-columns: repeat(1,auto);
 gap: 1.5rem;
+}
+
+.scope\:2ndcolcontainer.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
+}
+
+.mg-t\:d1 {
+margin-top: 0.25rem;
+}
+
+.mg-b\:d8 {
+margin-bottom: 2rem;
+}
+
+.max-w\:c11 {
+max-width: 12rem;
+}
+
+.font\:bold {
+font-weight: 700;
+}
+
+.font\:sans {
+font-family: Modernist, sans-serif;
+}
+
+.bg-color\:black {
+background-color: #0A141F;
+}
+
+.mg-b\:d6 {
+margin-bottom: 1.5rem;
+}
+
+.font\:sans\:base {
+font-family: Modernist, sans-serif;
+font-size: 1rem;
+}
+
+.text\:brief\:darkgrey {
+max-width: 45ch;
+color: #666666;
+}
+
+.mg-b\:d4 {
+margin-bottom: 1rem;
+}
+
+.font\:sans\:h4 {
+font-family: Modernist, sans-serif;
+font-size: 2.25rem;
+}
+
+.text\:note\:black\:snug {
+max-width: 20ch;
+color: #0A141F;
+line-height: 1.3;
+}
+
+.mg-b\:d2 {
+margin-bottom: 0.5rem;
+}
+
+.font\:sans\:h5 {
+font-family: Modernist, sans-serif;
+font-size: 1.5rem;
+}
+
+.text\:note\:black {
+max-width: 20ch;
+color: #0A141F;
+}
+
+.text\:note\:darkgrey {
+max-width: 20ch;
+color: #666666;
+}
+
+.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
 }
 
 .grid\:cols-1\:rows-1\:gap-d6 {
@@ -388,80 +499,6 @@ display:grid;
 grid-template-columns: repeat(1,auto);
 grid-template-rows: repeat(1,auto);
 gap: 1.5rem;
-}
-
-.pd\:d4\:d2 {
-padding-top: 1rem;
-padding-left: 0.5rem;
-padding-right: 1rem;
-padding-bottom: 0.5rem;
-}
-
-.format\:no-wrap {
-white-space: nowrap;
-}
-
-.mg-b\:c3 {
-margin-bottom: 5rem;
-}
-
-.bg-color\:black {
-background-color: #0A141F;
-}
-
-.font\:base\:sans\:bold {
-font-size: 1rem;
-font-family: Modernist, sans-serif;
-font-weight: 700;
-}
-
-.text\:darkgrey\:brief\:loose {
-color: #666666;
-max-width: 45ch;
-line-height: 1.6;
-}
-
-.font\:h6\:regular\:tight {
-font-size: 1.125rem;
-font-weight: 400;
-letter-spacing: -0.01rem;
-}
-
-.mg-b\:d6 {
-margin-bottom: 1.5rem;
-}
-
-.text\:black\:note\:relaxed {
-color: #0A141F;
-max-width: 20ch;
-line-height: 1.5;
-}
-
-.font\:h4\:bold\:tight {
-font-size: 2.25rem;
-font-weight: 700;
-letter-spacing: -0.01rem;
-}
-
-.font\:h5\:bold\:tight {
-font-size: 1.5rem;
-font-weight: 700;
-letter-spacing: -0.01rem;
-}
-
-.mg-b\:d1 {
-margin-bottom: 0.25rem;
-}
-
-.font\:base {
-font-size: 1rem;
-}
-
-.col\:x-center\:y-start {
-display:flex;
-flex-direction:column;
-align-items: center;
-justify-content: flex-start;
 }
 
 .pd-b\:c6 {
@@ -472,8 +509,18 @@ padding-bottom: 7rem;
 padding-top: 7rem;
 }
 
+.bg-color\:grey {
+background-color: #f1eef7;
+}
+
 .contain {
 
+}
+
+.text\:darkgrey\:brief\:loose {
+color: #666666;
+max-width: 45ch;
+line-height: 1.6;
 }
 
 .font\:sans\:h6\:regular\:tight {
@@ -507,8 +554,8 @@ font-weight: 700;
 letter-spacing: -0.01rem;
 }
 
-.mg-b\:d2 {
-margin-bottom: 0.5rem;
+.format\:no-wrap {
+white-space: nowrap;
 }
 
 .text\:purple {
@@ -520,6 +567,10 @@ font-family: Modernist, sans-serif;
 font-size: 1.5rem;
 font-weight: 500;
 letter-spacing: -0.01rem;
+}
+
+.col-spans\:to-2 {
+grid-column-end: 2;
 }
 
 .grid\:cols-1-fr {
@@ -535,11 +586,6 @@ background-position: center center;
 
 .h\:s4 {
 height: 36rem;
-}
-
-.font\:sans\:base {
-font-family: Modernist, sans-serif;
-font-size: 1rem;
 }
 
 .right\:d6 {
@@ -562,13 +608,21 @@ left: 0;
 bottom: 0;
 }
 
-.bg-img\:\(url\(\/images\/bentonpromo\.png\)\) {
-background-image: url(/images/bentonpromo.png);
+.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.bg-img\:\(url\(\/images\/enszscene\.png\)\) {
+background-image: url(/images/enszscene.png);
 }
 
 .bg-attr\:cover\:center {
 background-size: cover;
 background-position: center center;
+}
+
+.h\:full {
+height: 100%;
 }
 
 .scope\:altgrid.col-spans\:from-1\:to-1 {
@@ -580,16 +634,16 @@ grid-column-end: 1;
 position: relative;
 }
 
-.bg-img\:\(url\(\/images\/hungrypromo\.png\)\) {
-background-image: url(/images/hungrypromo.png);
+.bg-img\:\(url\(\/images\/bentonsscene\.png\)\) {
+background-image: url(/images/bentonsscene.png);
 }
 
 .relative {
 position: relative;
 }
 
-.bg-img\:\(url\(\/images\/pouredpromo\.png\)\) {
-background-image: url(/images/pouredpromo.png);
+.bg-img\:\(url\(\/images\/carneyscene\.png\)\) {
+background-image: url(/images/carneyscene.png);
 }
 
 .grid\:cols-1-fr\:rows-1\:rowgap-d10 {
@@ -601,6 +655,18 @@ row-gap: 2.5rem;
 
 .h\:s10 {
 height: 72rem;
+}
+
+.bg-img\:\(url\(\/images\/hungrypromo\.png\)\) {
+background-image: url(/images/hungrypromo.png);
+}
+
+.bg-img\:\(url\(\/images\/pouredpromo\.png\)\) {
+background-image: url(/images/pouredpromo.png);
+}
+
+.bg-img\:\(url\(\/images\/bentonpromo\.png\)\) {
+background-image: url(/images/bentonpromo.png);
 }
 
 .scope\:grid.col-spans\:from-1\:to-1 {
@@ -631,6 +697,10 @@ align-items: center;
 justify-content: center;
 }
 
+.overflow\:hidden {
+overflow: hidden;
+}
+
 .scope\:primarynavcontact.hidden {
 display: none;
 }
@@ -658,6 +728,10 @@ padding-bottom: 2.25rem;
 
 .transition\:slow {
 transition: all 0.3s ease-in-out;
+}
+
+.z\:50 {
+z-index: 50;
 }
 
 .fixed {
@@ -695,10 +769,6 @@ font-family: Modernist, sans-serif;
 font-size: 1.125rem;
 }
 
-.mg-b\:d4 {
-margin-bottom: 1rem;
-}
-
 .font\:sans\:h5\:light {
 font-family: Modernist, sans-serif;
 font-size: 1.5rem;
@@ -725,6 +795,10 @@ justify-content: flex-start;
 
 .pd-t\:c5 {
 padding-top: 6rem;
+}
+
+.opacity\:0\.0 {
+opacity: 0;
 }
 
 .z\:100 {
@@ -801,6 +875,10 @@ align-items: flex-start;
 
 .h\:s2 {
 height: 28rem;
+}
+
+.row-spans\:to-3 {
+grid-row-end: 3;
 }
 
 .grid\:rows-2\:gap-d6 {
@@ -948,6 +1026,10 @@ align-items: space-between;
 justify-content: space-between;
 }
 
+.h\:s1 {
+height: 24rem;
+}
+
 .font\:h5\:sans\:widest {
 font-size: 1.5rem;
 font-family: Modernist, sans-serif;
@@ -982,28 +1064,45 @@ color: #0A141F;
 line-height: 1.6;
 }
 
-.col\:y-start\:x-start {
+.scope\:aboutstory.col\:y-start\:x-start {
 display:flex;
 flex-direction:column;
 justify-content: flex-start;
 align-items: flex-start;
 }
 
-.col-spans\:from-3\:to-4 {
-grid-column-start: 3;
-grid-column-end: 4;
+.scope\:aboutstory.col-spans\:from-1\:to-1 {
+grid-column-start: 1;
+grid-column-end: 1;
 }
 
-.text\:darkgrey\:loose\:full {
+.text\:darkgrey\:loose\:book {
 color: #666666;
 line-height: 1.6;
-max-width: 80ch;
+max-width: 70ch;
 }
 
 .font\:sans\:h6\:medium {
 font-family: Modernist, sans-serif;
 font-size: 1.125rem;
 font-weight: 500;
+}
+
+.mg-b\:d1 {
+margin-bottom: 0.25rem;
+}
+
+.font\:base\:sans\:base {
+font-size: 1rem;
+font-family: Modernist, sans-serif;
+font-size: 1rem;
+}
+
+.grid\:cols-1\:rows-2\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(1,auto);
+grid-template-rows: repeat(2,auto);
+gap: 1.5rem;
 }
 
 .text\:darkgrey\:center\:book {
@@ -1157,6 +1256,11 @@ grid-column-start: 1;
 grid-column-end: 2;
 }
 
+.scope\:aboutstory.col-spans\:from-3\:to-4 {
+grid-column-start: 3;
+grid-column-end: 4;
+}
+
 .h\:s2 {
 height: 28rem;
 }
@@ -1233,18 +1337,45 @@ justify-content: flex-end;
 align-items: flex-end;
 }
 
-.grid\:cols-3\:rows-1\:gap-d6 {
+.grid\:cols-3-fr\:rows-2\:gap-d6 {
 display:grid;
-grid-template-columns: repeat(3,auto);
-grid-template-rows: repeat(1,auto);
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: repeat(2,auto);
 gap: 1.5rem;
 }
 
-.h\:s7 {
-height: 56rem;
+.scope\:2ndcolcontainer.h\:auto {
+height: auto;
 }
 
-.col-spans\:to-3 {
+.scope\:2ndcolcontainer.col-spans\:from-2\:to-4 {
+grid-column-start: 2;
+grid-column-end: 4;
+}
+
+.scope\:2ndcolcontainer.grid\:cols-3\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(3,auto);
+gap: 1.5rem;
+}
+
+.scope\:1stcol.col-spans\:from-1\:to-3 {
+grid-column-start: 1;
+grid-column-end: 3;
+}
+
+.scope\:1stcol.row-spans\:from-1\:to-3 {
+grid-row-start: 1;
+grid-row-end: 3;
+}
+
+.scope\:2ndcol.col-spans\:from-3\:to-3 {
+grid-column-start: 3;
+grid-column-end: 3;
+}
+
+.scope\:3rdcol.col-spans\:from-3\:to-3 {
+grid-column-start: 3;
 grid-column-end: 3;
 }
 

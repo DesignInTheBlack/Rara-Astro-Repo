@@ -12,12 +12,13 @@
         let close = document.getElementById("mobileClose");
         let open = document.getElementById("mobileOpen");
         let mobileNav = document.getElementById("mobileNav");
+        mobileNav.style.pointerEvents = "none";
 
 
         function mobileOpen() {
         console.log("Open Mobile!");
-        const animation = animate(mobileNav, { opacity: 100 }, { duration: 0.2 });
         mobileNav.style.display = "block";
+        mobileNav.style.pointerEvents = "all";
         animate(mobileNav, { opacity: 100 }, { duration: 0.2 })
    
         }
@@ -27,6 +28,7 @@
         const animation = animate(mobileNav, { opacity: 0 }, { duration: 0.2 });
         animation.then(() => {
             mobileNav.style.display = "none";
+            mobileNav.style.pointerEvents = "none";
         });
         }
 
@@ -42,7 +44,7 @@
 
 
 
-<div id = "mobileNav" class = "contain pattern:velvet:fg-purple:bg-altpurple z:100 fixed top:0 w:full h:full">
+<div id = "mobileNav" class = "contain pattern:velvet:fg-purple:bg-altpurple z:100 fixed top:0 w:full h:full opacity:0.0">
 
   <!-- Mobile Navigation Bar -->
   <nav  class="pd-t:c5">
