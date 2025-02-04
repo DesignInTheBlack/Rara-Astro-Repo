@@ -1,0 +1,100 @@
+---
+
+---
+
+
+
+<script>
+
+    import { animate, scroll} from "motion";
+    document.addEventListener("DOMContentLoaded", () => {
+
+        let close = document.getElementById("mobileClose");
+        let open = document.getElementById("mobileOpen");
+        let mobileNav = document.getElementById("mobileNav");
+
+
+        function mobileOpen() {
+        console.log("Open Mobile!");
+        const animation = animate(mobileNav, { opacity: 100 }, { duration: 0.2 });
+        mobileNav.style.display = "block";
+        animate(mobileNav, { opacity: 100 }, { duration: 0.2 })
+   
+        }
+
+        function mobileClose() {
+        console.log("Close Mobile!");
+        const animation = animate(mobileNav, { opacity: 0 }, { duration: 0.2 });
+        animation.then(() => {
+            mobileNav.style.display = "none";
+        });
+        }
+
+
+       
+        close.addEventListener("click", mobileClose);
+        open.addEventListener("click", mobileOpen);
+
+      });
+    
+</script>
+    
+
+
+
+<div id = "mobileNav" class = "contain pattern:velvet:fg-purple:bg-altpurple z:100 fixed top:0 w:full h:full">
+
+  <!-- Mobile Navigation Bar -->
+  <nav  class="pd-t:c5">
+    <div class = "row:x-center:y-center relative">
+
+        <img class="h:d8 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
+        <div id = "mobileClose" class="overflow:hidden col:x-center:y-center absolute right:0">
+          <img class="scope:mobilenavbutton block h:d8 w:d8" src="/images/close.svg" alt="Logo" />
+        </div>
+
+    </div>
+  </nav>
+
+   <div class = "col:y-start z:200 h:full gap:d9 pd-t:c8">
+        
+        <div>
+            <h2 class = "text:white font:sans:h5:light mg-b:d4">Home</h2>
+            <p class = "text:white font:sans:h6 opacity:0.75">We Believe In Good First Impressions</p>
+            <hr class = "mg-t:d6 opacity:0.35 bd:black">
+        </div>
+
+       
+
+        <div>
+            <h2 class = "text:white font:sans:h5:light mg-b:d4">About</h2>
+            <p class = "text:white font:sans:h6 opacity:0.75">Learn More About Why Rara Avis Is Different</p>
+            <hr class = "mg-t:d6 opacity:0.35 bd:black">
+        </div>
+
+        <div>
+            <h2 class = "text:white font:sans:h5:light mg-b:d4">Works</h2>
+            <p class = "text:white font:sans:h6 opacity:0.75">View The Work We're Proud Of</p>
+            <hr class = "mg-t:d6 opacity:0.35 bd:black">
+        </div>
+
+        <div>
+            <h2 class = "text:white font:sans:h5:light mg-b:d4">Pricing</h2>
+            <p class = "text:white font:sans:h6 opacity:0.75">We Value Your Time And Budget</p>
+            <hr class = "mg-t:d6 opacity:0.35 bd:black">
+        </div>
+
+        <div>
+            <h2 class = "text:white font:sans:h5:light mg-b:d4">Contact</h2>
+            <p class = "text:white font:sans:h6 opacity:0.75">We're Ready When You Are</p>
+            <hr class = "mg-t:d6 opacity:0.35 bd:black">
+        </div>
+
+        <div class="row:y-center pd-t:c1">
+            <a href = "https://www.facebook.com/profile.php?id=61566898301393"><img class="h:d8 w:auto mg-r:d4" src="/images/facebook.svg"></a>
+            <a href = "https://www.linkedin.com/company/raraavisdesign"><img class="h:d8 w:auto" src="/images/linkedin.svg"></a>
+        </div>
+
+    </div>
+
+</div>

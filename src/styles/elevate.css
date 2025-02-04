@@ -241,16 +241,20 @@ padding-left: 1rem;
 padding-right: 1rem;
 }
 
-.mg-l\:d2 {
-margin-left: 0.5rem;
-}
-
 .text\:black {
 color: #0A141F;
 }
 
 .bg-color\:white {
 background-color: #F7F5FB;
+}
+
+.mg-t\:d6 {
+margin-top: 1.5rem;
+}
+
+.w\:c10 {
+width: 10rem;
 }
 
 .bd\:solid\:white\:round-d2 {
@@ -399,10 +403,6 @@ white-space: nowrap;
 
 .mg-b\:c3 {
 margin-bottom: 5rem;
-}
-
-.mg-t\:d6 {
-margin-top: 1.5rem;
 }
 
 .bg-color\:black {
@@ -631,7 +631,7 @@ align-items: center;
 justify-content: center;
 }
 
-.hidden {
+.scope\:primarynavcontact.hidden {
 display: none;
 }
 
@@ -643,13 +643,17 @@ display: inline-block;
 gap: 0.75rem;
 }
 
+.hidden {
+display: none;
+}
+
 .h\:d8 {
 height: 2rem;
 }
 
-.pd-y\:d8 {
-padding-top: 2rem;
-padding-bottom: 2rem;
+.pd-y\:d9 {
+padding-top: 2.25rem;
+padding-bottom: 2.25rem;
 }
 
 .transition\:slow {
@@ -660,15 +664,84 @@ transition: all 0.3s ease-in-out;
 position: fixed;
 }
 
+.mg-r\:d4 {
+margin-right: 1rem;
+}
+
+.pd-t\:c1 {
+padding-top: 4rem;
+}
+
+.row\:y-center {
+display:flex;
+flex-direction:row;
+align-items: center;
+}
+
+.bd\:black {
+border-color: #0A141F;
+}
+
+.opacity\:0\.35 {
+opacity: 0.35;
+}
+
+.opacity\:0\.75 {
+opacity: 0.75;
+}
+
+.font\:sans\:h6 {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+}
+
+.mg-b\:d4 {
+margin-bottom: 1rem;
+}
+
+.font\:sans\:h5\:light {
+font-family: Modernist, sans-serif;
+font-size: 1.5rem;
+font-weight: 300;
+}
+
+.pd-t\:c8 {
+padding-top: 8rem;
+}
+
+.gap\:d9 {
+gap: 2.25rem;
+}
+
+.z\:200 {
+z-index: 200;
+}
+
+.col\:y-start {
+display:flex;
+flex-direction:column;
+justify-content: flex-start;
+}
+
+.pd-t\:c5 {
+padding-top: 6rem;
+}
+
+.z\:100 {
+z-index: 100;
+}
+
+.pattern\:velvet\:fg-purple\:bg-altpurple {
+background: repeating-linear-gradient(135deg, currentColor 0 2px, transparent 2px 6px);
+color: #6320EE;
+background-color: #5711E4;
+}
+
 .font\:h4\:bold\:tight\:sans {
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
 font-family: Modernist, sans-serif;
-}
-
-.mg-r\:d4 {
-margin-right: 1rem;
 }
 
 .col\:x-start\:y-start {
@@ -711,11 +784,19 @@ letter-spacing: 0.04rem;
 font-family: Modernist, sans-serif;
 }
 
-.col-r\:x-center\:y-start {
+.scope\:footer.mg-b\:d8 {
+margin-bottom: 2rem;
+}
+
+.scope\:footer.h\:s4 {
+height: 36rem;
+}
+
+.scope\:footer.col-r\:y-center\:x-start {
 display:flex;
 flex-direction:column-reverse;
-align-items: center;
-justify-content: flex-start;
+justify-content: center;
+align-items: flex-start;
 }
 
 .h\:s2 {
@@ -954,62 +1035,62 @@ align-items: y;
 flex-wrap: FlexWrapRule;
 }
 
-.row\:x-center\:y-center {
+.scope\:primarynavcontact.row\:x-center\:y-center {
 display:flex;
 flex-direction:row;
 justify-content: center;
 align-items: center;
 }
 
-.bg-color\:white {
+.scope\:primarynavcontact.bg-color\:white {
 background-color: #F7F5FB;
 }
 
-.text\:black {
+.scope\:primarynavcontact.text\:black {
 color: #0A141F;
 }
 
-.absolute {
+.scope\:primarynavcontact.absolute {
 position: absolute;
 }
 
-.right\:0 {
+.scope\:primarynavcontact.right\:0 {
 right: 0;
 }
 
-.pd-l\:d4 {
+.scope\:primarynavcontact.pd-l\:d4 {
 padding-left: 1rem;
 }
 
-.pd-r\:d4 {
+.scope\:primarynavcontact.pd-r\:d4 {
 padding-right: 1rem;
 }
 
-.pd-t\:d2 {
+.scope\:primarynavcontact.pd-t\:d2 {
 padding-top: 0.5rem;
 }
 
-.pd-b\:d2 {
+.scope\:primarynavcontact.pd-b\:d2 {
 padding-bottom: 0.5rem;
 }
 
-.child\:start {
+.scope\:primarynavcontact.child\:start {
 align-self: flex-start;
 }
 
-.font\:sans {
+.scope\:primarynavcontact.font\:sans {
 font-family: Modernist, sans-serif;
 }
 
-.bd\:round-d2 {
+.scope\:primarynavcontact.bd\:round-d2 {
 border-radius: 0.5rem;
 }
 
-.font\:bold {
+.scope\:primarynavcontact.font\:bold {
 font-weight: 700;
 }
 
-.row\:x-center {
+.scope\:primarynavcontact.row\:x-center {
 display:flex;
 flex-direction:row;
 justify-content: center;
@@ -1048,6 +1129,14 @@ flex-direction:row;
 justify-content: x;
 align-items: y;
 flex-wrap: FlexWrapRule;
+}
+
+.mg-t\:0 {
+margin-top: 0;
+}
+
+.mg-l\:d2 {
+margin-left: 0.5rem;
 }
 
 }
@@ -1169,14 +1258,14 @@ grid-template-rows: repeat(1,auto);
 gap: 1.5rem;
 }
 
-.row\:x-between\:y-center {
+.scope\:footer.row\:x-between\:y-center {
 display:flex;
 flex-direction:row;
 justify-content: space-between;
 align-items: center;
 }
 
-.h\:s1 {
+.scope\:footer.h\:s1 {
 height: 24rem;
 }
 

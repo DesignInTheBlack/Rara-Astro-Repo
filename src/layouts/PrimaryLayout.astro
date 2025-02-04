@@ -1,6 +1,7 @@
 ---
 import Navigation from "../components/layout/Navigation.astro";
 import Footer from "../components/layout/Footer.astro";
+import Mobile from "../components/layout/Mobile.astro";
 import "../styles/elevate.css";
 ---
 
@@ -14,8 +15,11 @@ import "../styles/elevate.css";
     </title>
   </head>
   <body class="-antialiased opacity:0">
+    
 <Navigation>
 </Navigation>
+<Mobile>
+</Mobile>
 <slot/>
 <Footer>
 </Footer>

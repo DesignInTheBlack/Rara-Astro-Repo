@@ -1,61 +1,60 @@
 ---
-import SmartButton from "../../subcomponents/SmartButton.astro";
 ---
 
 <script>
 import { animate, scroll} from "motion";
 
 document.addEventListener("DOMContentLoaded", () => {
+  const threshold = 768;
 
-  let quote = document.getElementById("quoteBar")
-  let nav = document.getElementById("primaryNavContainer")
-  let logo = document.getElementById("primaryNavLogo")
-  let contact = document.getElementById("primaryNavContact")
-  let originalColor = nav.style.backgroundColor
-  let originalRadius = nav.style.borderRadius
-  let originalPaddingTop = nav.style.paddingTop
-  let originalPaddingBottom = nav.style.paddingBottom
-  let originalPaddingLeft = nav.style.paddingLeft
-  let originalPaddingRight = nav.style.paddingRight
-  
+  // Only run if the viewport width is above the threshold.
+  if (window.innerWidth > threshold) {
+    let quote = document.getElementById("quoteBar");
+    let nav = document.getElementById("primaryNavContainer");
+    let logo = document.getElementById("primaryNavLogo");
+    let contact = document.getElementById("primaryNavContact");
+    let originalColor = nav.style.backgroundColor;
+    let originalRadius = nav.style.borderRadius;
+    let originalPaddingTop = nav.style.paddingTop;
+    let originalPaddingBottom = nav.style.paddingBottom;
+    let originalPaddingLeft = nav.style.paddingLeft;
+    let originalPaddingRight = nav.style.paddingRight;
 
-  let compressNav = (progress) => {
-    console.log(progress.toFixed(1))
+    let compressNav = (progress) => {
+      console.log(progress.toFixed(1));
 
-    if (progress > 0.1) {
-    nav.style.backgroundColor = "rgba(0,0,0,0.8)";
-    nav.style.borderRadius = "1rem";
-    logo.style.display = "none";
-    nav.style.width = "16rem";
-    nav.style.paddingTop = "0.5rem";
-    nav.style.paddingBottom = "0.5rem";
-    nav.style.paddingLeft = "0.5rem";
-    nav.style.paddingRight = "0.5rem";
-    quote.style.display = "none";
-    nav.style.marginTop = "0.5rem";
-    contact.style.display = "none";
+      if (progress > 0.1) { 
+        nav.style.backgroundColor = "rgba(0,0,0,0.8)";
+        nav.style.borderRadius = "1rem";
+        logo.style.display = "none";
+        nav.style.width = "16rem";
+        nav.style.paddingTop = "0.5rem";
+        nav.style.paddingBottom = "0.5rem";
+        nav.style.paddingLeft = "0.5rem";
+        nav.style.paddingRight = "0.5rem";
+        quote.style.display = "none";
+        nav.style.marginTop = "0.5rem";
+        contact.style.display = "none";
+      } else {
+        nav.style.backgroundColor = originalColor;
+        nav.style.borderRadius = originalRadius;
+        nav.style.width = "100%";
+        logo.style.display = "block";
+        nav.style.paddingTop = originalPaddingTop;
+        nav.style.paddingBottom = originalPaddingBottom;
+        nav.style.paddingLeft = originalPaddingLeft;
+        nav.style.paddingRight = originalPaddingRight;
+        quote.style.display = "flex";
+        nav.style.marginTop = "0";
+        contact.style.display = "flex";
+      }
+    };
 
+    // This assumes you have a 'scroll' function that provides the progress value.
+    scroll(progress => compressNav(progress));
   }
-
-    else {
-      nav.style.backgroundColor = originalColor;
-      nav.style.borderRadius = originalRadius;
-      nav.style.width = "100%";
-      logo.style.display = "block";
-      nav.style.paddingTop = originalPaddingTop;
-      nav.style.paddingBottom = originalPaddingBottom;
-      nav.style.paddingLeft = originalPaddingLeft;
-      nav.style.paddingRight = originalPaddingRight;
-      quote.style.display = "flex";
-      nav.style.marginTop = "0";
-      contact.style.display = "flex";
-
-
-    }
-}
-
-  scroll(progress => compressNav(progress))
 });
+
 
 
 
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 
   <!-- Navigation Bar -->
-  <nav id="primaryNavContainer" class="contain bg-color:purple transition:slow pd-y:d8">
+  <nav id="primaryNavContainer" class="contain bg-color:purple transition:slow pd-y:d9">
 
     <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
 
@@ -81,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <li class="-box inline-block text:white font:sans:base"><a href = "/works">Works</a></li>
           </ul>
         </div>
-        <a id = "primaryNavContact" href = "#footer" style = "top:50%;transform:translateY(-50%)" class = "hidden /sm/ row:x-center:y-center bg-color:white text:black absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans bd:round-d2 font:bold row:x-center">Contact Us<img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></a>
-        <div id = "mobileButton" class="overflow:hidden col:x-center:y-center ">
+        <a id = "primaryNavContact" href = "#footer" style = "top:50%;transform:translateY(-50%)" class = "scope:primarynavcontact hidden /sm/ row:x-center:y-center bg-color:white text:black absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans bd:round-d2 font:bold row:x-center">Contact Us<img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></a>
+        <div id = "mobileOpen" class="overflow:hidden col:x-center:y-center absolute right:0">
           <img class="scope:mobilenavbutton block h:d8 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
         </div>
 

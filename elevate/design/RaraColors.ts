@@ -1,6 +1,7 @@
 export const raracolors = {
     'purple': '#6320EE', 
     'lightpurple':'#C051F2', 
+    'altpurple':'#5711E4',
     'grey': '#f1eef7', 
     'green':'#81C14B',
     'pink':'#FD3E81',
