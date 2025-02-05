@@ -13,19 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let nav = document.getElementById("primaryNavContainer");
     let logo = document.getElementById("primaryNavLogo");
     let contact = document.getElementById("primaryNavContact");
+    let notch = document.getElementById("navNotch");
     let originalColor = nav.style.backgroundColor;
     let originalRadius = nav.style.borderRadius;
     let originalPaddingTop = nav.style.paddingTop;
     let originalPaddingBottom = nav.style.paddingBottom;
     let originalPaddingLeft = nav.style.paddingLeft;
     let originalPaddingRight = nav.style.paddingRight;
+    let originalNotchColor = notch.style.backgroundColor;
 
     let compressNav = (progress) => {
-      console.log(progress.toFixed(1));
 
       if (progress > 0.1) { 
-        nav.style.backgroundColor = "rgba(0,0,0,0.8)";
-        nav.style.borderRadius = "1rem";
+        nav.style.backgroundColor = "rgba(0,0,0,0.6)";
+        nav.style.borderRadius = "1.5rem";
         logo.style.display = "none";
         nav.style.width = "16rem";
         nav.style.paddingTop = "0.5rem";
@@ -33,8 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.style.paddingLeft = "0.5rem";
         nav.style.paddingRight = "0.5rem";
         quote.style.display = "none";
-        nav.style.marginTop = "0.5rem";
+        nav.style.marginTop = "1rem";
         contact.style.display = "none";
+        notch.style.backgroundColor = "rgba(0,0,0,0.5)";
+
+
       } else {
         nav.style.backgroundColor = originalColor;
         nav.style.borderRadius = originalRadius;
@@ -47,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         quote.style.display = "flex";
         nav.style.marginTop = "0";
         contact.style.display = "flex";
+        notch.style.backgroundColor = originalNotchColor;
       }
     };
 
@@ -72,9 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
 
-        <img id="primaryNavLogo" class="h:d8 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
+        <img id="primaryNavLogo" class="h:d9 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
         <div id="navMenu" class="hidden /sm/ row">
-          <ul class = "row:x-center:y-center gap:d3">
+          <ul id = "navNotch" class = "row:x-center:y-center gap:d3 bg-color:purple bd:round-d6 pd-y:d3 pd-x:d10">
             <li class="-box inline-block text:white font:sans:base"><a href = "/">Home</a></li>
             <li class="-box inline-block text:white font:sans:base"><a href = "/about">About</a></li>
             <li class="-box inline-block text:white font:sans:base"><a href = "/works">Works</a></li>
