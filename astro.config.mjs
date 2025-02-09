@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cloudflare from '@astrojs/cloudflare';
 
+
 // Convert import.meta.url to __dirname equivalent
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,9 +13,8 @@ export default defineConfig({
   output: 'hybrid', // Ensure you're handling SSR in Cloudflare runtime
   srcDir: './src', // Custom source directory
 
-  integrations: [
-    alpinejs(), // Alpine.js integration
-  ],
+  integrations: [// Alpine.js integration
+  alpinejs()],
 
   vite: {
     resolve: {
