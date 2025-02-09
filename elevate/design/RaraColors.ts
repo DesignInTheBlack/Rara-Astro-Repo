@@ -13,11 +13,14 @@ export const raracolors = {
     'black':'#0A141F',
     'error': '#F40076',
     'warn': '#F7B538',
+
+
     // New Colors
     'fpurple':'#4e4187',
     'fpurplealt':'#473C7C',
     'fwhite':'#E7E3DA',
-    'fblack':'#0C0F0A',
+    'fblack':'#12130F',
+    'fblackalt':'#0C0F0A',
     'findigo':'#9C95DC',
     'fblue':'#788BFF',
     'fdarkpurple':'#382E60'

@@ -242,7 +242,7 @@ padding-right: 1rem;
 }
 
 .text\:fblack {
-color: #0C0F0A;
+color: #12130F;
 }
 
 .bg-color\:fwhite {
@@ -285,7 +285,7 @@ border-style: dotted;
 }
 
 .bg-color\:fblack {
-background-color: #0C0F0A;
+background-color: #12130F;
 }
 
 .\@placeholder\:\[text\:white_font\:base\:sans\]::placeholder {
@@ -971,6 +971,18 @@ height: 28rem;
 grid-row-end: 3;
 }
 
+.\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.4_z\:40_empty_bd\:round-d6\]:after {
+position: absolute;
+top: 0;
+height: 100%;
+width: 100%;
+background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 40%), radial-gradient(circle at 50% 8%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+opacity: 0.4;
+z-index: 40;
+content: '';
+border-radius: 1.5rem;
+}
+
 .grid\:rows-2\:gap-d6 {
 display:grid;
 grid-template-rows: repeat(2,auto);
@@ -1050,6 +1062,12 @@ grid-template-columns: repeat(1,auto);
 .pd-y\:c4 {
 padding-top: 5.5rem;
 padding-bottom: 5.5rem;
+}
+
+.pattern\:halftone\:bg-fblackalt\:fg-fblack {
+background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 6px 6px, radial-gradient(circle, transparent 3px, currentColor 3px) 3px 3px / 6px 6px;
+background-color: #0C0F0A;
+color: #12130F;
 }
 
 .h\:c1 {
@@ -1255,7 +1273,7 @@ background-color: #E7E3DA;
 }
 
 .scope\:primarynavcontact.text\:fblack {
-color: #0C0F0A;
+color: #12130F;
 }
 
 .scope\:primarynavcontact.absolute {
@@ -1628,3 +1646,9 @@ margin-bottom: 0;
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,0.08) 50%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0.2) 100%);
 }
+
+.-lumino {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border:1px solid rgba(255,255,255,0.09)
+}
+
