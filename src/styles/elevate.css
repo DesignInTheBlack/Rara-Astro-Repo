@@ -824,8 +824,8 @@ flex-direction:row;
 align-items: center;
 }
 
-.bd\:black {
-border-color: #0A141F;
+.bd\:fblack {
+border-color: #12130F;
 }
 
 .opacity\:0\.25 {
@@ -876,14 +876,14 @@ padding-top: 6rem;
 opacity: 0;
 }
 
-.z\:100 {
-z-index: 100;
+.z\:5000 {
+z-index: 5000;
 }
 
-.pattern\:halftone\:fg-purple\:bg-altpurple {
-background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 6px 6px, radial-gradient(circle, transparent 3px, currentColor 3px) 3px 3px / 6px 6px;
-color: #6320EE;
-background-color: #5711E4;
+.pattern\:velvet\:fg-fpurple\:bg-fpurplealt {
+background: repeating-linear-gradient(135deg, currentColor 0 2px, transparent 2px 6px);
+color: #4e4187;
+background-color: #473C7C;
 }
 
 .font\:h4\:bold\:tight\:sans {
