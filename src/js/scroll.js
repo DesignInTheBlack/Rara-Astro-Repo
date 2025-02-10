@@ -49,30 +49,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   })
 })
 
-// Optional: stop scrolling on specific elements
-function stopScroll(event) {
-  if (event.target.hasAttribute('data-lenis-prevent')) {
-    lenis.stop()
-  }
-}
-
-document.addEventListener('mouseenter', stopScroll, true)
-
-function startScroll(event) {
-  if (event.target.hasAttribute('data-lenis-prevent')) {
-    lenis.start()
-  }
-}
-
-document.addEventListener('mouseleave', startScroll, true)
-
-
-// Pause Lenis when browser window is resized
-let resizeTimer
-window.addEventListener('resize', () => {
-  lenis.stop()
-  clearTimeout(resizeTimer)
-  resizeTimer = setTimeout(() => {
-    lenis.start()
-  }, 250)
-})

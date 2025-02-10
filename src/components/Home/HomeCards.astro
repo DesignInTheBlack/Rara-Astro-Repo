@@ -1,17 +1,14 @@
 <script>
-  import { inView, animate, easeInOut } from "motion";
+  import { inView, animate, stagger} from "motion";
 
   document.addEventListener("DOMContentLoaded", () => {
     // Use an escaped class selector to match the class "-scrollInDiv"
     let element = document.querySelector('.\\-scrollInDiv');
 
-    inView(element, () => {
-      let fadeIn = animate(element, { opacity: 1 }, { duration: 2 })
-      fadeIn.play()
-      fadeIn.then(() => {
-        fadeIn.stop()
-      })
-     
+
+    inView(element,  () => {
+      console.log("The link ", element, " has entered the viewport")
+        animate(element, {opacity:  [0,1]},{duration:2},{delay: stagger(0.2)})
     });
   });
 </script>
@@ -19,9 +16,10 @@
 
 
 
+
 <div class="contain grid:cols-1:rows-3:gap-d6 /xl/ grid:cols-3-fr:rows-1:gap-d6">
     
-    <div class="-lumino -scrollInDiv opacity:0.0 bg-color:findigo w:full h:s1 bd:round-d6 col:x-between:y-between border-box pd:d8 text:snug -fade-in /lg/ h:s2">
+    <div class="-lumino -scrollInDiv bg-color:findigo w:full h:s1 bd:round-d6 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s2">
       <div class="row:x-between:y-start">
         <p class="font:h5:widest:sans text:fwhite">Crafting Your</p>
         <img class="h:d10 w:auto" src="images/eye.svg">
@@ -32,7 +30,7 @@
       </div>
     </div>
 
-    <div class="-lumino bg-color:fblack w:full h:s1 bd:round-d6 col:x-between:y-between border-box pd:d8 text:snug -fade-in /lg/ h:s2">
+    <div class="-lumino -scrollInDiv bg-color:fblack w:full h:s1 bd:round-d6 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s2">
       <div class="row:x-between:y-start">
         <p class="font:h5:sans:widest text:fwhite">Shaping Your</p>
         <img class="h:d10 w:auto" src="images/mouse.svg">
@@ -43,7 +41,7 @@
       </div>
     </div>
 
-    <div class="-lumino bg-color:fwhite w:full h:s1 bd:round-d6 col:x-between:y-between border-box pd:d8 text:snug -fade-in /lg/ h:s2">
+    <div class="-lumino -scrollInDiv bg-color:fwhite w:full h:s1 bd:round-d6 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s2">
       <div class="row:x-between:y-start">
       <p class="font:h5:widest:sans text:fblack">Elevating Your</p>
       <img class="h:d10 w:auto" src="images/share.svg">
