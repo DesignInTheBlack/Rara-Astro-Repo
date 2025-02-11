@@ -3,9 +3,9 @@ import PrimaryLayout from '../layouts/PrimaryLayout.astro'
 import HomeTyped from '../components/home/HomeTyped.astro'
 import HomeHero from '../components/home/HomeHero.astro'
 import HomeCards from '../components/home/HomeCards.astro'
-import HomeValues from '../components/home/HomeValues.astro'
-import HomeWorks from '../components/home/HomeWorks.astro'
 import SmartSpacer from '../subcomponents/SmartSpacer.astro'
+import HomeCascade from '../components/home/HomeCascade.astro'
+import WorksGalleryAlt from '../components/works/WorksGalleryAlt.astro'
 ---
 
 <PrimaryLayout>
@@ -16,9 +16,9 @@ import SmartSpacer from '../subcomponents/SmartSpacer.astro'
   <SmartSpacer componentClass = {'pd-y:d3'}></SmartSpacer>
   <HomeCards></HomeCards>
   <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
-  <HomeValues></HomeValues>
+  <HomeCascade></HomeCascade>
   <SmartSpacer componentClass = {'pd-y:d7'}></SmartSpacer>
-  <HomeWorks></HomeWorks>
+  <WorksGalleryAlt></WorksGalleryAlt>
   <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
 </PrimaryLayout>
 
