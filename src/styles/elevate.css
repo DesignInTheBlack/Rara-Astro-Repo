@@ -129,22 +129,22 @@ textarea:not([rows]) {
 @media only screen and (min-width:120rem) {
 .contain {
     margin:auto;
-    padding-left: 16rem;
-    padding-right: 16rem;
+    padding-left: 24rem;
+    padding-right: 24rem;
     }
 }
 @media only screen and (min-width:160rem) {
 .contain {
     margin:auto;
-    padding-left: 16rem;
-    padding-right: 16rem;
+    padding-left: 24rem;
+    padding-right: 24rem;
     }
 }
 @media only screen and (min-width:240rem) {
 .contain {
     margin:auto;
-    padding-left: 16rem;
-    padding-right: 16rem;
+    padding-left: 24rem;
+    padding-right: 24rem;
     }
 }
 
@@ -659,18 +659,6 @@ left: 0;
 bottom: 0;
 }
 
-.\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.8_z\:40_empty_bd\:round-d6\]:after {
-position: absolute;
-top: 0;
-height: 100%;
-width: 100%;
-background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 40%), radial-gradient(circle at 50% 8%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
-opacity: 0.8;
-z-index: 40;
-content: '';
-border-radius: 1.5rem;
-}
-
 .relative {
 position: relative;
 }
@@ -718,6 +706,18 @@ row-gap: 2.5rem;
 
 .h\:s10 {
 height: 72rem;
+}
+
+.\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.8_z\:40_empty_bd\:round-d6\]:after {
+position: absolute;
+top: 0;
+height: 100%;
+width: 100%;
+background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 40%), radial-gradient(circle at 50% 8%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+opacity: 0.8;
+z-index: 40;
+content: '';
+border-radius: 1.5rem;
 }
 
 .bg-img\:\(url\(\/images\/hungrypromo\.png\)\) {
@@ -952,18 +952,6 @@ height: 28rem;
 grid-row-end: 3;
 }
 
-.\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.4_z\:40_empty_bd\:round-d6\]:after {
-position: absolute;
-top: 0;
-height: 100%;
-width: 100%;
-background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 40%), radial-gradient(circle at 50% 8%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
-opacity: 0.4;
-z-index: 40;
-content: '';
-border-radius: 1.5rem;
-}
-
 .grid\:rows-2\:gap-d6 {
 display:grid;
 grid-template-rows: repeat(2,auto);
@@ -1030,6 +1018,18 @@ font-weight: 700;
 background-image: url(/images/davidsonscene.png);
 }
 
+.\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.4_z\:40_empty_bd\:round-d6\]:after {
+position: absolute;
+top: 0;
+height: 100%;
+width: 100%;
+background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 40%), radial-gradient(circle at 50% 8%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+opacity: 0.4;
+z-index: 40;
+content: '';
+border-radius: 1.5rem;
+}
+
 .col-spans\:from-1\:to-3 {
 grid-column-start: 1;
 grid-column-end: 3;
@@ -1062,6 +1062,10 @@ display:flex;
 flex-direction:row;
 justify-content: space-between;
 align-items: center;
+}
+
+.h\:s6 {
+height: 48rem;
 }
 
 .font\:sans\:h5\:bold\:wide {
@@ -1208,15 +1212,8 @@ row-gap: 1.5rem;
 height: 90rem;
 }
 
-.font\:sans\:h5\:regular\:tight {
-font-family: Modernist, sans-serif;
-font-size: 1.5rem;
-font-weight: 400;
-letter-spacing: -0.01rem;
-}
-
-.text\:fpurple\:snug {
-color: #4e4187;
+.text\:findigo\:snug {
+color: #6257C7;
 line-height: 1.3;
 }
 
@@ -1316,10 +1313,8 @@ font-weight: 300;
 font-size: 3.375rem;
 }
 
-.pattern\:halftone\:fg-fpurplealt\:bg-fpurple {
-background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 6px 6px, radial-gradient(circle, transparent 3px, currentColor 3px) 3px 3px / 6px 6px;
-color: #473C7C;
-background-color: #4e4187;
+.bg-img\:\(url\(\/images\/backdrop\.png\)\) {
+background-image: url(/images/backdrop.png);
 }
 
 .grid\:cols-1\:rows-3\:gap-d6 {
@@ -1563,10 +1558,10 @@ grid-column-end: 4;
 height: 28rem;
 }
 
-.row\:x-between {
+.row\:x-start {
 display:flex;
 flex-direction:row;
-justify-content: space-between;
+justify-content: flex-start;
 }
 
 .h\:s8 {
@@ -1901,6 +1896,5 @@ margin-bottom: 0;
 
 .-lumino {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border:1px solid rgba(255,255,255,0.09)
 }
 
