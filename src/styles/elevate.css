@@ -101,29 +101,29 @@ textarea:not([rows]) {
 @media only screen and (min-width:48rem) {
 .contain {
     margin:auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     }
 }
 @media only screen and (min-width:64rem) {
 .contain {
     margin:auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     }
 }
 @media only screen and (min-width:80rem) {
 .contain {
     margin:auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     }
 }
 @media only screen and (min-width:96rem) {
 .contain {
     margin:auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     }
 }
 @media only screen and (min-width:120rem) {
@@ -789,8 +789,8 @@ display: none;
 height: 2.25rem;
 }
 
-.bg-color\:fdarkpurple {
-background-color: #382E60;
+.bg-color\:fpurplealt {
+background-color: #473C7C;
 }
 
 .pd-y\:d9 {
@@ -1208,6 +1208,28 @@ row-gap: 1.5rem;
 height: 90rem;
 }
 
+.font\:sans\:h5\:regular\:tight {
+font-family: Modernist, sans-serif;
+font-size: 1.5rem;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.text\:fpurple\:snug {
+color: #4e4187;
+line-height: 1.3;
+}
+
+.font\:h3\:sans\:bold {
+font-size: 3.375rem;
+font-family: Modernist, sans-serif;
+font-weight: 700;
+}
+
+.mg-b\:d9 {
+margin-bottom: 2.25rem;
+}
+
 .col\:x-start {
 display:flex;
 flex-direction:column;
@@ -1220,6 +1242,11 @@ background-color: #0C0F0A;
 color: #12130F;
 }
 
+.text\:fwhite\:relaxed {
+color: #E7E3DA;
+line-height: 1.5;
+}
+
 .font\:h3\:serif\:light {
 font-size: 3.375rem;
 font-family: Playfair, serif;
@@ -1230,10 +1257,10 @@ font-weight: 300;
 height: 2.5rem;
 }
 
-.font\:h5\:widest\:sans {
+.font\:h5\:sans\:widest {
 font-size: 1.5rem;
-letter-spacing: 0.04rem;
 font-family: Modernist, sans-serif;
+letter-spacing: 0.04rem;
 }
 
 .row\:x-between\:y-start {
@@ -1269,10 +1296,15 @@ justify-content: space-between;
 height: 24rem;
 }
 
-.font\:h5\:sans\:widest {
+.text\:fblack\:relaxed {
+color: #12130F;
+line-height: 1.5;
+}
+
+.font\:h5\:widest\:sans {
 font-size: 1.5rem;
-font-family: Modernist, sans-serif;
 letter-spacing: 0.04rem;
+font-family: Modernist, sans-serif;
 }
 
 .font\:serif\:light {
@@ -1284,8 +1316,10 @@ font-weight: 300;
 font-size: 3.375rem;
 }
 
-.bg-color\:findigo {
-background-color: #9C95DC;
+.pattern\:halftone\:fg-fpurplealt\:bg-fpurple {
+background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 6px 6px, radial-gradient(circle, transparent 3px, currentColor 3px) 3px 3px / 6px 6px;
+color: #473C7C;
+background-color: #4e4187;
 }
 
 .grid\:cols-1\:rows-3\:gap-d6 {
@@ -1533,14 +1567,6 @@ height: 28rem;
 display:flex;
 flex-direction:row;
 justify-content: space-between;
-}
-
-.mg-b\:0 {
-margin-bottom: 0;
-}
-
-.child\:end {
-align-self: flex-end;
 }
 
 .h\:s8 {
