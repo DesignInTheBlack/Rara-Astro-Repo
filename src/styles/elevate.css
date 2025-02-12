@@ -101,29 +101,29 @@ textarea:not([rows]) {
 @media only screen and (min-width:48rem) {
 .contain {
     margin:auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:64rem) {
 .contain {
     margin:auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:80rem) {
 .contain {
     margin:auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:96rem) {
 .contain {
     margin:auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:120rem) {
@@ -1064,8 +1064,18 @@ justify-content: space-between;
 align-items: center;
 }
 
-.h\:s6 {
-height: 48rem;
+.font\:sans\:light\:h5 {
+font-family: Modernist, sans-serif;
+font-weight: 300;
+font-size: 1.5rem;
+}
+
+.h\:c6 {
+height: 7rem;
+}
+
+.h\:s7 {
+height: 56rem;
 }
 
 .font\:sans\:h5\:bold\:wide {
@@ -1212,8 +1222,12 @@ row-gap: 1.5rem;
 height: 90rem;
 }
 
-.text\:findigo\:snug {
+.text\:findigo {
 color: #6257C7;
+}
+
+.text\:fwhite\:snug {
+color: #E7E3DA;
 line-height: 1.3;
 }
 
@@ -1233,10 +1247,10 @@ flex-direction:column;
 align-items: flex-start;
 }
 
-.pattern\:halftone\:bg-fblackalt\:fg-fblack {
-background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 6px 6px, radial-gradient(circle, transparent 3px, currentColor 3px) 3px 3px / 6px 6px;
-background-color: #0C0F0A;
+.pattern\:pointgrid\:fg-fblack\:bg-fblackalt {
+background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 10px 10px, radial-gradient(circle, currentColor 2px, transparent 2px) 5px 5px / 10px 10px;
 color: #12130F;
+background-color: #0C0F0A;
 }
 
 .text\:fwhite\:relaxed {
@@ -1289,25 +1303,19 @@ align-items: space-between;
 justify-content: space-between;
 }
 
+.bg-img\:\(url\(\/images\/backdrop\.png\)\) {
+background-image: url(/images/backdrop.png);
+}
+
 .text\:fblack\:relaxed\:right {
 color: #12130F;
 line-height: 1.5;
 text-align: right;
 }
 
-.child\:end {
-align-self: flex-end;
-}
-
-.row\:x-start\:y-start {
-display:flex;
-flex-direction:row;
-justify-content: flex-start;
-align-items: flex-start;
-}
-
-.h\:s1 {
-height: 24rem;
+.text\:fblack\:right {
+color: #12130F;
+text-align: right;
 }
 
 .grid\:cols-1\:rows-2\:gap-d6 {
@@ -1315,23 +1323,6 @@ display:grid;
 grid-template-columns: repeat(1,auto);
 grid-template-rows: repeat(2,auto);
 gap: 1.5rem;
-}
-
-.text\:fblack\:relaxed {
-color: #12130F;
-line-height: 1.5;
-}
-
-.font\:h3\:serif\:light {
-font-size: 3.375rem;
-font-family: Playfair, serif;
-font-weight: 300;
-}
-
-.font\:h5\:widest\:sans {
-font-size: 1.5rem;
-letter-spacing: 0.04rem;
-font-family: Modernist, sans-serif;
 }
 
 .font\:serif\:light {
@@ -1343,8 +1334,16 @@ font-weight: 300;
 font-size: 3.375rem;
 }
 
-.bg-img\:\(url\(\/images\/backdrop\.png\)\) {
-background-image: url(/images/backdrop.png);
+.font\:h5\:widest\:sans {
+font-size: 1.5rem;
+letter-spacing: 0.04rem;
+font-family: Modernist, sans-serif;
+}
+
+.pattern\:halftone\:fg-fblackalt\:bg-fblack {
+background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 6px 6px, radial-gradient(circle, transparent 3px, currentColor 3px) 3px 3px / 6px 6px;
+color: #0C0F0A;
+background-color: #12130F;
 }
 
 .grid\:cols-1\:rows-3\:gap-d6 {
@@ -1577,8 +1576,8 @@ grid-column-start: 3;
 grid-column-end: 4;
 }
 
-.h\:s2 {
-height: 28rem;
+.h\:s3 {
+height: 32rem;
 }
 
 .row\:x-start {
