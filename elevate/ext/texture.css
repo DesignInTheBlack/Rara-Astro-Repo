@@ -7,3 +7,14 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.-imageText {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,0,36,0.75) 85%);
+}
+
+.-imageText2 {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,0,36,0.32) 50%);
+}
+
+

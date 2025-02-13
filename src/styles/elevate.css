@@ -101,29 +101,29 @@ textarea:not([rows]) {
 @media only screen and (min-width:48rem) {
 .contain {
     margin:auto;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     }
 }
 @media only screen and (min-width:64rem) {
 .contain {
     margin:auto;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     }
 }
 @media only screen and (min-width:80rem) {
 .contain {
     margin:auto;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     }
 }
 @media only screen and (min-width:96rem) {
 .contain {
     margin:auto;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     }
 }
 @media only screen and (min-width:120rem) {
@@ -308,11 +308,6 @@ padding-bottom: 2.5rem;
 .pd-y\:d7 {
 padding-top: 1.75rem;
 padding-bottom: 1.75rem;
-}
-
-.pd-y\:c11 {
-padding-top: 12rem;
-padding-bottom: 12rem;
 }
 
 .events\:none {
@@ -789,17 +784,22 @@ display: none;
 height: 2.25rem;
 }
 
-.bg-color\:fpurplealt {
-background-color: #473C7C;
-}
-
-.pd-y\:d9 {
-padding-top: 2.25rem;
-padding-bottom: 2.25rem;
-}
-
 .transition\:slow {
 transition: all 0.3s ease-in-out;
+}
+
+.mg-x\:d6 {
+margin-left: 1.5rem;
+margin-right: 1.5rem;
+}
+
+.opacity\:0\.0 {
+opacity: 0;
+}
+
+.pd-y\:d5 {
+padding-top: 1.25rem;
+padding-bottom: 1.25rem;
 }
 
 .z\:2000 {
@@ -870,10 +870,6 @@ justify-content: flex-start;
 
 .pd-t\:c5 {
 padding-top: 6rem;
-}
-
-.opacity\:0\.0 {
-opacity: 0;
 }
 
 .z\:5000 {
@@ -1064,12 +1060,48 @@ justify-content: space-between;
 align-items: center;
 }
 
+.bg-color\:fpurplealt {
+background-color: #473C7C;
+}
+
 .h\:c4 {
 height: 5.5rem;
 }
 
-.h\:s7 {
-height: 56rem;
+.scope\:heroTitle.text\:fwhite {
+color: #E7E3DA;
+}
+
+.scope\:heroTitle.font\:h6\:sans {
+font-size: 1.125rem;
+font-family: Modernist, sans-serif;
+}
+
+.scope\:heroTitle.row\:x-between\:y-center {
+display:flex;
+flex-direction:row;
+justify-content: space-between;
+align-items: center;
+}
+
+.scope\:heroTitle.bottom\:0 {
+bottom: 0;
+}
+
+.scope\:heroTitle.w\:full {
+width: 100%;
+}
+
+.scope\:heroTitle.absolute {
+position: absolute;
+}
+
+.bd\:round-d7 {
+border-radius: 1.75rem;
+}
+
+.h\:s6 {
+height: 48rem;
 }
 
 .font\:sans\:h5\:bold\:wide {
@@ -1337,10 +1369,18 @@ font-weight: 300;
 font-size: 3.375rem;
 }
 
+.z\:20 {
+z-index: 20;
+}
+
 .font\:h5\:widest\:sans {
 font-size: 1.5rem;
 letter-spacing: 0.04rem;
 font-family: Modernist, sans-serif;
+}
+
+.z\:0 {
+z-index: undefined;
 }
 
 .pattern\:halftone\:fg-fblackalt\:bg-fblack {
@@ -1559,6 +1599,10 @@ height: 72rem;
 height: 60rem;
 }
 
+.scope\:heroTitle.font\:h5 {
+font-size: 1.5rem;
+}
+
 .font\:h4 {
 font-size: 2.25rem;
 }
@@ -1660,6 +1704,19 @@ font-size: 3.375rem;
 
 .scope\:cascadeBody.font\:h3 {
 font-size: 3.375rem;
+}
+
+.scope\:heroTitle.font\:h4 {
+font-size: 2.25rem;
+}
+
+.scope\:heroTitle.pd-b\:d8 {
+padding-bottom: 2rem;
+}
+
+.scope\:heroTitle.pd-x\:d12 {
+padding-left: 3rem;
+padding-right: 3rem;
 }
 
 .font\:h2 {
@@ -1958,4 +2015,15 @@ margin-bottom: 0;
 .-lumino {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.-imageText {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,0,36,0.75) 85%);
+}
+
+.-imageText2 {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,0,36,0.32) 50%);
+}
+
 

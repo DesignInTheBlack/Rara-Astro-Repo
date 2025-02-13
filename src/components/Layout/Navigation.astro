@@ -68,31 +68,34 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Fixed Header Container -->
 <div class = "fixed top:0 w:full z:2000">
   <!-- Quote Bar -->
-  <div id = "quoteBar" class="bg-color:fblack pd-y:d4 row:x-center:y-center">
+  <div id = "quoteBar" class="bg-color:fblack pd-y:d5 row:x-center:y-center opacity:0.0">
     <p class="font:sans:base text:fwhite">"Simplicity is the Ultimate Sophistication"</p>
   </div>
 
   <!-- Navigation Bar -->
-  <nav id="primaryNavContainer" class="contain transition:slow pd-y:d9 bg-color:fpurplealt">
+  <div class = "contain row:x-center:y-center mg-x:d6">
+    <nav id="primaryNavContainer" style = "backdrop-filter:blur(25px);background-color:rgba(255,255,255,0.04)" class="transition:slow pd-x:d4 pd-y:d4 bd:round-d6">
 
-    <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
+      <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
 
-        <img id="primaryNavLogo" class="h:d9 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
-        <div id="navMenu" class="hidden /sm/ row">
-          <ul id = "navNotch" class = "row:x-center:y-center gap:d3 bd:round-d6 pd-y:d3 pd-x:d10">
-            <li class="-box inline-block text:fwhite font:sans:base"><a href = "/">Home</a></li>
-            <li class="-box inline-block text:fwhite font:sans:base"><a href = "/about">About</a></li>
-            <li class="-box inline-block text:fwhite font:sans:base"><a href = "/works">Works</a></li>
-          </ul>
-        </div>
-        <a id = "primaryNavContact" href = "#footer" style = "top:50%;transform:translateY(-50%)" class = "scope:primarynavcontact hidden /sm/ row:x-center:y-center bg-color:fwhite text:fblack absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans bd:round-d2 font:bold row:x-center">Contact Us<img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></a>
-        <div id = "mobileOpen" class="overflow:hidden col:x-center:y-center absolute right:0">
-          <img class="scope:mobilenavbutton block h:d8 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
-        </div>
+          <img id="primaryNavLogo" class="h:d9 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
+          <div id="navMenu" class="hidden /sm/ row">
+            <ul id = "navNotch" class = "row:x-center:y-center gap:d3 bd:round-d6 pd-y:d3 pd-x:d10">
+              <li class="-box inline-block text:fwhite font:sans:base"><a href = "/">Home</a></li>
+              <li class="-box inline-block text:fwhite font:sans:base"><a href = "/about">About</a></li>
+              <li class="-box inline-block text:fwhite font:sans:base"><a href = "/works">Works</a></li>
+              <li class="-box inline-block text:fwhite font:sans:base"><a href = "/works">Pricing</a></li>
+            </ul>
+          </div>
+          <a id = "primaryNavContact" href = "#footer" style = "top:50%;transform:translateY(-50%)" class = "scope:primarynavcontact hidden /sm/ row:x-center:y-center bg-color:fwhite text:fblack absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans bd:round-d2 font:bold row:x-center">Contact Us<img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></a>
+          <div id = "mobileOpen" class="overflow:hidden col:x-center:y-center absolute right:0">
+            <img class="scope:mobilenavbutton block h:d8 w:d8 /sm/ hidden" src="/images/menu.svg" alt="Logo" />
+          </div>
 
-    </div>
+      </div>
 
-  </nav>
+    </nav>
+  </div>
 
 
 </div>

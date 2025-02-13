@@ -1,4 +1,34 @@
 <header class="contain">
-    <div class="relative -lumino w:full h:s7 bg-attr:no-repeat:cover:center bd:round-d6 @after:[absolute_top:0_h:full_w:full_pattern:plastic_opacity:0.4_z:40_empty_bd:round-d6]" style="background-image:url('/images/RaraPhone.png')">
+    <div class="relative -lumino w:full h:s6 bg-attr:no-repeat:cover:center bd:round-d7" style="background-image:url('/images/birb.png')">
+    <div class="-imageText absolute w:full h:full bd:round-d6"></div>
+        <script>
+            import {typeCore} from "@scripts/typeCore.js";
+              document.addEventListener('DOMContentLoaded', function() {
+          
+          let textID = "typed";
+          
+          // Strings for desktop and mobile
+          const desktopStrings = [
+            'Make <strong>Beautiful</strong> Websites^150.',
+            'Design <strong>Powerful</strong> Graphics^250.',
+            'Build <strong>Bold</strong> Brands^350.',
+            'Are <strong>Rara Avis</strong>^200.'
+          ];
+          
+          const mobileStrings = [
+            'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
+          ];
+          
+          typeCore(mobileStrings,desktopStrings,textID)
+          });
+          </script>
+          
+            <div class="scope:heroTitle absolute w:full bottom:0 row:x-between:y-center font:h6:sans text:fwhite /md/ font:h5 /lg/ font:h4 pd-b:d8 pd-x:d12">
+              <h1 class="font:regular text:hug">
+                We <span id="typed"></span>
+              </h1>
+              <img class="-slip h:c1 w:auto" src="/images/Arrow.svg" alt="Arrow">
+            </div>
+          
     </div>
 </header>
