@@ -1216,6 +1216,16 @@ row-gap: 1rem;
 height: 90rem;
 }
 
+.text\:fwhite\:brief {
+color: #E7E3DA;
+max-width: 45ch;
+}
+
+.font\:sans\:h6 {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+}
+
 .text\:findigo {
 color: #6257C7;
 }
@@ -1231,8 +1241,8 @@ font-family: Modernist, sans-serif;
 font-weight: 700;
 }
 
-.mg-b\:d9 {
-margin-bottom: 2.25rem;
+.mg-b\:d10 {
+margin-bottom: 2.5rem;
 }
 
 .col\:x-start {
@@ -1241,10 +1251,9 @@ flex-direction:column;
 align-items: flex-start;
 }
 
-.pattern\:pointgrid\:fg-fblack\:bg-fblackalt {
-background: radial-gradient(circle, currentColor 1px, transparent 1px) 0 0 / 10px 10px, radial-gradient(circle, currentColor 2px, transparent 2px) 5px 5px / 10px 10px;
-color: #12130F;
-background-color: #0C0F0A;
+.pd-y\:c12 {
+padding-top: 16rem;
+padding-bottom: 16rem;
 }
 
 .text\:fwhite\:relaxed {
@@ -1369,6 +1378,10 @@ max-width: 70ch;
 font-family: Modernist, sans-serif;
 font-size: 1.125rem;
 font-weight: 500;
+}
+
+.mg-b\:d9 {
+margin-bottom: 2.25rem;
 }
 
 .fit\:cover {
@@ -1601,10 +1614,11 @@ grid-column-end: 4;
 height: 32rem;
 }
 
-.row\:x-start {
+.row\:x-between\:y-end {
 display:flex;
 flex-direction:row;
-justify-content: flex-start;
+justify-content: space-between;
+align-items: flex-end;
 }
 
 .h\:s6 {
