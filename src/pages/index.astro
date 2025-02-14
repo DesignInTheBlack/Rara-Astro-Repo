@@ -1,12 +1,12 @@
 ---
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
-import HomeTyped from '../components/home/HomeTyped.astro'
 import HomeHero from '../components/home/HomeHero.astro'
 import HomeCards from '../components/home/HomeCards.astro'
 import SmartSpacer from '../subcomponents/SmartSpacer.astro'
 import HomeCascade from '../components/home/HomeCascade.astro'
 import WorksGalleryAlt from '../components/works/WorksGalleryAlt.astro'
 import HomeStrip from '../components/home/HomeStrip.astro'
+import HomeIntro from '../components/home/HomeIntro.astro'
 ---
 
 <PrimaryLayout>
@@ -15,9 +15,7 @@ import HomeStrip from '../components/home/HomeStrip.astro'
   <SmartSpacer componentClass = {'pd-y:d2'}></SmartSpacer>
   <HomeCards></HomeCards>
   <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
-  <HomeStrip></HomeStrip>
   <HomeCascade></HomeCascade>
-  <HomeStrip></HomeStrip>
   <SmartSpacer componentClass = {'pd-y:d7'}></SmartSpacer>
   <WorksGalleryAlt></WorksGalleryAlt>
   <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
