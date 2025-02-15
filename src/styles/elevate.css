@@ -101,29 +101,29 @@ textarea:not([rows]) {
 @media only screen and (min-width:48rem) {
 .contain {
     margin:auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:64rem) {
 .contain {
     margin:auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:80rem) {
 .contain {
     margin:auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:96rem) {
 .contain {
     margin:auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
     }
 }
 @media only screen and (min-width:120rem) {
@@ -308,6 +308,11 @@ padding-bottom: 2.5rem;
 .pd-y\:d7 {
 padding-top: 1.75rem;
 padding-bottom: 1.75rem;
+}
+
+.pd-y\:d3 {
+padding-top: 0.75rem;
+padding-bottom: 0.75rem;
 }
 
 .events\:none {
@@ -767,11 +772,6 @@ padding-left: 2.5rem;
 padding-right: 2.5rem;
 }
 
-.pd-y\:d3 {
-padding-top: 0.75rem;
-padding-bottom: 0.75rem;
-}
-
 .gap\:d3 {
 gap: 0.75rem;
 }
@@ -1104,38 +1104,164 @@ border-radius: 1.75rem;
 height: 56rem;
 }
 
+.h\:s6 {
+height: 48rem;
+}
+
+.bg-attr\:center\:cover {
+background-position: center center;
+background-size: cover;
+}
+
 .col-spans\:from-3\:to-5 {
 grid-column-start: 3;
 grid-column-end: 5;
 }
 
-.font\:h4\:sans {
+.scope\:cascadeSecond.grid\:cols-2\:rows-1\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(2,auto);
+grid-template-rows: repeat(1,auto);
+gap: 1.5rem;
+}
+
+.scope\:cascadeSecond.col-spans\:from-5\:to-10 {
+grid-column-start: 5;
+grid-column-end: 10;
+}
+
+.scope\:cascadeFirst.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:cascadeFirst.h\:s6 {
+height: 48rem;
+}
+
+.scope\:cascadeFirst.bg-attr\:center\:cover {
+background-position: center center;
+background-size: cover;
+}
+
+.scope\:cascadeFirst.bg-img\:\(url\(\/images\/davidsonscene\.png\)\) {
+background-image: url(/images/davidsonscene.png);
+}
+
+.scope\:cascadeFirst.col-spans\:from-1\:to-5 {
+grid-column-start: 1;
+grid-column-end: 5;
+}
+
+.scope\:cascadeGrid.grid\:cols-9-fr\:rows-1\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(9,1fr);
+grid-template-rows: repeat(1,auto);
+gap: 1.5rem;
+}
+
+.scope\:cascadeGrid.w\:full {
+width: 100%;
+}
+
+.scope\:cascadeGrid.mg-t\:c5 {
+margin-top: 6rem;
+}
+
+.scope\:cascadeGrid.contain {
+
+}
+
+.row\:x-center {
+display:flex;
+flex-direction:row;
+justify-content: center;
+}
+
+.bg-color\:findigogray {
+background-color: #9B91CA;
+}
+
+.child\:no-grow {
+flex-grow: 0;
+}
+
+.font\:serif {
+font-family: Playfair, serif;
+}
+
+.text\:findigogray\:normal {
+color: #9B91CA;
+line-height: 1.4;
+}
+
+.font\:sans\:h4\:light\:wide {
+font-family: Modernist, sans-serif;
 font-size: 2.25rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.col\:x-start\:y-center {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: center;
+}
+
+.col\:y-between\:x-start {
+display:flex;
+flex-direction:column;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.text\:findigogray\:brief {
+color: #9B91CA;
+max-width: 45ch;
+}
+
+.font\:h6\:sans\:regular\:tight {
+font-size: 1.125rem;
+font-family: Modernist, sans-serif;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.text\:findigogray {
+color: #9B91CA;
+}
+
+.font\:h6\:regular\:sans {
+font-size: 1.125rem;
+font-weight: 400;
 font-family: Modernist, sans-serif;
 }
 
-.scope\:cascadeContainer.grid\:cols-1\:rows-3\:gap-d4 {
+.col\:x-start\:y-between {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.scope\:cascadeTitle.grid\:cols-1\:rows-3\:gap-d4 {
 display:grid;
 grid-template-columns: repeat(1,auto);
 grid-template-rows: repeat(3,auto);
 gap: 1rem;
 }
 
-.scope\:cascadeContainer.w\:full {
+.scope\:cascadeTitle.w\:full {
 width: 100%;
 }
 
-.scope\:cascadeContainer.contain {
+.scope\:cascadeTitle.contain {
 
 }
 
-.mg-b\:c8 {
-margin-bottom: 8rem;
-}
-
-.pd-y\:c10 {
-padding-top: 10rem;
-padding-bottom: 10rem;
+.pd-y\:c11 {
+padding-top: 12rem;
+padding-bottom: 12rem;
 }
 
 .col\:x-start {
@@ -1209,11 +1335,11 @@ color: #12130F;
 text-align: right;
 }
 
-.grid\:cols-1\:rows-2\:gap-d4 {
+.grid\:cols-1\:rows-2\:gap-d6 {
 display:grid;
 grid-template-columns: repeat(1,auto);
 grid-template-rows: repeat(2,auto);
-gap: 1rem;
+gap: 1.5rem;
 }
 
 .font\:serif\:light {
@@ -1243,7 +1369,7 @@ z-index: 10;
 z-index: undefined;
 }
 
-.bg-color\:fpink {
+.bg-color\:findigo {
 background-color: #7668B6;
 }
 
@@ -1343,13 +1469,6 @@ align-items: flex-start;
 .scope\:aboutstory.col-spans\:from-1\:to-1 {
 grid-column-start: 1;
 grid-column-end: 1;
-}
-
-.grid\:cols-1\:rows-2\:gap-d6 {
-display:grid;
-grid-template-columns: repeat(1,auto);
-grid-template-rows: repeat(2,auto);
-gap: 1.5rem;
 }
 
 .text\:fwhite\:center\:book {
@@ -1512,28 +1631,6 @@ grid-column-end: 4;
 height: 32rem;
 }
 
-.grid\:cols-2\:gap-d12 {
-display:grid;
-grid-template-columns: repeat(2,auto);
-gap: 3rem;
-}
-
-.font\:h2 {
-font-size: 5.062rem;
-}
-
-.col-spans\:from-2\:to-3 {
-grid-column-start: 2;
-grid-column-end: 3;
-}
-
-.row\:x-end\:y-end {
-display:flex;
-flex-direction:row;
-justify-content: flex-end;
-align-items: flex-end;
-}
-
 .scope\:heroTitle.font\:h4 {
 font-size: 2.25rem;
 }
@@ -1601,6 +1698,24 @@ grid-row-start: 1;
 grid-row-end: -1;
 }
 
+.grid\:cols-2\:gap-d12 {
+display:grid;
+grid-template-columns: repeat(2,auto);
+gap: 3rem;
+}
+
+.col-spans\:from-2\:to-3 {
+grid-column-start: 2;
+grid-column-end: 3;
+}
+
+.row\:x-end\:y-end {
+display:flex;
+flex-direction:row;
+justify-content: flex-end;
+align-items: flex-end;
+}
+
 .grid\:cols-3-fr\:rows-2\:gap-d6 {
 display:grid;
 grid-template-columns: repeat(3,1fr);
@@ -1646,18 +1761,18 @@ grid-column-end: 3;
 }
 
 @media only screen and (min-width:80rem) {
-.grid\:cols-3-fr\:rows-1\:gap-d4 {
+.grid\:cols-3-fr\:rows-1\:gap-d6 {
 display:grid;
 grid-template-columns: repeat(3,1fr);
 grid-template-rows: repeat(1,auto);
-gap: 1rem;
+gap: 1.5rem;
 }
 
 .mg-b\:0 {
 margin-bottom: 0;
 }
 
-.scope\:cascadeContainer.grid\:cols-4-fr\:rows-1\:gap-d12 {
+.scope\:cascadeTitle.grid\:cols-4-fr\:rows-1\:gap-d12 {
 display:grid;
 grid-template-columns: repeat(4,1fr);
 grid-template-rows: repeat(1,auto);
@@ -1784,7 +1899,7 @@ font-size: 3.375rem;
 
 .-spotlight {
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,0.08) 50%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0.2) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 50%, rgba(0,0,0,0.1) 85%, rgba(0,0,0,0.2) 100%);
 }
 
 .-lumino {

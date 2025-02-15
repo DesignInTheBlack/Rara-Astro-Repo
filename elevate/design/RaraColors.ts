@@ -21,5 +21,6 @@ export const raracolors = {
     'fwhite':'#E7E3DA',
     'fblack':'#12130F',
     'fblackalt':'#0C0F0A',
-    'fpink':'#7668B6'
+    'findigo':'#7668B6',
+    'findigogray':'#9B91CA'
 }
