@@ -17,4 +17,19 @@
     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(2,0,36,0.32) 70%);
 }
 
+.-firstPara::first-letter {
+    font-size: 5.062rem;
+    float: left;
+    text-transform: none;
+    font-feature-settings: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    line-height: 1em;
+    overflow-wrap: normal;
+    float: left;
+    margin-bottom: -0.2em;
+    padding: 0px 0.05em 0px 0px;
+  }
+
 
