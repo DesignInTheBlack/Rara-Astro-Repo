@@ -4,9 +4,8 @@ import HomeHero from '../components/home/HomeHero.astro'
 import HomeCards from '../components/home/HomeCards.astro'
 import SmartSpacer from '../subcomponents/SmartSpacer.astro'
 import HomeCascade from '../components/home/HomeCascade.astro'
-import WorksGalleryAlt from '../components/works/WorksGalleryAlt.astro'
+import HomeMonolith from 'src/components/Home/HomeMonolith.astro'
 import HomeStrip from '../components/home/HomeStrip.astro'
-import HomeIntro from '../components/home/HomeIntro.astro'
 ---
 
 <PrimaryLayout>
@@ -16,6 +15,6 @@ import HomeIntro from '../components/home/HomeIntro.astro'
   <HomeCards></HomeCards>
   <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
   <HomeCascade></HomeCascade>
-  <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
+  <HomeMonolith></HomeMonolith>
 </PrimaryLayout>
 

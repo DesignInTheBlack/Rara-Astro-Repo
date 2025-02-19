@@ -914,6 +914,129 @@ background-color: #4e4187;
 height: 7rem;
 }
 
+.scope\:monolithImage.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:monolithImage.bg-attr\:no-repeat\:cover\:center {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+.scope\:monolithImage.bg-img\:\(url\(\/images\/subway\.png\)\) {
+background-image: url(/images/subway.png);
+}
+
+.scope\:monolithImage.mg-t\:c5 {
+margin-top: 6rem;
+}
+
+.scope\:monolithImage.h\:s6 {
+height: 48rem;
+}
+
+.row\:x-center {
+display:flex;
+flex-direction:row;
+justify-content: center;
+}
+
+.bg-color\:findigogray {
+background-color: #9B91CA;
+}
+
+.child\:no-grow {
+flex-grow: 0;
+}
+
+.text\:findigogray\:brief {
+color: #9B91CA;
+max-width: 45ch;
+}
+
+.font\:h6\:sans\:regular\:tight {
+font-size: 1.125rem;
+font-family: Modernist, sans-serif;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.col\:x-start\:y-end {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: flex-end;
+}
+
+.col\:x-end\:y-end {
+display:flex;
+flex-direction:column;
+align-items: flex-end;
+justify-content: flex-end;
+}
+
+.col-spans\:from-3\:to-5 {
+grid-column-start: 3;
+grid-column-end: 5;
+}
+
+.font\:serif {
+font-family: Playfair, serif;
+}
+
+.text\:findigogray\:normal {
+color: #9B91CA;
+line-height: 1.4;
+}
+
+.font\:sans\:h4\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 2.25rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.col\:x-start\:y-center {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: center;
+}
+
+.col\:y-end\:x-start {
+display:flex;
+flex-direction:column;
+justify-content: flex-end;
+align-items: flex-start;
+}
+
+.scope\:cascadeTitle.grid\:cols-1\:rows-3\:gap-d4 {
+display:grid;
+grid-template-columns: repeat(1,auto);
+grid-template-rows: repeat(3,auto);
+gap: 1rem;
+}
+
+.scope\:cascadeTitle.w\:full {
+width: 100%;
+}
+
+.scope\:cascadeTitle.contain {
+
+}
+
+.pd-y\:c11 {
+padding-top: 12rem;
+padding-bottom: 12rem;
+}
+
+.col\:x-start {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+}
+
 .h\:c1 {
 height: 4rem;
 }
@@ -981,11 +1104,6 @@ background-size: cover;
 background-image: url(/images/enszscene.png);
 }
 
-.col-spans\:from-3\:to-5 {
-grid-column-start: 3;
-grid-column-end: 5;
-}
-
 .bg-img\:\(url\(\/images\/carneyscene\.png\)\) {
 background-image: url(/images/carneyscene.png);
 }
@@ -1043,60 +1161,11 @@ margin-top: 6rem;
 
 }
 
-.row\:x-center {
-display:flex;
-flex-direction:row;
-justify-content: center;
-}
-
-.bg-color\:findigogray {
-background-color: #9B91CA;
-}
-
-.child\:no-grow {
-flex-grow: 0;
-}
-
-.font\:serif {
-font-family: Playfair, serif;
-}
-
-.text\:findigogray\:normal {
-color: #9B91CA;
-line-height: 1.4;
-}
-
-.font\:sans\:h4\:light\:wide {
-font-family: Modernist, sans-serif;
-font-size: 2.25rem;
-font-weight: 300;
-letter-spacing: 0.01rem;
-}
-
-.col\:x-start\:y-center {
-display:flex;
-flex-direction:column;
-align-items: flex-start;
-justify-content: center;
-}
-
 .col\:y-between\:x-start {
 display:flex;
 flex-direction:column;
 justify-content: space-between;
 align-items: flex-start;
-}
-
-.text\:findigogray\:brief {
-color: #9B91CA;
-max-width: 45ch;
-}
-
-.font\:h6\:sans\:regular\:tight {
-font-size: 1.125rem;
-font-family: Modernist, sans-serif;
-font-weight: 400;
-letter-spacing: -0.01rem;
 }
 
 .text\:findigogray {
@@ -1114,32 +1183,6 @@ display:flex;
 flex-direction:column;
 align-items: flex-start;
 justify-content: space-between;
-}
-
-.scope\:cascadeTitle.grid\:cols-1\:rows-3\:gap-d4 {
-display:grid;
-grid-template-columns: repeat(1,auto);
-grid-template-rows: repeat(3,auto);
-gap: 1rem;
-}
-
-.scope\:cascadeTitle.w\:full {
-width: 100%;
-}
-
-.scope\:cascadeTitle.contain {
-
-}
-
-.pd-y\:c11 {
-padding-top: 12rem;
-padding-bottom: 12rem;
-}
-
-.col\:x-start {
-display:flex;
-flex-direction:column;
-align-items: flex-start;
 }
 
 .text\:fwhite\:relaxed {
