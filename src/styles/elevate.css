@@ -899,6 +899,10 @@ padding-top: 5.5rem;
 padding-bottom: 5.5rem;
 }
 
+.text\:fpurplealt {
+color: #473C7C;
+}
+
 .row\:x-between\:y-center {
 display:flex;
 flex-direction:row;
@@ -924,16 +928,16 @@ background-size: cover;
 background-position: center center;
 }
 
-.scope\:monolithImage.bg-img\:\(url\(\/images\/subway\.png\)\) {
-background-image: url(/images/subway.png);
+.scope\:monolithImage.bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
+background-image: url(/images/birdgirl.png);
 }
 
 .scope\:monolithImage.mg-t\:c5 {
 margin-top: 6rem;
 }
 
-.scope\:monolithImage.h\:s6 {
-height: 48rem;
+.scope\:monolithImage.h\:s7 {
+height: 56rem;
 }
 
 .row\:x-center {
