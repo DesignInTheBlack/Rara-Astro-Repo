@@ -34,7 +34,22 @@
 
   .-imageMask {
     filter: blur(3px) brightness(50%); 
-    
   }
 
+  .-textFade {
+    display: block;
+    background: linear-gradient(to bottom, #E7E3DA, transparent);
+    color: transparent;
+    background-clip: text;
+  }
+
+  .-fadeLeft {
+    background: rgb(71,60,124);
+background: linear-gradient(90deg, rgba(71,60,124,1) 34%, rgba(71,60,124,0.773546918767507) 71%, rgba(71,60,124,0) 100%);
+  }
+
+  .-fadeRight {
+    background: rgb(71,60,124);
+background: linear-gradient(270deg, rgba(71,60,124,1) 34%, rgba(71,60,124,0.773546918767507) 71%, rgba(71,60,124,0) 100%);
+  }
 

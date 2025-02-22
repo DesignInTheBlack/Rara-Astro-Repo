@@ -903,6 +903,14 @@ padding-bottom: 5.5rem;
 color: #9B91CA;
 }
 
+.bg-color\:fpurple {
+background-color: #4e4187;
+}
+
+.w\:c4 {
+width: 5.5rem;
+}
+
 .row\:x-between\:y-center {
 display:flex;
 flex-direction:row;
@@ -916,6 +924,12 @@ background-color: #473C7C;
 
 .h\:c6 {
 height: 7rem;
+}
+
+.font\:sans\:bold\:h1 {
+font-family: Modernist, sans-serif;
+font-weight: 700;
+font-size: 7.594rem;
 }
 
 .scope\:monolithImage.bd\:round-d6 {
@@ -938,6 +952,13 @@ margin-top: 6rem;
 
 .scope\:monolithImage.h\:s7 {
 height: 56rem;
+}
+
+.scope\:monolithImage.row\:x-center\:y-center {
+display:flex;
+flex-direction:row;
+justify-content: center;
+align-items: center;
 }
 
 .row\:x-center {
@@ -1124,10 +1145,20 @@ grid-column-start: 5;
 grid-column-end: 10;
 }
 
-.font\:sans\:h3\:sans\:regular\:tight {
+.opacity\:0\.3 {
+opacity: 0.3;
+}
+
+.font\:sans\:h4\:regular\:tight {
+font-family: Modernist, sans-serif;
+font-size: 2.25rem;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.font\:sans\:h3\:regular\:tight {
 font-family: Modernist, sans-serif;
 font-size: 3.375rem;
-font-family: Modernist, sans-serif;
 font-weight: 400;
 letter-spacing: -0.01rem;
 }
@@ -1140,16 +1171,30 @@ max-width: 16rem;
 opacity: 0.4;
 }
 
-.mg-y\:d12 {
-margin-top: 3rem;
-margin-bottom: 3rem;
+.mg-y\:d6 {
+margin-top: 1.5rem;
+margin-bottom: 1.5rem;
 }
 
-.text\:fwhite\:normal\:note\:snug {
+.text\:fwhite\:normal\:note\:hug {
 color: #E7E3DA;
 line-height: 1.4;
 max-width: 20ch;
-line-height: 1.3;
+line-height: 1.2;
+}
+
+.font\:sans\:h3\:sans\:regular\:tight {
+font-family: Modernist, sans-serif;
+font-size: 3.375rem;
+font-family: Modernist, sans-serif;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.col\:y-center {
+display:flex;
+flex-direction:column;
+justify-content: center;
 }
 
 .z\:20 {
@@ -1164,12 +1209,21 @@ margin-left: 3rem;
 margin-bottom: 3rem;
 }
 
+.font\:sans\:h1 {
+font-family: Modernist, sans-serif;
+font-size: 7.594rem;
+}
+
+.z\:40 {
+z-index: 40;
+}
+
 .z\:10 {
 z-index: 10;
 }
 
-.bg-img\:\(url\(\/images\/subway\.png\)\) {
-background-image: url(/images/subway.png);
+.bg-img\:\(url\(\/images\/subwayblur\.png\)\) {
+background-image: url(/images/subwayblur.png);
 }
 
 .scope\:cascadeFirst.overflow\:hidden {
@@ -1241,10 +1295,6 @@ display:flex;
 flex-direction:column;
 align-items: flex-start;
 justify-content: space-between;
-}
-
-.bg-color\:fpurple {
-background-color: #4e4187;
 }
 
 .text\:fwhite\:relaxed {
@@ -1416,13 +1466,6 @@ line-height: 1.3;
 text-align: left;
 }
 
-.font\:sans\:h4\:regular\:tight {
-font-family: Modernist, sans-serif;
-font-size: 2.25rem;
-font-weight: 400;
-letter-spacing: -0.01rem;
-}
-
 .mg-y\:d7 {
 margin-top: 1.75rem;
 margin-bottom: 1.75rem;
@@ -1511,6 +1554,10 @@ display:flex;
 flex-direction:column;
 justify-content: center;
 align-items: flex-start;
+}
+
+.bg-img\:\(url\(\/images\/subway\.png\)\) {
+background-image: url(/images/subway.png);
 }
 
 @media only screen and (min-width:40rem) {
@@ -1899,7 +1946,22 @@ font-size: 3.375rem;
 
   .-imageMask {
     filter: blur(3px) brightness(50%); 
-    
   }
 
+  .-textFade {
+    display: block;
+    background: linear-gradient(to bottom, #E7E3DA, transparent);
+    color: transparent;
+    background-clip: text;
+  }
+
+  .-fadeLeft {
+    background: rgb(71,60,124);
+background: linear-gradient(90deg, rgba(71,60,124,1) 34%, rgba(71,60,124,0.773546918767507) 71%, rgba(71,60,124,0) 100%);
+  }
+
+  .-fadeRight {
+    background: rgb(71,60,124);
+background: linear-gradient(270deg, rgba(71,60,124,1) 34%, rgba(71,60,124,0.773546918767507) 71%, rgba(71,60,124,0) 100%);
+  }
 
