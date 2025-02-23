@@ -1022,11 +1022,21 @@ font-weight: 300;
 letter-spacing: 0.01rem;
 }
 
-.col\:x-start\:y-center {
+.mg-b\:c3 {
+margin-bottom: 5rem;
+}
+
+.font\:h6\:regular\:sans {
+font-size: 1.125rem;
+font-weight: 400;
+font-family: Modernist, sans-serif;
+}
+
+.col\:x-start\:y-between {
 display:flex;
 flex-direction:column;
 align-items: flex-start;
-justify-content: center;
+justify-content: space-between;
 }
 
 .col\:y-end\:x-start {
@@ -1277,24 +1287,18 @@ margin-top: 6rem;
 
 }
 
+.col\:x-start\:y-center {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: center;
+}
+
 .col\:y-between\:x-start {
 display:flex;
 flex-direction:column;
 justify-content: space-between;
 align-items: flex-start;
-}
-
-.font\:h6\:regular\:sans {
-font-size: 1.125rem;
-font-weight: 400;
-font-family: Modernist, sans-serif;
-}
-
-.col\:x-start\:y-between {
-display:flex;
-flex-direction:column;
-align-items: flex-start;
-justify-content: space-between;
 }
 
 .text\:fwhite\:relaxed {
@@ -1556,8 +1560,8 @@ justify-content: center;
 align-items: flex-start;
 }
 
-.bg-img\:\(url\(\/images\/subway\.png\)\) {
-background-image: url(/images/subway.png);
+.bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
+background-image: url(/images/birdgirl.png);
 }
 
 @media only screen and (min-width:40rem) {
