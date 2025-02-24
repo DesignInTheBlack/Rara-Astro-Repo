@@ -305,6 +305,25 @@ padding-top: 2.5rem;
 padding-bottom: 2.5rem;
 }
 
+.pd-y\:c6 {
+padding-top: 7rem;
+padding-bottom: 7rem;
+}
+
+.pd-y\:d8 {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+
+.bg-color\:fpurple {
+background-color: #4e4187;
+}
+
+.pd-y\:c3 {
+padding-top: 5rem;
+padding-bottom: 5rem;
+}
+
 .pd-y\:d3 {
 padding-top: 0.75rem;
 padding-bottom: 0.75rem;
@@ -903,12 +922,20 @@ padding-bottom: 5.5rem;
 color: #9B91CA;
 }
 
-.bg-color\:fpurple {
-background-color: #4e4187;
+.gap\:c1 {
+gap: 4rem;
 }
 
-.w\:c4 {
-width: 5.5rem;
+.flex {
+display: flex;
+}
+
+.z\:50 {
+z-index: 50;
+}
+
+.w\:c9 {
+width: 9rem;
 }
 
 .row\:x-between\:y-center {
@@ -924,41 +951,6 @@ background-color: #473C7C;
 
 .h\:c6 {
 height: 7rem;
-}
-
-.font\:sans\:bold\:h1 {
-font-family: Modernist, sans-serif;
-font-weight: 700;
-font-size: 7.594rem;
-}
-
-.scope\:monolithImage.bd\:round-d6 {
-border-radius: 1.5rem;
-}
-
-.scope\:monolithImage.bg-attr\:no-repeat\:cover\:center {
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center center;
-}
-
-.scope\:monolithImage.bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
-background-image: url(/images/birdgirl.png);
-}
-
-.scope\:monolithImage.mg-t\:c5 {
-margin-top: 6rem;
-}
-
-.scope\:monolithImage.h\:s7 {
-height: 56rem;
-}
-
-.scope\:monolithImage.row\:x-center\:y-center {
-display:flex;
-flex-direction:row;
-justify-content: center;
-align-items: center;
 }
 
 .row\:x-center {
@@ -1001,18 +993,19 @@ align-items: flex-end;
 justify-content: flex-end;
 }
 
-.col-spans\:from-3\:to-5 {
-grid-column-start: 3;
-grid-column-end: 5;
+.col-spans\:from-4\:to-6 {
+grid-column-start: 4;
+grid-column-end: 6;
 }
 
 .font\:serif {
 font-family: Playfair, serif;
 }
 
-.text\:findigogray\:normal {
+.text\:findigogray\:normal\:brief {
 color: #9B91CA;
 line-height: 1.4;
+max-width: 45ch;
 }
 
 .font\:sans\:h4\:light\:wide {
@@ -1046,6 +1039,11 @@ justify-content: flex-end;
 align-items: flex-start;
 }
 
+.col-spans\:from-1\:to-4 {
+grid-column-start: 1;
+grid-column-end: 4;
+}
+
 .scope\:cascadeTitle.grid\:cols-1\:rows-3\:gap-d4 {
 display:grid;
 grid-template-columns: repeat(1,auto);
@@ -1061,15 +1059,63 @@ width: 100%;
 
 }
 
-.pd-y\:c11 {
-padding-top: 12rem;
-padding-bottom: 12rem;
+.text\:findigogray\:normal {
+color: #9B91CA;
+line-height: 1.4;
 }
 
-.col\:x-start {
+.col\:x-start\:y-center {
 display:flex;
 flex-direction:column;
 align-items: flex-start;
+justify-content: center;
+}
+
+.col\:y-between\:x-start {
+display:flex;
+flex-direction:column;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.col-spans\:from-3\:to-5 {
+grid-column-start: 3;
+grid-column-end: 5;
+}
+
+.scope\:cascadeTitle.bg-color\:fpurple {
+background-color: #4e4187;
+}
+
+.font\:sans\:bold\:h1 {
+font-family: Modernist, sans-serif;
+font-weight: 700;
+font-size: 7.594rem;
+}
+
+.scope\:monolithImage.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:monolithImage.bg-attr\:no-repeat\:cover\:center {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+.scope\:monolithImage.bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
+background-image: url(/images/birdgirl.png);
+}
+
+.scope\:monolithImage.h\:s7 {
+height: 56rem;
+}
+
+.scope\:monolithImage.row\:x-center\:y-center {
+display:flex;
+flex-direction:row;
+justify-content: center;
+align-items: center;
 }
 
 .h\:c1 {
@@ -1279,25 +1325,13 @@ gap: 1.5rem;
 width: 100%;
 }
 
-.scope\:cascadeGrid.mg-t\:c5 {
-margin-top: 6rem;
-}
-
 .scope\:cascadeGrid.contain {
 
 }
 
-.col\:x-start\:y-center {
+.col\:x-start {
 display:flex;
 flex-direction:column;
-align-items: flex-start;
-justify-content: center;
-}
-
-.col\:y-between\:x-start {
-display:flex;
-flex-direction:column;
-justify-content: space-between;
 align-items: flex-start;
 }
 
@@ -1794,6 +1828,13 @@ gap: 1.5rem;
 
 .mg-b\:0 {
 margin-bottom: 0;
+}
+
+.scope\:cascadeTitle.grid\:cols-5-fr\:rows-1\:gap-d12 {
+display:grid;
+grid-template-columns: repeat(5,1fr);
+grid-template-rows: repeat(1,auto);
+gap: 3rem;
 }
 
 .grid\:cols-3-fr\:rows-1\:gap-d8 {

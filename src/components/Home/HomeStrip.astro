@@ -1,31 +1,48 @@
-<div class = "h:c6 bg-color:fpurplealt w:full">
-    <div class = "relative w:full h:full row:x-between:y-center overflow:hidden">
-        <div class = "-fadeLeft absolute top:0 left:0 w:c4 h:full bg-color:fpurple"></div>
-        <div class = "-fadeRight absolute top:0 right:0 h:full w:c4 bg-color:fpurple"></div>
-        <p class = "text:findigogray font:h5:sans">Ideate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Create</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Iterate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Ideate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Create</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Iterate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Ideate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Create</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Iterate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Ideate</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Create</p>
-        <p class = "text:findigogray font:h5:sans">●</p>
-        <p class = "text:findigogray font:h5:sans">Iterate</p>
+<div class="h:c6 bg-color:fpurplealt w:full">
+    <div class="relative w:full h:full row:x-between:y-center overflow:hidden">
+        <div class = "-fadeLeft absolute top:0 left:0 w:c9 h:full bg-color:fpurple z:50"></div>
+        <div class = "-fadeRight absolute top:0 right:0 h:full w:c9 bg-color:fpurple z:50"></div>
+        <div id="scrolling-content" class="flex row:x-start:y-center gap:c1">
+            <p class="text:findigogray font:h5:sans">Ideate</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Create</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Iterate</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Ideate</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Create</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Iterate</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Ideate</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Create</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+            <p class="text:findigogray font:h5:sans">Iterate</p>
+            <p class="text:findigogray font:h5:sans">●</p>
+        </div>
     </div>
 </div>
 
+<script>
+    const scrollingContent = document.getElementById('scrolling-content');
+    const contentWidth = scrollingContent.scrollWidth;
 
+    // Clone the content to create the endless effect
+    scrollingContent.innerHTML += scrollingContent.innerHTML;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 0.15; // Adjust speed here (lower = slower)
+
+    function scrollContent() {
+        scrollPosition -= scrollSpeed;
+        if (scrollPosition <= -contentWidth) {
+            scrollPosition = 0; // Reset to start seamlessly
+        }
+        scrollingContent.style.transform = `translateX(${scrollPosition}px)`;
+        requestAnimationFrame(scrollContent);
+    }
+
+    scrollContent();
+</script>
