@@ -953,20 +953,6 @@ background-color: #473C7C;
 height: 7rem;
 }
 
-.row\:x-center {
-display:flex;
-flex-direction:row;
-justify-content: center;
-}
-
-.bg-color\:findigogray {
-background-color: #9B91CA;
-}
-
-.child\:no-grow {
-flex-grow: 0;
-}
-
 .text\:findigogray\:brief {
 color: #9B91CA;
 max-width: 45ch;
@@ -1230,6 +1216,10 @@ opacity: 0.4;
 .mg-y\:d6 {
 margin-top: 1.5rem;
 margin-bottom: 1.5rem;
+}
+
+.bg-color\:findigogray {
+background-color: #9B91CA;
 }
 
 .text\:fwhite\:normal\:note\:hug {
