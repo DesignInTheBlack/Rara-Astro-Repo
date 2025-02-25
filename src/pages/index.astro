@@ -16,16 +16,27 @@ import HomeSpreadAlt from '../components/Home/HomeSpreadAlt.astro'
   <SmartSpacer componentClass = {'pd-y:d3'}></SmartSpacer>
   <HomeCards></HomeCards>
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
-  <SmartSpacer componentClass = {'pd-y:c6 bg-color:fpurple'}></SmartSpacer>
-  <HomeSpread></HomeSpread>
-  <SmartSpacer componentClass = {'pd-y:d8 bg-color:fpurple'}></SmartSpacer>
-  <HomeCascade></HomeCascade>
-  <SmartSpacer componentClass = {'pd-y:c3 bg-color:fpurple'}></SmartSpacer>
+
+  <div class = "contain w:full">
+    <div class = "bd:round-d6 pd-t:c6 pd-b:c2 bg-color:fpurplealt">
+      <HomeSpreadAlt></HomeSpreadAlt>
+      <SmartSpacer componentClass = {'pd-y:d8'}></SmartSpacer>
+      <HomeCascade></HomeCascade>
+    </div>
+  </div>
+
+  <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
+
+  <div class = "contain w:full">
+    <div class = "bg-color:fpurplealt bd:round-d6 pd-t:c6 pd-b:c2">
+      <HomeSpread></HomeSpread>
+      <SmartSpacer componentClass = {'pd-y:d8'}></SmartSpacer>
+      <HomeMonolith></HomeMonolith>
+    </div>
+  </div>
+
+
+  <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
   <HomeStrip></HomeStrip>
-  <SmartSpacer componentClass = {'pd-y:c6'}></SmartSpacer>
-  <HomeSpreadAlt></HomeSpreadAlt>
-  <SmartSpacer componentClass = {'pd-y:d8'}></SmartSpacer>
-  <HomeMonolith></HomeMonolith>
-  <SmartSpacer componentClass = {'pd-y:c6'}></SmartSpacer>
 </PrimaryLayout>
 

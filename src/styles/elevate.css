@@ -305,9 +305,9 @@ padding-top: 2.5rem;
 padding-bottom: 2.5rem;
 }
 
-.pd-y\:c6 {
-padding-top: 7rem;
-padding-bottom: 7rem;
+.pd-y\:c3 {
+padding-top: 5rem;
+padding-bottom: 5rem;
 }
 
 .pd-y\:d8 {
@@ -315,18 +315,29 @@ padding-top: 2rem;
 padding-bottom: 2rem;
 }
 
-.bg-color\:fpurple {
-background-color: #4e4187;
-}
-
-.pd-y\:c3 {
-padding-top: 5rem;
-padding-bottom: 5rem;
-}
-
 .pd-y\:d3 {
 padding-top: 0.75rem;
 padding-bottom: 0.75rem;
+}
+
+.pd-b\:c2 {
+padding-bottom: 4.5rem;
+}
+
+.pd-t\:c6 {
+padding-top: 7rem;
+}
+
+.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.bg-color\:fpurplealt {
+background-color: #473C7C;
+}
+
+.contain {
+
 }
 
 .events\:none {
@@ -573,14 +584,6 @@ gap: 1.5rem;
 padding-bottom: 7rem;
 }
 
-.pd-t\:c6 {
-padding-top: 7rem;
-}
-
-.contain {
-
-}
-
 .scope\:mobilenavbutton.w\:d8 {
 width: 2rem;
 }
@@ -619,10 +622,6 @@ display: inline-block;
 .pd-x\:d10 {
 padding-left: 2.5rem;
 padding-right: 2.5rem;
-}
-
-.bd\:round-d6 {
-border-radius: 1.5rem;
 }
 
 .gap\:d3 {
@@ -934,6 +933,10 @@ display: flex;
 z-index: 50;
 }
 
+.bg-color\:fpurple {
+background-color: #4e4187;
+}
+
 .w\:c9 {
 width: 9rem;
 }
@@ -943,10 +946,6 @@ display:flex;
 flex-direction:row;
 justify-content: space-between;
 align-items: center;
-}
-
-.bg-color\:fpurplealt {
-background-color: #473C7C;
 }
 
 .h\:c6 {
@@ -1045,16 +1044,14 @@ width: 100%;
 
 }
 
-.text\:findigogray\:normal {
+.text\:findigogray\:normal\:right {
 color: #9B91CA;
 line-height: 1.4;
+text-align: right;
 }
 
-.col\:x-start\:y-center {
-display:flex;
-flex-direction:column;
-align-items: flex-start;
-justify-content: center;
+.block {
+display: block;
 }
 
 .col\:y-between\:x-start {
@@ -1064,13 +1061,13 @@ justify-content: space-between;
 align-items: flex-start;
 }
 
-.col-spans\:from-3\:to-5 {
+.col-spans\:from-3\:to-6 {
 grid-column-start: 3;
-grid-column-end: 5;
+grid-column-end: 6;
 }
 
-.scope\:cascadeTitle.bg-color\:fpurple {
-background-color: #4e4187;
+.scope\:cascadeTitle.bg-color\:fpurplealt {
+background-color: #473C7C;
 }
 
 .font\:sans\:bold\:h1 {
@@ -1158,35 +1155,6 @@ background-position: center center;
 height: 56rem;
 }
 
-.h\:s6 {
-height: 48rem;
-}
-
-.bg-attr\:center\:cover {
-background-position: center center;
-background-size: cover;
-}
-
-.bg-img\:\(url\(\/images\/enszscene\.png\)\) {
-background-image: url(/images/enszscene.png);
-}
-
-.bg-img\:\(url\(\/images\/carneyscene\.png\)\) {
-background-image: url(/images/carneyscene.png);
-}
-
-.scope\:cascadeSecond.grid\:cols-2\:rows-1\:gap-d6 {
-display:grid;
-grid-template-columns: repeat(2,auto);
-grid-template-rows: repeat(1,auto);
-gap: 1.5rem;
-}
-
-.scope\:cascadeSecond.col-spans\:from-5\:to-10 {
-grid-column-start: 5;
-grid-column-end: 10;
-}
-
 .opacity\:0\.3 {
 opacity: 0.3;
 }
@@ -1264,6 +1232,11 @@ font-size: 7.594rem;
 z-index: 40;
 }
 
+.bg-attr\:center\:cover {
+background-position: center center;
+background-size: cover;
+}
+
 .z\:10 {
 z-index: 10;
 }
@@ -1292,9 +1265,9 @@ height: 48rem;
 position: relative;
 }
 
-.scope\:cascadeFirst.col-spans\:from-1\:to-5 {
-grid-column-start: 1;
-grid-column-end: 5;
+.scope\:cascadeFirst.col-spans\:from-6\:to-10 {
+grid-column-start: 6;
+grid-column-end: 10;
 }
 
 .scope\:cascadeFirst.col\:x-start\:y-end {
@@ -1302,6 +1275,35 @@ display:flex;
 flex-direction:column;
 align-items: flex-start;
 justify-content: flex-end;
+}
+
+.h\:s6 {
+height: 48rem;
+}
+
+.bg-img\:\(url\(\/images\/enszscene\.png\)\) {
+background-image: url(/images/enszscene.png);
+}
+
+.col-spans\:from-3\:to-5 {
+grid-column-start: 3;
+grid-column-end: 5;
+}
+
+.bg-img\:\(url\(\/images\/carneyscene\.png\)\) {
+background-image: url(/images/carneyscene.png);
+}
+
+.scope\:cascadeSecond.grid\:cols-2\:rows-1\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(2,auto);
+grid-template-rows: repeat(1,auto);
+gap: 1.5rem;
+}
+
+.scope\:cascadeSecond.col-spans\:from-1\:to-6 {
+grid-column-start: 1;
+grid-column-end: 6;
 }
 
 .scope\:cascadeGrid.grid\:cols-9-fr\:rows-1\:gap-d6 {
@@ -1577,13 +1579,6 @@ grid-column-start: 1;
 grid-column-end: 1;
 }
 
-.col\:y-center\:x-start {
-display:flex;
-flex-direction:column;
-justify-content: center;
-align-items: flex-start;
-}
-
 .bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
 background-image: url(/images/birdgirl.png);
 }
@@ -1802,9 +1797,9 @@ grid-column-end: 3;
 }
 
 @media only screen and (min-width:80rem) {
-.scope\:cascadeTitle.grid\:cols-4-fr\:rows-1\:gap-d12 {
+.scope\:cascadeTitle.grid\:cols-5-fr\:rows-1\:gap-d12 {
 display:grid;
-grid-template-columns: repeat(4,1fr);
+grid-template-columns: repeat(5,1fr);
 grid-template-rows: repeat(1,auto);
 gap: 3rem;
 }
@@ -1818,13 +1813,6 @@ gap: 1.5rem;
 
 .mg-b\:0 {
 margin-bottom: 0;
-}
-
-.scope\:cascadeTitle.grid\:cols-5-fr\:rows-1\:gap-d12 {
-display:grid;
-grid-template-columns: repeat(5,1fr);
-grid-template-rows: repeat(1,auto);
-gap: 3rem;
 }
 
 .grid\:cols-3-fr\:rows-1\:gap-d8 {
