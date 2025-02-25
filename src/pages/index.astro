@@ -8,6 +8,7 @@ import HomeMonolith from 'src/components/Home/HomeMonolith.astro'
 import HomeStrip from '../components/Home/HomeStrip.astro'
 import HomeSpread from '../components/Home/HomeSpread.astro'
 import HomeSpreadAlt from '../components/Home/HomeSpreadAlt.astro'
+import HomeButton from '../components/Home/HomeButton.astro'
 ---
 
 <PrimaryLayout>
@@ -18,8 +19,9 @@ import HomeSpreadAlt from '../components/Home/HomeSpreadAlt.astro'
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
 
   <div class = "contain w:full">
-    <div class = "bd:round-d6 pd-t:c6 pd-b:c2 bg-color:fpurplealt">
+    <div class = "bd:round-d6 pd-t:c10 pd-b:c2 bg-color:fpurplealt">
       <HomeSpreadAlt></HomeSpreadAlt>
+      <HomeButton></HomeButton>
       <SmartSpacer componentClass = {'pd-y:d8'}></SmartSpacer>
       <HomeCascade></HomeCascade>
     </div>
@@ -27,8 +29,13 @@ import HomeSpreadAlt from '../components/Home/HomeSpreadAlt.astro'
 
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
 
+  <div class = "w:full bg-color:fpurple h:s8">
+  </div>
+
+  <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
+
   <div class = "contain w:full">
-    <div class = "bg-color:fpurplealt bd:round-d6 pd-t:c6 pd-b:c2">
+    <div class = "bg-color:fpurplealt bd:round-d6 pd-t:c10 pd-b:c2">
       <HomeSpread></HomeSpread>
       <SmartSpacer componentClass = {'pd-y:d8'}></SmartSpacer>
       <HomeMonolith></HomeMonolith>

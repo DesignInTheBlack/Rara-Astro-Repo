@@ -324,8 +324,8 @@ padding-bottom: 0.75rem;
 padding-bottom: 4.5rem;
 }
 
-.pd-t\:c6 {
-padding-top: 7rem;
+.pd-t\:c10 {
+padding-top: 10rem;
 }
 
 .bd\:round-d6 {
@@ -338,6 +338,14 @@ background-color: #473C7C;
 
 .contain {
 
+}
+
+.h\:s8 {
+height: 60rem;
+}
+
+.bg-color\:fpurple {
+background-color: #4e4187;
 }
 
 .events\:none {
@@ -584,6 +592,10 @@ gap: 1.5rem;
 padding-bottom: 7rem;
 }
 
+.pd-t\:c6 {
+padding-top: 7rem;
+}
+
 .scope\:mobilenavbutton.w\:d8 {
 width: 2rem;
 }
@@ -800,29 +812,6 @@ justify-content: center;
 align-items: flex-start;
 }
 
-.h\:s2 {
-height: 28rem;
-}
-
-.row-spans\:to-3 {
-grid-row-end: 3;
-}
-
-.col-spans\:to-2 {
-grid-column-end: 2;
-}
-
-.bg-attr\:cover\:center {
-background-size: cover;
-background-position: center center;
-}
-
-.grid\:rows-2\:gap-d6 {
-display:grid;
-grid-template-rows: repeat(2,auto);
-gap: 1.5rem;
-}
-
 .font\:base\:sans {
 font-size: 1rem;
 font-family: Modernist, sans-serif;
@@ -890,6 +879,11 @@ font-weight: 700;
 background-image: url(/images/davidsonscene.png);
 }
 
+.bg-attr\:cover\:center {
+background-size: cover;
+background-position: center center;
+}
+
 .\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.4_z\:40_empty_bd\:round-d6\]:after {
 position: absolute;
 top: 0;
@@ -931,10 +925,6 @@ display: flex;
 
 .z\:50 {
 z-index: 50;
-}
-
-.bg-color\:fpurple {
-background-color: #4e4187;
 }
 
 .w\:c9 {
@@ -1392,6 +1382,10 @@ color: #12130F;
 text-align: right;
 }
 
+.h\:s2 {
+height: 28rem;
+}
+
 .grid\:cols-1\:rows-2\:gap-d6 {
 display:grid;
 grid-template-columns: repeat(1,auto);
@@ -1445,6 +1439,35 @@ grid-template-rows: repeat(3,auto);
 gap: 1rem;
 }
 
+.row\:x-center {
+display:flex;
+flex-direction:row;
+justify-content: center;
+}
+
+.child\:start {
+align-self: flex-start;
+}
+
+.font\:h5\:sans\:light {
+font-size: 1.5rem;
+font-family: Modernist, sans-serif;
+font-weight: 300;
+}
+
+.opacity\:0\.2 {
+opacity: 0.2;
+}
+
+.mg-y\:c1 {
+margin-top: 4rem;
+margin-bottom: 4rem;
+}
+
+.bd\:findigogray {
+border-color: #9B91CA;
+}
+
 .\@after\:\[absolute_top\:0_h\:full_w\:full_pattern\:plastic_opacity\:0\.6_z\:40_empty_bd\:round-d6\]:after {
 position: absolute;
 top: 0;
@@ -1483,11 +1506,6 @@ margin-bottom: 4rem;
 
 .fit\:cover {
 object-fit: cover;
-}
-
-.mg-y\:c1 {
-margin-top: 4rem;
-margin-bottom: 4rem;
 }
 
 .text\:findigogray\:snug\:left {
@@ -1730,26 +1748,6 @@ height: 32rem;
 
 .font\:h3 {
 font-size: 3.375rem;
-}
-
-.grid\:cols-3\:rows-2\:gap-d6 {
-display:grid;
-grid-template-columns: repeat(3,auto);
-grid-template-rows: repeat(2,auto);
-gap: 1.5rem;
-}
-
-.h\:full {
-height: 100%;
-}
-
-.col-spans\:from-2\:to-4 {
-grid-column-start: 2;
-grid-column-end: 4;
-}
-
-.relative {
-position: relative;
 }
 
 .grid\:cols-3-fr\:rows-2\:gap-d6 {
