@@ -982,10 +982,10 @@ grid-column-end: 6;
 font-family: Playfair, serif;
 }
 
-.text\:findigogray\:normal\:brief {
+.text\:chunk\:findigogray\:normal {
+max-width: 35ch;
 color: #9B91CA;
 line-height: 1.4;
-max-width: 45ch;
 }
 
 .font\:sans\:h4\:light\:wide {
@@ -1035,8 +1035,9 @@ gap: 1rem;
 width: 100%;
 }
 
-.text\:findigogray\:normal\:right {
+.text\:findigogray\:chunk\:normal\:right {
 color: #9B91CA;
+max-width: 35ch;
 line-height: 1.4;
 text-align: right;
 }
@@ -1045,11 +1046,11 @@ text-align: right;
 display: block;
 }
 
-.col\:y-between\:x-start {
+.col\:y-between\:x-end {
 display:flex;
 flex-direction:column;
 justify-content: space-between;
-align-items: flex-start;
+align-items: flex-end;
 }
 
 .col-spans\:from-3\:to-6 {
@@ -1092,18 +1093,17 @@ justify-content: center;
 align-items: center;
 }
 
+.text\:findigogray\:snug\:brief {
+color: #9B91CA;
+line-height: 1.3;
+max-width: 45ch;
+}
+
 .font\:sans\:h3\:light\:wide {
 font-family: Modernist, sans-serif;
 font-size: 3.375rem;
 font-weight: 300;
 letter-spacing: 0.01rem;
-}
-
-.col\:y-between\:x-end {
-display:flex;
-flex-direction:column;
-justify-content: space-between;
-align-items: flex-end;
 }
 
 .h\:c1 {
@@ -1606,6 +1606,19 @@ align-items: flex-start;
 .scope\:aboutstory.col-spans\:from-1\:to-1 {
 grid-column-start: 1;
 grid-column-end: 1;
+}
+
+.text\:findigogray\:normal\:right {
+color: #9B91CA;
+line-height: 1.4;
+text-align: right;
+}
+
+.col\:y-between\:x-start {
+display:flex;
+flex-direction:column;
+justify-content: space-between;
+align-items: flex-start;
 }
 
 .scope\:cascadeTitle.contain {

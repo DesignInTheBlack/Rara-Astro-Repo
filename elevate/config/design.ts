@@ -10,6 +10,7 @@ import { breakpoints } from '../core/system/design/breakpoints.js';
 import { effects } from '../core/system/design/effects.js';
 import { raracolors } from '../design/RaraColors.js';
 import { rarafonts } from '../design/RaraFonts.js';
+import { raratype } from '../design/RaraTypography.js';
 
 
 //Token Definitions
@@ -21,7 +22,7 @@ export const designSystem = {
     FontFamilyToken: rarafonts,
     LineHeightToken: typography.leading,
     LetterSpacingToken: typography.tracking,
-    MeasureToken: typography.measure,
+    MeasureToken: {...typography.measure,...raratype},
     FontWeightToken: typography.weight,
     ShadowToken: effects.shadows,
     GradientToken: effects.gradients,
