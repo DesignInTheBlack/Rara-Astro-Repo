@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Only run if the viewport width is above the threshold.
   if (window.innerWidth > threshold) {
-    let quote = document.getElementById("quoteBar");
+    let quote = document.getElementById("navSpacer");
     let nav = document.getElementById("primaryNavContainer");
     let logo = document.getElementById("primaryNavLogo");
     let contact = document.getElementById("primaryNavContact");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (progress > 0.1) { 
         nav.style.backgroundColor = "rgba(12,15,10,0.6)";
-        nav.style.borderRadius = "1.5rem";
+        nav.style.borderRadius = "2rem";
         logo.style.display = "none";
         nav.style.width = "19.5rem";
         nav.style.paddingTop = "0.5rem";
@@ -67,14 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- Fixed Header Container -->
 <div class = "fixed top:0 w:full z:2000">
-  <!-- Quote Bar -->
-  <div id = "quoteBar" class="bg-color:fblack pd-y:d5 row:x-center:y-center opacity:0.0">
-    <p class="font:sans:base text:fwhite">"Simplicity is the Ultimate Sophistication"</p>
+  <!-- Spacer -->
+  <div id = "navSpacer" class="pd-y:d7">
   </div>
 
   <!-- Navigation Bar -->
   <div class = "contain row:x-center:y-center mg-x:d6">
-    <nav id="primaryNavContainer" style = "backdrop-filter:blur(25px);background-color:rgba(255,255,255,0.04)" class="transition:slow pd-x:d4 pd-y:d4 bd:round-d6">
+    <nav id="primaryNavContainer" style = "backdrop-filter:blur(25px);background-color:rgba(255,255,255,0.04)" class="transition:slow pd-x:d4 pd-y:d4 bd:round-d4">
 
       <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
 

@@ -333,8 +333,8 @@ padding-bottom: 4.5rem;
 padding-top: 10rem;
 }
 
-.bd\:round-d6 {
-border-radius: 1.5rem;
+.bd\:round-d4 {
+border-radius: 1rem;
 }
 
 .bg-color\:fpurplealt {
@@ -653,6 +653,10 @@ padding-left: 2.5rem;
 padding-right: 2.5rem;
 }
 
+.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
 .gap\:d3 {
 gap: 0.75rem;
 }
@@ -682,13 +686,9 @@ margin-left: 1.5rem;
 margin-right: 1.5rem;
 }
 
-.opacity\:0\.0 {
-opacity: 0;
-}
-
-.pd-y\:d5 {
-padding-top: 1.25rem;
-padding-bottom: 1.25rem;
+.pd-y\:d7 {
+padding-top: 1.75rem;
+padding-bottom: 1.75rem;
 }
 
 .z\:2000 {
@@ -759,6 +759,10 @@ justify-content: flex-start;
 
 .pd-t\:c5 {
 padding-top: 6rem;
+}
+
+.opacity\:0\.0 {
+opacity: 0;
 }
 
 .z\:5000 {
@@ -1134,8 +1138,8 @@ font-weight: 700;
 font-size: 7.594rem;
 }
 
-.scope\:monolithImage.bd\:round-d6 {
-border-radius: 1.5rem;
+.scope\:monolithImage.bd\:round-d4 {
+border-radius: 1rem;
 }
 
 .scope\:monolithImage.bg-attr\:no-repeat\:cover\:center {
@@ -1212,10 +1216,6 @@ width: 100%;
 position: absolute;
 }
 
-.bd\:round-d7 {
-border-radius: 1.75rem;
-}
-
 .bg-attr\:no-repeat\:cover\:center {
 background-repeat: no-repeat;
 background-size: cover;
@@ -1247,10 +1247,6 @@ background-size: cover;
 z-index: 10;
 }
 
-.bg-color\:findigo {
-background-color: #7668B6;
-}
-
 .scope\:clientSecond.overflow\:hidden {
 overflow: hidden;
 }
@@ -1259,16 +1255,26 @@ overflow: hidden;
 z-index: undefined;
 }
 
-.scope\:clientSecond.bd\:round-d6 {
-border-radius: 1.5rem;
+.scope\:clientSecond.bd\:round-d4 {
+border-radius: 1rem;
 }
 
-.scope\:clientSecond.h\:s3 {
-height: 32rem;
+.scope\:clientSecond.h\:s4 {
+height: 36rem;
 }
 
 .scope\:clientSecond.relative {
 position: relative;
+}
+
+.scope\:clientSecond.bg-attr\:no-repeat\:cover\:center {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+.scope\:clientSecond.bg-img\:\(url\(\/images\/Ellington\.PNG\)\) {
+background-image: url(/images/Ellington.PNG);
 }
 
 .scope\:clientSecond.col-spans\:from-6\:to-10 {
@@ -1283,8 +1289,14 @@ align-items: flex-start;
 justify-content: flex-end;
 }
 
-.scope\:clientFirst.bg-color\:findigo {
-background-color: #7668B6;
+.scope\:clientFirst.bg-attr\:no-repeat\:cover\:center {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+.scope\:clientFirst.bg-img\:\(url\(\/images\/Poured\.png\)\) {
+background-image: url(/images/Poured.png);
 }
 
 .scope\:clientFirst.col-spans\:from-1\:to-6 {
@@ -1292,8 +1304,8 @@ grid-column-start: 1;
 grid-column-end: 6;
 }
 
-.scope\:clientFirst.bd\:round-d6 {
-border-radius: 1.5rem;
+.scope\:clientFirst.bd\:round-d4 {
+border-radius: 1rem;
 }
 
 .scope\:clientGrid.grid\:cols-9-fr\:rows-1\:gap-d6 {
@@ -1363,8 +1375,8 @@ overflow: hidden;
 z-index: undefined;
 }
 
-.scope\:cascadeFirst.bd\:round-d6 {
-border-radius: 1.5rem;
+.scope\:cascadeFirst.bd\:round-d4 {
+border-radius: 1rem;
 }
 
 .scope\:cascadeFirst.h\:s6 {
@@ -1536,6 +1548,10 @@ font-family: Modernist, sans-serif;
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
+}
+
+.bg-color\:findigo {
+background-color: #7668B6;
 }
 
 .grid\:cols-1\:rows-3\:gap-d4 {
@@ -1718,6 +1734,10 @@ align-items: flex-start;
 
 .scope\:cascadeTitle.contain {
 
+}
+
+.bd\:round-d7 {
+border-radius: 1.75rem;
 }
 
 .bg-img\:\(url\(\/images\/subway\.png\)\) {
