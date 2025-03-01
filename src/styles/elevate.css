@@ -315,6 +315,11 @@ padding-top: 2rem;
 padding-bottom: 2rem;
 }
 
+.pd-y\:c6 {
+padding-top: 7rem;
+padding-bottom: 7rem;
+}
+
 .pd-y\:d3 {
 padding-top: 0.75rem;
 padding-bottom: 0.75rem;
@@ -345,8 +350,15 @@ padding-right: 4.5rem;
 
 }
 
-.h\:s8 {
-height: 60rem;
+.col\:y-center {
+display:flex;
+flex-direction:column;
+justify-content: center;
+}
+
+.pd-y\:c10 {
+padding-top: 10rem;
+padding-bottom: 10rem;
 }
 
 .bg-color\:fpurple {
@@ -1062,6 +1074,53 @@ grid-column-end: 6;
 background-color: #473C7C;
 }
 
+.col\:x-end\:y-center {
+display:flex;
+flex-direction:column;
+align-items: flex-end;
+justify-content: center;
+}
+
+.opacity\:0\.3 {
+opacity: 0.3;
+}
+
+.font\:sans\:h6\:regular\:tight {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.font\:sans\:h5\:regular\:tight {
+font-family: Modernist, sans-serif;
+font-size: 1.5rem;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.max-w\:c12 {
+max-width: 16rem;
+}
+
+.opacity\:0\.4 {
+opacity: 0.4;
+}
+
+.mg-y\:d6 {
+margin-top: 1.5rem;
+margin-bottom: 1.5rem;
+}
+
+.bg-color\:findigogray {
+background-color: #9B91CA;
+}
+
+.font\:sans\:h2 {
+font-family: Modernist, sans-serif;
+font-size: 5.062rem;
+}
+
 .font\:sans\:bold\:h1 {
 font-family: Modernist, sans-serif;
 font-weight: 700;
@@ -1078,8 +1137,8 @@ background-size: cover;
 background-position: center center;
 }
 
-.scope\:monolithImage.bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
-background-image: url(/images/birdgirl.png);
+.scope\:monolithImage.bg-img\:\(url\(\/images\/birb\.png\)\) {
+background-image: url(/images/birb.png);
 }
 
 .scope\:monolithImage.h\:s7 {
@@ -1160,8 +1219,91 @@ background-position: center center;
 height: 56rem;
 }
 
-.opacity\:0\.3 {
-opacity: 0.3;
+.z\:20 {
+z-index: 20;
+}
+
+.mg-l\:d12 {
+margin-left: 3rem;
+}
+
+.mg-b\:d12 {
+margin-bottom: 3rem;
+}
+
+.bg-attr\:center\:cover {
+background-position: center center;
+background-size: cover;
+}
+
+.z\:10 {
+z-index: 10;
+}
+
+.bg-color\:findigo {
+background-color: #7668B6;
+}
+
+.scope\:clientSecond.overflow\:hidden {
+overflow: hidden;
+}
+
+.scope\:clientSecond.z\:0 {
+z-index: undefined;
+}
+
+.scope\:clientSecond.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:clientSecond.h\:s3 {
+height: 32rem;
+}
+
+.scope\:clientSecond.relative {
+position: relative;
+}
+
+.scope\:clientSecond.col-spans\:from-6\:to-10 {
+grid-column-start: 6;
+grid-column-end: 10;
+}
+
+.scope\:clientSecond.col\:x-start\:y-end {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: flex-end;
+}
+
+.scope\:clientFirst.bg-color\:findigo {
+background-color: #7668B6;
+}
+
+.scope\:clientFirst.col-spans\:from-1\:to-6 {
+grid-column-start: 1;
+grid-column-end: 6;
+}
+
+.scope\:clientFirst.bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.scope\:clientGrid.grid\:cols-9-fr\:rows-1\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(9,1fr);
+grid-template-rows: repeat(1,auto);
+gap: 1.5rem;
+}
+
+.scope\:clientGrid.w\:full {
+width: 100%;
+}
+
+.col\:x-start {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
 }
 
 .font\:sans\:h4\:regular\:tight {
@@ -1176,23 +1318,6 @@ font-family: Modernist, sans-serif;
 font-size: 3.375rem;
 font-weight: 400;
 letter-spacing: -0.01rem;
-}
-
-.max-w\:c12 {
-max-width: 16rem;
-}
-
-.opacity\:0\.4 {
-opacity: 0.4;
-}
-
-.mg-y\:d6 {
-margin-top: 1.5rem;
-margin-bottom: 1.5rem;
-}
-
-.bg-color\:findigogray {
-background-color: #9B91CA;
 }
 
 .text\:fwhite\:normal\:note\:hug {
@@ -1210,24 +1335,6 @@ font-weight: 400;
 letter-spacing: -0.01rem;
 }
 
-.col\:y-center {
-display:flex;
-flex-direction:column;
-justify-content: center;
-}
-
-.z\:20 {
-z-index: 20;
-}
-
-.mg-l\:d12 {
-margin-left: 3rem;
-}
-
-.mg-b\:d12 {
-margin-bottom: 3rem;
-}
-
 .font\:sans\:h1 {
 font-family: Modernist, sans-serif;
 font-size: 7.594rem;
@@ -1235,15 +1342,6 @@ font-size: 7.594rem;
 
 .z\:40 {
 z-index: 40;
-}
-
-.bg-attr\:center\:cover {
-background-position: center center;
-background-size: cover;
-}
-
-.z\:10 {
-z-index: 10;
 }
 
 .bg-img\:\(url\(\/images\/subwayblur\.png\)\) {
@@ -1320,12 +1418,6 @@ gap: 1.5rem;
 
 .scope\:cascadeGrid.w\:full {
 width: 100%;
-}
-
-.col\:x-start {
-display:flex;
-flex-direction:column;
-align-items: flex-start;
 }
 
 .text\:fwhite\:relaxed {
@@ -1437,10 +1529,6 @@ font-family: Modernist, sans-serif;
 font-size: 2.25rem;
 font-weight: 700;
 letter-spacing: -0.01rem;
-}
-
-.bg-color\:findigo {
-background-color: #7668B6;
 }
 
 .grid\:cols-1\:rows-3\:gap-d4 {
@@ -1625,8 +1713,8 @@ align-items: flex-start;
 
 }
 
-.bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
-background-image: url(/images/birdgirl.png);
+.bg-img\:\(url\(\/images\/subway\.png\)\) {
+background-image: url(/images/subway.png);
 }
 
 @media only screen and (min-width:40rem) {

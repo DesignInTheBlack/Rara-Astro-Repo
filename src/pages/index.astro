@@ -10,6 +10,8 @@ import HomeSpread from '../components/Home/HomeSpread.astro'
 import HomeSpreadAlt from '../components/Home/HomeSpreadAlt.astro'
 import HomeButton from '../components/Home/HomeButton.astro'
 import HomeIntro from '../components/Home/HomeIntro.astro'
+import HomeClient from '../components/Home/HomeClient.astro'
+import HomeQuote from '../components/Home/HomeQuote.astro'
 ---
 
 <PrimaryLayout>
@@ -17,7 +19,7 @@ import HomeIntro from '../components/Home/HomeIntro.astro'
   <HomeHero></HomeHero>
   <SmartSpacer componentClass = {'pd-y:d3'}></SmartSpacer>
   <HomeCards></HomeCards>
-  <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
+  <SmartSpacer componentClass = {'pd-y:c6'}></SmartSpacer>
 
 
 
@@ -25,7 +27,7 @@ import HomeIntro from '../components/Home/HomeIntro.astro'
   <HomeIntro></HomeIntro>
 </div>
 
-<SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
+<SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
   <div class = "contain w:full">
     <div class = "pd-x:c2 bd:round-d6 pd-t:c10 pd-b:c2 bg-color:fpurplealt">
       <HomeSpreadAlt></HomeSpreadAlt>
@@ -37,7 +39,10 @@ import HomeIntro from '../components/Home/HomeIntro.astro'
 
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
 
-  <div class = "w:full bg-color:fpurple h:s8">
+  <div class = "contain w:full bg-color:fpurple pd-y:c10  col:y-center">
+    <HomeClient></HomeClient>
+    <SmartSpacer componentClass = {'pd-y:d8'}></SmartSpacer>
+    <HomeQuote></HomeQuote>
   </div>
 
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
