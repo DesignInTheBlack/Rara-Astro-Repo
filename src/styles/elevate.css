@@ -1074,13 +1074,6 @@ grid-column-end: 6;
 background-color: #473C7C;
 }
 
-.col\:x-end\:y-center {
-display:flex;
-flex-direction:column;
-align-items: flex-end;
-justify-content: center;
-}
-
 .opacity\:0\.3 {
 opacity: 0.3;
 }
@@ -1119,6 +1112,20 @@ background-color: #9B91CA;
 .font\:sans\:h2 {
 font-family: Modernist, sans-serif;
 font-size: 5.062rem;
+}
+
+.col\:x-end\:y-between {
+display:flex;
+flex-direction:column;
+align-items: flex-end;
+justify-content: space-between;
+}
+
+.col\:x-start\:y-center {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: center;
 }
 
 .font\:sans\:bold\:h1 {
