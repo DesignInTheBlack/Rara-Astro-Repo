@@ -14,22 +14,6 @@ import HomeClient from '../components/Home/HomeClient.astro'
 import HomeQuote from '../components/Home/HomeQuote.astro'
 ---
 
-<script>
-  import { inView, animate, stagger} from "motion";
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // Use an escaped class selector to match the class
-    let element = document.querySelector('.\\-growSlow');
-
-    inView(element,  () => {
-      console.log("The link ", element, " has entered the viewport")
-      animate(element, {paddingTop: "400px"},{duration:1.5})
-      animate(element, {paddingBottom: "400px"},{duration:1.5})
-      animate(element, {opacity: 1},{duration:1.5})
-    });
-  });
-</script>
-
 
 
 <PrimaryLayout>
@@ -57,11 +41,9 @@ import HomeQuote from '../components/Home/HomeQuote.astro'
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>
 
   <div class = "overflow:hidden contain w:full bg-color:fpurple pd-y:c10  col:y-center">
-    <div class = "-growSlow w:full h:0 opacity:0.0">
       <HomeClient></HomeClient>
       <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
       <HomeQuote></HomeQuote>
-    </div>
   </div>
 
   <SmartSpacer componentClass = {'pd-y:c3'}></SmartSpacer>

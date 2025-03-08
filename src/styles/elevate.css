@@ -350,14 +350,6 @@ padding-right: 1.5rem;
 
 }
 
-.opacity\:0\.0 {
-opacity: 0;
-}
-
-.h\:0 {
-height: 0;
-}
-
 .col\:y-center {
 display:flex;
 flex-direction:column;
@@ -767,6 +759,10 @@ justify-content: flex-start;
 
 .pd-t\:c5 {
 padding-top: 6rem;
+}
+
+.opacity\:0\.0 {
+opacity: 0;
 }
 
 .z\:5000 {
