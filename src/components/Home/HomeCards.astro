@@ -1,32 +1,19 @@
-<script>
-  import { inView, animate, stagger} from "motion";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    // Use an escaped class selector to match the class "-scrollInDiv"
-    let element = document.querySelector('.\\-scrollInDiv');
-
-
-    inView(element,  () => {
-      console.log("The link ", element, " has entered the viewport")
-        animate(element, {opacity:  [0,1]},{duration:2},{delay: stagger(0.2)})
-    });
-  });
-</script>
 
 
 <div class="contain grid:cols-1:rows-3:gap-d4 /xl/ grid:cols-3-fr:rows-1:gap-d6">
     
-  <div class="-lumino -scrollInDiv bg-color:findigo relative z:0 w:full h:s2 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
+  <div class="-lumino bg-color:findigo relative z:0 w:full h:s2 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
     <div class="row:x-between:y-start">
       <p class="font:h5:widest:sans text:fwhite">Your Creative Partners</p>
       </div>
-    <div class = "z:20">
-      <h2 class="scope:HeadlineOne font:sans:h4:bold:tight text:fwhite:note mg-b:0 /lg/ font:h3 mg-b:d6">We Can Build It, If You Can Dream It</h2>
+    <div class = "z:20 overflow:hidden">
+      <h2 class="scope:HeadlineOne font:sans:h4:bold:tight text:fwhite:note format:no-wrap mg-b:0 /lg/ font:h3 mg-b:d6">We Can Build It,<br>If You Can Dream It</h2>
     </div>
   </div>
 
 
-    <div class="-lumino -scrollInDiv relative z:0 bg-img:(url(/images/Poured.png)) bg-attr:no-repeat:cover:center w:full h:s2 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
+    <div class="-lumino relative z:0 bg-img:(url(/images/Poured.png)) bg-attr:no-repeat:cover:center w:full h:s2 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
       <div class="-imageText2 absolute top:0 left:0 w:full h:full bd:round-d4 z:10"></div>
       <div class="row:x-between:y-start">
         <p class="font:h5:widest:sans text:fwhite">Crafting Your</p>
@@ -40,25 +27,25 @@
 
 <div class = "grid:cols-1:rows-2:gap-d6 h:s2 /lg/ h:s3">
     
-    <div class="-lumino -scrollInDiv bg-color:fwhite w:full bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug">
+    <div class="-lumino bg-color:fwhite w:full bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug">
       <div class="row:x-between:y-start">
         <img class="h:d10 w:auto" src="images/share.svg">
         <p class="font:h5:sans:widest text:fblack">Elevating Your</p>
         </div>
       <div>
      
-      <h3 class="-slip2 font:h4:serif:light text:fblack:right mg-b:d4">Social Media</h3>
+      <h3 class="font:h4:serif:light text:fblack:right mg-b:d4">Social Media</h3>
       <p class="font:h6:sans text:fblack:relaxed:right">Amplifying your voice with precision and finesse in an ever evolving and often unpredictable digital landscape.</p>
       </div>
     </div>
 
-    <div class="-lumino -scrollInDiv bg-img:(url(/images/backdrop.png)) bg-attr:no-repeat:cover:center w:full bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug">
+    <div class="-lumino bg-img:(url(/images/backdrop.png)) bg-attr:no-repeat:cover:center w:full bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug">
       <div class="row:x-between:y-start">
         <p class="font:h5:sans:widest text:fwhite">Shaping Your</p>
         <img class="h:d10 w:auto" src="images/mouse.svg">
         </div>
       <div>
-      <h3 class="-slip2 font:h4:serif:light text:fwhite mg-b:d4">Digital Footprint</h3>
+      <h3 class="font:h4:serif:light text:fwhite mg-b:d4">Digital Footprint</h3>
       <p class="font:h6:sans text:fwhite:relaxed">Crafting sophisticated digital experiences that tell your story with expertise, efficiency, and empathy.</p>
       </div>
     </div>
