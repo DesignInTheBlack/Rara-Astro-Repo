@@ -29,6 +29,7 @@ const main = async () => {
         // ║                        1. SCAN FILES                               ║
         // ║ Scan the files in the provided directory and retrieve class lists. ║
         // ╚════════════════════════════════════════════════════════════════════╝
+
         spinner.text = 'Scanning files for Elevate classes...';
         let scannedClasses;
         try {
@@ -46,8 +47,10 @@ const main = async () => {
         // ║                  2. INITIALIZE DATA STRUCTURES                     ║
         // ║ Define the compiledClasses array and placeholder for types.        ║
         // ╚════════════════════════════════════════════════════════════════════╝
+
         spinner.text = 'Processing class definitions...';
         let compiledClasses: any[] = [];
+        let currentScope = null;
 
         // ╔════════════════════════════════════════════════════════════════════╗
         // ║                    3. Establish Breakpoints                        ║
@@ -55,6 +58,7 @@ const main = async () => {
         // ║ - Detects breakpoints                                              ║
         // ║ - Adds them to class objects                                       ║
         // ╚════════════════════════════════════════════════════════════════════╝
+
         function establishBreakpoints(instance) {
           if (!instance || !instance.classes) {
             throw new Error('Invalid class instance provided');
@@ -63,15 +67,21 @@ const main = async () => {
             let classList = instance.classes;
 
            
+            //Consider difference between TRACKING the last encountered scope, nullifying said tracked scope on ctx:end.
             // Variable to hold the removed item
             let scopeItem = null;
 
             // Find and remove the item containing "scope"
             classList = classList.filter(item => {
-                if (item.includes('scope')) {
+                if (item.includes('ctx') && item != "ctx:end") {
                     scopeItem = item;
                     return false; // Exclude it from the new array
                 }
+
+                else if (item == "ctx:end") {
+                    return false; // Exclude it from the new array
+                }
+
                 return true; // Keep other items
             });
             
@@ -79,7 +89,7 @@ const main = async () => {
 
             classList.forEach(function (classString) {
                 if (!classString.startsWith("-")) {
-                    const regex = /\/[a-zA-Z]{1,3}\//;
+                    const regex = /\/[a-zA-Z0-9]{1,3}\//;
                     // ════ Mobile-First Breakpoint Processing ════
                     if (regex.test(classString)) {
                         lastBreak = classString;
@@ -88,9 +98,12 @@ const main = async () => {
 
                     let classObject = elevateCompiler(classString,{ fileName: instance.file, lineNumber: instance.lineNumber });
                     classObject.breakpoint = lastBreak;
+
+                
                     classObject.scope = scopeItem;
-                 
                     
+                
+        
                     compiledClasses.push(classObject);
                 }
             });
