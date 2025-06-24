@@ -13,6 +13,8 @@ import ora from 'ora';
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+let currentScope = null;
+
 const main = async () => {
     const spinner = ora({
         text: 'Elevating Your CSS..',
@@ -50,7 +52,7 @@ const main = async () => {
 
         spinner.text = 'Processing class definitions...';
         let compiledClasses: any[] = [];
-        let currentScope = null;
+     
 
         // ╔════════════════════════════════════════════════════════════════════╗
         // ║                    3. Establish Breakpoints                        ║
@@ -67,28 +69,22 @@ const main = async () => {
             let classList = instance.classes;
 
            
-            //Consider difference between TRACKING the last encountered scope, nullifying said tracked scope on ctx:end.
-            // Variable to hold the removed item
-            let scopeItem = null;
-
-            // Find and remove the item containing "scope"
-            classList = classList.filter(item => {
-                if (item.includes('ctx') && item != "ctx:end") {
-                    scopeItem = item;
-                    return false; // Exclude it from the new array
-                }
-
-                else if (item == "ctx:end") {
-                    return false; // Exclude it from the new array
-                }
-
-                return true; // Keep other items
-            });
-            
-         
 
             classList.forEach(function (classString) {
                 if (!classString.startsWith("-")) {
+
+                    let scope = currentScope;
+                    if (classString.includes("ctx") && classString != "ctx:end") {
+                        console.log("--------------------------------------------- SCOPE CHANGING TO :" ,classString)
+                        currentScope = classString;
+                        return  
+                       }
+
+                    else if (classString == "ctx:end") {
+                        currentScope = null;
+                        return  
+                       }
+                    
                     const regex = /\/[a-zA-Z0-9]{1,3}\//;
                     // ════ Mobile-First Breakpoint Processing ════
                     if (regex.test(classString)) {
@@ -98,11 +94,8 @@ const main = async () => {
 
                     let classObject = elevateCompiler(classString,{ fileName: instance.file, lineNumber: instance.lineNumber });
                     classObject.breakpoint = lastBreak;
-
-                
-                    classObject.scope = scopeItem;
-                    
-                
+                    classObject.scope = scope;
+                    console.log("Writing class:",classString," with scope: ",scope)
         
                     compiledClasses.push(classObject);
                 }
@@ -197,10 +190,29 @@ const main = async () => {
 
             const modifiers = item.modifiers.map((modifier) => `${modifier};`).join("\n");
 
-            compiledCSS += `${item.scope ? `.${escapeClassName(item.scope)}` : ''}.${escapeClassName(item.className)}${stateSelector === ':placeholder' ? `:` : ''}${stateSelector} {` +
+            const scopeClass = item.scope
+            ? `.${escapeClassName(item.scope)}`
+            : ''
+          const targetClass = `.${escapeClassName(item.className)}`
+          const stateSuffix =
+            stateSelector === ':placeholder'
+              ? `:${stateSelector}`
+              : stateSelector
+          
+          // make an array of the two selectors…
+          const selectors = [
+            // 1) parent itself when it has both classes
+            `${scopeClass}${targetClass}${stateSuffix}`,
+            // 2) any descendant of the scope
+            `${scopeClass} ${targetClass}${stateSuffix}`,
+          ]
+          
+          // and then join with a comma
+          compiledCSS +=
+            selectors.join(', ') +
+            ' {' +
             (flexProperties ? `\n${flexProperties}` : '') +
-            `\n${modifiers}\n}\n\n`;
-
+            `\n${modifiers}\n}\n\n`
       
         });
 
@@ -215,7 +227,7 @@ const main = async () => {
           throw new Error('No CSS content generated!');
       }
         writeToFile(compiledCSS);
-        console.clear();
+        // console.clear();
         spinner.succeed('Elevate CSS Compilation Successful!');
     } catch (error) {
         spinner.fail(`Compilation failed: ${error.message}`);
@@ -234,12 +246,12 @@ const watcher = chokidar.watch(config.Watch, {
 });
 
 watcher.on('ready', () => {
-    console.clear();
+    // console.clear();
     console.log('Elevate CSS is watching for changes...');
 });
 
 watcher.on('change', () => {
-    console.clear();
+    // console.clear();
     main();
 });
 
