@@ -75,7 +75,6 @@ const main = async () => {
 
                     let scope = currentScope;
                     if (classString.includes("ctx") && classString != "ctx:end") {
-                        console.log("--------------------------------------------- SCOPE CHANGING TO :" ,classString)
                         currentScope = classString;
                         return  
                        }
@@ -95,7 +94,6 @@ const main = async () => {
                     let classObject = elevateCompiler(classString,{ fileName: instance.file, lineNumber: instance.lineNumber });
                     classObject.breakpoint = lastBreak;
                     classObject.scope = scope;
-                    console.log("Writing class:",classString," with scope: ",scope)
         
                     compiledClasses.push(classObject);
                 }
@@ -246,12 +244,12 @@ const watcher = chokidar.watch(config.Watch, {
 });
 
 watcher.on('ready', () => {
-    // console.clear();
+    console.clear();
     console.log('Elevate CSS is watching for changes...');
 });
 
 watcher.on('change', () => {
-    // console.clear();
+    console.clear();
     main();
 });
 

@@ -1250,31 +1250,38 @@ letter-spacing: 0.01rem;
 display: block;
 }
 
-.ctx\:introCopy.mg-b\:d6, .ctx\:introCopy .mg-b\:d6 {
+.ctx\:scopeTESTING.col\:y-between\:x-end, .ctx\:scopeTESTING .col\:y-between\:x-end {
+display:flex;
+flex-direction:column;
+justify-content: space-between;
+align-items: flex-end;
+}
+
+.ctx\:scopeTESTING.bd\:round-d6, .ctx\:scopeTESTING .bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.ctx\:scopeTESTING.mg-b\:d6, .ctx\:scopeTESTING .mg-b\:d6 {
 margin-bottom: 1.5rem;
 }
 
-.ctx\:introCopy.text\:findigogray\:brief, .ctx\:introCopy .text\:findigogray\:brief {
+.ctx\:scopeTESTING.text\:findigogray\:brief, .ctx\:scopeTESTING .text\:findigogray\:brief {
 color: #9B91CA;
 max-width: 45ch;
 }
 
-.ctx\:introCopy.font\:h6\:sans\:regular\:tight, .ctx\:introCopy .font\:h6\:sans\:regular\:tight {
+.ctx\:scopeTESTING.font\:h6\:sans\:regular\:tight, .ctx\:scopeTESTING .font\:h6\:sans\:regular\:tight {
 font-size: 1.125rem;
 font-family: Modernist, sans-serif;
 font-weight: 400;
 letter-spacing: -0.01rem;
 }
 
-.ctx\:introEyebrow.mg-b\:d6, .ctx\:introEyebrow .mg-b\:d6 {
-margin-bottom: 1.5rem;
-}
-
-.ctx\:introEyebrow.text\:fwhite, .ctx\:introEyebrow .text\:fwhite {
+.ctx\:scopeTESTING.text\:fwhite, .ctx\:scopeTESTING .text\:fwhite {
 color: #E7E3DA;
 }
 
-.ctx\:introEyebrow.font\:h6\:regular\:sans, .ctx\:introEyebrow .font\:h6\:regular\:sans {
+.ctx\:scopeTESTING.font\:h6\:regular\:sans, .ctx\:scopeTESTING .font\:h6\:regular\:sans {
 font-size: 1.125rem;
 font-weight: 400;
 font-family: Modernist, sans-serif;
@@ -1285,10 +1292,6 @@ display:flex;
 flex-direction:column;
 align-items: flex-start;
 justify-content: space-between;
-}
-
-.ctx\:scopeTESTING.bd\:round-d6, .ctx\:scopeTESTING .bd\:round-d6 {
-border-radius: 1.5rem;
 }
 
 .ctx\:scopeTESTING.h\:full, .ctx\:scopeTESTING .h\:full {
@@ -2400,15 +2403,15 @@ grid-column-start: 1;
 grid-column-end: 3;
 }
 
-.ctx\:introEyebrow.mg-b\:c3, .ctx\:introEyebrow .mg-b\:c3 {
+.ctx\:scopeTESTING.mg-b\:c3, .ctx\:scopeTESTING .mg-b\:c3 {
 margin-bottom: 5rem;
 }
 
-.ctx\:introCopy.mg-b\:0, .ctx\:introCopy .mg-b\:0 {
+.ctx\:scopeTESTING.mg-b\:0, .ctx\:scopeTESTING .mg-b\:0 {
 margin-bottom: 0;
 }
 
-.col-spans\:from-3\:to-6,  .col-spans\:from-3\:to-6 {
+.ctx\:scopeTESTING.col-spans\:from-3\:to-6, .ctx\:scopeTESTING .col-spans\:from-3\:to-6 {
 grid-column-start: 3;
 grid-column-end: 6;
 }
