@@ -113,12 +113,22 @@ const main = async () => {
         // ╚════════════════════════════════════════════════════════════════════╝
         spinner.text = 'Organizing and sorting classes...';
         compiledClasses.sort((a, b) => {
-            // Handle empty breakpoints (put them first)
-            if (!a.breakpoint) return -1;
-            if (!b.breakpoint) return 1;
-
-            return getBreakpointPriority(a.breakpoint) - getBreakpointPriority(b.breakpoint);
-        });
+            const aBp = a.breakpoint
+            const bBp = b.breakpoint
+          
+            // 1) neither has a breakpoint → equal
+            if (!aBp && !bBp) return 0
+          
+            // 2) only a is missing → a goes first
+            if (!aBp) return -1
+          
+            // 3) only b is missing → b goes first
+            if (!bBp) return 1
+          
+            // 4) both have breakpoints → compare their index
+            //    (getBreakpointPriority will always return ≥0 for valid tokens)
+            return getBreakpointPriority(aBp) - getBreakpointPriority(bBp)
+          })
 
  
 

@@ -1,18 +1,32 @@
+
 ---
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
-import WorksHero from '../components/works/WorksHero.astro'
+import AboutHero from '../components/about/AboutHero.astro'
 import WorksIntro from '../components/works/WorksIntro.astro'
-import WorksGallery from '../components/works/WorksGallery.astro'
-import WorksGalleryAlt from '../components/works/WorksGalleryAlt.astro'
-import WorksStudy from '../components/works/WorksStudy.astro'
+import WorksStory from '../components/works/WorksStory.astro'
+import AboutSubHero from '../components/about/AboutSubHero.astro'
 import SmartSpacer from '../subcomponents/SmartSpacer.astro'
+import HomeValues from '../components/home/HomeValues.astro'
+import WorksQuote from '../components/works/WorksQuote.astro'
+import WorksHero from '../components/works/WorksHero.astro'
+import WorksCascade from '../components/works/WorksCascade.astro'
 ---
 
 <PrimaryLayout>
+    <SmartSpacer componentClass = {'pd-y:d4'}></SmartSpacer>
+    <WorksHero></WorksHero>
+    <SmartSpacer componentClass = {'pd-y:c1'}></SmartSpacer>
+    <div class = "contain w:full">
+        <WorksIntro></WorksIntro>
+    </div>
 
-<SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
-<WorksStudy></WorksStudy>
-<SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
+    <SmartSpacer componentClass = {'pd-y:c1'}></SmartSpacer>
+    <WorksStory></WorksStory>
+    <SmartSpacer componentClass = {'pd-y:c1'}></SmartSpacer>
+    <div class = "contain w:full">
+        <WorksCascade></WorksCascade>
+    </div>
+    <SmartSpacer componentClass = {'pd-y:c1'}></SmartSpacer>
+    <WorksQuote></WorksQuote>
+    <SmartSpacer componentClass = {'pd-y:c1'}></SmartSpacer>
 </PrimaryLayout>
-
-

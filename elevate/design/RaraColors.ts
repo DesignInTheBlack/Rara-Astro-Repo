@@ -2,6 +2,7 @@ export const raracolors = {
     'purple': '#6320EE', 
     'lightpurple':'#C051F2', 
     'altpurple':'#5711E4',
+    'darkpurple':'#433878',
     'grey': '#f1eef7', 
     'green':'#81C14B',
     'pink':'#FD3E81',
@@ -15,12 +16,13 @@ export const raracolors = {
     'warn': '#F7B538',
 
 
-    // New Colors
+    // New Colors -'#9B91CA'
     'fpurple':'#4e4187',
     'fpurplealt':'#473C7C',
     'fwhite':'#E7E3DA',
     'fblack':'#12130F',
     'fblackalt':'#0C0F0A',
     'findigo':'#7668B6',
-    'findigogray':'#9B91CA'
+    'findigogray':'#baaef3'
+
 }

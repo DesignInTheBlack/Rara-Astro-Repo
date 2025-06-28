@@ -1,31 +1,42 @@
+
+
 <header class="contain">
-    <div class="relative -lumino w:full bg-img:(url(/images/subway.png)) bg-attr:cover:center h:s7 bg-attr:no-repeat:cover:center bd:round-d7">
-    <div class="-imageText absolute w:full h:full bd:round-d6"></div>
-        <script>
-            import {typeCore} from "@scripts/typeCore.js";
-              document.addEventListener('DOMContentLoaded', function() {
-          
-          let textID = "typed";
-          
-          // Strings for desktop and mobile
-          const desktopStrings = [
-            'Believe The <strong>Future</strong> Is Local^150.',
-          ];
-          
-          const mobileStrings = [
-            'Are <strong>Rara Avis</strong>^200.' // Only the last statement for mobile
-          ];
-          
-          typeCore(mobileStrings,desktopStrings,textID)
-          });
-          </script>
-          
-            <div class="ctx:heroTitle absolute w:full bottom:0 row:x-between:y-center font:h6:sans text:fwhite /md/ font:h5 /lg/ font:h4 pd-b:d8 pd-x:d12 ctx:end">
-              <h1 class="font:regular text:hug">
-                We <span id="typed"></span>
-              </h1>
-              <img class="-slip h:c1 w:auto" src="/images/Arrow.svg" alt="Arrow">
-            </div>
-          
-    </div>
+  <div class="ctx:homeHero relative -lumino w:full h:s3 bg-img:(url(/images/subway.png)) bg-attr:no-repeat:cover:center bd:round-d4 /lg/ h:s7 ctx:end">
+  <!-- <div class="-imageText absolute w:full h:full bd:round-d6"></div> -->
+    
+<script>
+  import {typeCore} from "@scripts/typeCore.js";
+    document.addEventListener('DOMContentLoaded', function() {
+
+let textID = "typed";
+
+// Strings for desktop and mobile
+const desktopStrings = [
+  'Believe The <strong>Future</strong> Is Local^150.',
+];
+
+const mobileStrings = [
+  'Believe The <strong>Future</strong> Is Local^150.' // Only the last statement for mobile
+];
+
+typeCore(mobileStrings,desktopStrings,textID)
+});
+</script>
+
+        
+          <div class="ctx:heroTitle absolute w:full pd-x:d6 pd-b:d8 bottom:0 row:x-between:y-center font:h6:sans text:fwhite /md/ font:h5 /lg/ font:h4 pd-b:d8 pd-x:d12">
+            <h1 class="font:regular text:hug">
+              We <span id="typed"></span>
+            </h1>
+            <img class="-slip w:auto h:d10 /lg/ h:c2 ctx:end" src="/images/Arrow.svg" alt="Arrow">
+          </div>
+        
+  </div>
 </header>
+
+
+
+
+
+
+

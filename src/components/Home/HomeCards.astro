@@ -1,39 +1,17 @@
-<script>
-  import { inView, animate, stagger} from "motion";
-
-  document.addEventListener("DOMContentLoaded", () => {
-    // Use an escaped class selector to match the class
-    let element = document.querySelector('.\\-growth');
-    let headline = document.querySelector('.\\-delayed');
-    let eyebrow = document.querySelector('.\\-eyebrow');
-
-    inView(element,  () => {
-      console.log("The link ", element, " has entered the viewport")
-      animate(element, {opacity: [0,1]},{duration:0.35})
-      animate(element, {scale: [0,1]},{duration:0.35})
-      animate(headline, {opacity: [0,1]},{duration:0.25, delay:1.1})
-      animate(headline, {y: [150,0]},{duration:0.25, delay:1.1})
-      animate(eyebrow, {opacity: [0,1]},{duration:0.25, delay:1})
-    });
-  });
-</script>
-
-
-
 
 <div class="contain grid:cols-1:rows-3:gap-d4 /xl/ grid:cols-3-fr:rows-1:gap-d6">
     
-  <div class="-lumino -growth bg-color:findigo relative z:0 w:full h:s2 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
+  <div class="-lumino bg-color:findigo relative z:0 w:full h:s1 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
     <div class="row:x-between:y-start">
       <p class="font:h5:widest:sans text:fwhite -eyebrow">We're Proud To Be Your</p>
       </div>
     <div class = "z:20 overflow:hidden">
-      <h2 class="ctx:HeadlineOne -delayed font:sans:h4:bold:tight text:fwhite:note format:no-wrap mg-b:0 /lg/ font:h3 mg-b:d6 ctx:end">Creative Partners</h2>
+      <h2 class="ctx:HeadlineOne font:sans:h4:bold:tight text:fwhite:note format:no-wrap mg-b:0 /lg/ font:h3 mg-b:d6 ctx:end">Creative Partners</h2>
     </div>
   </div>
 
 
-    <div class="-lumino relative z:0 bg-img:(url(/images/Poured.png)) bg-attr:no-repeat:cover:center w:full h:s2 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
+    <div class="-lumino relative z:0 bg-img:(url(/images/Poured.png)) bg-attr:no-repeat:cover:center w:full h:s1 bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug /lg/ h:s3">
       <div class="-imageText2 absolute top:0 left:0 w:full h:full bd:round-d4 z:10"></div>
       <div class="row:x-between:y-start">
         <p class="font:h5:widest:sans text:fwhite">Crafting Your</p>
@@ -45,7 +23,7 @@
       </div>
     </div>
 
-<div class = "grid:cols-1:rows-2:gap-d6 h:s2 /lg/ h:s3">
+<div class = "grid:cols-1:rows-2:gap-d6 h:s1 /lg/ h:s3">
     
     <div class="-lumino bg-color:fwhite w:full bd:round-d4 col:x-between:y-between border-box pd:d8 text:snug">
       <div class="row:x-between:y-start">
