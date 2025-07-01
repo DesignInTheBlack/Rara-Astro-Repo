@@ -1,0 +1,22 @@
+---
+import PrimaryLayout from '../layouts/PrimaryLayout.astro'
+import SmartSpacer from '../subcomponents/SmartSpacer.astro'
+import PricingHero from '../components/pricing/PricingHero.astro'
+import PricingCascade from '../components/pricing/PricingCascade.astro'
+import PricingIntro from '../components/pricing/PricingIntro.astro'
+import PricingSpread from '../components/pricing/PricingSpread.astro'
+import PricingButton from '../components/pricing/PricingButton.astro'
+---
+<PrimaryLayout>
+    <PricingHero></PricingHero>
+    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+    <div class = "contain w:full">
+        <PricingSpread></PricingSpread>
+        <PricingButton></PricingButton>
+    </div>
+    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+    <div class = "overflow:hidden contain w:full bg-color:darkpurple pd-t:c2 pd-b:c2 col:y-center /lg/ pd-t:c6 pd-b:c6">
+        <PricingCascade></PricingCascade>
+    </div>
+    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+</PrimaryLayout>

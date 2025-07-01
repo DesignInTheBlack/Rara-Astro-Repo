@@ -28,7 +28,7 @@ function initNav () {
         if (progress > 0.025 && window.innerWidth > 768) { 
           nav.style.backgroundColor = "rgba(12,15,10,0.6)";
           nav.style.borderRadius = "2rem";
-          nav.style.width = "19.5rem";
+          nav.style.width = "20.5rem";
           nav.style.paddingTop = "0.5rem";
           nav.style.paddingBottom = "0.5rem";
           nav.style.paddingLeft = "0.5rem";
@@ -101,22 +101,22 @@ window.addEventListener("resize", initNav);
 <!-- Fixed Header Container -->
 <div class = "fixed top:0 w:full z:2000">
   <!-- Spacer -->
-  <div id = "navSpacer" class="pd-y:d7">
+  <div id = "navSpacer" class="pd-y:d4">
   </div>
 
   <!-- Navigation Bar -->
   <div id = "placeMat" class = "contain row:x-center:y-center mg-x:d6 mg-t:d3 /lg/ mg-t:0">
-    <nav id="primaryNavContainer" class="transition:slow pd-x:d4 pd-y:d4 bd:round-d4">
+    <nav id="primaryNavContainer" class="transition:slow pd-y:d4 bd:round-d4">
 
       <div id = "primaryNavInternal" class = "row:x-center:y-center relative">
 
           <img id="primaryNavLogo" class="h:d9 w:auto absolute left:0" src="/images/LogoLight.svg" alt="Logo" />
           <div id="navMenu" class="ctx:navMenu">
-            <ul id = "navNotch" class = "invisible /sm/ visible row:x-center:y-center gap:d3 bd:round-d6 pd-y:d3 pd-x:d10">
+            <ul id = "navNotch" class = "invisible /sm/ visible row:x-center:y-center gap:d6 bd:round-d6 pd-y:d3 pd-x:d8">
               <li class="-box inline-block text:fwhite font:sans:base"><a href = "/">Home</a></li>
               <li class="-box inline-block text:fwhite font:sans:base"><a href = "/about">About</a></li>
               <li class="-box inline-block text:fwhite font:sans:base"><a href = "/works">Works</a></li>
-              <li class="-box inline-block text:fwhite font:sans:base"><a href = "/works">Pricing</a></li>
+              <li class="-box inline-block text:fwhite font:sans:base"><a href = "/pricing">Pricing</a></li>
             </ul>
           </div>
           <a id = "primaryNavContact" href = "#footer" style = "top:50%;transform:translateY(-50%)" class = "row:x-center:y-center bg-color:fwhite text:fblack absolute right:0 pd-l:d4 pd-r:d4 pd-t:d2 pd-b:d2 child:start font:sans bd:round-d2 font:bold row:x-center ctx:end">Contact Us<img class="mg-l:d3 h:d7 w:auto" src="/images/arrowright.svg"></a>

@@ -38,7 +38,7 @@ button, input, label {
 
 h1, h2,
 h3, h4 {
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 a:not([class]) {
