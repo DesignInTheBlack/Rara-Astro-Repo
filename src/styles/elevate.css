@@ -2044,8 +2044,8 @@ justify-content: flex-start;
 background-image: url(/images/BentonSocial1.jpg);
 }
 
-.ctx\:pricingCards.h\:s7, .ctx\:pricingCards .h\:s7 {
-height: 56rem;
+.ctx\:pricingCards.h\:s1, .ctx\:pricingCards .h\:s1 {
+height: 24rem;
 }
 
 .ctx\:pricingCards.bg-attr\:no-repeat\:cover\:center, .ctx\:pricingCards .bg-attr\:no-repeat\:cover\:center {
@@ -3340,6 +3340,10 @@ padding-right: 4rem;
 .ctx\:pricingCards.pd-y\:c3, .ctx\:pricingCards .pd-y\:c3 {
 padding-top: 5rem;
 padding-bottom: 5rem;
+}
+
+.ctx\:pricingCards.h\:s5, .ctx\:pricingCards .h\:s5 {
+height: 40rem;
 }
 
 .ctx\:priceGrid.pd-x\:c1, .ctx\:priceGrid .pd-x\:c1 {
