@@ -38,7 +38,7 @@ button, input, label {
 
 h1, h2,
 h3, h4 {
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 a:not([class]) {
@@ -67,7 +67,7 @@ textarea:not([rows]) {
 }
 
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 5em;
 }
 
 /* Added universal animations for better UI feedback */
@@ -80,22 +80,22 @@ textarea:not([rows]) {
 @media only screen and (min-width:20rem) {
 .contain {
     margin:auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     }
 }
 @media only screen and (min-width:30rem) {
 .contain {
     margin:auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     }
 }
 @media only screen and (min-width:40rem) {
 .contain {
     margin:auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     }
 }
 @media only screen and (min-width:48rem) {
@@ -236,10 +236,10 @@ font-weight: 300;
 letter-spacing: 0.01rem;
 }
 
-.ctx\:introTitle.text\:findigogray\:normal\:brief, .ctx\:introTitle .text\:findigogray\:normal\:brief {
+.ctx\:introTitle.text\:findigogray\:normal\:blob, .ctx\:introTitle .text\:findigogray\:normal\:blob {
 color: #baaef3;
 line-height: 1.4;
-max-width: 45ch;
+max-width: 30ch;
 }
 
 .ctx\:introTitle.text\:white, .ctx\:introTitle .text\:white {
@@ -1234,8 +1234,8 @@ align-items: center;
 height: 28rem;
 }
 
-.ctx\:monolithImage.bg-img\:\(url\(\/images\/birb\.png\)\), .ctx\:monolithImage .bg-img\:\(url\(\/images\/birb\.png\)\) {
-background-image: url(/images/birb.png);
+.ctx\:monolithImage.bg-img\:\(url\(\/images\/birdgirl\.png\)\), .ctx\:monolithImage .bg-img\:\(url\(\/images\/birdgirl\.png\)\) {
+background-image: url(/images/birdgirl.png);
 }
 
 .ctx\:monolithImage.bg-attr\:no-repeat\:cover\:center, .ctx\:monolithImage .bg-attr\:no-repeat\:cover\:center {
@@ -1798,10 +1798,8 @@ font-family: Modernist, sans-serif;
 margin-top: 1.5rem;
 }
 
-.pattern\:velvet\:fg-fpurple\:bg-fpurplealt,  .pattern\:velvet\:fg-fpurple\:bg-fpurplealt {
-background: repeating-linear-gradient(135deg, currentColor 0 2px, transparent 2px 6px);
-color: #4e4187;
-background-color: #473C7C;
+.bg-color\:black,  .bg-color\:black {
+background-color: #0A141F;
 }
 
 .z\:5000,  .z\:5000 {
@@ -1853,22 +1851,22 @@ justify-content: flex-start;
 z-index: 200;
 }
 
-.gap\:d9,  .gap\:d9 {
-gap: 2.25rem;
+.gap\:d8,  .gap\:d8 {
+gap: 2rem;
 }
 
 .pd-t\:c4,  .pd-t\:c4 {
 padding-top: 5.5rem;
 }
 
-.font\:sans\:h6\:light,  .font\:sans\:h6\:light {
+.font\:sans\:h5\:light,  .font\:sans\:h5\:light {
 font-family: Modernist, sans-serif;
-font-size: 1.125rem;
+font-size: 1.5rem;
 font-weight: 300;
 }
 
-.mg-b\:d3,  .mg-b\:d3 {
-margin-bottom: 0.75rem;
+.mg-b\:d5,  .mg-b\:d5 {
+margin-bottom: 1.25rem;
 }
 
 .font\:sans\:base,  .font\:sans\:base {
@@ -1894,8 +1892,8 @@ flex-direction:row;
 align-items: center;
 }
 
-.pd-t\:d8,  .pd-t\:d8 {
-padding-top: 2rem;
+.pd-t\:d6,  .pd-t\:d6 {
+padding-top: 1.5rem;
 }
 
 .z\:2000,  .z\:2000 {
@@ -1907,9 +1905,9 @@ padding-top: 1rem;
 padding-bottom: 1rem;
 }
 
-.mg-x\:d6,  .mg-x\:d6 {
-margin-left: 1.5rem;
-margin-right: 1.5rem;
+.mg-x\:d5,  .mg-x\:d5 {
+margin-left: 1.25rem;
+margin-right: 1.25rem;
 }
 
 .mg-t\:d3,  .mg-t\:d3 {
@@ -2025,6 +2023,69 @@ height: 2rem;
 width: 2rem;
 }
 
+.ctx\:pricingCards.col\:x-start, .ctx\:pricingCards .col\:x-start {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+}
+
+.ctx\:pricingCards.w\:full, .ctx\:pricingCards .w\:full {
+width: 100%;
+}
+
+.ctx\:pricingCards.col-r\:x-start\:y-start, .ctx\:pricingCards .col-r\:x-start\:y-start {
+display:flex;
+flex-direction:column-reverse;
+align-items: flex-start;
+justify-content: flex-start;
+}
+
+.ctx\:pricingCards.bg-img\:\(url\(\/images\/BentonSocial1\.jpg\)\), .ctx\:pricingCards .bg-img\:\(url\(\/images\/BentonSocial1\.jpg\)\) {
+background-image: url(/images/BentonSocial1.jpg);
+}
+
+.ctx\:pricingCards.h\:s7, .ctx\:pricingCards .h\:s7 {
+height: 56rem;
+}
+
+.ctx\:pricingCards.bg-attr\:no-repeat\:cover\:center, .ctx\:pricingCards .bg-attr\:no-repeat\:cover\:center {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+.ctx\:pricingCards.col-spans\:from-1\:to-6, .ctx\:pricingCards .col-spans\:from-1\:to-6 {
+grid-column-start: 1;
+grid-column-end: 6;
+}
+
+.ctx\:pricingCards.pd-x\:d6, .ctx\:pricingCards .pd-x\:d6 {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+
+.ctx\:pricingCards.pd-y\:d12, .ctx\:pricingCards .pd-y\:d12 {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.ctx\:pricingCards.bd\:round-d4, .ctx\:pricingCards .bd\:round-d4 {
+border-radius: 1rem;
+}
+
+.ctx\:pricingCards.mg-b\:d4, .ctx\:pricingCards .mg-b\:d4 {
+margin-bottom: 1rem;
+}
+
+.ctx\:pricingCards.bg-img\:\(url\(\/images\/PouredSocial1\.png\)\), .ctx\:pricingCards .bg-img\:\(url\(\/images\/PouredSocial1\.png\)\) {
+background-image: url(/images/PouredSocial1.png);
+}
+
+.ctx\:pricingCards.col-spans\:from-6\:to-10, .ctx\:pricingCards .col-spans\:from-6\:to-10 {
+grid-column-start: 6;
+grid-column-end: 10;
+}
+
 .ctx\:priceGrid.col\:x-start, .ctx\:priceGrid .col\:x-start {
 display:flex;
 flex-direction:column;
@@ -2042,8 +2103,10 @@ align-items: flex-start;
 justify-content: flex-start;
 }
 
-.ctx\:priceGrid.bg-color\:purple, .ctx\:priceGrid .bg-color\:purple {
-background-color: #6320EE;
+.ctx\:priceGrid.pattern\:cotton\:bg-black\:fg-altblack, .ctx\:priceGrid .pattern\:cotton\:bg-black\:fg-altblack {
+background: radial-gradient(circle, currentColor 2px, transparent 2px) 0 0 / 10px 10px, radial-gradient(circle, currentColor 2px, transparent 2px) 5px 5px / 10px 10px;
+background-color: #0A141F;
+color: #181a1c;
 }
 
 .ctx\:priceGrid.col-spans\:from-1\:to-4, .ctx\:priceGrid .col-spans\:from-1\:to-4 {
@@ -2051,13 +2114,14 @@ grid-column-start: 1;
 grid-column-end: 4;
 }
 
-.ctx\:priceGrid.bg-attr\:center\:cover, .ctx\:priceGrid .bg-attr\:center\:cover {
-background-position: center center;
-background-size: cover;
+.ctx\:priceGrid.pd-x\:d6, .ctx\:priceGrid .pd-x\:d6 {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
 }
 
-.ctx\:priceGrid.h\:s2, .ctx\:priceGrid .h\:s2 {
-height: 28rem;
+.ctx\:priceGrid.pd-y\:d12, .ctx\:priceGrid .pd-y\:d12 {
+padding-top: 3rem;
+padding-bottom: 3rem;
 }
 
 .ctx\:priceGrid.bd\:round-d4, .ctx\:priceGrid .bd\:round-d4 {
@@ -2068,12 +2132,187 @@ border-radius: 1rem;
 margin-bottom: 1rem;
 }
 
+.ctx\:priceGrid.font\:sans\:h5\:semibold\:wide, .ctx\:priceGrid .font\:sans\:h5\:semibold\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1.5rem;
+font-weight: 600;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:priceGrid.text\:chunk\:fwhite\:normal, .ctx\:priceGrid .text\:chunk\:fwhite\:normal {
+max-width: 35ch;
+color: #E7E3DA;
+line-height: 1.4;
+}
+
+.ctx\:priceGrid.mg-b\:d10, .ctx\:priceGrid .mg-b\:d10 {
+margin-bottom: 2.5rem;
+}
+
+.ctx\:priceGrid.font\:sans\:h6\:light\:wide, .ctx\:priceGrid .font\:sans\:h6\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:priceGrid.font\:sans\:h3\:semibold\:wide, .ctx\:priceGrid .font\:sans\:h3\:semibold\:wide {
+font-family: Modernist, sans-serif;
+font-size: 3.375rem;
+font-weight: 600;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:priceGrid.mg-b\:d7, .ctx\:priceGrid .mg-b\:d7 {
+margin-bottom: 1.75rem;
+}
+
+.ctx\:priceGrid.font\:sans\:h6\:semibold\:wide, .ctx\:priceGrid .font\:sans\:h6\:semibold\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+font-weight: 600;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:priceGrid.mg-b\:d6, .ctx\:priceGrid .mg-b\:d6 {
+margin-bottom: 1.5rem;
+}
+
+.ctx\:priceGrid.col, .ctx\:priceGrid .col {
+display:flex;
+flex-direction:column;
+align-items: x;
+justify-content: y;
+flex-wrap: FlexWrapRule;
+}
+
+.ctx\:priceGrid.gap\:d5, .ctx\:priceGrid .gap\:d5 {
+gap: 1.25rem;
+}
+
+.ctx\:priceGrid.font\:sans\:base\:light\:wide, .ctx\:priceGrid .font\:sans\:base\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
 .ctx\:priceGrid.col-spans\:from-4\:to-7, .ctx\:priceGrid .col-spans\:from-4\:to-7 {
 grid-column-start: 4;
 grid-column-end: 7;
 }
 
 .ctx\:priceGrid.col-spans\:from-7\:to-10, .ctx\:priceGrid .col-spans\:from-7\:to-10 {
+grid-column-start: 7;
+grid-column-end: 10;
+}
+
+.ctx\:socialGrid.col\:x-start, .ctx\:socialGrid .col\:x-start {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+}
+
+.ctx\:socialGrid.w\:full, .ctx\:socialGrid .w\:full {
+width: 100%;
+}
+
+.ctx\:socialGrid.col-r\:x-start\:y-start, .ctx\:socialGrid .col-r\:x-start\:y-start {
+display:flex;
+flex-direction:column-reverse;
+align-items: flex-start;
+justify-content: flex-start;
+}
+
+.ctx\:socialGrid.bd\:findigogray\:solid\:width-d0, .ctx\:socialGrid .bd\:findigogray\:solid\:width-d0 {
+border-color: #baaef3;
+border-style: solid;
+border-width: 0.125rem;
+}
+
+.ctx\:socialGrid.col-spans\:from-1\:to-4, .ctx\:socialGrid .col-spans\:from-1\:to-4 {
+grid-column-start: 1;
+grid-column-end: 4;
+}
+
+.ctx\:socialGrid.pd-x\:d6, .ctx\:socialGrid .pd-x\:d6 {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+
+.ctx\:socialGrid.pd-y\:d12, .ctx\:socialGrid .pd-y\:d12 {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.ctx\:socialGrid.bd\:round-d4, .ctx\:socialGrid .bd\:round-d4 {
+border-radius: 1rem;
+}
+
+.ctx\:socialGrid.mg-b\:d4, .ctx\:socialGrid .mg-b\:d4 {
+margin-bottom: 1rem;
+}
+
+.ctx\:socialGrid.font\:sans\:h6\:light\:wide, .ctx\:socialGrid .font\:sans\:h6\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:socialGrid.text\:chunk\:fwhite\:normal, .ctx\:socialGrid .text\:chunk\:fwhite\:normal {
+max-width: 35ch;
+color: #E7E3DA;
+line-height: 1.4;
+}
+
+.ctx\:socialGrid.font\:sans\:h4\:semibold\:wide, .ctx\:socialGrid .font\:sans\:h4\:semibold\:wide {
+font-family: Modernist, sans-serif;
+font-size: 2.25rem;
+font-weight: 600;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:socialGrid.mg-b\:d6, .ctx\:socialGrid .mg-b\:d6 {
+margin-bottom: 1.5rem;
+}
+
+.ctx\:socialGrid.font\:h5, .ctx\:socialGrid .font\:h5 {
+font-size: 1.5rem;
+}
+
+.ctx\:socialGrid.font\:sans\:h6\:semibold\:wide, .ctx\:socialGrid .font\:sans\:h6\:semibold\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1.125rem;
+font-weight: 600;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:socialGrid.col, .ctx\:socialGrid .col {
+display:flex;
+flex-direction:column;
+align-items: x;
+justify-content: y;
+flex-wrap: FlexWrapRule;
+}
+
+.ctx\:socialGrid.gap\:d5, .ctx\:socialGrid .gap\:d5 {
+gap: 1.25rem;
+}
+
+.ctx\:socialGrid.font\:sans\:base\:light\:wide, .ctx\:socialGrid .font\:sans\:base\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 1rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:socialGrid.col-spans\:from-4\:to-7, .ctx\:socialGrid .col-spans\:from-4\:to-7 {
+grid-column-start: 4;
+grid-column-end: 7;
+}
+
+.ctx\:socialGrid.col-spans\:from-7\:to-10, .ctx\:socialGrid .col-spans\:from-7\:to-10 {
 grid-column-start: 7;
 grid-column-end: 10;
 }
@@ -2096,67 +2335,107 @@ background-size: cover;
 background-position: center center;
 }
 
-.ctx\:pricingIntro.w\:full, .ctx\:pricingIntro .w\:full {
+.ctx\:pricingQuote.w\:full, .ctx\:pricingQuote .w\:full {
 width: 100%;
 }
 
-.ctx\:pricingIntro.col\:x-start\:y-end, .ctx\:pricingIntro .col\:x-start\:y-end {
+.ctx\:pricingQuote.col\:x-start, .ctx\:pricingQuote .col\:x-start {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+}
+
+.ctx\:pricingQuote.col-spans\:from-1\:to-4, .ctx\:pricingQuote .col-spans\:from-1\:to-4 {
+grid-column-start: 1;
+grid-column-end: 4;
+}
+
+.ctx\:pricingQuote.bd\:round-d6, .ctx\:pricingQuote .bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.ctx\:pricingQuote.col\:y-end\:x-start, .ctx\:pricingQuote .col\:y-end\:x-start {
+display:flex;
+flex-direction:column;
+justify-content: flex-end;
+align-items: flex-start;
+}
+
+.ctx\:pricingQuote.col\:x-start\:y-between, .ctx\:pricingQuote .col\:x-start\:y-between {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.ctx\:pricingQuote.font\:h6\:regular\:sans, .ctx\:pricingQuote .font\:h6\:regular\:sans {
+font-size: 1.125rem;
+font-weight: 400;
+font-family: Modernist, sans-serif;
+}
+
+.ctx\:pricingQuote.text\:fwhite, .ctx\:pricingQuote .text\:fwhite {
+color: #E7E3DA;
+}
+
+.ctx\:pricingQuote.mg-b\:d6, .ctx\:pricingQuote .mg-b\:d6 {
+margin-bottom: 1.5rem;
+}
+
+.ctx\:pricingQuote.font\:sans\:h4\:light\:wide, .ctx\:pricingQuote .font\:sans\:h4\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 2.25rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:pricingQuote.text\:chunk\:findigogray\:normal, .ctx\:pricingQuote .text\:chunk\:findigogray\:normal {
+max-width: 35ch;
+color: #baaef3;
+line-height: 1.4;
+}
+
+.ctx\:pricingQuote.text\:white, .ctx\:pricingQuote .text\:white {
+color: #F7F5FB;
+}
+
+.ctx\:pricingQuote.font\:serif, .ctx\:pricingQuote .font\:serif {
+font-family: Playfair, serif;
+}
+
+.ctx\:pricingQuote.col-spans\:from-4\:to-6, .ctx\:pricingQuote .col-spans\:from-4\:to-6 {
+grid-column-start: 4;
+grid-column-end: 6;
+}
+
+.ctx\:pricingQuote.col\:x-end\:y-end, .ctx\:pricingQuote .col\:x-end\:y-end {
+display:flex;
+flex-direction:column;
+align-items: flex-end;
+justify-content: flex-end;
+}
+
+.ctx\:pricingQuote.mg-t\:auto, .ctx\:pricingQuote .mg-t\:auto {
+margin-top: auto;
+}
+
+.ctx\:pricingQuote.col\:x-start\:y-end, .ctx\:pricingQuote .col\:x-start\:y-end {
 display:flex;
 flex-direction:column;
 align-items: flex-start;
 justify-content: flex-end;
 }
 
-.ctx\:pricingIntro.h\:full, .ctx\:pricingIntro .h\:full {
-height: 100%;
-}
-
-.ctx\:pricingIntro.bd\:round-d6, .ctx\:pricingIntro .bd\:round-d6 {
-border-radius: 1.5rem;
-}
-
-.ctx\:pricingIntro.col\:x-start\:y-between, .ctx\:pricingIntro .col\:x-start\:y-between {
-display:flex;
-flex-direction:column;
-align-items: flex-start;
-justify-content: space-between;
-}
-
-.ctx\:pricingIntro.font\:h6\:regular\:sans, .ctx\:pricingIntro .font\:h6\:regular\:sans {
-font-size: 1.125rem;
-font-weight: 400;
-font-family: Modernist, sans-serif;
-}
-
-.ctx\:pricingIntro.text\:fwhite, .ctx\:pricingIntro .text\:fwhite {
-color: #E7E3DA;
-}
-
-.ctx\:pricingIntro.mg-b\:d6, .ctx\:pricingIntro .mg-b\:d6 {
-margin-bottom: 1.5rem;
-}
-
-.ctx\:pricingIntro.font\:h6\:sans\:regular\:tight, .ctx\:pricingIntro .font\:h6\:sans\:regular\:tight {
+.ctx\:pricingQuote.font\:h6\:sans\:regular\:tight, .ctx\:pricingQuote .font\:h6\:sans\:regular\:tight {
 font-size: 1.125rem;
 font-family: Modernist, sans-serif;
 font-weight: 400;
 letter-spacing: -0.01rem;
 }
 
-.ctx\:pricingIntro.text\:findigogray\:brief, .ctx\:pricingIntro .text\:findigogray\:brief {
+.ctx\:pricingQuote.text\:findigogray\:brief, .ctx\:pricingQuote .text\:findigogray\:brief {
 color: #baaef3;
 max-width: 45ch;
-}
-
-.ctx\:pricingIntro.mg-b\:0, .ctx\:pricingIntro .mg-b\:0 {
-margin-bottom: 0;
-}
-
-.ctx\:pricingIntro.col\:y-between\:x-end, .ctx\:pricingIntro .col\:y-between\:x-end {
-display:flex;
-flex-direction:column;
-justify-content: space-between;
-align-items: flex-end;
 }
 
 .ctx\:pricingSpread.w\:full, .ctx\:pricingSpread .w\:full {
@@ -2192,11 +2471,110 @@ align-items: flex-start;
 justify-content: space-between;
 }
 
+.text\:blob\:findigogray\:normal,  .text\:blob\:findigogray\:normal {
+max-width: 30ch;
+color: #baaef3;
+line-height: 1.4;
+}
+
 .col\:x-end\:y-start,  .col\:x-end\:y-start {
 display:flex;
 flex-direction:column;
 align-items: flex-end;
 justify-content: flex-start;
+}
+
+.ctx\:pricingSpreadAlt.w\:full, .ctx\:pricingSpreadAlt .w\:full {
+width: 100%;
+}
+
+.ctx\:pricingSpreadAlt.col\:x-start, .ctx\:pricingSpreadAlt .col\:x-start {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+}
+
+.ctx\:pricingSpreadAlt.col-spans\:from-1\:to-4, .ctx\:pricingSpreadAlt .col-spans\:from-1\:to-4 {
+grid-column-start: 1;
+grid-column-end: 4;
+}
+
+.ctx\:pricingSpreadAlt.bd\:round-d6, .ctx\:pricingSpreadAlt .bd\:round-d6 {
+border-radius: 1.5rem;
+}
+
+.ctx\:pricingSpreadAlt.col\:y-end\:x-start, .ctx\:pricingSpreadAlt .col\:y-end\:x-start {
+display:flex;
+flex-direction:column;
+justify-content: flex-end;
+align-items: flex-start;
+}
+
+.ctx\:pricingSpreadAlt.col\:x-start\:y-between, .ctx\:pricingSpreadAlt .col\:x-start\:y-between {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: space-between;
+}
+
+.ctx\:pricingSpreadAlt.font\:sans\:h4\:light\:wide, .ctx\:pricingSpreadAlt .font\:sans\:h4\:light\:wide {
+font-family: Modernist, sans-serif;
+font-size: 2.25rem;
+font-weight: 300;
+letter-spacing: 0.01rem;
+}
+
+.ctx\:pricingSpreadAlt.text\:chunk\:findigogray\:normal, .ctx\:pricingSpreadAlt .text\:chunk\:findigogray\:normal {
+max-width: 35ch;
+color: #baaef3;
+line-height: 1.4;
+}
+
+.ctx\:pricingSpreadAlt.mg-b\:d6, .ctx\:pricingSpreadAlt .mg-b\:d6 {
+margin-bottom: 1.5rem;
+}
+
+.ctx\:pricingSpreadAlt.text\:white, .ctx\:pricingSpreadAlt .text\:white {
+color: #F7F5FB;
+}
+
+.ctx\:pricingSpreadAlt.font\:serif, .ctx\:pricingSpreadAlt .font\:serif {
+font-family: Playfair, serif;
+}
+
+.ctx\:pricingSpreadAlt.col-spans\:from-4\:to-6, .ctx\:pricingSpreadAlt .col-spans\:from-4\:to-6 {
+grid-column-start: 4;
+grid-column-end: 6;
+}
+
+.ctx\:pricingSpreadAlt.col\:x-end\:y-end, .ctx\:pricingSpreadAlt .col\:x-end\:y-end {
+display:flex;
+flex-direction:column;
+align-items: flex-end;
+justify-content: flex-end;
+}
+
+.ctx\:pricingSpreadAlt.mg-t\:auto, .ctx\:pricingSpreadAlt .mg-t\:auto {
+margin-top: auto;
+}
+
+.ctx\:pricingSpreadAlt.col\:x-start\:y-end, .ctx\:pricingSpreadAlt .col\:x-start\:y-end {
+display:flex;
+flex-direction:column;
+align-items: flex-start;
+justify-content: flex-end;
+}
+
+.ctx\:pricingSpreadAlt.font\:h6\:sans\:regular\:tight, .ctx\:pricingSpreadAlt .font\:h6\:sans\:regular\:tight {
+font-size: 1.125rem;
+font-family: Modernist, sans-serif;
+font-weight: 400;
+letter-spacing: -0.01rem;
+}
+
+.ctx\:pricingSpreadAlt.text\:findigogray\:brief, .ctx\:pricingSpreadAlt .text\:findigogray\:brief {
+color: #baaef3;
+max-width: 45ch;
 }
 
 .ctx\:cascadeGrid.bg-img\:\(url\(\/images\/hungrypromo\.png\)\), .ctx\:cascadeGrid .bg-img\:\(url\(\/images\/hungrypromo\.png\)\) {
@@ -2211,10 +2589,10 @@ background-image: url(/images/davidsonscene.png);
 background-image: url(/images/windowbanner.png);
 }
 
-.ctx\:introTitle.text\:findigogray\:snug\:brief, .ctx\:introTitle .text\:findigogray\:snug\:brief {
+.ctx\:introTitle.text\:findigogray\:snug\:blob, .ctx\:introTitle .text\:findigogray\:snug\:blob {
 color: #baaef3;
 line-height: 1.3;
-max-width: 45ch;
+max-width: 30ch;
 }
 
 .bg-color\:darkpurple,  .bg-color\:darkpurple {
@@ -2562,6 +2940,11 @@ padding-bottom: 1.5rem;
 padding-bottom: 4.5rem;
 }
 
+.pd-y\:d11,  .pd-y\:d11 {
+padding-top: 2.75rem;
+padding-bottom: 2.75rem;
+}
+
 .col\:x-stretch,  .col\:x-stretch {
 display:flex;
 flex-direction:column;
@@ -2675,24 +3058,44 @@ height: 60rem;
 font-size: 1.5rem;
 }
 
-.ctx\:monolithImage.h\:s7, .ctx\:monolithImage .h\:s7 {
-height: 56rem;
+.ctx\:monolithImage.h\:s6, .ctx\:monolithImage .h\:s6 {
+height: 48rem;
 }
 
 .font\:h2,  .font\:h2 {
 font-size: 5.062rem;
 }
 
-.mg-t\:d3,  .mg-t\:d3 {
-margin-top: 0.75rem;
+.mg-t\:d4,  .mg-t\:d4 {
+margin-top: 1rem;
 }
 
-.mg-b\:d3,  .mg-b\:d3 {
-margin-bottom: 0.75rem;
+.mg-b\:d4,  .mg-b\:d4 {
+margin-bottom: 1rem;
 }
 
 .ctx\:mobileOpen.hidden, .ctx\:mobileOpen .hidden {
 display: none;
+}
+
+.ctx\:priceGrid.font\:h4, .ctx\:priceGrid .font\:h4 {
+font-size: 2.25rem;
+}
+
+.ctx\:priceGrid.font\:h5, .ctx\:priceGrid .font\:h5 {
+font-size: 1.5rem;
+}
+
+.ctx\:priceGrid.font\:h6, .ctx\:priceGrid .font\:h6 {
+font-size: 1.125rem;
+}
+
+.ctx\:socialGrid.font\:h5, .ctx\:socialGrid .font\:h5 {
+font-size: 1.5rem;
+}
+
+.ctx\:socialGrid.font\:h6, .ctx\:socialGrid .font\:h6 {
+font-size: 1.125rem;
 }
 
 .row,  .row {
@@ -2714,8 +3117,8 @@ margin-left: 0.5rem;
 }
 
 @media only screen and (min-width:64rem) {
-.ctx\:homeHero.h\:s7, .ctx\:homeHero .h\:s7 {
-height: 56rem;
+.ctx\:homeHero.h\:s6, .ctx\:homeHero .h\:s6 {
+height: 48rem;
 }
 
 .ctx\:scopeTESTING.grid\:cols-5-fr\:rows-1\:gap-d12, .ctx\:scopeTESTING .grid\:cols-5-fr\:rows-1\:gap-d12 {
@@ -2929,37 +3332,69 @@ margin-bottom: 0;
 height: 7rem;
 }
 
-.ctx\:priceGrid.h\:s4, .ctx\:priceGrid .h\:s4 {
-height: 36rem;
+.ctx\:pricingCards.pd-x\:c1, .ctx\:pricingCards .pd-x\:c1 {
+padding-left: 4rem;
+padding-right: 4rem;
 }
 
-.ctx\:priceHero.h\:s7, .ctx\:priceHero .h\:s7 {
-height: 56rem;
+.ctx\:pricingCards.pd-y\:c3, .ctx\:pricingCards .pd-y\:c3 {
+padding-top: 5rem;
+padding-bottom: 5rem;
 }
 
-.ctx\:pricingIntro.grid\:cols-5-fr\:rows-1\:gap-d12, .ctx\:pricingIntro .grid\:cols-5-fr\:rows-1\:gap-d12 {
+.ctx\:priceGrid.pd-x\:c1, .ctx\:priceGrid .pd-x\:c1 {
+padding-left: 4rem;
+padding-right: 4rem;
+}
+
+.ctx\:priceGrid.pd-y\:c3, .ctx\:priceGrid .pd-y\:c3 {
+padding-top: 5rem;
+padding-bottom: 5rem;
+}
+
+.ctx\:priceGrid.font\:h2, .ctx\:priceGrid .font\:h2 {
+font-size: 5.062rem;
+}
+
+.ctx\:priceGrid.font\:h5, .ctx\:priceGrid .font\:h5 {
+font-size: 1.5rem;
+}
+
+.ctx\:socialGrid.pd-x\:c1, .ctx\:socialGrid .pd-x\:c1 {
+padding-left: 4rem;
+padding-right: 4rem;
+}
+
+.ctx\:socialGrid.pd-y\:c3, .ctx\:socialGrid .pd-y\:c3 {
+padding-top: 5rem;
+padding-bottom: 5rem;
+}
+
+.ctx\:socialGrid.font\:h3, .ctx\:socialGrid .font\:h3 {
+font-size: 3.375rem;
+}
+
+.ctx\:socialGrid.font\:h5, .ctx\:socialGrid .font\:h5 {
+font-size: 1.5rem;
+}
+
+.ctx\:priceHero.h\:s6, .ctx\:priceHero .h\:s6 {
+height: 48rem;
+}
+
+.ctx\:pricingQuote.grid\:cols-5-fr\:rows-1\:gap-d12, .ctx\:pricingQuote .grid\:cols-5-fr\:rows-1\:gap-d12 {
 display:grid;
 grid-template-columns: repeat(5,1fr);
 grid-template-rows: repeat(1,auto);
 gap: 3rem;
 }
 
-.ctx\:pricingIntro.col-spans\:from-1\:to-3, .ctx\:pricingIntro .col-spans\:from-1\:to-3 {
-grid-column-start: 1;
-grid-column-end: 3;
-}
-
-.ctx\:pricingIntro.mg-b\:c3, .ctx\:pricingIntro .mg-b\:c3 {
+.ctx\:pricingQuote.mg-b\:c3, .ctx\:pricingQuote .mg-b\:c3 {
 margin-bottom: 5rem;
 }
 
-.ctx\:pricingIntro.mg-b\:0, .ctx\:pricingIntro .mg-b\:0 {
+.ctx\:pricingQuote.mg-b\:0, .ctx\:pricingQuote .mg-b\:0 {
 margin-bottom: 0;
-}
-
-.ctx\:pricingIntro.col-spans\:from-3\:to-6, .ctx\:pricingIntro .col-spans\:from-3\:to-6 {
-grid-column-start: 3;
-grid-column-end: 6;
 }
 
 .ctx\:pricingSpread.grid\:cols-5-fr\:rows-1\:gap-d12, .ctx\:pricingSpread .grid\:cols-5-fr\:rows-1\:gap-d12 {
@@ -2967,6 +3402,17 @@ display:grid;
 grid-template-columns: repeat(5,1fr);
 grid-template-rows: repeat(1,auto);
 gap: 3rem;
+}
+
+.ctx\:pricingSpreadAlt.grid\:cols-5-fr\:rows-1\:gap-d12, .ctx\:pricingSpreadAlt .grid\:cols-5-fr\:rows-1\:gap-d12 {
+display:grid;
+grid-template-columns: repeat(5,1fr);
+grid-template-rows: repeat(1,auto);
+gap: 3rem;
+}
+
+.ctx\:pricingSpreadAlt.mg-b\:0, .ctx\:pricingSpreadAlt .mg-b\:0 {
+margin-bottom: 0;
 }
 
 .grid\:cols-5-fr\:gap-d6,  .grid\:cols-5-fr\:gap-d6 {
@@ -3033,14 +3479,9 @@ grid-column-start: 3;
 grid-column-end: 3;
 }
 
-.pd-y\:c12,  .pd-y\:c12 {
-padding-top: 16rem;
-padding-bottom: 16rem;
-}
-
-.pd-y\:c1,  .pd-y\:c1 {
-padding-top: 4rem;
-padding-bottom: 4rem;
+.pd-y\:c10,  .pd-y\:c10 {
+padding-top: 10rem;
+padding-bottom: 10rem;
 }
 
 .pd-t\:c10,  .pd-t\:c10 {
@@ -3062,6 +3503,16 @@ padding-top: 7rem;
 
 .pd-b\:c6,  .pd-b\:c6 {
 padding-bottom: 7rem;
+}
+
+.pd-y\:c3,  .pd-y\:c3 {
+padding-top: 5rem;
+padding-bottom: 5rem;
+}
+
+.pd-y\:c1,  .pd-y\:c1 {
+padding-top: 4rem;
+padding-bottom: 4rem;
 }
 
 }
@@ -3151,7 +3602,21 @@ align-items: flex-end;
 font-size: 3.375rem;
 }
 
+.ctx\:pricingCards.grid\:cols-9-fr\:rows-1\:gap-d6, .ctx\:pricingCards .grid\:cols-9-fr\:rows-1\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(9,1fr);
+grid-template-rows: repeat(1,auto);
+gap: 1.5rem;
+}
+
 .ctx\:priceGrid.grid\:cols-9-fr\:rows-1\:gap-d6, .ctx\:priceGrid .grid\:cols-9-fr\:rows-1\:gap-d6 {
+display:grid;
+grid-template-columns: repeat(9,1fr);
+grid-template-rows: repeat(1,auto);
+gap: 1.5rem;
+}
+
+.ctx\:socialGrid.grid\:cols-9-fr\:rows-1\:gap-d6, .ctx\:socialGrid .grid\:cols-9-fr\:rows-1\:gap-d6 {
 display:grid;
 grid-template-columns: repeat(9,1fr);
 grid-template-rows: repeat(1,auto);
@@ -3173,12 +3638,16 @@ height: 48rem;
 font-size: 3.375rem;
 }
 
+.ctx\:pricingCards.mg-b\:0, .ctx\:pricingCards .mg-b\:0 {
+margin-bottom: 0;
+}
+
 .ctx\:priceGrid.mg-b\:0, .ctx\:priceGrid .mg-b\:0 {
 margin-bottom: 0;
 }
 
-.ctx\:priceGrid.h\:s6, .ctx\:priceGrid .h\:s6 {
-height: 48rem;
+.ctx\:socialGrid.mg-b\:0, .ctx\:socialGrid .mg-b\:0 {
+margin-bottom: 0;
 }
 
 }

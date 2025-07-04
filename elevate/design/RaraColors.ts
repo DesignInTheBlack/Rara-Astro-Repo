@@ -12,6 +12,7 @@ export const raracolors = {
     'white': '#F7F5FB',
     'altwhite': '#F2EFFA',
     'black':'#0A141F',
+    'altblack':'#181a1c',
     'error': '#F40076',
     'warn': '#F7B538',
 

@@ -3,20 +3,44 @@ import PrimaryLayout from '../layouts/PrimaryLayout.astro'
 import SmartSpacer from '../subcomponents/SmartSpacer.astro'
 import PricingHero from '../components/pricing/PricingHero.astro'
 import PricingCascade from '../components/pricing/PricingCascade.astro'
-import PricingIntro from '../components/pricing/PricingIntro.astro'
 import PricingSpread from '../components/pricing/PricingSpread.astro'
 import PricingButton from '../components/pricing/PricingButton.astro'
+import HomeStrip from '../components/home/HomeStrip.astro'
+import PricingSpreadAlt from '../components/pricing/PricingSpreadAlt.astro'
+import PricingClient from '../components/pricing/PricingClient.astro'
+import PricingQuote from '../components/pricing/PricingQuote.astro'
+import PricingCards from '../components/pricing/PricingCards.astro'
 ---
 <PrimaryLayout>
     <PricingHero></PricingHero>
-    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c3'}></SmartSpacer>
     <div class = "contain w:full">
         <PricingSpread></PricingSpread>
         <PricingButton></PricingButton>
     </div>
-    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+    <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
     <div class = "overflow:hidden contain w:full bg-color:darkpurple pd-t:c2 pd-b:c2 col:y-center /lg/ pd-t:c6 pd-b:c6">
+        <PricingSpreadAlt></PricingSpreadAlt>
+        <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
         <PricingCascade></PricingCascade>
     </div>
+
     <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+
+    <HomeStrip></HomeStrip>
+
+    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+
+    <div class = "contain w:full">
+        <div class = "pd-x:d6 bd:round-d4 pd-t:c2 pd-b:d6 bg-color:darkpurple /lg/ pd-t:c10 pd-b:c1 pd-x:c1">
+            <PricingClient></PricingClient>
+            <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
+            <PricingQuote></PricingQuote>
+            <SmartSpacer componentClass = {'pd-y:d10'}></SmartSpacer>
+            <PricingCards></PricingCards>
+    </div> 
+    <SmartSpacer componentClass = {'pd-y:d10 /lg/ pd-y:c1'}></SmartSpacer>
+  
+
+
 </PrimaryLayout>

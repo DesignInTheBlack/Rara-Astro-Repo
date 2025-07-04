@@ -1,8 +1,8 @@
 
 export const contain = {
-    '2xs': 'd6',
-    'xs': 'd6',
-    'sm': 'd6',
+    '2xs': 'd5',
+    'xs': 'd5',
+    'sm': 'd5',
     'md': 'c1',
     'lg': 'c1',
     'xl': 'c1',

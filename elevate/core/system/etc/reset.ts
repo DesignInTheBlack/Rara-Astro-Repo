@@ -38,7 +38,7 @@ button, input, label {
 
 h1, h2,
 h3, h4 {
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 a:not([class]) {
@@ -67,7 +67,7 @@ textarea:not([rows]) {
 }
 
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 5em;
 }
 
 /* Added universal animations for better UI feedback */
