@@ -80,22 +80,22 @@ textarea:not([rows]) {
 @media only screen and (min-width:20rem) {
 .contain {
     margin:auto;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     }
 }
 @media only screen and (min-width:30rem) {
 .contain {
     margin:auto;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     }
 }
 @media only screen and (min-width:40rem) {
 .contain {
     margin:auto;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     }
 }
 @media only screen and (min-width:48rem) {
@@ -953,6 +953,10 @@ z-index: undefined;
 overflow: hidden;
 }
 
+.ctx\:cascadeGrid.h\:s2, .ctx\:cascadeGrid .h\:s2 {
+height: 28rem;
+}
+
 .ctx\:cascadeGrid.absolute, .ctx\:cascadeGrid .absolute {
 position: absolute;
 }
@@ -977,8 +981,8 @@ background-image: url(/images/subwayblur.png);
 z-index: 10;
 }
 
-.ctx\:quoteMark.mg-l\:d10, .ctx\:quoteMark .mg-l\:d10 {
-margin-left: 2.5rem;
+.ctx\:quoteMark.mg-l\:d8, .ctx\:quoteMark .mg-l\:d8 {
+margin-left: 2rem;
 }
 
 .ctx\:quoteMark.absolute, .ctx\:quoteMark .absolute {
@@ -1014,9 +1018,9 @@ opacity: 0.3;
 margin-bottom: 2.25rem;
 }
 
-.mg-x\:d10,  .mg-x\:d10 {
-margin-left: 2.5rem;
-margin-right: 2.5rem;
+.mg-x\:d8,  .mg-x\:d8 {
+margin-left: 2rem;
+margin-right: 2rem;
 }
 
 .z\:20,  .z\:20 {
@@ -1029,9 +1033,9 @@ flex-direction:column;
 justify-content: center;
 }
 
-.ctx\:quoteFuller.font\:sans\:h6\:sans\:regular\:tight, .ctx\:quoteFuller .font\:sans\:h6\:sans\:regular\:tight {
+.ctx\:quoteFuller.font\:sans\:h5\:sans\:regular\:tight, .ctx\:quoteFuller .font\:sans\:h5\:sans\:regular\:tight {
 font-family: Modernist, sans-serif;
-font-size: 1.125rem;
+font-size: 1.5rem;
 font-family: Modernist, sans-serif;
 font-weight: 400;
 letter-spacing: -0.01rem;
@@ -1209,51 +1213,48 @@ justify-content: center;
 height: 32rem;
 }
 
-.ctx\:heroTitle.absolute, .ctx\:heroTitle .absolute {
+.ctx\:homeHero.contain, .ctx\:homeHero .contain {
+
+}
+
+.ctx\:homeHero.absolute, .ctx\:homeHero .absolute {
 position: absolute;
 }
 
-.ctx\:heroTitle.w\:full, .ctx\:heroTitle .w\:full {
-width: 100%;
+.ctx\:homeHero.pd-b\:d5, .ctx\:homeHero .pd-b\:d5 {
+padding-bottom: 1.25rem;
 }
 
-.ctx\:heroTitle.pd-b\:d8, .ctx\:heroTitle .pd-b\:d8 {
-padding-bottom: 2rem;
-}
-
-.ctx\:heroTitle.bottom\:0, .ctx\:heroTitle .bottom\:0 {
+.ctx\:homeHero.bottom\:0, .ctx\:homeHero .bottom\:0 {
 bottom: 0;
 }
 
-.ctx\:heroTitle.row\:x-between\:y-center, .ctx\:heroTitle .row\:x-between\:y-center {
+.ctx\:homeHero.row\:x-between\:y-center, .ctx\:homeHero .row\:x-between\:y-center {
 display:flex;
 flex-direction:row;
 justify-content: space-between;
 align-items: center;
 }
 
-.ctx\:heroTitle.font\:h6\:sans, .ctx\:heroTitle .font\:h6\:sans {
-font-size: 1.125rem;
-font-family: Modernist, sans-serif;
-}
-
-.ctx\:heroTitle.text\:fwhite, .ctx\:heroTitle .text\:fwhite {
+.ctx\:homeHero.text\:fwhite, .ctx\:homeHero .text\:fwhite {
 color: #E7E3DA;
 }
 
-.ctx\:heroTitle.font\:regular, .ctx\:heroTitle .font\:regular {
+.ctx\:homeHero.font\:sans\:regular\:h5, .ctx\:homeHero .font\:sans\:regular\:h5 {
+font-family: Modernist, sans-serif;
 font-weight: 400;
+font-size: 1.5rem;
 }
 
-.ctx\:heroTitle.text\:hug, .ctx\:heroTitle .text\:hug {
+.ctx\:homeHero.text\:hug, .ctx\:homeHero .text\:hug {
 line-height: 1.2;
 }
 
-.ctx\:heroTitle.w\:auto, .ctx\:heroTitle .w\:auto {
+.ctx\:homeHero.w\:auto, .ctx\:homeHero .w\:auto {
 width: auto;
 }
 
-.ctx\:heroTitle.h\:d10, .ctx\:heroTitle .h\:d10 {
+.ctx\:homeHero.h\:d10, .ctx\:homeHero .h\:d10 {
 height: 2.5rem;
 }
 
@@ -2402,6 +2403,28 @@ background-size: cover;
 background-position: center center;
 }
 
+.pd-b\:d5,  .pd-b\:d5 {
+padding-bottom: 1.25rem;
+}
+
+.bottom\:0,  .bottom\:0 {
+bottom: 0;
+}
+
+.font\:sans\:regular\:h5,  .font\:sans\:regular\:h5 {
+font-family: Modernist, sans-serif;
+font-weight: 400;
+font-size: 1.5rem;
+}
+
+.text\:hug,  .text\:hug {
+line-height: 1.2;
+}
+
+.h\:d10,  .h\:d10 {
+height: 2.5rem;
+}
+
 .ctx\:pricingQuote.w\:full, .ctx\:pricingQuote .w\:full {
 width: 100%;
 }
@@ -2648,10 +2671,6 @@ max-width: 45ch;
 background-image: url(/images/hungrypromo.png);
 }
 
-.ctx\:cascadeGrid.h\:s2, .ctx\:cascadeGrid .h\:s2 {
-height: 28rem;
-}
-
 .ctx\:cascadeGrid.bg-img\:\(url\(\/images\/davidsonscene\.png\)\), .ctx\:cascadeGrid .bg-img\:\(url\(\/images\/davidsonscene\.png\)\) {
 background-image: url(/images/davidsonscene.png);
 }
@@ -2710,10 +2729,6 @@ color: #baaef3;
 line-height: 1.3;
 text-align: left;
 line-height: 1.5;
-}
-
-.ctx\:aboutMain.h\:s2, .ctx\:aboutMain .h\:s2 {
-height: 28rem;
 }
 
 .ctx\:aboutMain.contain, .ctx\:aboutMain .contain {
@@ -3129,7 +3144,7 @@ padding-right: 2rem;
 height: 60rem;
 }
 
-.ctx\:heroTitle.font\:h5, .ctx\:heroTitle .font\:h5 {
+.ctx\:homeHero.font\:h5, .ctx\:homeHero .font\:h5 {
 font-size: 1.5rem;
 }
 
@@ -3171,6 +3186,10 @@ font-size: 1.5rem;
 
 .ctx\:socialGrid.font\:h6, .ctx\:socialGrid .font\:h6 {
 font-size: 1.125rem;
+}
+
+.font\:h5,  .font\:h5 {
+font-size: 1.5rem;
 }
 
 .row,  .row {
@@ -3358,15 +3377,19 @@ margin-bottom: 0;
 height: 40rem;
 }
 
-.ctx\:heroTitle.font\:h4, .ctx\:heroTitle .font\:h4 {
+.ctx\:homeHero.font\:h4, .ctx\:homeHero .font\:h4 {
 font-size: 2.25rem;
 }
 
-.ctx\:heroTitle.pd-b\:d8, .ctx\:heroTitle .pd-b\:d8 {
+.ctx\:homeHero.pd-b\:d8, .ctx\:homeHero .pd-b\:d8 {
 padding-bottom: 2rem;
 }
 
-.ctx\:heroTitle.h\:c2, .ctx\:heroTitle .h\:c2 {
+.ctx\:homeHero.font\:h2, .ctx\:homeHero .font\:h2 {
+font-size: 5.062rem;
+}
+
+.ctx\:homeHero.h\:c2, .ctx\:homeHero .h\:c2 {
 height: 4.5rem;
 }
 
@@ -3474,6 +3497,18 @@ font-size: 1.5rem;
 
 .ctx\:priceHero.h\:s6, .ctx\:priceHero .h\:s6 {
 height: 48rem;
+}
+
+.pd-b\:d8,  .pd-b\:d8 {
+padding-bottom: 2rem;
+}
+
+.font\:h2,  .font\:h2 {
+font-size: 5.062rem;
+}
+
+.h\:c2,  .h\:c2 {
+height: 4.5rem;
 }
 
 .ctx\:pricingQuote.grid\:cols-5-fr\:rows-1\:gap-d12, .ctx\:pricingQuote .grid\:cols-5-fr\:rows-1\:gap-d12 {
