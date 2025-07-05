@@ -2679,6 +2679,69 @@ background-image: url(/images/davidsonscene.png);
 background-image: url(/images/windowbanner.png);
 }
 
+.ctx\:worksHero.relative, .ctx\:worksHero .relative {
+position: relative;
+}
+
+.ctx\:worksHero.w\:full, .ctx\:worksHero .w\:full {
+width: 100%;
+}
+
+.ctx\:worksHero.h\:s3, .ctx\:worksHero .h\:s3 {
+height: 32rem;
+}
+
+.ctx\:worksHero.bg-attr\:no-repeat\:cover\:center, .ctx\:worksHero .bg-attr\:no-repeat\:cover\:center {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+
+.ctx\:worksHero.contain, .ctx\:worksHero .contain {
+
+}
+
+.ctx\:worksHero.absolute, .ctx\:worksHero .absolute {
+position: absolute;
+}
+
+.ctx\:worksHero.pd-b\:d5, .ctx\:worksHero .pd-b\:d5 {
+padding-bottom: 1.25rem;
+}
+
+.ctx\:worksHero.bottom\:0, .ctx\:worksHero .bottom\:0 {
+bottom: 0;
+}
+
+.ctx\:worksHero.row\:x-between\:y-center, .ctx\:worksHero .row\:x-between\:y-center {
+display:flex;
+flex-direction:row;
+justify-content: space-between;
+align-items: center;
+}
+
+.ctx\:worksHero.text\:fwhite, .ctx\:worksHero .text\:fwhite {
+color: #E7E3DA;
+}
+
+.ctx\:worksHero.font\:sans\:regular\:h5, .ctx\:worksHero .font\:sans\:regular\:h5 {
+font-family: Modernist, sans-serif;
+font-weight: 400;
+font-size: 1.5rem;
+}
+
+.ctx\:worksHero.text\:hug, .ctx\:worksHero .text\:hug {
+line-height: 1.2;
+}
+
+.ctx\:worksHero.w\:auto, .ctx\:worksHero .w\:auto {
+width: auto;
+}
+
+.ctx\:worksHero.h\:d10, .ctx\:worksHero .h\:d10 {
+height: 2.5rem;
+}
+
 .ctx\:introTitle.text\:findigogray\:snug\:blob, .ctx\:introTitle .text\:findigogray\:snug\:blob {
 color: #baaef3;
 line-height: 1.3;
@@ -3192,6 +3255,10 @@ font-size: 1.125rem;
 font-size: 1.5rem;
 }
 
+.ctx\:worksHero.font\:h5, .ctx\:worksHero .font\:h5 {
+font-size: 1.5rem;
+}
+
 .row,  .row {
 display:flex;
 flex-direction:row;
@@ -3546,6 +3613,26 @@ gap: 3rem;
 
 .ctx\:pricingSpreadAlt.mg-b\:0, .ctx\:pricingSpreadAlt .mg-b\:0 {
 margin-bottom: 0;
+}
+
+.ctx\:worksHero.h\:s6, .ctx\:worksHero .h\:s6 {
+height: 48rem;
+}
+
+.ctx\:worksHero.font\:h4, .ctx\:worksHero .font\:h4 {
+font-size: 2.25rem;
+}
+
+.ctx\:worksHero.pd-b\:d8, .ctx\:worksHero .pd-b\:d8 {
+padding-bottom: 2rem;
+}
+
+.ctx\:worksHero.font\:h2, .ctx\:worksHero .font\:h2 {
+font-size: 5.062rem;
+}
+
+.ctx\:worksHero.h\:c2, .ctx\:worksHero .h\:c2 {
+height: 4.5rem;
 }
 
 .grid\:cols-5-fr\:gap-d6,  .grid\:cols-5-fr\:gap-d6 {
