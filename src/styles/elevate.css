@@ -1858,35 +1858,78 @@ font-family: Modernist, sans-serif;
 margin-top: 1.5rem;
 }
 
-.bg-color\:black,  .bg-color\:black {
+.ctx\:mobileNav.bg-color\:black, .ctx\:mobileNav .bg-color\:black {
 background-color: #0A141F;
 }
 
-.z\:5000,  .z\:5000 {
+.ctx\:mobileNav.z\:5000, .ctx\:mobileNav .z\:5000 {
 z-index: 5000;
 }
 
-.fixed,  .fixed {
+.ctx\:mobileNav.fixed, .ctx\:mobileNav .fixed {
 position: fixed;
 }
 
-.opacity\:0\.0,  .opacity\:0\.0 {
+.ctx\:mobileNav.top\:0, .ctx\:mobileNav .top\:0 {
+top: 0;
+}
+
+.ctx\:mobileNav.w\:full, .ctx\:mobileNav .w\:full {
+width: 100%;
+}
+
+.ctx\:mobileNav.h\:full, .ctx\:mobileNav .h\:full {
+height: 100%;
+}
+
+.ctx\:mobileNav.opacity\:0\.0, .ctx\:mobileNav .opacity\:0\.0 {
 opacity: 0;
 }
 
-.pd-t\:c1,  .pd-t\:c1 {
+.ctx\:mobileNav.pd-t\:c1, .ctx\:mobileNav .pd-t\:c1 {
 padding-top: 4rem;
 }
 
-.h\:d9,  .h\:d9 {
+.ctx\:mobileNav.row\:x-center\:y-center, .ctx\:mobileNav .row\:x-center\:y-center {
+display:flex;
+flex-direction:row;
+justify-content: center;
+align-items: center;
+}
+
+.ctx\:mobileNav.relative, .ctx\:mobileNav .relative {
+position: relative;
+}
+
+.ctx\:mobileNav.h\:d9, .ctx\:mobileNav .h\:d9 {
 height: 2.25rem;
 }
 
-.col\:x-center\:y-center,  .col\:x-center\:y-center {
+.ctx\:mobileNav.w\:auto, .ctx\:mobileNav .w\:auto {
+width: auto;
+}
+
+.ctx\:mobileNav.absolute, .ctx\:mobileNav .absolute {
+position: absolute;
+}
+
+.ctx\:mobileNav.left\:0, .ctx\:mobileNav .left\:0 {
+left: 0;
+}
+
+.ctx\:mobileNav.overflow\:hidden, .ctx\:mobileNav .overflow\:hidden {
+overflow: hidden;
+}
+
+.ctx\:mobileNav.col\:x-center\:y-center, .ctx\:mobileNav .col\:x-center\:y-center {
 display:flex;
 flex-direction:column;
 align-items: center;
 justify-content: center;
+}
+
+.ctx\:mobileNav.right\:0, .ctx\:mobileNav .right\:0 {
+right: 0;
 }
 
 .ctx\:mobilenavbutton.block, .ctx\:mobilenavbutton .block {
@@ -1964,6 +2007,10 @@ padding-top: 1.5rem;
 height: 2rem;
 }
 
+.fixed,  .fixed {
+position: fixed;
+}
+
 .z\:2000,  .z\:2000 {
 z-index: 2000;
 }
@@ -1973,9 +2020,9 @@ padding-top: 1rem;
 padding-bottom: 1rem;
 }
 
-.mg-x\:d5,  .mg-x\:d5 {
-margin-left: 1.25rem;
-margin-right: 1.25rem;
+.mg-x\:d4,  .mg-x\:d4 {
+margin-left: 1rem;
+margin-right: 1rem;
 }
 
 .transition\:slow,  .transition\:slow {
@@ -1984,6 +2031,10 @@ transition: all 0.3s ease-in-out;
 
 .bd\:round-d4,  .bd\:round-d4 {
 border-radius: 1rem;
+}
+
+.h\:d9,  .h\:d9 {
+height: 2.25rem;
 }
 
 .ctx\:navMenu.invisible, .ctx\:navMenu .invisible {
